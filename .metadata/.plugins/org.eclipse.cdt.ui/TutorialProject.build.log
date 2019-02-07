@@ -1,0 +1,12 @@
+19:54:18 **** Build of configuration Debug for project TutorialProject ****
+make all 
+Building file: ../src/BaseApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BaseApplication.d" -MT"src/BaseApplication.o" -o "src/BaseApplication.o" "../src/BaseApplication.cpp"
+../src/BaseApplication.cpp:18:29: fatal error: BaseApplication.h: No such file or directory
+compilation terminated.
+make: *** [src/BaseApplication.o] Error 1
+src/subdir.mk:21: recipe for target 'src/BaseApplication.o' failed
+
+19:54:19 Build Finished (took 1s.412ms)
+

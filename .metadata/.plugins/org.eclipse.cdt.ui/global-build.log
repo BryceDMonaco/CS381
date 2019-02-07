@@ -140,3 +140,329 @@ make: Nothing to be done for 'all'.
 16:45:46 **** Incremental Build of configuration Debug for project As0 ****
 make all 
 make: Nothing to be done for 'all'.
+11:33:46 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+make: Nothing to be done for 'all'.
+12:53:09 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+make: Nothing to be done for 'all'.
+13:01:15 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+make: Nothing to be done for 'all'.
+13:01:57 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+make: Nothing to be done for 'all'.
+13:02:47 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+make: Nothing to be done for 'all'.
+13:03:41 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+make: Nothing to be done for 'all'.
+13:10:27 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+make: Nothing to be done for 'all'.
+13:41:16 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As0/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As0
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As0"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As0
+ 
+13:55:59 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As0/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As0
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As0"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As0
+ 
+13:56:48 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+make: Nothing to be done for 'all'.
+13:59:05 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As0/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As0
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As0"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As0
+ 
+14:00:24 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+make: Nothing to be done for 'all'.
+14:01:41 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+make: Nothing to be done for 'all'.
+14:02:42 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As0/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As0
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As0"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As0
+ 
+14:05:32 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As0/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As0
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As0"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As0
+ 
+14:07:26 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As0/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As0
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As0"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As0
+ 
+17:28:25 **** Build of configuration Debug for project As0 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As0/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As0
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As0"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+./src/TutorialApplication.o: In function `TutorialApplication::frameRenderingQueued(Ogre::FrameEvent const&)':
+/home/brycbuntu/CS381/As0/Debug/../src/TutorialApplication.cpp:58: undefined reference to `TutorialApplication::processUnbufferedInput(Ogre::FrameEvent const&)'
+makefile:45: recipe for target 'As0' failed
+collect2: error: ld returned 1 exit status
+make: *** [As0] Error 1
+17:29:34 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As0/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As0
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As0"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+./src/TutorialApplication.o:(.rodata._ZTV19TutorialApplication[_ZTV19TutorialApplication]+0x18): undefined reference to `TutorialApplication::frameRenderingQueued(Ogre::FrameEvent const&)'
+collect2: error: ld returned 1 exit status
+makefile:45: recipe for target 'As0' failed
+make: *** [As0] Error 1
+17:31:01 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As0/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As0
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As0"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As0
+ 
+17:32:55 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+make: Nothing to be done for 'all'.
+17:33:42 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+make: Nothing to be done for 'all'.
+17:35:08 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+make: Nothing to be done for 'all'.
+17:35:45 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+make: Nothing to be done for 'all'.
+19:54:16 **** Clean-only build of configuration Debug for project TutorialProject ****
+make clean 
+rm -rf  ./src/BaseApplication.o ./src/TutorialApplication.o  ./src/BaseApplication.d ./src/TutorialApplication.d  As0
+ 
+19:54:18 **** Build of configuration Debug for project TutorialProject ****
+make all 
+Building file: ../src/BaseApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BaseApplication.d" -MT"src/BaseApplication.o" -o "src/BaseApplication.o" "../src/BaseApplication.cpp"
+../src/BaseApplication.cpp:18:29: fatal error: BaseApplication.h: No such file or directory
+compilation terminated.
+make: *** [src/BaseApplication.o] Error 1
+src/subdir.mk:21: recipe for target 'src/BaseApplication.o' failed
+19:56:39 **** Clean-only build of configuration Debug for project As0 ****
+make clean 
+rm -rf  ./src/BaseApplication.o ./src/TutorialApplication.o  ./src/BaseApplication.d ./src/TutorialApplication.d  TutorialProject
+ 
+19:56:40 **** Build of configuration Debug for project As0 ****
+make all 
+Building file: ../src/BaseApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As0/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BaseApplication.d" -MT"src/BaseApplication.o" -o "src/BaseApplication.o" "../src/BaseApplication.cpp"
+In file included from ../src/BaseApplication.cpp:18:0:
+/home/brycbuntu/CS381/As0/inc/BaseApplication.h: In constructor ‘BaseApplication::BaseApplication()’:
+/home/brycbuntu/CS381/As0/inc/BaseApplication.h:124:33: warning: ‘BaseApplication::mKeyboard’ will be initialized after [-Wreorder]
+     OIS::Keyboard*              mKeyboard;
+                                 ^
+/home/brycbuntu/CS381/As0/inc/BaseApplication.h:111:33: warning:   ‘Ogre::OverlaySystem* BaseApplication::mOverlaySystem’ [-Wreorder]
+     Ogre::OverlaySystem*        mOverlaySystem;
+                                 ^
+../src/BaseApplication.cpp:25:1: warning:   when initialized here [-Wreorder]
+ BaseApplication::BaseApplication(void)
+ ^
+Finished building: ../src/BaseApplication.cpp
+ 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As0/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As0
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As0"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As0
+ 
+20:16:40 **** Incremental Build of configuration Debug for project As0 ****
+make all 
+Building file: ../src/BaseApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As0/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BaseApplication.d" -MT"src/BaseApplication.o" -o "src/BaseApplication.o" "../src/BaseApplication.cpp"
+In file included from ../src/BaseApplication.cpp:18:0:
+/home/brycbuntu/CS381/As0/inc/BaseApplication.h: In constructor ‘BaseApplication::BaseApplication()’:
+/home/brycbuntu/CS381/As0/inc/BaseApplication.h:124:33: warning: ‘BaseApplication::mKeyboard’ will be initialized after [-Wreorder]
+     OIS::Keyboard*              mKeyboard;
+                                 ^
+/home/brycbuntu/CS381/As0/inc/BaseApplication.h:111:33: warning:   ‘Ogre::OverlaySystem* BaseApplication::mOverlaySystem’ [-Wreorder]
+     Ogre::OverlaySystem*        mOverlaySystem;
+                                 ^
+../src/BaseApplication.cpp:25:1: warning:   when initialized here [-Wreorder]
+ BaseApplication::BaseApplication(void)
+ ^
+Finished building: ../src/BaseApplication.cpp
+ 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As0/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As0
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As0"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As0
+ 
+20:21:40 **** Build of configuration Debug for project As1 ****
+make all 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+20:38:59 **** Clean-only build of configuration Debug for project As1 ****
+make clean 
+rm -rf  ./src/BaseApplication.o ./src/TutorialApplication.o  ./src/BaseApplication.d ./src/TutorialApplication.d  As1
+ 
+20:39:00 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/BaseApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As0/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BaseApplication.d" -MT"src/BaseApplication.o" -o "src/BaseApplication.o" "../src/BaseApplication.cpp"
+In file included from ../src/BaseApplication.cpp:18:0:
+/home/brycbuntu/CS381/As0/inc/BaseApplication.h: In constructor ‘BaseApplication::BaseApplication()’:
+/home/brycbuntu/CS381/As0/inc/BaseApplication.h:124:33: warning: ‘BaseApplication::mKeyboard’ will be initialized after [-Wreorder]
+     OIS::Keyboard*              mKeyboard;
+                                 ^
+/home/brycbuntu/CS381/As0/inc/BaseApplication.h:111:33: warning:   ‘Ogre::OverlaySystem* BaseApplication::mOverlaySystem’ [-Wreorder]
+     Ogre::OverlaySystem*        mOverlaySystem;
+                                 ^
+../src/BaseApplication.cpp:25:1: warning:   when initialized here [-Wreorder]
+ BaseApplication::BaseApplication(void)
+ ^
+Finished building: ../src/BaseApplication.cpp
+ 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As0/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp:69:40: error: no ‘void TutorialApplication::createCamera()’ member function declared in class ‘TutorialApplication’
+ void TutorialApplication::createCamera()
+                                        ^
+../src/TutorialApplication.cpp:78:43: error: no ‘void TutorialApplication::createViewports()’ member function declared in class ‘TutorialApplication’
+ void TutorialApplication::createViewports()
+                                           ^
+src/subdir.mk:21: recipe for target 'src/TutorialApplication.o' failed
+make: *** [src/TutorialApplication.o] Error 1
+20:45:42 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/BaseApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BaseApplication.d" -MT"src/BaseApplication.o" -o "src/BaseApplication.o" "../src/BaseApplication.cpp"
+In file included from ../src/BaseApplication.cpp:18:0:
+/home/brycbuntu/CS381/As1/inc/BaseApplication.h: In constructor ‘BaseApplication::BaseApplication()’:
+/home/brycbuntu/CS381/As1/inc/BaseApplication.h:124:33: warning: ‘BaseApplication::mKeyboard’ will be initialized after [-Wreorder]
+     OIS::Keyboard*              mKeyboard;
+                                 ^
+/home/brycbuntu/CS381/As1/inc/BaseApplication.h:111:33: warning:   ‘Ogre::OverlaySystem* BaseApplication::mOverlaySystem’ [-Wreorder]
+     Ogre::OverlaySystem*        mOverlaySystem;
+                                 ^
+../src/BaseApplication.cpp:25:1: warning:   when initialized here [-Wreorder]
+ BaseApplication::BaseApplication(void)
+ ^
+Finished building: ../src/BaseApplication.cpp
+ 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+21:08:32 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+21:09:15 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:09:58 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:16:54 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 

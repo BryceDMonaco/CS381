@@ -20,18 +20,19 @@ http://www.ogre3d.org/wiki/
 
 #include "BaseApplication.h"
 
-//---------------------------------------------------------------------------
-
 class TutorialApplication : public BaseApplication
 {
 public:
-    TutorialApplication(void);
-    virtual ~TutorialApplication(void);
+  TutorialApplication();
+  virtual ~TutorialApplication();
 
 protected:
-    virtual void createScene(void);
-    virtual void createCamera();
-    virtual void createViewports();
+  virtual void createScene();
+  virtual bool frameRenderingQueued(const Ogre::FrameEvent& fe);
+
+private:
+  bool processUnbufferedInput(const Ogre::FrameEvent& fe);
+
 };
 
 //---------------------------------------------------------------------------

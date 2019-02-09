@@ -1,8 +1,12 @@
-21:16:54 **** Incremental Build of configuration Debug for project As1 ****
+16:52:04 **** Incremental Build of configuration Debug for project As1 ****
 make all 
 Building file: ../src/TutorialApplication.cpp
 Invoking: GCC C++ Compiler
 g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:58:20: warning: unused variable ‘toggleTimer’ [-Wunused-variable]
+  static Ogre::Real toggleTimer = 0.0;
+                    ^
 Finished building: ../src/TutorialApplication.cpp
  
 Building target: As1
@@ -11,5 +15,5 @@ g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplic
 Finished building target: As1
  
 
-21:17:00 Build Finished (took 5s.972ms)
+16:52:13 Build Finished (took 8s.520ms)
 

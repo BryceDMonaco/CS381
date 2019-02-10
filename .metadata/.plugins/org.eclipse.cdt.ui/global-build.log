@@ -755,3 +755,495 @@ Invoking: GCC C++ Linker
 g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
 Finished building target: As1
  
+17:17:15 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp:30:24: error: invalid suffix "f" on integer constant
+  float surfaceHeight = 0f;
+                        ^
+../src/TutorialApplication.cpp:38:26: error: invalid suffix "f" on integer constant
+  groundNode->setPosition(0f, surfaceHeight, 0f);
+                          ^
+../src/TutorialApplication.cpp:38:45: error: invalid suffix "f" on integer constant
+  groundNode->setPosition(0f, surfaceHeight, 0f);
+                                             ^
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:71:20: warning: unused variable ‘toggleTimer’ [-Wunused-variable]
+  static Ogre::Real toggleTimer = 0.0;
+                    ^
+src/subdir.mk:21: recipe for target 'src/TutorialApplication.o' failed
+make: *** [src/TutorialApplication.o] Error 1
+17:17:42 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:71:20: warning: unused variable ‘toggleTimer’ [-Wunused-variable]
+  static Ogre::Real toggleTimer = 0.0;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+17:21:21 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:71:20: warning: unused variable ‘toggleTimer’ [-Wunused-variable]
+  static Ogre::Real toggleTimer = 0.0;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+17:21:59 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+make: Nothing to be done for 'all'.
+17:22:42 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+make: Nothing to be done for 'all'.
+17:23:10 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:71:20: warning: unused variable ‘toggleTimer’ [-Wunused-variable]
+  static Ogre::Real toggleTimer = 0.0;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+10:43:03 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:71:20: warning: unused variable ‘toggleTimer’ [-Wunused-variable]
+  static Ogre::Real toggleTimer = 0.0;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+10:52:51 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+10:55:43 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:71:20: warning: unused variable ‘toggleTimer’ [-Wunused-variable]
+  static Ogre::Real toggleTimer = 0.0;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+10:56:57 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:71:20: warning: unused variable ‘toggleTimer’ [-Wunused-variable]
+  static Ogre::Real toggleTimer = 0.0;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+11:00:23 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+11:01:06 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+11:17:52 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+11:23:19 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+11:32:32 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:73:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+11:35:11 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:73:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+11:38:32 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:73:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+11:39:10 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:41:37 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:73:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+11:43:51 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:75:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+11:44:28 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:75:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+11:44:56 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:75:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+11:45:21 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:75:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+11:45:51 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:75:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+11:47:05 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:47:22 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:75:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+11:51:48 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:76:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+12:24:49 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:78:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+12:31:35 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:78:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+12:32:06 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:78:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+12:40:08 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:78:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+12:41:08 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:78:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+12:41:46 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:78:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+12:42:16 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:78:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 
+12:42:45 **** Incremental Build of configuration Debug for project As1 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As1/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:78:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As1
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As1"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As1
+ 

@@ -17,6 +17,11 @@ http://www.ogre3d.org/wiki/
 
 #include "TutorialApplication.h"
 
+#include <sstream>
+
+#define SSTR( x ) static_cast< std::ostringstream & >( \
+        ( std::ostringstream() << std::dec << x ) ).str()
+
 TutorialApplication::TutorialApplication()
 {
 }
@@ -26,6 +31,7 @@ TutorialApplication::~TutorialApplication()
 }
 
 float surfaceHeight = 0;
+int sphereIndex = 0;
 
 void TutorialApplication::createScene()
 {
@@ -53,9 +59,24 @@ void TutorialApplication::createScene()
 	pointLight->setDiffuseColour(Ogre::ColourValue::White);
 	pointLight->setSpecularColour(Ogre::ColourValue::White);
 
-	Ogre::Entity* sphereEntity = mSceneMgr->createEntity("sphere.mesh");
-	Ogre::SceneNode* sphereNode = mSceneMgr->getRootSceneNode()->createChildSceneNode("SphereNode");
-	sphereNode->attachObject(sphereEntity);
+	// Create a 10x10 grid of spheres
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			Ogre::Entity* sphereEntity = mSceneMgr->createEntity("sphere.mesh");
+			Ogre::SceneNode* sphereNode = mSceneMgr->getRootSceneNode()->createChildSceneNode(SSTR("SphereNode" << (i * 10) + j));
+			sphereNode->attachObject(sphereEntity);
+			sphereNode->setPosition(j * 250, 100, i * 250);
+
+		}
+	}
+
+	// Turn on the box for the 0th sphere to show it is selected
+	mSceneMgr->getSceneNode(SSTR("SphereNode" << sphereIndex))->showBoundingBox(true);
+
+
+
 
 }
 
@@ -75,8 +96,12 @@ Ogre::Vector3 velocityVec = Ogre::Vector3::ZERO;
 bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent& fe)
 {
 	static bool mouseDownLastFrame = false;
+	static Ogre::Real toggleTimer = 0.0;
 	static Ogre::Real rotate = .13;
 	static Ogre::Real move = 250;
+
+	toggleTimer -= fe.timeSinceLastFrame;
+
 
 	bool leftMouseDown = mMouse->getMouseState().buttonDown(OIS::MB_Left);
 
@@ -130,8 +155,21 @@ bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent& fe)
 
 	}
 
-	// Apply the velocity vector
-	mSceneMgr->getSceneNode("SphereNode")->translate(velocityVec * fe.timeSinceLastFrame, Ogre::Node::TS_LOCAL);
+	// if tab pressed, switch to the next sphere, switches limited to once every 0.25 seconds
+	if ((toggleTimer < 0) && mKeyboard->isKeyDown(OIS::KC_TAB))
+	{
+		toggleTimer  = 0.25;
+
+		mSceneMgr->getSceneNode(SSTR("SphereNode" << sphereIndex))->showBoundingBox(false);
+
+		sphereIndex = (sphereIndex + 1) % 100;
+
+		mSceneMgr->getSceneNode(SSTR("SphereNode" << sphereIndex))->showBoundingBox(true);
+
+	}
+
+	// Apply the velocity vector to the selected sphere
+	mSceneMgr->getSceneNode(SSTR("SphereNode" << sphereIndex))->translate(velocityVec * fe.timeSinceLastFrame, Ogre::Node::TS_LOCAL);
 
 	//Ground plane movement
 	if (mKeyboard->isKeyDown(OIS::KC_MINUS)) // Down

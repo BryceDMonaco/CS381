@@ -52,6 +52,7 @@ void TutorialApplication::createScene()
 
 
 	mSceneMgr->setAmbientLight(Ogre::ColourValue(.25, .25, .25));
+	mSceneMgr->setShadowTechnique(Ogre::SHADOWTYPE_STENCIL_MODULATIVE);
 
 	Ogre::Light* pointLight = mSceneMgr->createLight("PointLight");
 	pointLight->setType(Ogre::Light::LT_POINT);

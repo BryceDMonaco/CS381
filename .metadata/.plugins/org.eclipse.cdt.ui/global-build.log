@@ -1686,3 +1686,355 @@ Invoking: GCC C++ Linker
 g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
 Finished building target: As2
  
+18:43:44 **** Clean-only build of configuration Debug for project As2 ****
+make clean 
+rm -rf  ./src/BaseApplication.o ./src/TutorialApplication.o  ./src/BaseApplication.d ./src/TutorialApplication.d  As2
+ 
+18:43:45 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/BaseApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BaseApplication.d" -MT"src/BaseApplication.o" -o "src/BaseApplication.o" "../src/BaseApplication.cpp"
+In file included from ../src/BaseApplication.cpp:18:0:
+/home/brycbuntu/CS381/As2/inc/BaseApplication.h: In constructor ‘BaseApplication::BaseApplication()’:
+/home/brycbuntu/CS381/As2/inc/BaseApplication.h:124:33: warning: ‘BaseApplication::mKeyboard’ will be initialized after [-Wreorder]
+     OIS::Keyboard*              mKeyboard;
+                                 ^
+/home/brycbuntu/CS381/As2/inc/BaseApplication.h:111:33: warning:   ‘Ogre::OverlaySystem* BaseApplication::mOverlaySystem’ [-Wreorder]
+     Ogre::OverlaySystem*        mOverlaySystem;
+                                 ^
+../src/BaseApplication.cpp:25:1: warning:   when initialized here [-Wreorder]
+ BaseApplication::BaseApplication(void)
+ ^
+In file included from ../src/EntityMgr.cpp:1:0:
+/home/brycbuntu/CS381/As2/inc/EntityMgr.h:15:14: error: ‘Entity381’ was not declared in this scope
+  std::vector<Entity381*> entities;
+              ^
+/home/brycbuntu/CS381/As2/inc/EntityMgr.h:15:24: error: template argument 1 is invalid
+  std::vector<Entity381*> entities;
+                        ^
+/home/brycbuntu/CS381/As2/inc/EntityMgr.h:15:24: error: template argument 2 is invalid
+make: *** [src/EntityMgr.o] Error 1
+Finished building: ../src/BaseApplication.cpp
+ 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+src/subdir.mk:27: recipe for target 'src/EntityMgr.o' failed
+18:45:31 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+In file included from /home/brycbuntu/CS381/As2/inc/EntityMgr.h:5:0,
+                 from ../src/EntityMgr.cpp:1:
+/home/brycbuntu/CS381/As2/inc/Entity381.h:15:14: error: ‘Aspect’ was not declared in this scope
+  std::vector<Aspect*> aspects;
+              ^
+/home/brycbuntu/CS381/As2/inc/Entity381.h:15:21: error: template argument 1 is invalid
+  std::vector<Aspect*> aspects;
+                     ^
+/home/brycbuntu/CS381/As2/inc/Entity381.h:15:21: error: template argument 2 is invalid
+src/subdir.mk:27: recipe for target 'src/EntityMgr.o' failed
+make: *** [src/EntityMgr.o] Error 1
+18:45:56 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+In file included from /home/brycbuntu/CS381/As2/inc/Entity381.h:5:0,
+                 from /home/brycbuntu/CS381/As2/inc/EntityMgr.h:5,
+                 from ../src/EntityMgr.cpp:1:
+/home/brycbuntu/CS381/As2/inc/Aspect.h:7:18: error: constructors cannot be declared virtual [-fpermissive]
+  virtual Aspect ();
+                  ^
+src/subdir.mk:27: recipe for target 'src/EntityMgr.o' failed
+make: *** [src/EntityMgr.o] Error 1
+18:46:21 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+Finished building: ../src/EntityMgr.cpp
+ 
+Building file: ../src/SphereEntity.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SphereEntity.d" -MT"src/SphereEntity.o" -o "src/SphereEntity.o" "../src/SphereEntity.cpp"
+In file included from /home/brycbuntu/CS381/As2/inc/SphereEntity.h:4:0,
+                 from ../src/SphereEntity.cpp:1:
+/home/brycbuntu/CS381/As2/inc/Entity381.h: In constructor ‘SphereEntity::SphereEntity()’:
+/home/brycbuntu/CS381/As2/inc/Entity381.h:16:23: error: ‘std::vector<Aspect*> Entity381::aspects’ is private
+  std::vector<Aspect*> aspects;
+                       ^
+../src/SphereEntity.cpp:5:2: error: within this context
+  aspects.push_back(new PhysicsAspect ()); //Ex: All spheres now have physics
+  ^
+../src/SphereEntity.cpp:5:24: error: expected type-specifier before ‘PhysicsAspect’
+  aspects.push_back(new PhysicsAspect ()); //Ex: All spheres now have physics
+                        ^
+src/subdir.mk:27: recipe for target 'src/SphereEntity.o' failed
+make: *** [src/SphereEntity.o] Error 1
+18:47:20 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/SphereEntity.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SphereEntity.d" -MT"src/SphereEntity.o" -o "src/SphereEntity.o" "../src/SphereEntity.cpp"
+../src/SphereEntity.cpp:3:29: error: definition of implicitly-declared ‘SphereEntity::SphereEntity()’
+ SphereEntity::SphereEntity ()
+                             ^
+src/subdir.mk:27: recipe for target 'src/SphereEntity.o' failed
+make: *** [src/SphereEntity.o] Error 1
+18:47:37 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/SphereEntity.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SphereEntity.d" -MT"src/SphereEntity.o" -o "src/SphereEntity.o" "../src/SphereEntity.cpp"
+Finished building: ../src/SphereEntity.cpp
+ 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:101:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+18:50:41 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:101:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+18:54:49 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:101:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+18:55:21 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:101:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+18:55:53 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:101:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+18:57:05 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:101:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+18:57:42 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:101:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+19:03:13 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:101:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+19:04:19 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:101:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+19:06:45 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:232:2: error: expected ‘;’ before ‘return’
+  return true;
+  ^
+../src/TutorialApplication.cpp:101:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+../src/TutorialApplication.cpp:233:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:27: recipe for target 'src/TutorialApplication.o' failed
+make: *** [src/TutorialApplication.o] Error 1
+19:07:06 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:101:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+19:08:09 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:101:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+19:08:36 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:101:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+19:10:22 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent&)’:
+../src/TutorialApplication.cpp:101:20: warning: unused variable ‘rotate’ [-Wunused-variable]
+  static Ogre::Real rotate = .13;
+                    ^
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+19:15:12 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+19:16:16 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 

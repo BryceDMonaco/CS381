@@ -29,6 +29,8 @@ public:
 protected:
   virtual void createScene();
   virtual bool frameRenderingQueued(const Ogre::FrameEvent& fe);
+  virtual void createCamera();
+  virtual void createViewports();
 
 private:
   bool processUnbufferedInput(const Ogre::FrameEvent& fe);

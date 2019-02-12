@@ -37,8 +37,8 @@ void TutorialApplication::createScene()
 {
 	mSceneMgr->setSkyBox(true, "Examples/StormySkyBox");
 
-	mCamera->setPosition(0, 50, 1000); // Just so that the camera does not spawn inside of the sphere
-
+	mCamera->getParentSceneNode()->setPosition(0, 50, 1000); // Just so that the camera does not spawn inside of the sphere
+	//mCamera->lookAt(0, 50, 1000);
 
 	//Create the plane
 	Ogre::Plane plane(Ogre::Vector3::UNIT_Y, 0);
@@ -187,8 +187,75 @@ bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent& fe)
 
 	mSceneMgr->getSceneNode("GroundNode")->setPosition(0, surfaceHeight, 0);
 
+	// Camera Position
+	Ogre::Vector3 cameraOffset = Ogre::Vector3::ZERO;
+	float cameraSpeed = 250;
+	if (mKeyboard->isKeyDown(OIS::KC_W)) // Forward
+	{
+		cameraOffset.z -= cameraSpeed;
+
+	}
+
+	if (mKeyboard->isKeyDown(OIS::KC_S)) // Backward
+	{
+		cameraOffset.z += cameraSpeed;
+
+	}
+
+	if (mKeyboard->isKeyDown(OIS::KC_A)) // Left
+	{
+		if(mKeyboard->isKeyDown(OIS::KC_LSHIFT)) //Rotate CC-wise
+			mCamera->getParentSceneNode()->yaw(Ogre::Degree(5 * rotate));
+		else
+			cameraOffset.x -= cameraSpeed;
+
+	}
+
+	if (mKeyboard->isKeyDown(OIS::KC_D)) // Right
+	{
+		if(mKeyboard->isKeyDown(OIS::KC_LSHIFT)) //Rotate C-wise
+			mCamera->getParentSceneNode()->yaw(Ogre::Degree(-5 * rotate));
+		else
+			cameraOffset.x += cameraSpeed;
+
+	}
+
+	if (mKeyboard->isKeyDown(OIS::KC_E)) // Up
+	{
+		cameraOffset.y += cameraSpeed;
+
+	}
+
+	if (mKeyboard->isKeyDown(OIS::KC_F)) // Down
+	{
+		cameraOffset.y -= cameraSpeed;
+
+	}
+
+	mCamera->getParentSceneNode()->translate(cameraOffset * fe.timeSinceLastFrame, Ogre::Node::TS_LOCAL);
+
 	return true;
 }
+
+void TutorialApplication::createCamera()
+{
+	mCamera = mSceneMgr->createCamera("PlayerCam");
+	mCamera->setNearClipDistance(5);
+	Ogre::SceneNode* camNode = mSceneMgr->getRootSceneNode()->createChildSceneNode("MainCamera");
+	camNode->attachObject(mCamera);
+
+ }
+
+ void TutorialApplication::createViewports()
+{
+	Ogre::Viewport* vp = mWindow->addViewport(mCamera);
+	vp->setBackgroundColour(Ogre::ColourValue(0, 0, 0));
+	mCamera->setAspectRatio(
+	  Ogre::Real(vp->getActualWidth()) /
+	  Ogre::Real(vp->getActualHeight()));
+
+
+ }
 //---------------------------------------------------------------------------
 
 #if OGRE_PLATFORM == OGRE_PLATFORM_WIN32

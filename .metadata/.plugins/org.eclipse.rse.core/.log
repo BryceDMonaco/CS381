@@ -1,4 +1,4 @@
-Mon Feb 11 13:56:04 PST 2019
+Wed Feb 13 12:42:21 PST 2019
 ERROR org.eclipse.rse.core  Unexpected Exception
 java.net.UnknownHostException: brycbuntu: brycbuntu: Name or service not known
 	at java.net.InetAddress.getLocalHost(InetAddress.java:1506)
@@ -24,13 +24,16 @@ java.net.UnknownHostException: brycbuntu: brycbuntu: Name or service not known
 	at org.eclipse.rse.core.RSECorePlugin.getLogger(RSECorePlugin.java:392)
 	at org.eclipse.rse.internal.core.RSEInitJob.<init>(RSEInitJob.java:133)
 	at org.eclipse.rse.internal.core.RSEInitJob.<clinit>(RSEInitJob.java:65)
-	at org.eclipse.rse.core.RSECorePlugin.waitForInitCompletion(RSECorePlugin.java:142)
-	at org.eclipse.rse.internal.ui.RSEUIInitJob.run(RSEUIInitJob.java:32)
+	at org.eclipse.rse.internal.ui.RSEUIStartup.earlyStartup(RSEUIStartup.java:20)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:77)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:53)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2835)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 Caused by: java.net.UnknownHostException: brycbuntu: Name or service not known
 	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
 	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
 	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
 	at java.net.InetAddress.getLocalHost(InetAddress.java:1501)
-	... 25 more
+	... 28 more
 --------------------------------------------

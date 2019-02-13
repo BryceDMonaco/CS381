@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "Aspect.h"
+#include <OgreVector3.h>
 
 class Entity381
 {
@@ -14,6 +15,8 @@ public:
 
 private:
 	std::vector<Aspect*> aspects;
+
+	Ogre::Vector3 position = Ogre::Vector3::ZERO;
 
 };
 

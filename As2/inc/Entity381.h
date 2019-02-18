@@ -3,20 +3,26 @@
 
 #include <vector>
 #include "Aspect.h"
+#include "RenderableAspect.h"
+#include "PhysicsAspect.h"
 #include <OgreVector3.h>
+#include <OgreSceneManager.h>
 
 class Entity381
 {
 public:
-	Entity381 ();
+	Entity381 (Ogre::SceneManager* manager);
 	~Entity381 ();
 
 	void Tick (float dt); // The update function
 
-private:
-	std::vector<Aspect*> aspects;
+	Ogre::Vector3 mPosition = Ogre::Vector3::ZERO;
+	Ogre::SceneManager* mSceneMgr = nullptr;
 
-	Ogre::Vector3 position = Ogre::Vector3::ZERO;
+	void AddAspect (Aspect* aspect);
+
+private:
+	std::vector<Aspect*>* aspects;
 
 };
 

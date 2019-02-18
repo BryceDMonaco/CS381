@@ -2,6 +2,7 @@
 #define INC_ASPECT_H_
 
 #include <OgreVector3.h> //Included here since most children of Aspect use it in some way
+//#include "Entity381.h"
 
 class Aspect
 {
@@ -12,7 +13,7 @@ public:
 	virtual void Tick (float dt);
 
 private:
-
+	//Entity381* mEntity381 = nullptr;
 
 };
 

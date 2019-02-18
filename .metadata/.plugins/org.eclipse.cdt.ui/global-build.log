@@ -2038,3 +2038,744 @@ Invoking: GCC C++ Linker
 g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
 Finished building target: As2
  
+14:00:05 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+In file included from /home/brycbuntu/CS381/As2/inc/EntityMgr.h:5:0,
+                 from ../src/EntityMgr.cpp:1:
+/home/brycbuntu/CS381/As2/inc/Entity381.h:22:2: warning: identifier ‘nullptr’ is a keyword in C++11 [-Wc++0x-compat]
+  Ogre::SceneManager* mSceneMgr = nullptr;
+  ^
+/home/brycbuntu/CS381/As2/inc/Entity381.h:20:42: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  Ogre::Vector3 position = Ogre::Vector3::ZERO;
+                                          ^
+/home/brycbuntu/CS381/As2/inc/Entity381.h:22:34: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  Ogre::SceneManager* mSceneMgr = nullptr;
+                                  ^
+/home/brycbuntu/CS381/As2/inc/Entity381.h:22:34: error: ‘nullptr’ was not declared in this scope
+src/subdir.mk:33: recipe for target 'src/EntityMgr.o' failed
+make: *** [src/EntityMgr.o] Error 1
+14:01:48 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+In file included from /home/brycbuntu/CS381/As2/inc/EntityMgr.h:5:0,
+                 from ../src/EntityMgr.cpp:1:
+/home/brycbuntu/CS381/As2/inc/Entity381.h:20:42: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  Ogre::Vector3 position = Ogre::Vector3::ZERO;
+                                          ^
+Finished building: ../src/EntityMgr.cpp
+ 
+Building file: ../src/PhysicsAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PhysicsAspect.d" -MT"src/PhysicsAspect.o" -o "src/PhysicsAspect.o" "../src/PhysicsAspect.cpp"
+../src/PhysicsAspect.cpp:11:2: warning: identifier ‘nullptr’ is a keyword in C++11 [-Wc++0x-compat]
+  mPosition = nullptr;
+  ^
+In file included from ../src/PhysicsAspect.cpp:1:0:
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:5:1: error: expected class-name before ‘{’ token
+ {
+ ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:7:17: error: ‘Ogre’ has not been declared
+  PhysicsAspect (Ogre::Vector3* postionVector);
+                 ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:7:30: error: expected ‘)’ before ‘*’ token
+  PhysicsAspect (Ogre::Vector3* postionVector);
+                              ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:11:20: error: ‘Ogre’ has not been declared
+  void SetVelocity (Ogre::Vector3 vel);
+                    ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:11:34: error: expected ‘,’ or ‘...’ before ‘vel’
+  void SetVelocity (Ogre::Vector3 vel);
+                                  ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:16:2: error: ‘Ogre’ does not name a type
+  Ogre::Vector3* mPosition; //Pointer passed from Entity381
+  ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:17:2: error: ‘Ogre’ does not name a type
+  Ogre::Vector3 mVelocity = Ogre::Vector3::ZERO;
+  ^
+../src/PhysicsAspect.cpp:3:30: error: expected constructor, destructor, or type conversion before ‘(’ token
+src/subdir.mk:33: recipe for target 'src/PhysicsAspect.o' failed
+ PhysicsAspect::PhysicsAspect (Ogre::Vector3* posVector)
+                              ^
+../src/PhysicsAspect.cpp: In destructor ‘PhysicsAspect::~PhysicsAspect()’:
+../src/PhysicsAspect.cpp:11:2: error: ‘mPosition’ was not declared in this scope
+  mPosition = nullptr;
+  ^
+../src/PhysicsAspect.cpp:11:14: error: ‘nullptr’ was not declared in this scope
+  mPosition = nullptr;
+              ^
+../src/PhysicsAspect.cpp: In member function ‘void PhysicsAspect::SetVelocity(float, float, float)’:
+../src/PhysicsAspect.cpp:17:2: error: ‘mVelocity’ was not declared in this scope
+  mVelocity.x = x;
+  ^
+../src/PhysicsAspect.cpp: At global scope:
+../src/PhysicsAspect.cpp:25:34: error: variable or field ‘SetVelocity’ declared void
+ void PhysicsAspect::SetVelocity (Ogre::Vector3 vel)
+                                  ^
+../src/PhysicsAspect.cpp:25:34: error: ‘Ogre’ has not been declared
+../src/PhysicsAspect.cpp: In member function ‘virtual void PhysicsAspect::Tick(float)’:
+../src/PhysicsAspect.cpp:35:4: error: ‘mPosition’ was not declared in this scope
+  (*mPosition) = (*mPosition) + mVelocity * dt;
+    ^
+../src/PhysicsAspect.cpp:35:32: error: ‘mVelocity’ was not declared in this scope
+  (*mPosition) = (*mPosition) + mVelocity * dt;
+                                ^
+make: *** [src/PhysicsAspect.o] Error 1
+14:03:23 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/BaseApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BaseApplication.d" -MT"src/BaseApplication.o" -o "src/BaseApplication.o" "../src/BaseApplication.cpp"
+In file included from ../src/BaseApplication.cpp:18:0:
+/home/brycbuntu/CS381/As2/inc/BaseApplication.h: In constructor ‘BaseApplication::BaseApplication()’:
+/home/brycbuntu/CS381/As2/inc/BaseApplication.h:124:33: warning: ‘BaseApplication::mKeyboard’ will be initialized after [-Wreorder]
+     OIS::Keyboard*              mKeyboard;
+                                 ^
+/home/brycbuntu/CS381/As2/inc/BaseApplication.h:111:33: warning:   ‘Ogre::OverlaySystem* BaseApplication::mOverlaySystem’ [-Wreorder]
+     Ogre::OverlaySystem*        mOverlaySystem;
+                                 ^
+../src/BaseApplication.cpp:25:1: warning:   when initialized here [-Wreorder]
+ BaseApplication::BaseApplication(void)
+ ^
+Finished building: ../src/BaseApplication.cpp
+ 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+Finished building: ../src/EntityMgr.cpp
+ 
+Building file: ../src/PhysicsAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PhysicsAspect.d" -MT"src/PhysicsAspect.o" -o "src/PhysicsAspect.o" "../src/PhysicsAspect.cpp"
+In file included from ../src/PhysicsAspect.cpp:1:0:
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:5:1: error: expected class-name before ‘{’ token
+ {
+ ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:7:17: error: ‘Ogre’ has not been declared
+  PhysicsAspect (Ogre::Vector3* postionVector);
+                 ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:7:30: error: expected ‘)’ before ‘*’ token
+  PhysicsAspect (Ogre::Vector3* postionVector);
+                              ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:11:20: error: ‘Ogre’ has not been declared
+  void SetVelocity (Ogre::Vector3 vel);
+                    ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:11:34: error: expected ‘,’ or ‘...’ before ‘vel’
+  void SetVelocity (Ogre::Vector3 vel);
+                                  ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:16:2: error: ‘Ogre’ does not name a type
+  Ogre::Vector3* mPosition; //Pointer passed from Entity381
+  ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:17:2: error: ‘Ogre’ does not name a type
+src/subdir.mk:33: recipe for target 'src/PhysicsAspect.o' failed
+  Ogre::Vector3 mVelocity = Ogre::Vector3::ZERO;
+  ^
+../src/PhysicsAspect.cpp:3:30: error: expected constructor, destructor, or type conversion before ‘(’ token
+ PhysicsAspect::PhysicsAspect (Ogre::Vector3* posVector)
+                              ^
+../src/PhysicsAspect.cpp: In destructor ‘PhysicsAspect::~PhysicsAspect()’:
+../src/PhysicsAspect.cpp:11:2: error: ‘mPosition’ was not declared in this scope
+  mPosition = nullptr;
+  ^
+../src/PhysicsAspect.cpp: In member function ‘void PhysicsAspect::SetVelocity(float, float, float)’:
+../src/PhysicsAspect.cpp:17:2: error: ‘mVelocity’ was not declared in this scope
+  mVelocity.x = x;
+  ^
+../src/PhysicsAspect.cpp: At global scope:
+../src/PhysicsAspect.cpp:25:34: error: variable or field ‘SetVelocity’ declared void
+ void PhysicsAspect::SetVelocity (Ogre::Vector3 vel)
+                                  ^
+../src/PhysicsAspect.cpp:25:34: error: ‘Ogre’ has not been declared
+../src/PhysicsAspect.cpp: In member function ‘virtual void PhysicsAspect::Tick(float)’:
+../src/PhysicsAspect.cpp:35:4: error: ‘mPosition’ was not declared in this scope
+  (*mPosition) = (*mPosition) + mVelocity * dt;
+    ^
+../src/PhysicsAspect.cpp:35:32: error: ‘mVelocity’ was not declared in this scope
+  (*mPosition) = (*mPosition) + mVelocity * dt;
+                                ^
+make: *** [src/PhysicsAspect.o] Error 1
+14:07:52 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+Finished building: ../src/EntityMgr.cpp
+ 
+Building file: ../src/PhysicsAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PhysicsAspect.d" -MT"src/PhysicsAspect.o" -o "src/PhysicsAspect.o" "../src/PhysicsAspect.cpp"
+In file included from ../src/PhysicsAspect.cpp:1:0:
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:7:1: error: expected class-name before ‘{’ token
+ {
+ ^
+make: *** [src/PhysicsAspect.o] Error 1
+src/subdir.mk:33: recipe for target 'src/PhysicsAspect.o' failed
+14:09:00 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/PhysicsAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PhysicsAspect.d" -MT"src/PhysicsAspect.o" -o "src/PhysicsAspect.o" "../src/PhysicsAspect.cpp"
+In file included from ../src/PhysicsAspect.cpp:1:0:
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:6:37: error: expected class-name before ‘{’ token
+ class PhysicsAspect : public Aspect {
+                                     ^
+src/subdir.mk:33: recipe for target 'src/PhysicsAspect.o' failed
+make: *** [src/PhysicsAspect.o] Error 1
+14:09:32 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/PhysicsAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PhysicsAspect.d" -MT"src/PhysicsAspect.o" -o "src/PhysicsAspect.o" "../src/PhysicsAspect.cpp"
+Finished building: ../src/PhysicsAspect.cpp
+ 
+Building file: ../src/RenderableAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RenderableAspect.d" -MT"src/RenderableAspect.o" -o "src/RenderableAspect.o" "../src/RenderableAspect.cpp"
+In file included from ../src/RenderableAspect.cpp:1:0:
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:10:1: error: expected class-name before ‘{’ token
+ {
+ ^
+src/subdir.mk:33: recipe for target 'src/RenderableAspect.o' failed
+make: *** [src/RenderableAspect.o] Error 1
+14:10:00 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/RenderableAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RenderableAspect.d" -MT"src/RenderableAspect.o" -o "src/RenderableAspect.o" "../src/RenderableAspect.cpp"
+Finished building: ../src/RenderableAspect.cpp
+ 
+Building file: ../src/SphereEntity.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SphereEntity.d" -MT"src/SphereEntity.o" -o "src/SphereEntity.o" "../src/SphereEntity.cpp"
+Finished building: ../src/SphereEntity.cpp
+ 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+makefile:45: recipe for target 'As2' failed
+./src/PhysicsAspect.o: In function `PhysicsAspect::PhysicsAspect(Ogre::Vector3*)':
+/home/brycbuntu/CS381/As2/Debug/../src/PhysicsAspect.cpp:3: undefined reference to `Aspect::Aspect()'
+./src/PhysicsAspect.o: In function `PhysicsAspect::~PhysicsAspect()':
+/home/brycbuntu/CS381/As2/Debug/../src/PhysicsAspect.cpp:9: undefined reference to `Aspect::~Aspect()'
+./src/PhysicsAspect.o:(.rodata._ZTI13PhysicsAspect[_ZTI13PhysicsAspect]+0x18): undefined reference to `typeinfo for Aspect'
+./src/RenderableAspect.o: In function `RenderableAspect::RenderableAspect(RenderableAspect::Types, Ogre::Vector3*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Ogre::SceneManager*)':
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:3: undefined reference to `Aspect::Aspect()'
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:3: undefined reference to `vtable for RenderableAspect'
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:3: undefined reference to `Aspect::~Aspect()'
+./src/RenderableAspect.o: In function `RenderableAspect::RenderableAspect(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Ogre::Vector3*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Ogre::SceneManager*)':
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:25: undefined reference to `Aspect::Aspect()'
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:25: undefined reference to `vtable for RenderableAspect'
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:25: undefined reference to `Aspect::~Aspect()'
+collect2: error: ld returned 1 exit status
+make: *** [As2] Error 1
+11:04:24 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+In file included from /home/brycbuntu/CS381/As2/inc/Entity381.h:5:0,
+                 from /home/brycbuntu/CS381/As2/inc/EntityMgr.h:5,
+                 from ../src/EntityMgr.cpp:1:
+/home/brycbuntu/CS381/As2/inc/Aspect.h:10:19: error: expected ‘)’ before ‘*’ token
+  Aspect (Entity381* entity381); //Change to have a pointer to its Entity381, do entity->position to access it
+                   ^
+/home/brycbuntu/CS381/As2/inc/Aspect.h:16:2: error: ‘Entity381’ does not name a type
+  Entity381* mEntity381 = nullptr;
+  ^
+src/subdir.mk:33: recipe for target 'src/EntityMgr.o' failed
+make: *** [src/EntityMgr.o] Error 1
+11:06:21 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+In file included from /home/brycbuntu/CS381/As2/inc/Entity381.h:5:0,
+                 from /home/brycbuntu/CS381/As2/inc/EntityMgr.h:5,
+                 from ../src/EntityMgr.cpp:1:
+/home/brycbuntu/CS381/As2/inc/Aspect.h:11:19: error: expected ‘)’ before ‘*’ token
+  Aspect (Entity381* entity381); //Change to have a pointer to its Entity381, do entity->position to access it
+                   ^
+/home/brycbuntu/CS381/As2/inc/Aspect.h:17:2: error: ‘Entity381’ does not name a type
+  Entity381* mEntity381 = nullptr;
+  ^
+make: *** wait: No child processes.  Stop.
+make: *** Waiting for unfinished jobs....
+make: *** wait: No child processes.  Stop.
+Command canceled
+11:06:40 **** Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+In file included from /home/brycbuntu/CS381/As2/inc/Entity381.h:5:0,
+                 from /home/brycbuntu/CS381/As2/inc/EntityMgr.h:5,
+                 from ../src/EntityMgr.cpp:1:
+/home/brycbuntu/CS381/As2/inc/Aspect.h:16:2: error: ‘Entity381’ does not name a type
+  Entity381* mEntity381 = nullptr;
+  ^
+src/subdir.mk:33: recipe for target 'src/EntityMgr.o' failed
+make: *** [src/EntityMgr.o] Error 1
+11:11:07 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+Finished building: ../src/EntityMgr.cpp
+ 
+Building file: ../src/PhysicsAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PhysicsAspect.d" -MT"src/PhysicsAspect.o" -o "src/PhysicsAspect.o" "../src/PhysicsAspect.cpp"
+Finished building: ../src/PhysicsAspect.cpp
+ 
+Building file: ../src/RenderableAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RenderableAspect.d" -MT"src/RenderableAspect.o" -o "src/RenderableAspect.o" "../src/RenderableAspect.cpp"
+Finished building: ../src/RenderableAspect.cpp
+ 
+Building file: ../src/SphereEntity.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SphereEntity.d" -MT"src/SphereEntity.o" -o "src/SphereEntity.o" "../src/SphereEntity.cpp"
+Finished building: ../src/SphereEntity.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+./src/PhysicsAspect.o: In function `PhysicsAspect::PhysicsAspect(Ogre::Vector3*)':
+/home/brycbuntu/CS381/As2/Debug/../src/PhysicsAspect.cpp:3: undefined reference to `Aspect::Aspect()'
+./src/PhysicsAspect.o: In function `PhysicsAspect::~PhysicsAspect()':
+/home/brycbuntu/CS381/As2/Debug/../src/PhysicsAspect.cpp:9: undefined reference to `Aspect::~Aspect()'
+./src/PhysicsAspect.o:(.rodata._ZTI13PhysicsAspect[_ZTI13PhysicsAspect]+0x18): undefined reference to `typeinfo for Aspect'
+makefile:45: recipe for target 'As2' failed
+./src/RenderableAspect.o: In function `RenderableAspect::RenderableAspect(Ogre::Vector3*, Ogre::SceneManager*, RenderableAspect::Types, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)':
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:3: undefined reference to `Aspect::Aspect()'
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:3: undefined reference to `vtable for RenderableAspect'
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:3: undefined reference to `Aspect::~Aspect()'
+./src/RenderableAspect.o: In function `RenderableAspect::RenderableAspect(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Ogre::Vector3*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Ogre::SceneManager*)':
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:25: undefined reference to `Aspect::Aspect()'
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:25: undefined reference to `vtable for RenderableAspect'
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:25: undefined reference to `Aspect::~Aspect()'
+collect2: error: ld returned 1 exit status
+make: *** [As2] Error 1
+11:13:56 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/RenderableAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RenderableAspect.d" -MT"src/RenderableAspect.o" -o "src/RenderableAspect.o" "../src/RenderableAspect.cpp"
+Finished building: ../src/RenderableAspect.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+./src/PhysicsAspect.o: In function `PhysicsAspect::~PhysicsAspect()':
+/home/brycbuntu/CS381/As2/Debug/../src/PhysicsAspect.cpp:9: undefined reference to `Aspect::~Aspect()'
+./src/PhysicsAspect.o:(.rodata._ZTI13PhysicsAspect[_ZTI13PhysicsAspect]+0x18): undefined reference to `typeinfo for Aspect'
+./src/RenderableAspect.o: In function `Aspect::Aspect()':
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:3: undefined reference to `vtable for Aspect'
+makefile:45: recipe for target 'As2' failed
+./src/RenderableAspect.o: In function `RenderableAspect::RenderableAspect(Ogre::Vector3*, Ogre::SceneManager*, RenderableAspect::Types, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)':
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:5: undefined reference to `Aspect::~Aspect()'
+./src/RenderableAspect.o: In function `RenderableAspect::RenderableAspect(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Ogre::Vector3*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Ogre::SceneManager*)':
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:27: undefined reference to `Aspect::~Aspect()'
+./src/RenderableAspect.o: In function `RenderableAspect::~RenderableAspect()':
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:40: undefined reference to `Aspect::~Aspect()'
+./src/RenderableAspect.o:(.rodata._ZTV16RenderableAspect[_ZTV16RenderableAspect]+0x20): undefined reference to `RenderableAspect::Tick(float)'
+./src/RenderableAspect.o:(.rodata._ZTI16RenderableAspect[_ZTI16RenderableAspect]+0x18): undefined reference to `typeinfo for Aspect'
+collect2: error: ld returned 1 exit status
+make: *** [As2] Error 1
+11:14:42 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/RenderableAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RenderableAspect.d" -MT"src/RenderableAspect.o" -o "src/RenderableAspect.o" "../src/RenderableAspect.cpp"
+Finished building: ../src/RenderableAspect.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+./src/RenderableAspect.o:(.rodata._ZTV16RenderableAspect[_ZTV16RenderableAspect]+0x20): undefined reference to `RenderableAspect::Tick(float)'
+./src/RenderableAspect.o:(.rodata._ZTV6Aspect[_ZTV6Aspect]+0x20): undefined reference to `Aspect::Tick(float)'
+collect2: error: ld returned 1 exit status
+makefile:45: recipe for target 'As2' failed
+make: *** [As2] Error 1
+11:16:27 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/RenderableAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RenderableAspect.d" -MT"src/RenderableAspect.o" -o "src/RenderableAspect.o" "../src/RenderableAspect.cpp"
+Finished building: ../src/RenderableAspect.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+makefile:45: recipe for target 'As2' failed
+./src/RenderableAspect.o:(.rodata._ZTV6Aspect[_ZTV6Aspect]+0x20): undefined reference to `Aspect::Tick(float)'
+collect2: error: ld returned 1 exit status
+make: *** [As2] Error 1
+11:17:06 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/RenderableAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RenderableAspect.d" -MT"src/RenderableAspect.o" -o "src/RenderableAspect.o" "../src/RenderableAspect.cpp"
+Finished building: ../src/RenderableAspect.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/BaseApplication.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+./src/PhysicsAspect.o: In function `PhysicsAspect::PhysicsAspect(Ogre::Vector3*)':
+/home/brycbuntu/CS381/As2/Debug/../src/PhysicsAspect.cpp:3: undefined reference to `Aspect::Aspect()'
+makefile:45: recipe for target 'As2' failed
+./src/PhysicsAspect.o: In function `PhysicsAspect::~PhysicsAspect()':
+/home/brycbuntu/CS381/As2/Debug/../src/PhysicsAspect.cpp:9: undefined reference to `Aspect::~Aspect()'
+./src/PhysicsAspect.o:(.rodata._ZTI13PhysicsAspect[_ZTI13PhysicsAspect]+0x18): undefined reference to `typeinfo for Aspect'
+./src/RenderableAspect.o: In function `RenderableAspect::RenderableAspect(Ogre::Vector3*, Ogre::SceneManager*, RenderableAspect::Types, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)':
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:3: undefined reference to `Aspect::Aspect()'
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:3: undefined reference to `Aspect::~Aspect()'
+./src/RenderableAspect.o: In function `RenderableAspect::RenderableAspect(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Ogre::Vector3*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, Ogre::SceneManager*)':
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:25: undefined reference to `Aspect::Aspect()'
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:25: undefined reference to `Aspect::~Aspect()'
+./src/RenderableAspect.o: In function `RenderableAspect::~RenderableAspect()':
+/home/brycbuntu/CS381/As2/Debug/../src/RenderableAspect.cpp:38: undefined reference to `Aspect::~Aspect()'
+./src/RenderableAspect.o:(.rodata._ZTI16RenderableAspect[_ZTI16RenderableAspect]+0x18): undefined reference to `typeinfo for Aspect'
+collect2: error: ld returned 1 exit status
+make: *** [As2] Error 1
+11:18:20 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Aspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Aspect.d" -MT"src/Aspect.o" -o "src/Aspect.o" "../src/Aspect.cpp"
+Finished building: ../src/Aspect.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+./src/Aspect.o:(.rodata._ZTV6Aspect[_ZTV6Aspect]+0x20): undefined reference to `Aspect::Tick(float)'
+collect2: error: ld returned 1 exit status
+make: *** [As2] Error 1
+makefile:45: recipe for target 'As2' failed
+11:18:48 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Aspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Aspect.d" -MT"src/Aspect.o" -o "src/Aspect.o" "../src/Aspect.cpp"
+Finished building: ../src/Aspect.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+11:39:15 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:21:31: error: invalid use of member function (did you forget the ‘()’ ?)
+  for (int i = 0; i < aspects->size; i++)
+                               ^
+src/subdir.mk:39: recipe for target 'src/Entity381.o' failed
+make: *** [src/Entity381.o] Error 1
+11:39:53 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+Finished building: ../src/Entity381.cpp
+ 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::CreateEntity()’:
+../src/EntityMgr.cpp:33:2: error: ‘RenderableAspect’ was not declared in this scope
+  RenderableAspect* renderable = new RenderableAspect(newEntity->mPosition, mSceneMgr, RenderableAspect::CUBE, "testcube")
+  ^
+../src/EntityMgr.cpp:33:20: error: ‘renderable’ was not declared in this scope
+  RenderableAspect* renderable = new RenderableAspect(newEntity->mPosition, mSceneMgr, RenderableAspect::CUBE, "testcube")
+                    ^
+../src/EntityMgr.cpp:33:37: error: expected type-specifier before ‘RenderableAspect’
+  RenderableAspect* renderable = new RenderableAspect(newEntity->mPosition, mSceneMgr, RenderableAspect::CUBE, "testcube")
+                                     ^
+../src/EntityMgr.cpp:37:23: error: ‘physics’ was not declared in this scope
+  newEntity->AddAspect(physics);
+                       ^
+src/subdir.mk:39: recipe for target 'src/EntityMgr.o' failed
+make: *** [src/EntityMgr.o] Error 1
+11:41:41 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::CreateEntity()’:
+../src/EntityMgr.cpp:33:121: error: no matching function for call to ‘RenderableAspect::RenderableAspect(Ogre::Vector3&, Ogre::SceneManager*&, RenderableAspect::Types, const char [9])’
+  RenderableAspect* renderable = new RenderableAspect(newEntity->mPosition, mSceneMgr, RenderableAspect::CUBE, "testcube")
+                                                                                                                         ^
+In file included from /home/brycbuntu/CS381/As2/inc/EntityMgr.h:7:0,
+                 from ../src/EntityMgr.cpp:1:
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:17:2: note: candidate: RenderableAspect::RenderableAspect(std::__cxx11::string, Ogre::Vector3*, std::__cxx11::string, Ogre::SceneManager*)
+  RenderableAspect (std::string meshName, Ogre::Vector3* posVec, std::string entityName, Ogre::SceneManager* mgr); //Used for setting a CUSTOM object mesh
+  ^
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:17:2: note:   no known conversion for argument 1 from ‘Ogre::Vector3’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:16:2: note: candidate: RenderableAspect::RenderableAspect(Ogre::Vector3*, Ogre::SceneManager*, RenderableAspect::Types, std::__cxx11::string)
+  RenderableAspect (Ogre::Vector3* posVec, Ogre::SceneManager* mgr, Types type, std::string entityName);
+  ^
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:16:2: note:   no known conversion for argument 1 from ‘Ogre::Vector3’ to ‘Ogre::Vector3*’
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:11:7: note: candidate: RenderableAspect::RenderableAspect(const RenderableAspect&)
+ class RenderableAspect : Aspect
+       ^
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:11:7: note:   candidate expects 1 argument, 4 provided
+../src/EntityMgr.cpp:36:33: error: ‘Aspect’ is an inaccessible base of ‘RenderableAspect’
+  newEntity->AddAspect(renderable);
+                                 ^
+../src/EntityMgr.cpp:37:23: error: ‘physics’ was not declared in this scope
+  newEntity->AddAspect(physics);
+                       ^
+src/subdir.mk:39: recipe for target 'src/EntityMgr.o' failed
+make: *** [src/EntityMgr.o] Error 1
+11:42:59 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In constructor ‘Entity381::Entity381(Ogre::SceneManager*)’:
+../src/Entity381.cpp:9:2: error: ‘RenderableAspect’ was not declared in this scope
+  RenderableAspect* renderable = new RenderableAspect(this->mPosition, mSceneMgr, RenderableAspect::CUBE, "testcube")
+  ^
+../src/Entity381.cpp:9:20: error: ‘renderable’ was not declared in this scope
+  RenderableAspect* renderable = new RenderableAspect(this->mPosition, mSceneMgr, RenderableAspect::CUBE, "testcube")
+                    ^
+../src/Entity381.cpp:9:37: error: expected type-specifier before ‘RenderableAspect’
+  RenderableAspect* renderable = new RenderableAspect(this->mPosition, mSceneMgr, RenderableAspect::CUBE, "testcube")
+                                     ^
+../src/Entity381.cpp:13:18: error: ‘physics’ was not declared in this scope
+  this->AddAspect(physics);
+                  ^
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:27:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+src/subdir.mk:39: recipe for target 'src/Entity381.o' failed
+make: *** [src/Entity381.o] Error 1
+11:50:37 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In constructor ‘Entity381::Entity381(Ogre::SceneManager*)’:
+../src/Entity381.cpp:9:2: error: ‘RenderableAspect’ was not declared in this scope
+  RenderableAspect* renderable = new RenderableAspect(this->mPosition, mSceneMgr, RenderableAspect::CUBE, "testcube");
+  ^
+../src/Entity381.cpp:9:20: error: ‘renderable’ was not declared in this scope
+  RenderableAspect* renderable = new RenderableAspect(this->mPosition, mSceneMgr, RenderableAspect::CUBE, "testcube");
+                    ^
+../src/Entity381.cpp:9:37: error: expected type-specifier before ‘RenderableAspect’
+  RenderableAspect* renderable = new RenderableAspect(this->mPosition, mSceneMgr, RenderableAspect::CUBE, "testcube");
+                                     ^
+../src/Entity381.cpp:10:2: error: ‘PhysicsAspect’ was not declared in this scope
+  PhysicsAspect* physics = new PhysicsAspect(this->mPosition);
+  ^
+../src/Entity381.cpp:10:17: error: ‘physics’ was not declared in this scope
+  PhysicsAspect* physics = new PhysicsAspect(this->mPosition);
+                 ^
+../src/Entity381.cpp:10:31: error: expected type-specifier before ‘PhysicsAspect’
+  PhysicsAspect* physics = new PhysicsAspect(this->mPosition);
+                               ^
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:27:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+src/subdir.mk:39: recipe for target 'src/Entity381.o' failed
+make: *** [src/Entity381.o] Error 1
+12:06:11 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In constructor ‘Entity381::Entity381(Ogre::SceneManager*)’:
+../src/Entity381.cpp:9:116: error: no matching function for call to ‘RenderableAspect::RenderableAspect(Ogre::Vector3&, Ogre::SceneManager*&, RenderableAspect::Types, const char [9])’
+  RenderableAspect* renderable = new RenderableAspect(this->mPosition, mSceneMgr, RenderableAspect::CUBE, "testcube");
+                                                                                                                    ^
+In file included from /home/brycbuntu/CS381/As2/inc/Entity381.h:6:0,
+                 from ../src/Entity381.cpp:1:
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:17:2: note: candidate: RenderableAspect::RenderableAspect(std::__cxx11::string, Ogre::Vector3*, std::__cxx11::string, Ogre::SceneManager*)
+  RenderableAspect (std::string meshName, Ogre::Vector3* posVec, std::string entityName, Ogre::SceneManager* mgr); //Used for setting a CUSTOM object mesh
+  ^
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:17:2: note:   no known conversion for argument 1 from ‘Ogre::Vector3’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:16:2: note: candidate: RenderableAspect::RenderableAspect(Ogre::Vector3*, Ogre::SceneManager*, RenderableAspect::Types, std::__cxx11::string)
+  RenderableAspect (Ogre::Vector3* posVec, Ogre::SceneManager* mgr, Types type, std::string entityName);
+  ^
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:16:2: note:   no known conversion for argument 1 from ‘Ogre::Vector3’ to ‘Ogre::Vector3*’
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:11:7: note: candidate: RenderableAspect::RenderableAspect(const RenderableAspect&)
+ class RenderableAspect : Aspect
+       ^
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:11:7: note:   candidate expects 1 argument, 4 provided
+../src/Entity381.cpp:10:60: error: no matching function for call to ‘PhysicsAspect::PhysicsAspect(Ogre::Vector3&)’
+  PhysicsAspect* physics = new PhysicsAspect(this->mPosition);
+                                                            ^
+In file included from /home/brycbuntu/CS381/As2/inc/Entity381.h:7:0,
+                 from ../src/Entity381.cpp:1:
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:10:2: note: candidate: PhysicsAspect::PhysicsAspect(Ogre::Vector3*)
+  PhysicsAspect (Ogre::Vector3* postionVector);
+  ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:10:2: note:   no known conversion for argument 1 from ‘Ogre::Vector3’ to ‘Ogre::Vector3*’
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:8:7: note: candidate: constexpr PhysicsAspect::PhysicsAspect(const PhysicsAspect&)
+ class PhysicsAspect : Aspect {
+       ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:8:7: note:   no known conversion for argument 1 from ‘Ogre::Vector3’ to ‘const PhysicsAspect&’
+../src/Entity381.cpp:12:28: error: ‘Aspect’ is an inaccessible base of ‘RenderableAspect’
+  this->AddAspect(renderable);
+                            ^
+../src/Entity381.cpp:13:25: error: ‘Aspect’ is an inaccessible base of ‘PhysicsAspect’
+  this->AddAspect(physics);
+                         ^
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:27:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+src/subdir.mk:39: recipe for target 'src/Entity381.o' failed
+make: *** [src/Entity381.o] Error 1
+13:29:08 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In constructor ‘Entity381::Entity381(Ogre::SceneManager*)’:
+../src/Entity381.cpp:9:116: error: no matching function for call to ‘RenderableAspect::RenderableAspect(Ogre::Vector3&, Ogre::SceneManager*&, RenderableAspect::Types, const char [9])’
+  RenderableAspect* renderable = new RenderableAspect(this->mPosition, mSceneMgr, RenderableAspect::CUBE, "testcube");
+                                                                                                                    ^
+In file included from /home/brycbuntu/CS381/As2/inc/Entity381.h:6:0,
+                 from ../src/Entity381.cpp:1:
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:17:2: note: candidate: RenderableAspect::RenderableAspect(std::__cxx11::string, Ogre::Vector3*, std::__cxx11::string, Ogre::SceneManager*)
+  RenderableAspect (std::string meshName, Ogre::Vector3* posVec, std::string entityName, Ogre::SceneManager* mgr); //Used for setting a CUSTOM object mesh
+  ^
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:17:2: note:   no known conversion for argument 1 from ‘Ogre::Vector3’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:16:2: note: candidate: RenderableAspect::RenderableAspect(Ogre::Vector3*, Ogre::SceneManager*, RenderableAspect::Types, std::__cxx11::string)
+  RenderableAspect (Ogre::Vector3* posVec, Ogre::SceneManager* mgr, Types type, std::string entityName);
+  ^
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:16:2: note:   no known conversion for argument 1 from ‘Ogre::Vector3’ to ‘Ogre::Vector3*’
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:11:7: note: candidate: RenderableAspect::RenderableAspect(const RenderableAspect&)
+ class RenderableAspect : Aspect
+       ^
+/home/brycbuntu/CS381/As2/inc/RenderableAspect.h:11:7: note:   candidate expects 1 argument, 4 provided
+../src/Entity381.cpp:12:28: error: ‘Aspect’ is an inaccessible base of ‘RenderableAspect’
+  this->AddAspect(renderable);
+                            ^
+../src/Entity381.cpp:13:25: error: ‘Aspect’ is an inaccessible base of ‘PhysicsAspect’
+  this->AddAspect(physics);
+                         ^
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:27:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+src/subdir.mk:39: recipe for target 'src/Entity381.o' failed
+make: *** [src/Entity381.o] Error 1
+13:31:10 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In constructor ‘Entity381::Entity381(Ogre::SceneManager*)’:
+../src/Entity381.cpp:12:28: error: ‘Aspect’ is an inaccessible base of ‘RenderableAspect’
+  this->AddAspect(renderable);
+                            ^
+../src/Entity381.cpp:13:25: error: ‘Aspect’ is an inaccessible base of ‘PhysicsAspect’
+  this->AddAspect(physics);
+                         ^
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:27:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+src/subdir.mk:39: recipe for target 'src/Entity381.o' failed
+make: *** [src/Entity381.o] Error 1
+13:33:32 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:27:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+Finished building: ../src/Entity381.cpp
+ 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+Finished building: ../src/EntityMgr.cpp
+ 
+Building file: ../src/PhysicsAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PhysicsAspect.d" -MT"src/PhysicsAspect.o" -o "src/PhysicsAspect.o" "../src/PhysicsAspect.cpp"
+Finished building: ../src/PhysicsAspect.cpp
+ 
+Building file: ../src/RenderableAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RenderableAspect.d" -MT"src/RenderableAspect.o" -o "src/RenderableAspect.o" "../src/RenderableAspect.cpp"
+Finished building: ../src/RenderableAspect.cpp
+ 
+Building file: ../src/SphereEntity.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SphereEntity.d" -MT"src/SphereEntity.o" -o "src/SphereEntity.o" "../src/SphereEntity.cpp"
+Finished building: ../src/SphereEntity.cpp
+ 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+13:42:03 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/RenderableAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RenderableAspect.d" -MT"src/RenderableAspect.o" -o "src/RenderableAspect.o" "../src/RenderableAspect.cpp"
+Finished building: ../src/RenderableAspect.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+13:43:16 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/RenderableAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RenderableAspect.d" -MT"src/RenderableAspect.o" -o "src/RenderableAspect.o" "../src/RenderableAspect.cpp"
+Finished building: ../src/RenderableAspect.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+13:47:53 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+make: Nothing to be done for 'all'.

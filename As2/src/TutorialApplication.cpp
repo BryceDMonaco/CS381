@@ -16,6 +16,7 @@ http://www.ogre3d.org/wiki/
 */
 
 #include "TutorialApplication.h"
+#include "EntityMgr.h"
 
 #include <sstream>
 
@@ -35,6 +36,9 @@ int sphereIndex = 0;
 
 void TutorialApplication::createScene()
 {
+	EntityMgr* entityMgr = new EntityMgr(mSceneMgr);
+	entityMgr->CreateEntity();
+
 	mSceneMgr->setSkyBox(true, "Examples/StormySkyBox");
 
 	mCamera->getParentSceneNode()->setPosition(0, 50, 1000); // Just so that the camera does not spawn inside of the sphere

@@ -1,8 +1,11 @@
 #ifndef INC_PHYSICSASPECT_H_
 #define INC_PHYSICSASPECT_H_
 
-class PhysicsAspect : Aspect
-{
+#include "Aspect.h"
+
+#include <OgreVector3.h>
+
+class PhysicsAspect : public Aspect {
 public:
 	PhysicsAspect (Ogre::Vector3* postionVector);
 	~PhysicsAspect ();

@@ -65,3 +65,9 @@ void Entity381::TranslatePosition (Ogre::Vector3* trans)
 	return;
 
 }
+
+Aspect* Entity381::GetAspect (int index)
+{
+	return aspects->at(index);
+
+}

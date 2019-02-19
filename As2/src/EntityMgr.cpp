@@ -60,6 +60,14 @@ void EntityMgr::CreateEntity(RenderableAspect::Types type, std::string name, Ogr
 
 	entities->push_back(newEntity);
 
+	//If this is the first entity, show the box
+	if (entities->size() == 1)
+	{
+		RenderableAspect* target = (RenderableAspect*) entities->at(selectedEntityIndex)->GetAspect(0);
+		target->ShowAABB (true);
+
+	}
+
 	return;
 
 
@@ -83,5 +91,27 @@ bool EntityMgr::SetSceneMgr (Ogre::SceneManager* mgr) //Should only be called on
 	mSceneMgr = mgr;
 
 	return true;
+
+}
+
+Entity381* EntityMgr::GetSelectedEntity ()
+{
+	return entities->at(selectedEntityIndex);
+
+}
+
+void EntityMgr::IncrementSeclectedIndex ()
+{
+	//Turn off the old bounding box
+	RenderableAspect* target = (RenderableAspect*) entities->at(selectedEntityIndex)->GetAspect(0);
+	target->ShowAABB (false);
+
+	selectedEntityIndex = (selectedEntityIndex + 1) % entities->size();
+
+	//Turn on the new bounding box
+	target = (RenderableAspect*) entities->at(selectedEntityIndex)->GetAspect(0);
+	target->ShowAABB (true);
+
+	return;
 
 }

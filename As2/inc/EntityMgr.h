@@ -6,6 +6,8 @@
 #include <OgreSceneManager.h>
 #include <OgreVector3.h>
 
+#include "RenderableAspect.h" //Used to toggle bounding box
+
 class EntityMgr
 {
 public:
@@ -21,9 +23,13 @@ public:
 
 	bool SetSceneMgr (Ogre::SceneManager* mgr); //Should only be called once
 
+	Entity381* GetSelectedEntity ();
+	void IncrementSeclectedIndex (); //Index will loop back to 0
+
 private:
 	std::vector<Entity381 *>* entities = nullptr;
 	Ogre::SceneManager* mSceneMgr = nullptr;
+	int selectedEntityIndex = 0;
 
 };
 

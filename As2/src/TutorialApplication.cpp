@@ -170,6 +170,8 @@ bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent& fe)
 	{
 		toggleTimer  = 0.25;
 
+		entityMgr->IncrementSeclectedIndex();
+
 		mSceneMgr->getSceneNode(SSTR("SphereNode" << sphereIndex))->showBoundingBox(false);
 
 		sphereIndex = (sphereIndex + 1) % 100;

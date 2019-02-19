@@ -3543,3 +3543,149 @@ Invoking: GCC C++ Linker
 g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
 Finished building target: As2
  
+11:13:29 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+Finished building: ../src/Entity381.cpp
+ 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+In file included from /home/brycbuntu/CS381/As2/inc/EntityMgr.h:5:0,
+                 from ../src/EntityMgr.cpp:1:
+/home/brycbuntu/CS381/As2/inc/Entity381.h: In member function ‘void EntityMgr::IncrementSeclectedIndex()’:
+/home/brycbuntu/CS381/As2/inc/Entity381.h:31:24: error: ‘std::vector<Aspect*>* Entity381::aspects’ is private
+  std::vector<Aspect*>* aspects;
+                        ^
+../src/EntityMgr.cpp:98:64: error: within this context
+  RenderableAspect* target = entities->at(selectedEntityIndex)->aspects->at(0);
+                                                                ^
+../src/EntityMgr.cpp:98:75: error: invalid conversion from ‘__gnu_cxx::__alloc_traits<std::allocator<Aspect*> >::value_type {aka Aspect*}’ to ‘RenderableAspect*’ [-fpermissive]
+  RenderableAspect* target = entities->at(selectedEntityIndex)->aspects->at(0);
+                                                                           ^
+In file included from /home/brycbuntu/CS381/As2/inc/EntityMgr.h:5:0,
+                 from ../src/EntityMgr.cpp:1:
+/home/brycbuntu/CS381/As2/inc/Entity381.h:31:24: error: ‘std::vector<Aspect*>* Entity381::aspects’ is private
+  std::vector<Aspect*>* aspects;
+                        ^
+../src/EntityMgr.cpp:104:46: error: within this context
+  target = entities->at(selectedEntityIndex)->aspects->at(0);
+                                              ^
+../src/EntityMgr.cpp:104:57: error: invalid conversion from ‘__gnu_cxx::__alloc_traits<std::allocator<Aspect*> >::value_type {aka Aspect*}’ to ‘RenderableAspect*’ [-fpermissive]
+  target = entities->at(selectedEntityIndex)->aspects->at(0);
+                                                         ^
+src/subdir.mk:42: recipe for target 'src/EntityMgr.o' failed
+make: *** [src/EntityMgr.o] Error 1
+11:16:08 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+Finished building: ../src/Entity381.cpp
+ 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::IncrementSeclectedIndex()’:
+../src/EntityMgr.cpp:98:73: error: invalid conversion from ‘Aspect*’ to ‘RenderableAspect*’ [-fpermissive]
+  RenderableAspect* target = entities->at(selectedEntityIndex)->GetAspect(0);
+                                                                         ^
+In file included from /home/brycbuntu/CS381/As2/inc/EntityMgr.h:5:0,
+                 from ../src/EntityMgr.cpp:1:
+/home/brycbuntu/CS381/As2/inc/Entity381.h:33:24: error: ‘std::vector<Aspect*>* Entity381::aspects’ is private
+  std::vector<Aspect*>* aspects;
+                        ^
+../src/EntityMgr.cpp:104:46: error: within this context
+  target = entities->at(selectedEntityIndex)->aspects->GetAspect(0);
+                                              ^
+../src/EntityMgr.cpp:104:55: error: ‘class std::vector<Aspect*>’ has no member named ‘GetAspect’
+  target = entities->at(selectedEntityIndex)->aspects->GetAspect(0);
+                                                       ^
+src/subdir.mk:42: recipe for target 'src/EntityMgr.o' failed
+make: *** [src/EntityMgr.o] Error 1
+11:16:57 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::IncrementSeclectedIndex()’:
+../src/EntityMgr.cpp:98:73: error: invalid conversion from ‘Aspect*’ to ‘RenderableAspect*’ [-fpermissive]
+  RenderableAspect* target = entities->at(selectedEntityIndex)->GetAspect(0);
+                                                                         ^
+../src/EntityMgr.cpp:104:55: error: invalid conversion from ‘Aspect*’ to ‘RenderableAspect*’ [-fpermissive]
+  target = entities->at(selectedEntityIndex)->GetAspect(0);
+                                                       ^
+src/subdir.mk:42: recipe for target 'src/EntityMgr.o' failed
+make: *** [src/EntityMgr.o] Error 1
+11:17:41 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+Finished building: ../src/EntityMgr.cpp
+ 
+Building file: ../src/RenderableAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RenderableAspect.d" -MT"src/RenderableAspect.o" -o "src/RenderableAspect.o" "../src/RenderableAspect.cpp"
+Finished building: ../src/RenderableAspect.cpp
+ 
+Building file: ../src/SphereEntity.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SphereEntity.d" -MT"src/SphereEntity.o" -o "src/SphereEntity.o" "../src/SphereEntity.cpp"
+Finished building: ../src/SphereEntity.cpp
+ 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+11:23:22 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+Finished building: ../src/EntityMgr.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+11:24:37 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+make: Nothing to be done for 'all'.

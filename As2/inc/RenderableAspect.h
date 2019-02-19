@@ -23,6 +23,8 @@ public:
 
 	Ogre::SceneNode* GetSceneNode ();
 
+	void ShowAABB (bool state);
+
 private:
 	Ogre::Entity* mEntity = nullptr;
 	Ogre::SceneNode* mSceneNode = nullptr;

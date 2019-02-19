@@ -64,3 +64,8 @@ Ogre::SceneNode* RenderableAspect::GetSceneNode ()
 
 }
 
+void RenderableAspect::ShowAABB (bool state)
+{
+	mSceneNode->showBoundingBox(state);
+
+}

@@ -27,6 +27,8 @@ public:
 
 	void AddAspect (Aspect* aspect);
 
+	Aspect* GetAspect (int index);
+
 private:
 	std::vector<Aspect*>* aspects;
 

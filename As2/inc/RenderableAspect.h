@@ -21,7 +21,7 @@ public:
 
 	virtual void Tick (float dt);
 
-
+	Ogre::SceneNode* GetSceneNode ();
 
 private:
 	Ogre::Entity* mEntity = nullptr;

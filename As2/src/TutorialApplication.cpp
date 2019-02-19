@@ -17,6 +17,7 @@ http://www.ogre3d.org/wiki/
 
 #include "TutorialApplication.h"
 #include "EntityMgr.h"
+#include "RenderableAspect.h"
 
 #include <sstream>
 
@@ -34,10 +35,13 @@ TutorialApplication::~TutorialApplication()
 float surfaceHeight = 0;
 int sphereIndex = 0;
 
+EntityMgr* entityMgr = new EntityMgr(nullptr);
+
 void TutorialApplication::createScene()
 {
-	EntityMgr* entityMgr = new EntityMgr(mSceneMgr);
-	entityMgr->CreateEntity();
+	entityMgr->SetSceneMgr(mSceneMgr);
+	entityMgr->CreateAs2Scene();
+	//entityMgr->CreateEntity(RenderableAspect::CUBE, "name", new Ogre::Vector3(0, 0, 0));
 
 	mSceneMgr->setSkyBox(true, "Examples/StormySkyBox");
 
@@ -92,6 +96,7 @@ bool TutorialApplication::frameRenderingQueued(const Ogre::FrameEvent& fe)
   if(!processUnbufferedInput(fe))
     return false;
 
+  entityMgr->Tick(fe.timeSinceLastFrame);
 
   return ret;
 }

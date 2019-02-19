@@ -57,3 +57,10 @@ void RenderableAspect::Tick (float dt)
 	mSceneNode->setPosition(*mPosition);
 
 }
+
+Ogre::SceneNode* RenderableAspect::GetSceneNode ()
+{
+	return mSceneNode;
+
+}
+

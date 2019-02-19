@@ -2779,3 +2779,767 @@ Finished building target: As2
 13:47:53 **** Incremental Build of configuration Debug for project As2 ****
 make all 
 make: Nothing to be done for 'all'.
+14:06:22 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In constructor ‘Entity381::Entity381(Ogre::SceneManager*)’:
+../src/Entity381.cpp:14:2: error: ‘RotatorAspect’ was not declared in this scope
+  RotatorAspect* rotate = new RotatorAspect(this->mSceneNode);
+  ^
+../src/Entity381.cpp:14:17: error: ‘rotate’ was not declared in this scope
+  RotatorAspect* rotate = new RotatorAspect(this->mSceneNode);
+                 ^
+../src/Entity381.cpp:14:17: note: suggested alternatives:
+In file included from /usr/include/c++/5/algorithm:62:0,
+                 from /usr/local/include/OGRE/OgreStdHeaders.h:71,
+                 from /usr/local/include/OGRE/OgrePrerequisites.h:325,
+                 from /usr/local/include/OGRE/OgreVector3.h:31,
+                 from /home/brycbuntu/CS381/As2/inc/Aspect.h:4,
+                 from /home/brycbuntu/CS381/As2/inc/Entity381.h:6,
+                 from ../src/Entity381.cpp:1:
+/usr/include/c++/5/bits/stl_algo.h:1431:5: note:   ‘std::_V2::rotate’
+     rotate(_ForwardIterator __first, _ForwardIterator __middle,
+     ^
+/usr/include/c++/5/bits/stl_algo.h:1431:5: note:   ‘std::_V2::rotate’
+../src/Entity381.cpp:14:30: error: expected type-specifier before ‘RotatorAspect’
+  RotatorAspect* rotate = new RotatorAspect(this->mSceneNode);
+                              ^
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+src/subdir.mk:42: recipe for target 'src/Entity381.o' failed
+make: *** [src/Entity381.o] Error 1
+14:07:54 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+Finished building: ../src/Entity381.cpp
+ 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+Finished building: ../src/EntityMgr.cpp
+ 
+Building file: ../src/RenderableAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RenderableAspect.d" -MT"src/RenderableAspect.o" -o "src/RenderableAspect.o" "../src/RenderableAspect.cpp"
+Finished building: ../src/RenderableAspect.cpp
+ 
+Building file: ../src/RotatorAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RotatorAspect.d" -MT"src/RotatorAspect.o" -o "src/RotatorAspect.o" "../src/RotatorAspect.cpp"
+Finished building: ../src/RotatorAspect.cpp
+ 
+Building file: ../src/SphereEntity.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SphereEntity.d" -MT"src/SphereEntity.o" -o "src/SphereEntity.o" "../src/SphereEntity.cpp"
+Finished building: ../src/SphereEntity.cpp
+ 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+In file included from /home/brycbuntu/CS381/As2/inc/TutorialApplication.h:21:0,
+                 from ../src/TutorialApplication.cpp:18:
+/home/brycbuntu/CS381/As2/inc/BaseApplication.h:106:33: error: ‘Ogre::SceneManager* BaseApplication::mSceneMgr’ is protected
+     Ogre::SceneManager*         mSceneMgr;
+                                 ^
+../src/TutorialApplication.cpp:37:59: error: within this context
+ EntityMgr* entityMgr = new EntityMgr(TutorialApplication::mSceneMgr);
+                                                           ^
+../src/TutorialApplication.cpp:37:59: error: invalid use of non-static data member ‘BaseApplication::mSceneMgr’
+In file included from /home/brycbuntu/CS381/As2/inc/TutorialApplication.h:21:0,
+                 from ../src/TutorialApplication.cpp:18:
+/home/brycbuntu/CS381/As2/inc/BaseApplication.h:106:33: note: declared here
+     Ogre::SceneManager*         mSceneMgr;
+                                 ^
+src/subdir.mk:42: recipe for target 'src/TutorialApplication.o' failed
+make: *** [src/TutorialApplication.o] Error 1
+14:13:49 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+Finished building: ../src/EntityMgr.cpp
+ 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+14:15:18 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+Finished building: ../src/Entity381.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+14:17:37 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+Finished building: ../src/Entity381.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+16:14:32 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+make: Nothing to be done for 'all'.
+16:26:56 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+Finished building: ../src/Entity381.cpp
+ 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::CreateAs2Scene()’:
+../src/EntityMgr.cpp:31:16: warning: variable ‘pos’ set but not used [-Wunused-but-set-variable]
+  Ogre::Vector3 pos = Ogre::Vector3::ZERO;
+                ^
+Finished building: ../src/EntityMgr.cpp
+ 
+Building file: ../src/SphereEntity.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SphereEntity.d" -MT"src/SphereEntity.o" -o "src/SphereEntity.o" "../src/SphereEntity.cpp"
+Finished building: ../src/SphereEntity.cpp
+ 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+../src/TutorialApplication.cpp: In member function ‘virtual void TutorialApplication::createScene()’:
+../src/TutorialApplication.cpp:42:26: error: no matching function for call to ‘EntityMgr::CreateEntity()’
+  entityMgr->CreateEntity();
+                          ^
+In file included from ../src/TutorialApplication.cpp:19:0:
+/home/brycbuntu/CS381/As2/inc/EntityMgr.h:19:7: note: candidate: void EntityMgr::CreateEntity(RenderableAspect::Types, std::__cxx11::string, Ogre::Vector3)
+  void CreateEntity(RenderableAspect::Types type, std::string name, Ogre::Vector3 pos);
+       ^
+/home/brycbuntu/CS381/As2/inc/EntityMgr.h:19:7: note:   candidate expects 3 arguments, 0 provided
+src/subdir.mk:42: recipe for target 'src/TutorialApplication.o' failed
+make: *** [src/TutorialApplication.o] Error 1
+16:29:29 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+16:36:01 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+Finished building: ../src/Entity381.cpp
+ 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::CreateAs2Scene()’:
+../src/EntityMgr.cpp:39:111: error: no matching function for call to ‘EntityMgr::CreateEntity(RenderableAspect::Types, std::__cxx11::string, Ogre::Vector3*)’
+     CreateEntity (RenderableAspect::Types::CUBE, std::to_string((i*5) + j), new Ogre::Vector3(5 * i, 5, 5 * j));
+                                                                                                               ^
+In file included from ../src/EntityMgr.cpp:1:0:
+/home/brycbuntu/CS381/As2/inc/EntityMgr.h:19:7: note: candidate: void EntityMgr::CreateEntity(RenderableAspect::Types, std::__cxx11::string, Ogre::Vector3)
+  void CreateEntity(RenderableAspect::Types type, std::string name, Ogre::Vector3 pos);
+       ^
+/home/brycbuntu/CS381/As2/inc/EntityMgr.h:19:7: note:   no known conversion for argument 3 from ‘Ogre::Vector3*’ to ‘Ogre::Vector3’
+../src/EntityMgr.cpp:44:113: error: no matching function for call to ‘EntityMgr::CreateEntity(RenderableAspect::Types, std::__cxx11::string, Ogre::Vector3*)’
+     CreateEntity (RenderableAspect::Types::SPHERE, std::to_string((i*5) + j), new Ogre::Vector3(5 * i, 5, 5 * j));
+                                                                                                                 ^
+In file included from ../src/EntityMgr.cpp:1:0:
+/home/brycbuntu/CS381/As2/inc/EntityMgr.h:19:7: note: candidate: void EntityMgr::CreateEntity(RenderableAspect::Types, std::__cxx11::string, Ogre::Vector3)
+  void CreateEntity(RenderableAspect::Types type, std::string name, Ogre::Vector3 pos);
+       ^
+/home/brycbuntu/CS381/As2/inc/EntityMgr.h:19:7: note:   no known conversion for argument 3 from ‘Ogre::Vector3*’ to ‘Ogre::Vector3’
+../src/EntityMgr.cpp: At global scope:
+../src/EntityMgr.cpp:56:6: error: prototype for ‘void EntityMgr::CreateEntity(RenderableAspect::Types, std::__cxx11::string, Ogre::Vector3*)’ does not match any in class ‘EntityMgr’
+ void EntityMgr::CreateEntity(RenderableAspect::Types type, std::string name, Ogre::Vector3* pos)
+      ^
+In file included from ../src/EntityMgr.cpp:1:0:
+/home/brycbuntu/CS381/As2/inc/EntityMgr.h:19:7: error: candidate is: void EntityMgr::CreateEntity(RenderableAspect::Types, std::__cxx11::string, Ogre::Vector3)
+  void CreateEntity(RenderableAspect::Types type, std::string name, Ogre::Vector3 pos);
+       ^
+src/subdir.mk:42: recipe for target 'src/EntityMgr.o' failed
+make: *** [src/EntityMgr.o] Error 1
+16:37:00 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::CreateAs2Scene()’:
+../src/EntityMgr.cpp:31:16: warning: variable ‘pos’ set but not used [-Wunused-but-set-variable]
+  Ogre::Vector3 pos = Ogre::Vector3::ZERO;
+                ^
+Finished building: ../src/EntityMgr.cpp
+ 
+Building file: ../src/PhysicsAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PhysicsAspect.d" -MT"src/PhysicsAspect.o" -o "src/PhysicsAspect.o" "../src/PhysicsAspect.cpp"
+Finished building: ../src/PhysicsAspect.cpp
+ 
+Building file: ../src/SphereEntity.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SphereEntity.d" -MT"src/SphereEntity.o" -o "src/SphereEntity.o" "../src/SphereEntity.cpp"
+Finished building: ../src/SphereEntity.cpp
+ 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+16:39:58 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+16:42:41 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+16:43:42 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+16:44:49 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+16:47:00 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+16:48:39 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+16:50:39 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+16:58:51 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In constructor ‘Entity381::Entity381(Ogre::SceneManager*, RenderableAspect::Types, std::__cxx11::string)’:
+../src/Entity381.cpp:10:17: warning: unused variable ‘physics’ [-Wunused-variable]
+  PhysicsAspect* physics = new PhysicsAspect(mPosition);
+                 ^
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+Finished building: ../src/Entity381.cpp
+ 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+Finished building: ../src/EntityMgr.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+17:02:06 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+17:03:16 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+17:06:31 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+Finished building: ../src/EntityMgr.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+17:10:34 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In constructor ‘Entity381::Entity381(Ogre::SceneManager*, RenderableAspect::Types, std::__cxx11::string)’:
+../src/Entity381.cpp:10:17: warning: unused variable ‘physics’ [-Wunused-variable]
+  PhysicsAspect* physics = new PhysicsAspect(mPosition);
+                 ^
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+Finished building: ../src/Entity381.cpp
+ 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::CreateEntity(RenderableAspect::Types, std::__cxx11::string, Ogre::Vector3*)’:
+../src/EntityMgr.cpp:59:13: error: ‘class Entity381’ has no member named ‘SetPosition’
+  newEntity->SetPosition (pos);
+             ^
+src/subdir.mk:42: recipe for target 'src/EntityMgr.o' failed
+make: *** [src/EntityMgr.o] Error 1
+17:11:49 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In constructor ‘Entity381::Entity381(Ogre::SceneManager*, RenderableAspect::Types, std::__cxx11::string)’:
+../src/Entity381.cpp:10:17: warning: unused variable ‘physics’ [-Wunused-variable]
+  PhysicsAspect* physics = new PhysicsAspect(mPosition);
+                 ^
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+Finished building: ../src/Entity381.cpp
+ 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+Finished building: ../src/EntityMgr.cpp
+ 
+Building file: ../src/SphereEntity.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SphereEntity.d" -MT"src/SphereEntity.o" -o "src/SphereEntity.o" "../src/SphereEntity.cpp"
+Finished building: ../src/SphereEntity.cpp
+ 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+17:14:12 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+Finished building: ../src/EntityMgr.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+17:15:13 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+Finished building: ../src/EntityMgr.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+17:16:14 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+Finished building: ../src/Entity381.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+17:16:41 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+Finished building: ../src/Entity381.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+17:17:08 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In constructor ‘Entity381::Entity381(Ogre::SceneManager*, RenderableAspect::Types, std::__cxx11::string)’:
+../src/Entity381.cpp:10:17: warning: unused variable ‘physics’ [-Wunused-variable]
+  PhysicsAspect* physics = new PhysicsAspect(mPosition);
+                 ^
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+Finished building: ../src/Entity381.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+17:30:24 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+In file included from /home/brycbuntu/CS381/As2/inc/Entity381.h:8:0,
+                 from ../src/Entity381.cpp:1:
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:11:26: error: expected ‘)’ before ‘*’ token
+  PhysicsAspect (Entity381* ent);
+                          ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:21:2: error: ‘Entity381’ does not name a type
+  Entity381* mEntity = nullptr;
+  ^
+../src/Entity381.cpp: In constructor ‘Entity381::Entity381(Ogre::SceneManager*, RenderableAspect::Types, std::__cxx11::string)’:
+../src/Entity381.cpp:10:54: error: no matching function for call to ‘PhysicsAspect::PhysicsAspect(Ogre::Vector3*&)’
+  PhysicsAspect* physics = new PhysicsAspect(mPosition);
+                                                      ^
+In file included from /home/brycbuntu/CS381/As2/inc/Entity381.h:8:0,
+                 from ../src/Entity381.cpp:1:
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:8:7: note: candidate: PhysicsAspect::PhysicsAspect()
+ class PhysicsAspect : public Aspect {
+       ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:8:7: note:   candidate expects 0 arguments, 1 provided
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:8:7: note: candidate: constexpr PhysicsAspect::PhysicsAspect(const PhysicsAspect&)
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:8:7: note:   no known conversion for argument 1 from ‘Ogre::Vector3*’ to ‘const PhysicsAspect&’
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+src/subdir.mk:42: recipe for target 'src/Entity381.o' failed
+make: *** [src/Entity381.o] Error 1
+17:36:34 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+In file included from /home/brycbuntu/CS381/As2/inc/Entity381.h:8:0,
+                 from ../src/Entity381.cpp:1:
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:11:26: error: expected ‘)’ before ‘*’ token
+  PhysicsAspect (Entity381* ent);
+                          ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:21:2: error: ‘Entity381’ does not name a type
+  Entity381* mEntity = nullptr;
+  ^
+../src/Entity381.cpp: In constructor ‘Entity381::Entity381(Ogre::SceneManager*, RenderableAspect::Types, std::__cxx11::string)’:
+../src/Entity381.cpp:10:49: error: no matching function for call to ‘PhysicsAspect::PhysicsAspect(Entity381*)’
+  PhysicsAspect* physics = new PhysicsAspect(this);
+                                                 ^
+In file included from /home/brycbuntu/CS381/As2/inc/Entity381.h:8:0,
+                 from ../src/Entity381.cpp:1:
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:8:7: note: candidate: PhysicsAspect::PhysicsAspect()
+ class PhysicsAspect : public Aspect {
+       ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:8:7: note:   candidate expects 0 arguments, 1 provided
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:8:7: note: candidate: constexpr PhysicsAspect::PhysicsAspect(const PhysicsAspect&)
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:8:7: note:   no known conversion for argument 1 from ‘Entity381*’ to ‘const PhysicsAspect&’
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+src/subdir.mk:42: recipe for target 'src/Entity381.o' failed
+make: *** [src/Entity381.o] Error 1
+17:40:02 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+In file included from /home/brycbuntu/CS381/As2/inc/Entity381.h:8:0,
+                 from ../src/Entity381.cpp:1:
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:12:26: error: expected ‘)’ before ‘*’ token
+  PhysicsAspect (Entity381* ent);
+                          ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:22:2: error: ‘Entity381’ does not name a type
+  Entity381* mEntity = nullptr;
+  ^
+../src/Entity381.cpp: In constructor ‘Entity381::Entity381(Ogre::SceneManager*, RenderableAspect::Types, std::__cxx11::string)’:
+../src/Entity381.cpp:10:49: error: no matching function for call to ‘PhysicsAspect::PhysicsAspect(Entity381*)’
+  PhysicsAspect* physics = new PhysicsAspect(this);
+                                                 ^
+In file included from /home/brycbuntu/CS381/As2/inc/Entity381.h:8:0,
+                 from ../src/Entity381.cpp:1:
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:9:7: note: candidate: PhysicsAspect::PhysicsAspect()
+ class PhysicsAspect : public Aspect {
+       ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:9:7: note:   candidate expects 0 arguments, 1 provided
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:9:7: note: candidate: constexpr PhysicsAspect::PhysicsAspect(const PhysicsAspect&)
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:9:7: note:   no known conversion for argument 1 from ‘Entity381*’ to ‘const PhysicsAspect&’
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+src/subdir.mk:42: recipe for target 'src/Entity381.o' failed
+make: *** [src/Entity381.o] Error 1
+17:50:41 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In constructor ‘Entity381::Entity381(Ogre::SceneManager*, RenderableAspect::Types, std::__cxx11::string)’:
+../src/Entity381.cpp:10:49: error: no matching function for call to ‘PhysicsAspect::PhysicsAspect(Entity381*)’
+  PhysicsAspect* physics = new PhysicsAspect(this);
+                                                 ^
+In file included from /home/brycbuntu/CS381/As2/inc/Entity381.h:8:0,
+                 from ../src/Entity381.cpp:1:
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:10:2: note: candidate: PhysicsAspect::PhysicsAspect(Ogre::Vector3*)
+  PhysicsAspect (Ogre::Vector3* postionVector);
+  ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:10:2: note:   no known conversion for argument 1 from ‘Entity381*’ to ‘Ogre::Vector3*’
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:8:7: note: candidate: constexpr PhysicsAspect::PhysicsAspect(const PhysicsAspect&)
+ class PhysicsAspect : public Aspect {
+       ^
+/home/brycbuntu/CS381/As2/inc/PhysicsAspect.h:8:7: note:   no known conversion for argument 1 from ‘Entity381*’ to ‘const PhysicsAspect&’
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+src/subdir.mk:42: recipe for target 'src/Entity381.o' failed
+make: *** [src/Entity381.o] Error 1
+17:52:38 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+../src/Entity381.cpp: In member function ‘void Entity381::Tick(float)’:
+../src/Entity381.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < aspects->size(); i++)
+                    ^
+Finished building: ../src/Entity381.cpp
+ 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+../src/EntityMgr.cpp: In member function ‘void EntityMgr::Tick(float)’:
+../src/EntityMgr.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < entities->size(); i++)
+                    ^
+Finished building: ../src/EntityMgr.cpp
+ 
+Building file: ../src/PhysicsAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PhysicsAspect.d" -MT"src/PhysicsAspect.o" -o "src/PhysicsAspect.o" "../src/PhysicsAspect.cpp"
+Finished building: ../src/PhysicsAspect.cpp
+ 
+Building file: ../src/SphereEntity.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SphereEntity.d" -MT"src/SphereEntity.o" -o "src/SphereEntity.o" "../src/SphereEntity.cpp"
+Finished building: ../src/SphereEntity.cpp
+ 
+Building file: ../src/TutorialApplication.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
+Finished building: ../src/TutorialApplication.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+17:54:57 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/PhysicsAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PhysicsAspect.d" -MT"src/PhysicsAspect.o" -o "src/PhysicsAspect.o" "../src/PhysicsAspect.cpp"
+Finished building: ../src/PhysicsAspect.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 
+17:59:47 **** Incremental Build of configuration Debug for project As2 ****
+make all 
+Building file: ../src/PhysicsAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PhysicsAspect.d" -MT"src/PhysicsAspect.o" -o "src/PhysicsAspect.o" "../src/PhysicsAspect.cpp"
+Finished building: ../src/PhysicsAspect.cpp
+ 
+Building target: As2
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As2
+ 

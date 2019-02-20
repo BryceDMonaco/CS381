@@ -115,3 +115,23 @@ void EntityMgr::IncrementSeclectedIndex ()
 	return;
 
 }
+
+int EntityMgr::GetSelectedEntityIndex ()
+{
+	return selectedEntityIndex;
+
+}
+
+void EntityMgr::SetEntityVelocity (int index, Ogre::Vector3* vel)
+{
+	PhysicsAspect* target = (PhysicsAspect*) entities->at(selectedEntityIndex)->GetAspect(1);
+	target->SetVelocity(vel);
+
+}
+
+Ogre::Vector3* EntityMgr::GetEntityVelocity (int index)
+{
+	PhysicsAspect* target = (PhysicsAspect*) entities->at(selectedEntityIndex)->GetAspect(1);
+	return target->GetVelocity();
+
+}

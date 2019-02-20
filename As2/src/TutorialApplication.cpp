@@ -41,7 +41,6 @@ void TutorialApplication::createScene()
 {
 	entityMgr->SetSceneMgr(mSceneMgr);
 	entityMgr->CreateAs2Scene();
-	//entityMgr->CreateEntity(RenderableAspect::CUBE, "name", new Ogre::Vector3(0, 0, 0));
 
 	mSceneMgr->setSkyBox(true, "Examples/StormySkyBox");
 
@@ -56,15 +55,15 @@ void TutorialApplication::createScene()
 	groundNode->attachObject(groundEntity);
 	groundNode->setPosition(0, surfaceHeight, 0);
 	groundEntity->setCastShadows(false);
-	groundEntity->setMaterialName("Examples/Rockwall");
+	groundEntity->setMaterialName("Ocean2_Cg");
 
 
 	mSceneMgr->setAmbientLight(Ogre::ColourValue(.25, .25, .25));
-	mSceneMgr->setShadowTechnique(Ogre::SHADOWTYPE_STENCIL_MODULATIVE);
+	//mSceneMgr->setShadowTechnique(Ogre::SHADOWTYPE_STENCIL_MODULATIVE);
 
 	Ogre::Light* pointLight = mSceneMgr->createLight("PointLight");
 	pointLight->setType(Ogre::Light::LT_POINT);
-	pointLight->setPosition(250, 150, 250);
+	pointLight->setPosition(250, 400, 250);
 	pointLight->setDiffuseColour(Ogre::ColourValue::White);
 	pointLight->setSpecularColour(Ogre::ColourValue::White);
 
@@ -101,14 +100,14 @@ bool TutorialApplication::frameRenderingQueued(const Ogre::FrameEvent& fe)
   return ret;
 }
 
-Ogre::Vector3 velocityVec = Ogre::Vector3::ZERO;
+Ogre::Vector3* velocityVec = new Ogre::Vector3(Ogre::Vector3::ZERO);
 
 bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent& fe)
 {
 	static bool mouseDownLastFrame = false;
 	static Ogre::Real toggleTimer = 0.0;
 	static Ogre::Real rotate = .13;
-	static Ogre::Real move = 250;
+	static Ogre::Real move = 25;
 
 	toggleTimer -= fe.timeSinceLastFrame;
 
@@ -123,45 +122,45 @@ bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent& fe)
 
 	mouseDownLastFrame = leftMouseDown;
 
-	if (mKeyboard->isKeyDown(OIS::KC_NUMPAD8)) // Forward
+	if (mKeyboard->isKeyDown(OIS::KC_UP)) // Forward
 	{
-		velocityVec.z -= move;
+		velocityVec->z -= move;
 
 	}
 
-	if (mKeyboard->isKeyDown(OIS::KC_NUMPAD2)) // Backward
+	if (mKeyboard->isKeyDown(OIS::KC_DOWN)) // Backward
 	{
-		velocityVec.z += move;
+		velocityVec->z += move;
 
 	}
 
-	if (mKeyboard->isKeyDown(OIS::KC_NUMPAD7)) // Up, Assignment requires PGUP, but the built in camera uses that already
+	if (mKeyboard->isKeyDown(OIS::KC_PGUP)) // Up, Assignment requires PGUP, but the built in camera uses that already
 	{
-		velocityVec.y += move;
+		velocityVec->y += move;
 
 	}
 
-	if (mKeyboard->isKeyDown(OIS::KC_NUMPAD9)) // Down, Assignment requires PGDOWN, but the built in camera uses that already
+	if (mKeyboard->isKeyDown(OIS::KC_PGDOWN)) // Down, Assignment requires PGDOWN, but the built in camera uses that already
 	{
-		velocityVec.y -= move;
+		velocityVec->y -= move;
 
 	}
 
-	if (mKeyboard->isKeyDown(OIS::KC_NUMPAD4)) // Left
+	if (mKeyboard->isKeyDown(OIS::KC_LEFT)) // Left
 	{
-		velocityVec.x -= move;
+		velocityVec->x -= move;
 
 	}
 
-	if (mKeyboard->isKeyDown(OIS::KC_NUMPAD6)) // Right
+	if (mKeyboard->isKeyDown(OIS::KC_RIGHT)) // Right
 	{
-		velocityVec.x += move;
+		velocityVec->x += move;
 
 	}
 
 	if (mKeyboard->isKeyDown(OIS::KC_SPACE)) // Stop the motion
 	{
-		velocityVec = Ogre::Vector3::ZERO;
+		(*velocityVec) = Ogre::Vector3::ZERO;
 
 	}
 
@@ -170,7 +169,9 @@ bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent& fe)
 	{
 		toggleTimer  = 0.25;
 
+		(*velocityVec) = Ogre::Vector3::ZERO;
 		entityMgr->IncrementSeclectedIndex();
+		(*velocityVec) = *(entityMgr->GetEntityVelocity(entityMgr->GetSelectedEntityIndex()));
 
 		mSceneMgr->getSceneNode(SSTR("SphereNode" << sphereIndex))->showBoundingBox(false);
 
@@ -181,7 +182,8 @@ bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent& fe)
 	}
 
 	// Apply the velocity vector to the selected sphere
-	mSceneMgr->getSceneNode(SSTR("SphereNode" << sphereIndex))->translate(velocityVec * fe.timeSinceLastFrame, Ogre::Node::TS_LOCAL);
+	//mSceneMgr->getSceneNode(SSTR("SphereNode" << sphereIndex))->translate(velocityVec * fe.timeSinceLastFrame, Ogre::Node::TS_LOCAL);
+	entityMgr->SetEntityVelocity(entityMgr->GetSelectedEntityIndex(), velocityVec);
 
 	//Ground plane movement
 	if (mKeyboard->isKeyDown(OIS::KC_MINUS)) // Down

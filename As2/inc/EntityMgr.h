@@ -26,6 +26,11 @@ public:
 	Entity381* GetSelectedEntity ();
 	void IncrementSeclectedIndex (); //Index will loop back to 0
 
+	void SetEntityVelocity (int index, Ogre::Vector3* vel);
+	Ogre::Vector3* GetEntityVelocity (int index);
+
+	int GetSelectedEntityIndex ();
+
 private:
 	std::vector<Entity381 *>* entities = nullptr;
 	Ogre::SceneManager* mSceneMgr = nullptr;

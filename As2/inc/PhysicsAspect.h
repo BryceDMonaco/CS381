@@ -12,6 +12,7 @@ public:
 
 	void SetVelocity (float x, float y, float z);
 	void SetVelocity (Ogre::Vector3* vel);
+	Ogre::Vector3* GetVelocity ();
 
 	virtual void Tick (float dt);
 

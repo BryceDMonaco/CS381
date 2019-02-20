@@ -25,12 +25,15 @@ void PhysicsAspect::SetVelocity (float x, float y, float z)
 
 void PhysicsAspect::SetVelocity (Ogre::Vector3* vel)
 {
-	delete mVelocity;
-	mVelocity = nullptr;
-
-	mVelocity = vel;
+	(*mVelocity) = (*vel);
 
 	return;
+
+}
+
+Ogre::Vector3* PhysicsAspect::GetVelocity ()
+{
+	return mVelocity;
 
 }
 

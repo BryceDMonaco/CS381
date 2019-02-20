@@ -67,25 +67,6 @@ void TutorialApplication::createScene()
 	pointLight->setDiffuseColour(Ogre::ColourValue::White);
 	pointLight->setSpecularColour(Ogre::ColourValue::White);
 
-	// Create a 10x10 grid of spheres
-	for (int i = 0; i < 10; i++)
-	{
-		for (int j = 0; j < 10; j++)
-		{
-			Ogre::Entity* sphereEntity = mSceneMgr->createEntity("alienship.mesh");
-			Ogre::SceneNode* sphereNode = mSceneMgr->getRootSceneNode()->createChildSceneNode(SSTR("SphereNode" << (i * 10) + j));
-			sphereNode->attachObject(sphereEntity);
-			sphereNode->setPosition(j * 250, 100, i * 250);
-
-		}
-	}
-
-	// Turn on the box for the 0th sphere to show it is selected
-	mSceneMgr->getSceneNode(SSTR("SphereNode" << sphereIndex))->showBoundingBox(true);
-
-
-
-
 }
 
 bool TutorialApplication::frameRenderingQueued(const Ogre::FrameEvent& fe)
@@ -96,6 +77,12 @@ bool TutorialApplication::frameRenderingQueued(const Ogre::FrameEvent& fe)
     return false;
 
   entityMgr->Tick(fe.timeSinceLastFrame);
+
+  if (mKeyboard->isKeyDown(OIS::KC_Q)) // Quit nicely
+{
+	return false;
+
+}
 
   return ret;
 }
@@ -118,6 +105,7 @@ bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent& fe)
 	{
 	  Ogre::Light* light = mSceneMgr->getLight("PointLight");
 	  light->setVisible(!light->isVisible());
+
 	}
 
 	mouseDownLastFrame = leftMouseDown;
@@ -134,13 +122,13 @@ bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent& fe)
 
 	}
 
-	if (mKeyboard->isKeyDown(OIS::KC_PGUP)) // Up, Assignment requires PGUP, but the built in camera uses that already
+	if (mKeyboard->isKeyDown(OIS::KC_PGUP)) // Up
 	{
 		velocityVec->y += move;
 
 	}
 
-	if (mKeyboard->isKeyDown(OIS::KC_PGDOWN)) // Down, Assignment requires PGDOWN, but the built in camera uses that already
+	if (mKeyboard->isKeyDown(OIS::KC_PGDOWN)) // Down
 	{
 		velocityVec->y -= move;
 
@@ -172,12 +160,6 @@ bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent& fe)
 		(*velocityVec) = Ogre::Vector3::ZERO;
 		entityMgr->IncrementSeclectedIndex();
 		(*velocityVec) = *(entityMgr->GetEntityVelocity(entityMgr->GetSelectedEntityIndex()));
-
-		mSceneMgr->getSceneNode(SSTR("SphereNode" << sphereIndex))->showBoundingBox(false);
-
-		sphereIndex = (sphereIndex + 1) % 100;
-
-		mSceneMgr->getSceneNode(SSTR("SphereNode" << sphereIndex))->showBoundingBox(true);
 
 	}
 

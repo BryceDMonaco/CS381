@@ -1,15 +1,6 @@
-18:19:56 **** Incremental Build of configuration Debug for project As2 ****
+21:27:38 **** Incremental Build of configuration Debug for project As2 ****
 make all 
-Building file: ../src/TutorialApplication.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As2/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TutorialApplication.d" -MT"src/TutorialApplication.o" -o "src/TutorialApplication.o" "../src/TutorialApplication.cpp"
-Finished building: ../src/TutorialApplication.cpp
- 
-Building target: As2
-Invoking: GCC C++ Linker
-g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As2"  ./src/Aspect.o ./src/BaseApplication.o ./src/Entity381.o ./src/EntityMgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/TutorialApplication.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
-Finished building target: As2
- 
+make: Nothing to be done for 'all'.
 
-18:20:26 Build Finished (took 29s.133ms)
+21:27:39 Build Finished (took 744ms)
 

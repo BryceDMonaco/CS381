@@ -18,7 +18,7 @@ EntityMgr::~EntityMgr ()
 
 void EntityMgr::Tick (float dt)
 {
-	for (int i = 0; i < entities->size(); i++)
+	for (int i = 0; i < (int) entities->size(); i++)
 	{
 		entities->at(i)->Tick(dt);
 
@@ -28,22 +28,9 @@ void EntityMgr::Tick (float dt)
 
 void EntityMgr::CreateAs2Scene ()
 {
-	for (int i = 0; i < 2; i ++)
+	for (int i = 0; i < 5; i ++)
 	{
-		for (int j = 0; j < 5; j++)
-		{
-			if (i == 0) // Cube
-			{
-				CreateEntity (RenderableAspect::Types::CUBE, std::to_string((i*5) + j), new Ogre::Vector3(250 * i, 100, 250 * j));
-
-
-			} else // Sphere
-			{
-				CreateSphereEntity (RenderableAspect::Types::SPHERE, std::to_string((i*5) + j), new Ogre::Vector3(250 * i, 100, 250 * j));
-
-			}
-
-		}
+		CreateEntityOfTypeAtPositionAndHeading (i, std::to_string(i), new Ogre::Vector3(500 * i, 0, 0), 0);
 
 	}
 
@@ -51,32 +38,36 @@ void EntityMgr::CreateAs2Scene ()
 
 }
 
-void EntityMgr::CreateSphereEntity(RenderableAspect::Types type, std::string name, Ogre::Vector3* pos)
+void EntityMgr::CreateEntityOfTypeAtPositionAndHeading(int entity381Type, std::string name, Ogre::Vector3* pos, float heading)
 {
-	//Assume for now we just want a cube entity
-	Entity381* newEntity = new SphereEntity381(mSceneMgr, type, name);
+	Entity381* newEntity = nullptr;
 
-	newEntity->SetPosition (pos);
-
-	entities->push_back(newEntity);
-
-	//If this is the first entity, show the box
-	if (entities->size() == 1)
+	if (entity381Type == 0)  // CVN68
 	{
-		RenderableAspect* target = (RenderableAspect*) entities->at(selectedEntityIndex)->GetAspect(0);
-		target->ShowAABB (true);
+		newEntity = new CVN68Entity381 (mSceneMgr, RenderableAspect::OTHER, name, heading);
+
+	} else if (entity381Type == 1)  // Cig
+	{
+		newEntity = new CigBoatEntity381 (mSceneMgr, RenderableAspect::OTHER, name, heading);
+
+	} else if (entity381Type == 2)  // DDG51
+	{
+		newEntity = new DDG51Entity381 (mSceneMgr, RenderableAspect::OTHER, name, heading);
+
+	} else if (entity381Type == 3)  // Sleek
+	{
+		newEntity = new SleekEntity381 (mSceneMgr, RenderableAspect::OTHER, name, heading);
+
+	} else if (entity381Type == 4)  // Alienship
+	{
+		newEntity = new AShipEntity381 (mSceneMgr, RenderableAspect::OTHER, name, heading);
+
+	} else
+	{
+		//By default, create a cube
+		newEntity = new Entity381(mSceneMgr, RenderableAspect::CUBE, name, heading, false);
 
 	}
-
-	return;
-
-
-}
-
-void EntityMgr::CreateEntity(RenderableAspect::Types type, std::string name, Ogre::Vector3* pos)
-{
-	//Assume for now we just want a cube entity
-	Entity381* newEntity = new Entity381(mSceneMgr, type, name, false);
 
 	newEntity->SetPosition (pos);
 

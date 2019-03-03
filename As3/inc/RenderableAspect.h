@@ -11,7 +11,7 @@
 class RenderableAspect : public Aspect
 {
 public:
-	enum Types {SPHERE, CUBE};
+	enum Types {SPHERE, CUBE, OTHER};
 
 	RenderableAspect (Entity381* ent, Ogre::Vector3* posVec, Ogre::SceneManager* mgr, Types type, std::string entityName);
 	//RenderableAspect (std::string meshName, Ogre::Vector3* posVec, std::string entityName, Ogre::SceneManager* mgr); //Used for setting a CUSTOM object mesh

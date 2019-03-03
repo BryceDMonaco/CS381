@@ -18,8 +18,7 @@ public:
 
 	void CreateAs2Scene (); // Creates the scene as required for As2, see implementation for more info
 
-	void CreateSphereEntity(RenderableAspect::Types type, std::string name, Ogre::Vector3* pos);  //Test func
-	void CreateEntity(RenderableAspect::Types type, std::string name, Ogre::Vector3* pos);
+	void CreateEntityOfTypeAtPositionAndHeading(int entity381Type, std::string name, Ogre::Vector3* pos, float heading);
 	void DestroyEntity ();
 
 	bool SetSceneMgr (Ogre::SceneManager* mgr); //Should only be called once

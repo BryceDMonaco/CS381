@@ -1,24 +1,15 @@
 #include "Entity381.h"
 
-Entity381::Entity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, bool isSubClass)
+Entity381::Entity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head, bool isSubClass)
 {
 	mSceneMgr = manager;
 	aspects = new std::vector<Aspect*>;
 	mPosition = new Ogre::Vector3(0, 0, 0);
+	heading = head;
 
-	if (!isSubClass)
+	if (!isSubClass)  // Subclasses should be initialized at the end of their constructor
 	{
-		RenderableAspect* renderable = new RenderableAspect(this, mPosition, mSceneMgr, type, name);
-		PhysicsAspect* physics = new PhysicsAspect(this, mPosition);
-
-		mSceneNode = renderable->GetSceneNode();
-
-		RotatorAspect* rotate = new RotatorAspect(this, mSceneNode);
-		rotate->SetRotationalVelocity(0, 1, 0);
-
-		this->AddAspect(renderable);
-		this->AddAspect(physics);
-		this->AddAspect(rotate);
+		this->Initialize (manager, type, name);
 
 	}
 
@@ -87,18 +78,54 @@ void Entity381::Initialize (Ogre::SceneManager* manager, RenderableAspect::Types
 
 	mSceneNode = renderable->GetSceneNode();
 
-	RotatorAspect* rotate = new RotatorAspect(this, mSceneNode);
-	rotate->SetRotationalVelocity(0, 1, 0);
-
 	this->AddAspect(renderable);
 	this->AddAspect(physics);
-	this->AddAspect(rotate);
 
 }
 
-SphereEntity381::SphereEntity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name) : Entity381 (manager, type, name, true)
+SphereEntity381::SphereEntity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head) : Entity381 (manager, type, name, head, true)
 {
 	meshFileName = "sphere.mesh";
+
+	this->Initialize (manager, type, name);
+
+}
+
+CVN68Entity381::CVN68Entity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head) : Entity381 (manager, type, name, head, true)
+{
+	meshFileName = "cvn68.mesh";
+
+	this->Initialize (manager, type, name);
+
+}
+
+CigBoatEntity381::CigBoatEntity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head) : Entity381 (manager, type, name, head, true)
+{
+	meshFileName = "cigarette.mesh";
+
+	this->Initialize (manager, type, name);
+
+}
+
+DDG51Entity381::DDG51Entity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head) : Entity381 (manager, type, name, head, true)
+{
+	meshFileName = "ddg51.mesh";
+
+	this->Initialize (manager, type, name);
+
+}
+
+SleekEntity381::SleekEntity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head) : Entity381 (manager, type, name, head, true)
+{
+	meshFileName = "sleek.mesh";
+
+	this->Initialize (manager, type, name);
+
+}
+
+AShipEntity381::AShipEntity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head) : Entity381 (manager, type, name, head, true)
+{
+	meshFileName = "alienship.mesh";
 
 	this->Initialize (manager, type, name);
 

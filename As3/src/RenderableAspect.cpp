@@ -9,12 +9,16 @@ RenderableAspect::RenderableAspect (Entity381* ent, Ogre::Vector3* posVec, Ogre:
 
 	if (type == SPHERE)
 	{
-		mEntity = mSceneMgr->createEntity(mEntity381->meshFileName);
+		mEntity = mSceneMgr->createEntity("sphere.mesh");
 
 
 	} else if (type == CUBE)
 	{
 		mEntity = mSceneMgr->createEntity("cube.mesh");
+
+	} else if (type == OTHER)
+	{
+		mEntity = mSceneMgr->createEntity(mEntity381->meshFileName);
 
 	}
 

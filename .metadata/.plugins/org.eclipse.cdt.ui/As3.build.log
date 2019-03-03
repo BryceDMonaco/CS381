@@ -1,4 +1,4 @@
-13:01:52 **** Incremental Build of configuration Debug for project As3 ****
+12:56:31 **** Incremental Build of configuration Debug for project As3 ****
 make all 
 Building file: ../src/RenderableAspect.cpp
 Invoking: GCC C++ Compiler
@@ -11,5 +11,5 @@ g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As3"  ./src/Aspect.o .
 Finished building target: As3
  
 
-13:02:10 Build Finished (took 17s.298ms)
+12:56:46 Build Finished (took 14s.939ms)
 

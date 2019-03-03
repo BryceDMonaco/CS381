@@ -4,16 +4,19 @@
 #include <OgreVector3.h> //Included here since most children of Aspect use it in some way
 //#include "Entity381.h"
 
+class Entity381;  // Forward reference
+
 class Aspect
 {
 public:
-	Aspect ();
+	Aspect (Entity381* ent);
 	virtual ~Aspect ();
 
 	virtual void Tick (float dt);
 
+	Entity381* mEntity381 = nullptr;
+
 private:
-	//Entity381* mEntity381 = nullptr;
 
 };
 

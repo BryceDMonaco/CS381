@@ -1,6 +1,6 @@
 #include "RotatorAspect.h"
 
-RotatorAspect::RotatorAspect (Ogre::SceneNode* myNode)
+RotatorAspect::RotatorAspect (Entity381* ent, Ogre::SceneNode* myNode) : Aspect (ent)
 {
 	mSceneNode = myNode;
 

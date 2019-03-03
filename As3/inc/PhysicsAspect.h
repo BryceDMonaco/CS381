@@ -7,7 +7,7 @@
 
 class PhysicsAspect : public Aspect {
 public:
-	PhysicsAspect (Ogre::Vector3* postionVector);
+	PhysicsAspect (Entity381* ent, Ogre::Vector3* pos);
 	~PhysicsAspect ();
 
 	void SetVelocity (float x, float y, float z);
@@ -17,8 +17,8 @@ public:
 	virtual void Tick (float dt);
 
 private:
-	Ogre::Vector3* mPosition; //Pointer passed from Entity381
-	Ogre::Vector3* mVelocity = nullptr;
+	Ogre::Vector3* mPosition;  // Pointer passed from Entity381
+	Ogre::Vector3* mVelocity;  // Pointer passed from Entity381
 
 };
 

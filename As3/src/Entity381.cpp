@@ -1,22 +1,26 @@
 #include "Entity381.h"
 
-Entity381::Entity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name)
+Entity381::Entity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, bool isSubClass)
 {
 	mSceneMgr = manager;
 	aspects = new std::vector<Aspect*>;
 	mPosition = new Ogre::Vector3(0, 0, 0);
 
-	RenderableAspect* renderable = new RenderableAspect(mPosition, mSceneMgr, type, name);
-	PhysicsAspect* physics = new PhysicsAspect(mPosition);
+	if (!isSubClass)
+	{
+		RenderableAspect* renderable = new RenderableAspect(this, mPosition, mSceneMgr, type, name);
+		PhysicsAspect* physics = new PhysicsAspect(this, mPosition);
 
-	mSceneNode = renderable->GetSceneNode();
+		mSceneNode = renderable->GetSceneNode();
 
-	RotatorAspect* rotate = new RotatorAspect(mSceneNode);
-	rotate->SetRotationalVelocity(0, 1, 0);
+		RotatorAspect* rotate = new RotatorAspect(this, mSceneNode);
+		rotate->SetRotationalVelocity(0, 1, 0);
 
-	this->AddAspect(renderable);
-	this->AddAspect(physics);
-	this->AddAspect(rotate);
+		this->AddAspect(renderable);
+		this->AddAspect(physics);
+		this->AddAspect(rotate);
+
+	}
 
 }
 
@@ -30,7 +34,7 @@ Entity381::~Entity381 ()
 
 void Entity381::Tick (float dt)
 {
-	for (int i = 0; i < aspects->size(); i++)
+	for (int i = 0; i < (int) aspects->size(); i++)
 	{
 		aspects->at(i)->Tick(dt);
 
@@ -69,5 +73,33 @@ void Entity381::TranslatePosition (Ogre::Vector3* trans)
 Aspect* Entity381::GetAspect (int index)
 {
 	return aspects->at(index);
+
+}
+
+void Entity381::Initialize (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name)
+{
+	mSceneMgr = manager;
+	aspects = new std::vector<Aspect*>;
+	mPosition = new Ogre::Vector3(0, 0, 0);
+
+	RenderableAspect* renderable = new RenderableAspect(this, mPosition, mSceneMgr, type, name);
+	PhysicsAspect* physics = new PhysicsAspect(this, mPosition);
+
+	mSceneNode = renderable->GetSceneNode();
+
+	RotatorAspect* rotate = new RotatorAspect(this, mSceneNode);
+	rotate->SetRotationalVelocity(0, 1, 0);
+
+	this->AddAspect(renderable);
+	this->AddAspect(physics);
+	this->AddAspect(rotate);
+
+}
+
+SphereEntity381::SphereEntity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name) : Entity381 (manager, type, name, true)
+{
+	meshFileName = "sphere.mesh";
+
+	this->Initialize (manager, type, name);
 
 }

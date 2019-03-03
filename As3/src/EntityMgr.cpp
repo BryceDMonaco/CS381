@@ -39,7 +39,7 @@ void EntityMgr::CreateAs2Scene ()
 
 			} else // Sphere
 			{
-				CreateEntity (RenderableAspect::Types::SPHERE, std::to_string((i*5) + j), new Ogre::Vector3(250 * i, 100, 250 * j));
+				CreateSphereEntity (RenderableAspect::Types::SPHERE, std::to_string((i*5) + j), new Ogre::Vector3(250 * i, 100, 250 * j));
 
 			}
 
@@ -51,10 +51,32 @@ void EntityMgr::CreateAs2Scene ()
 
 }
 
+void EntityMgr::CreateSphereEntity(RenderableAspect::Types type, std::string name, Ogre::Vector3* pos)
+{
+	//Assume for now we just want a cube entity
+	Entity381* newEntity = new SphereEntity381(mSceneMgr, type, name);
+
+	newEntity->SetPosition (pos);
+
+	entities->push_back(newEntity);
+
+	//If this is the first entity, show the box
+	if (entities->size() == 1)
+	{
+		RenderableAspect* target = (RenderableAspect*) entities->at(selectedEntityIndex)->GetAspect(0);
+		target->ShowAABB (true);
+
+	}
+
+	return;
+
+
+}
+
 void EntityMgr::CreateEntity(RenderableAspect::Types type, std::string name, Ogre::Vector3* pos)
 {
 	//Assume for now we just want a cube entity
-	Entity381* newEntity = new Entity381(mSceneMgr, type, name);
+	Entity381* newEntity = new Entity381(mSceneMgr, type, name, false);
 
 	newEntity->SetPosition (pos);
 

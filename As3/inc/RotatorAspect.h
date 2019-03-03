@@ -8,7 +8,7 @@
 
 class RotatorAspect : public Aspect {
 public:
-	RotatorAspect (Ogre::SceneNode* myNode);
+	RotatorAspect (Entity381* ent, Ogre::SceneNode* myNode);
 	~RotatorAspect ();
 
 	void SetRotationalVelocity (float x, float y, float z);

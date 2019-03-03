@@ -1,6 +1,6 @@
 #include "PhysicsAspect.h"
 
-PhysicsAspect::PhysicsAspect (Ogre::Vector3* pos)
+PhysicsAspect::PhysicsAspect (Entity381* ent, Ogre::Vector3* pos) : Aspect (ent)
 {
 	mPosition = pos;
 	mVelocity = new Ogre::Vector3(0, 0, 0);
@@ -10,6 +10,7 @@ PhysicsAspect::PhysicsAspect (Ogre::Vector3* pos)
 PhysicsAspect::~PhysicsAspect ()
 {
 	mPosition = nullptr;
+	mVelocity = nullptr;
 
 }
 

@@ -1,6 +1,7 @@
 #include "RenderableAspect.h"
+#include "Entity381.h"
 
-RenderableAspect::RenderableAspect (Ogre::Vector3* posVec, Ogre::SceneManager* mgr, Types type, std::string entityName)
+RenderableAspect::RenderableAspect (Entity381* ent, Ogre::Vector3* posVec, Ogre::SceneManager* mgr, Types type, std::string entityName) : Aspect (ent)
 {
 	mPosition = posVec;
 	mName = entityName;
@@ -8,7 +9,7 @@ RenderableAspect::RenderableAspect (Ogre::Vector3* posVec, Ogre::SceneManager* m
 
 	if (type == SPHERE)
 	{
-		mEntity = mSceneMgr->createEntity("sphere.mesh");
+		mEntity = mSceneMgr->createEntity(mEntity381->meshFileName);
 
 
 	} else if (type == CUBE)
@@ -16,19 +17,6 @@ RenderableAspect::RenderableAspect (Ogre::Vector3* posVec, Ogre::SceneManager* m
 		mEntity = mSceneMgr->createEntity("cube.mesh");
 
 	}
-
-	mSceneNode = mSceneMgr->getRootSceneNode()->createChildSceneNode(mName + "Node");
-	mSceneNode->attachObject(mEntity);
-
-}
-
-RenderableAspect::RenderableAspect (std::string meshName, Ogre::Vector3* posVector, std::string entityName, Ogre::SceneManager* mgr)
-{
-	mPosition = posVector;
-	mName = entityName;
-	mSceneMgr = mgr;
-
-	mEntity = mSceneMgr->createEntity(meshName);
 
 	mSceneNode = mSceneMgr->getRootSceneNode()->createChildSceneNode(mName + "Node");
 	mSceneNode->attachObject(mEntity);

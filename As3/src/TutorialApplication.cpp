@@ -87,16 +87,25 @@ bool TutorialApplication::frameRenderingQueued(const Ogre::FrameEvent& fe)
   return ret;
 }
 
-Ogre::Vector3* velocityVec = new Ogre::Vector3(Ogre::Vector3::ZERO);
-
 bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent& fe)
 {
+	Ogre::Vector3* accVec = new Ogre::Vector3(Ogre::Vector3::ZERO);
+
 	static bool mouseDownLastFrame = false;
 	static Ogre::Real toggleTimer = 0.0;
+	static Ogre::Real turnTimerL = 0.0;
+	static Ogre::Real turnTimerR = 0.0;
+	static Ogre::Real speedTimer = 0.0;
 	static Ogre::Real rotate = .13;
-	static Ogre::Real move = 25;
+	static Ogre::Real move = 1;
+	static Ogre::Real turnRate = 5;  // Life is much easier when this equals Entity381's turnRate
+	float turn = 0;
+
 
 	toggleTimer -= fe.timeSinceLastFrame;
+	turnTimerL -= fe.timeSinceLastFrame;
+	turnTimerR -= fe.timeSinceLastFrame;
+	speedTimer -= fe.timeSinceLastFrame;
 
 
 	bool leftMouseDown = mMouse->getMouseState().buttonDown(OIS::MB_Left);
@@ -110,45 +119,67 @@ bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent& fe)
 
 	mouseDownLastFrame = leftMouseDown;
 
-	if (mKeyboard->isKeyDown(OIS::KC_UP)) // Forward
+	if ((speedTimer < 0) && mKeyboard->isKeyDown(OIS::KC_UP)) // Forward
 	{
-		velocityVec->z -= move;
+		speedTimer = 0.25;
+
+		accVec->x -= move;
 
 	}
 
-	if (mKeyboard->isKeyDown(OIS::KC_DOWN)) // Backward
+	if ((speedTimer < 0) && mKeyboard->isKeyDown(OIS::KC_DOWN)) // Backward
 	{
-		velocityVec->z += move;
+		speedTimer = 0.25;
+
+		accVec->x += move;
 
 	}
 
 	if (mKeyboard->isKeyDown(OIS::KC_PGUP)) // Up
 	{
-		velocityVec->y += move;
+		accVec->y += move;
 
 	}
 
 	if (mKeyboard->isKeyDown(OIS::KC_PGDOWN)) // Down
 	{
-		velocityVec->y -= move;
+		accVec->y -= move;
 
 	}
 
-	if (mKeyboard->isKeyDown(OIS::KC_LEFT)) // Left
+	if ((turnTimerL < 0) && mKeyboard->isKeyDown(OIS::KC_LEFT)) // Left
 	{
-		velocityVec->x -= move;
+		turnTimerL = 0.25;
+
+		//accVec->x -= move; Rotate left
+		turn += turnRate;
+
 
 	}
 
-	if (mKeyboard->isKeyDown(OIS::KC_RIGHT)) // Right
+	if ((turnTimerR < 0) && mKeyboard->isKeyDown(OIS::KC_RIGHT)) // Right
 	{
-		velocityVec->x += move;
+		turnTimerR = 0.25;
+
+		//accVec->x += move; Rotate Right
+		turn -= turnRate;
 
 	}
+
+	// Set the new desired rotation
+	entityMgr->ChangeEntityDesiredHeading(entityMgr->GetSelectedEntityIndex(), turn);
+
 
 	if (mKeyboard->isKeyDown(OIS::KC_SPACE)) // Stop the motion
 	{
-		(*velocityVec) = Ogre::Vector3::ZERO;
+		//(*accVec) = Ogre::Vector3::ZERO;
+		entityMgr->SetEntityVelocity(entityMgr->GetSelectedEntityIndex(), new Ogre::Vector3(Ogre::Vector3::ZERO));
+
+	} else
+	{
+		// Apply the velocity vector to the selected sphere
+		//mSceneMgr->getSceneNode(SSTR("SphereNode" << sphereIndex))->translate(velocityVec * fe.timeSinceLastFrame, Ogre::Node::TS_LOCAL);
+		entityMgr->AccelerateEntity(entityMgr->GetSelectedEntityIndex(), accVec);
 
 	}
 
@@ -157,15 +188,11 @@ bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent& fe)
 	{
 		toggleTimer  = 0.25;
 
-		(*velocityVec) = Ogre::Vector3::ZERO;
+		(*accVec) = Ogre::Vector3::ZERO;
 		entityMgr->IncrementSeclectedIndex();
-		(*velocityVec) = *(entityMgr->GetEntityVelocity(entityMgr->GetSelectedEntityIndex()));
+		//(*accVec) = *(entityMgr->GetEntityVelocity(entityMgr->GetSelectedEntityIndex()));
 
 	}
-
-	// Apply the velocity vector to the selected sphere
-	//mSceneMgr->getSceneNode(SSTR("SphereNode" << sphereIndex))->translate(velocityVec * fe.timeSinceLastFrame, Ogre::Node::TS_LOCAL);
-	entityMgr->SetEntityVelocity(entityMgr->GetSelectedEntityIndex(), velocityVec);
 
 	//Ground plane movement
 	if (mKeyboard->isKeyDown(OIS::KC_MINUS)) // Down

@@ -34,7 +34,7 @@ public:
 	std::string entityName;
 
 	float minSpeed = 0;
-	float maxSpeed = 100;
+	float maxSpeed = 200;
 	float speed = 0;  // The current speed, [minSpeed, maxSpeed]
 	float desiredSpeed = 0; // The speed to accelerate to
 	float acceleration = 5;

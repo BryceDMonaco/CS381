@@ -5,6 +5,7 @@
 #include "Entity381.h"
 #include <OgreSceneManager.h>
 #include <OgreVector3.h>
+#include <stdio.h>
 
 #include "RenderableAspect.h" //Used to toggle bounding box
 
@@ -26,7 +27,9 @@ public:
 	Entity381* GetSelectedEntity ();
 	void IncrementSeclectedIndex (); //Index will loop back to 0
 
+	void ChangeEntityDesiredHeading (int index, float deltaDH);
 	void SetEntityVelocity (int index, Ogre::Vector3* vel);
+	void AccelerateEntity (int index, Ogre::Vector3* vec);
 	Ogre::Vector3* GetEntityVelocity (int index);
 
 	int GetSelectedEntityIndex ();

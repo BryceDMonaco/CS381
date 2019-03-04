@@ -1,9 +1,9 @@
-14:41:23 **** Incremental Build of configuration Debug for project As3 ****
+19:03:43 **** Incremental Build of configuration Debug for project As3 ****
 make all 
-Building file: ../src/EntityMgr.cpp
+Building file: ../src/PhysicsAspect.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As3/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
-Finished building: ../src/EntityMgr.cpp
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As3/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PhysicsAspect.d" -MT"src/PhysicsAspect.o" -o "src/PhysicsAspect.o" "../src/PhysicsAspect.cpp"
+Finished building: ../src/PhysicsAspect.cpp
  
 Building target: As3
 Invoking: GCC C++ Linker
@@ -11,5 +11,5 @@ g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As3"  ./src/Aspect.o .
 Finished building target: As3
  
 
-14:41:38 Build Finished (took 15s.302ms)
+19:03:59 Build Finished (took 15s.493ms)
 

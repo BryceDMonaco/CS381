@@ -47,6 +47,8 @@ void RenderableAspect::SetMaterial(std::string material)
 void RenderableAspect::Tick (float dt)
 {
 	mSceneNode->setPosition(*mPosition);
+	mSceneNode->setOrientation(Ogre::Quaternion(Ogre::Degree(mEntity381->heading), Ogre::Vector3(0,1,0)));
+
 
 }
 

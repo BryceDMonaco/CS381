@@ -6,6 +6,8 @@
 #include <OgreSceneNode.h>
 #include <OgreSceneManager.h>
 #include <OgreEntity.h>
+#include <OgreQuaternion.h>
+
 #include <string>
 
 class RenderableAspect : public Aspect

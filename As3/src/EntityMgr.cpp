@@ -135,10 +135,29 @@ int EntityMgr::GetSelectedEntityIndex ()
 
 }
 
+void EntityMgr::ChangeEntityDesiredHeading (int index, float deltaDH)
+{
+	entities->at(selectedEntityIndex)->desiredHeading += deltaDH;
+
+	if (deltaDH != 0)
+	{
+		std::cout << "Selected Ent's DH=" << entities->at(selectedEntityIndex)->desiredHeading << std::endl;
+
+	}
+
+}
+
 void EntityMgr::SetEntityVelocity (int index, Ogre::Vector3* vel)
 {
 	PhysicsAspect* target = (PhysicsAspect*) entities->at(selectedEntityIndex)->GetAspect(1);
 	target->SetVelocity(vel);
+
+}
+
+void EntityMgr::AccelerateEntity (int index, Ogre::Vector3* vec)
+{
+	PhysicsAspect* target = (PhysicsAspect*) entities->at(selectedEntityIndex)->GetAspect(1);
+	target->Accelerate(vec);
 
 }
 

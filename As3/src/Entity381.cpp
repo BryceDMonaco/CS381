@@ -102,6 +102,8 @@ CVN68Entity381::CVN68Entity381 (Ogre::SceneManager* manager, RenderableAspect::T
 CigBoatEntity381::CigBoatEntity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head) : Entity381 (manager, type, name, head, true)
 {
 	meshFileName = "cigarette.mesh";
+	turnRate *= 3;
+	acceleration *= 3;
 
 	this->Initialize (manager, type, name);
 
@@ -110,6 +112,8 @@ CigBoatEntity381::CigBoatEntity381 (Ogre::SceneManager* manager, RenderableAspec
 DDG51Entity381::DDG51Entity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head) : Entity381 (manager, type, name, head, true)
 {
 	meshFileName = "ddg51.mesh";
+	turnRate *= 3;
+	acceleration *= 2;
 
 	this->Initialize (manager, type, name);
 
@@ -119,6 +123,9 @@ SleekEntity381::SleekEntity381 (Ogre::SceneManager* manager, RenderableAspect::T
 {
 	meshFileName = "sleek.mesh";
 
+	turnRate *= 2;
+	acceleration *= 4;
+
 	this->Initialize (manager, type, name);
 
 }
@@ -126,6 +133,9 @@ SleekEntity381::SleekEntity381 (Ogre::SceneManager* manager, RenderableAspect::T
 AShipEntity381::AShipEntity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head) : Entity381 (manager, type, name, head, true)
 {
 	meshFileName = "alienship.mesh";
+
+	turnRate *= 15;
+	acceleration *= 10;
 
 	this->Initialize (manager, type, name);
 

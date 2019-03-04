@@ -126,7 +126,7 @@ void PhysicsAspect::Tick (float dt)
 
 	if (mPosition != nullptr)
 	{
-		//Convert 1D Speed to 2D velocity vector
+		//Convert 1D Speed to 2D velocity vector, -90 degrees because the models are parallel with x axis instead of z
 		mVelocity->x = -mEntity381->speed * std::cos(((mEntity381->heading - 90) * PI) / 180);
 		mVelocity->y = -mEntity381->speed * std::sin(((mEntity381->heading - 90) * PI) / 180);
 

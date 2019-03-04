@@ -214,13 +214,19 @@ bool TutorialApplication::processUnbufferedInput(const Ogre::FrameEvent& fe)
 	float cameraSpeed = 250;
 	if (mKeyboard->isKeyDown(OIS::KC_W)) // Forward
 	{
-		cameraOffset.z -= cameraSpeed;
+		if(mKeyboard->isKeyDown(OIS::KC_LSHIFT)) //Rotate up
+			mCamera->getParentSceneNode()->pitch(Ogre::Degree(5 * rotate));
+		else
+			cameraOffset.z -= cameraSpeed;
 
 	}
 
 	if (mKeyboard->isKeyDown(OIS::KC_S)) // Backward
 	{
-		cameraOffset.z += cameraSpeed;
+		if(mKeyboard->isKeyDown(OIS::KC_LSHIFT)) //Rotate up
+			mCamera->getParentSceneNode()->pitch(Ogre::Degree(-5 * rotate));
+		else
+			cameraOffset.z += cameraSpeed;
 
 	}
 

@@ -30,7 +30,7 @@ void EntityMgr::CreateAs2Scene ()
 {
 	for (int i = 0; i < 5; i ++)
 	{
-		CreateEntityOfTypeAtPositionAndHeading (i, std::to_string(i), new Ogre::Vector3(500 * i, 0, 0), 0);
+		CreateEntityOfTypeAtPositionAndHeading (i, std::to_string(i), new Ogre::Vector3(500 * i, 0, 0), 45 * i);
 
 	}
 
@@ -70,6 +70,8 @@ void EntityMgr::CreateEntityOfTypeAtPositionAndHeading(int entity381Type, std::s
 	}
 
 	newEntity->SetPosition (pos);
+	newEntity->heading = heading;
+	newEntity->entityName = name;
 
 	entities->push_back(newEntity);
 

@@ -34,7 +34,6 @@ private:
 
 	Ogre::Camera* mCamera;
 
-
 };
 
 

@@ -66,8 +66,10 @@ void GfxMgr::Init ()
 	mSceneMgr = mRoot->createSceneManager(Ogre::ST_GENERIC);
 
 	mCamera = mSceneMgr->createCamera("MainCam");
+	Ogre::SceneNode* camNode = mSceneMgr->getRootSceneNode()->createChildSceneNode("MainCamera");
+	camNode->attachObject(mCamera);
 
-	mCamera->setPosition(0, 50, 1000);
+	camNode->setPosition(0, 50, 1000);
 	mCamera->lookAt(0, 0, -300);
 	mCamera->setNearClipDistance(5);
 
@@ -82,6 +84,9 @@ void GfxMgr::Init ()
 	Ogre::LogManager::getSingletonPtr()->logMessage("*** Camera Set ***");
 
 	engine->entityMgr->mSceneMgr = mSceneMgr;
+	engine->inputMgr->mWindow = mWindow;
+	engine->inputMgr->mRoot = mRoot;
+	engine->inputMgr->mSceneMgr = mSceneMgr;
 
 	Ogre::LogManager::getSingletonPtr()->logMessage("*** GfxMgr Init Done! ***");
 

@@ -3,15 +3,24 @@
 
 #include "Mgr.h"
 
+#include <vector>
+#include "Entity381.h"
+#include <OgreSceneManager.h>
+#include <OgreMeshManager.h>
+#include <OgreVector3.h>
+#include <stdio.h>
+
 class GameMgr : public Mgr
 {
 public:
 	GameMgr (Engine* engine);
 	~GameMgr ();
 
-	void Init ();
+	void LoadLevel ();
 	void Tick (float dt);
 	void Stop ();
+
+	Ogre::SceneManager* mSceneMgr = nullptr;
 
 };
 

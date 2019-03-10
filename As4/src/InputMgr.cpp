@@ -114,8 +114,6 @@ bool InputMgr::frameRenderingQueued(const Ogre::FrameEvent& evt)
 
 bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 {
-	//(*cameraOffset) = Ogre::Vector3(Ogre::Vector3::ZERO);
-
 	// Quit
 	if (ke.key == OIS::KC_Q)
 	{
@@ -126,7 +124,17 @@ bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 	// Change the selected entity
 	if (ke.key == OIS::KC_TAB)
 	{
+		(*accVec) = Ogre::Vector3::ZERO;
+
 		engine->entityMgr->IncrementSeclectedIndex();
+
+	}
+
+	if (ke.key == OIS::KC_SPACE)
+	{
+		(*accVec) = Ogre::Vector3::ZERO;
+
+		engine->entityMgr->SetEntityVelocity(engine->entityMgr->GetSelectedEntityIndex(), new Ogre::Vector3(Ogre::Vector3::ZERO));
 
 	}
 
@@ -195,13 +203,13 @@ bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 	}
 
 	// Selected Entity Movement
-	if (ke.key == OIS::KC_P)  // Forward
+	if (ke.key == OIS::KC_UP)  // Forward
 	{
-		accVec->z += -10;
+		accVec->x += -1;
 
 	} else if (ke.key == OIS::KC_DOWN)  // Backward
 	{
-		accVec->z += 10;
+		accVec->x += 1;
 
 	} else if (ke.key == OIS::KC_LEFT)  // Rotate Left
 	{

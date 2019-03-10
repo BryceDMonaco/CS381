@@ -2,6 +2,7 @@
 #include "GfxMgr.h"
 #include "InputMgr.h"
 #include "EntityMgr.h"
+#include "GameMgr.h"
 
 GfxMgr::GfxMgr (Engine* engine) : Mgr (engine),
 mRoot(0),
@@ -87,6 +88,7 @@ void GfxMgr::Init ()
 	engine->inputMgr->mWindow = mWindow;
 	engine->inputMgr->mRoot = mRoot;
 	engine->inputMgr->mSceneMgr = mSceneMgr;
+	engine->gameMgr->mSceneMgr = mSceneMgr;
 
 	Ogre::LogManager::getSingletonPtr()->logMessage("*** GfxMgr Init Done! ***");
 

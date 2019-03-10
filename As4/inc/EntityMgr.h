@@ -21,8 +21,6 @@ public:
 
 	void Tick (float dt); // Update all entities in the manager
 
-	void LoadLevel (); // Creates the scene as required for As2, see implementation for more info
-
 	void CreateEntityOfTypeAtPositionAndHeading(int entity381Type, std::string name, Ogre::Vector3* pos, float heading);
 	void DestroyEntity ();
 

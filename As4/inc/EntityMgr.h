@@ -6,6 +6,7 @@
 #include <vector>
 #include "Entity381.h"
 #include <OgreSceneManager.h>
+#include <OgreMeshManager.h>
 #include <OgreVector3.h>
 #include <stdio.h>
 

@@ -46,6 +46,18 @@ void EntityMgr::LoadLevel ()
 
 	}
 
+	mSceneMgr->setSkyBox(true, "Examples/StormySkyBox");
+
+	//Create the plane
+	Ogre::Plane plane(Ogre::Vector3::UNIT_Y, 0);
+	Ogre::MeshManager::getSingleton().createPlane("ground", Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME, plane, 10000, 10000, 200, 200, true, 1, 5, 5, Ogre::Vector3::UNIT_Z);
+	Ogre::Entity* groundEntity = mSceneMgr->createEntity("ground");
+	Ogre::SceneNode* groundNode = mSceneMgr->getRootSceneNode()->createChildSceneNode("GroundNode");
+	groundNode->attachObject(groundEntity);
+	groundNode->setPosition(0, 0, 0);
+	groundEntity->setCastShadows(false);
+	groundEntity->setMaterialName("Ocean2_Cg");
+
 }
 
 void EntityMgr::CreateEntityOfTypeAtPositionAndHeading(int entity381Type, std::string name, Ogre::Vector3* pos, float heading)

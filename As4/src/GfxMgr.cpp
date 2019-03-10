@@ -67,7 +67,7 @@ void GfxMgr::Init ()
 
 	mCamera = mSceneMgr->createCamera("MainCam");
 
-	mCamera->setPosition(0, 0, 80);
+	mCamera->setPosition(0, 50, 1000);
 	mCamera->lookAt(0, 0, -300);
 	mCamera->setNearClipDistance(5);
 

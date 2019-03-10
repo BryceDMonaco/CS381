@@ -1,6 +1,8 @@
 #ifndef INC_ENTITYMGR_H_
 #define INC_ENTITYMGR_H_
 
+#include "Mgr.h"
+
 #include <vector>
 #include "Entity381.h"
 #include <OgreSceneManager.h>
@@ -9,15 +11,16 @@
 
 #include "RenderableAspect.h" //Used to toggle bounding box
 
-class EntityMgr
+class EntityMgr : public Mgr
 {
 public:
-	EntityMgr (Ogre::SceneManager* mgr);
+	EntityMgr (Engine* engine);
+	EntityMgr (Ogre::SceneManager* mgr, Engine* engine);
 	~EntityMgr ();
 
 	void Tick (float dt); // Update all entities in the manager
 
-	void CreateAs2Scene (); // Creates the scene as required for As2, see implementation for more info
+	void LoadLevel (); // Creates the scene as required for As2, see implementation for more info
 
 	void CreateEntityOfTypeAtPositionAndHeading(int entity381Type, std::string name, Ogre::Vector3* pos, float heading);
 	void DestroyEntity ();
@@ -34,9 +37,10 @@ public:
 
 	int GetSelectedEntityIndex ();
 
+	Ogre::SceneManager* mSceneMgr = nullptr;
+
 private:
 	std::vector<Entity381 *>* entities = nullptr;
-	Ogre::SceneManager* mSceneMgr = nullptr;
 	int selectedEntityIndex = 0;
 
 };

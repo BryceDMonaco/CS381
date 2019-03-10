@@ -8,10 +8,7 @@
 #ifndef INC_INPUTMGR_H_
 #define INC_INPUTMGR_H_
 
-#include <OISEvents.h>
-#include <OISInputManager.h>
-#include <OISKeyboard.h>
-#include <OISMouse.h>
+#include "Mgr.h"
 
 class InputMgr : public Mgr
 {
@@ -23,11 +20,9 @@ public:
 	void Tick (float dt);
 	void Stop ();
 
-	OIS::InputManager* mInputManager;
-	OIS::Mouse* mMouse;
-	OIS::Keyboard* mKeyboard;
-
 private:
+
+protected:
 
 };
 #endif /* INC_INPUTMGR_H_ */

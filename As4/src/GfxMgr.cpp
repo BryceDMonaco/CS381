@@ -1,5 +1,7 @@
 #include "Engine.h"
 #include "GfxMgr.h"
+#include "InputMgr.h"
+#include "EntityMgr.h"
 
 GfxMgr::GfxMgr (Engine* engine) : Mgr (engine),
 mRoot(0),
@@ -18,13 +20,8 @@ GfxMgr::~GfxMgr ()
 
 void GfxMgr::Init ()
 {
-	#ifdef _DEBUG
-		mResourcesCfg = "resources_d.cfg";
-		mPluginsCfg = "plugins_d.cfg";
-	#else
-		mResourcesCfg = "resources.cfg";
-		mPluginsCfg = "plugins.cfg";
-	#endif
+	mResourcesCfg = "resources.cfg";
+	mPluginsCfg = "plugins.cfg";
 
 	mRoot = new Ogre::Root(mPluginsCfg);
 
@@ -46,17 +43,25 @@ void GfxMgr::Init ()
 			name = it->second;
 
 			Ogre::ResourceGroupManager::getSingleton().addResourceLocation(name, locType);
+
 		}
+
+
 	}
 
 	if(!(mRoot->restoreConfig() || mRoot->showConfigDialog()))
-	  engine->keepRunning = false;
+	{
+		engine->keepRunning = false;
+
+	}
 
 	mWindow = mRoot->initialise(true, "TutorialApplication Render Window");
 
 	Ogre::TextureManager::getSingleton().setDefaultNumMipmaps(5);
 
 	Ogre::ResourceGroupManager::getSingleton().initialiseAllResourceGroups();
+
+	Ogre::LogManager::getSingletonPtr()->logMessage("*** All Resource Groups Init'd ***");
 
 	mSceneMgr = mRoot->createSceneManager(Ogre::ST_GENERIC);
 
@@ -74,15 +79,30 @@ void GfxMgr::Init ()
 	  Ogre::Real(vp->getActualWidth()) /
 	  Ogre::Real(vp->getActualHeight()));
 
+	Ogre::LogManager::getSingletonPtr()->logMessage("*** Camera Set ***");
+
+	engine->entityMgr->mSceneMgr = mSceneMgr;
+
+	Ogre::LogManager::getSingletonPtr()->logMessage("*** GfxMgr Init Done! ***");
+
+
 }
 
 void GfxMgr::Tick (float dt)
 {
 	Ogre::WindowEventUtilities::messagePump();
 
-	if(mWindow->isClosed()) engine->keepRunning = false;
+	if(mWindow->isClosed())
+	{
+		engine->keepRunning = false;
 
-	if(!mRoot->renderOneFrame()) engine->keepRunning = false;
+	}
+
+	if(!mRoot->renderOneFrame())
+	{
+		engine->keepRunning = false;
+
+	}
 
 }
 

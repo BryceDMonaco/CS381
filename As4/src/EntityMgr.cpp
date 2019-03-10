@@ -1,6 +1,13 @@
 #include "EntityMgr.h"
 
-EntityMgr::EntityMgr (Ogre::SceneManager* mgr)
+EntityMgr::EntityMgr (Engine* engine) : Mgr (engine)
+{
+	mSceneMgr = nullptr;  // Should be passed by graphics when it is init'd
+	entities = new std::vector<Entity381*>;
+
+}
+
+EntityMgr::EntityMgr (Ogre::SceneManager* mgr, Engine* engine) : Mgr (engine)
 {
 	mSceneMgr = mgr;
 	entities = new std::vector<Entity381*>;
@@ -26,15 +33,18 @@ void EntityMgr::Tick (float dt)
 
 }
 
-void EntityMgr::CreateAs2Scene ()
+void EntityMgr::LoadLevel ()
 {
+	mSceneMgr->setAmbientLight(Ogre::ColourValue(.5, .5, .5));
+
+	Ogre::Light* light = mSceneMgr->createLight("MainLight");
+	light->setPosition(20, 80, 50);
+
 	for (int i = 0; i < 5; i ++)
 	{
 		CreateEntityOfTypeAtPositionAndHeading (i, std::to_string(i), new Ogre::Vector3(500 * i, 0, 0), 45 * i);
 
 	}
-
-
 
 }
 

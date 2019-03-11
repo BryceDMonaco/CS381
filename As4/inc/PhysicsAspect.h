@@ -13,6 +13,7 @@ public:
 	PhysicsAspect (Entity381* ent, Ogre::Vector3* pos);
 	~PhysicsAspect ();
 
+	void SetSpeed (float sentSpeed);
 	void SetVelocity (float x, float y, float z);
 	void SetVelocity (Ogre::Vector3* vel);
 	void Accelerate (Ogre::Vector3* vec);

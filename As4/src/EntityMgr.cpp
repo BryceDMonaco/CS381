@@ -144,6 +144,13 @@ void EntityMgr::ChangeEntityDesiredHeading (int index, float deltaDH)
 
 }
 
+void EntityMgr::SetEntitySpeed (int index, float sentSpeed)
+{
+	PhysicsAspect* target = (PhysicsAspect*) entities->at(selectedEntityIndex)->GetAspect(1);
+	target->SetSpeed(sentSpeed);
+
+}
+
 void EntityMgr::SetEntityVelocity (int index, Ogre::Vector3* vel)
 {
 	PhysicsAspect* target = (PhysicsAspect*) entities->at(selectedEntityIndex)->GetAspect(1);

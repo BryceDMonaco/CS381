@@ -70,7 +70,9 @@ void InputMgr::Tick (float dt)
 	{
 		(*accVec) = Ogre::Vector3::ZERO;
 
-		engine->entityMgr->SetEntityVelocity(engine->entityMgr->GetSelectedEntityIndex(), new Ogre::Vector3(Ogre::Vector3::ZERO));
+		engine->entityMgr->SetEntitySpeed(engine->entityMgr->GetSelectedEntityIndex(), 0);
+
+		entityStopped = false;
 
 
 	}
@@ -78,6 +80,9 @@ void InputMgr::Tick (float dt)
 
 	// Turn selected entity
 	engine->entityMgr->ChangeEntityDesiredHeading(engine->entityMgr->GetSelectedEntityIndex(), turn);
+
+	turn = 0;
+	(*accVec) = Ogre::Vector3(Ogre::Vector3::ZERO);
 
 	//(*cameraOffset) = Ogre::Vector3(Ogre::Vector3::ZERO);
 
@@ -148,9 +153,8 @@ bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 	{
 		(*accVec) = Ogre::Vector3::ZERO;
 
-		engine->entityMgr->SetEntityVelocity(engine->entityMgr->GetSelectedEntityIndex(), new Ogre::Vector3(Ogre::Vector3::ZERO));
+		engine->entityMgr->SetEntitySpeed(engine->entityMgr->GetSelectedEntityIndex(), 0);
 
-		entityStopped = !entityStopped;
 	}
 
 	if (ke.key == OIS::KC_LSHIFT)
@@ -228,11 +232,11 @@ bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 
 	} else if (ke.key == OIS::KC_LEFT)  // Rotate Left
 	{
-		turn += 1;
+		turn = 5;
 
 	} else if (ke.key == OIS::KC_RIGHT)  // Rotate Right
 	{
-		turn += -1;
+		turn = -5;
 
 	}
 
@@ -291,11 +295,11 @@ bool InputMgr::keyReleased(const OIS::KeyEvent& ke)
 
 	} else if (ke.key == OIS::KC_LEFT)  // Rotate Left
 	{
-		turn += -1;
+		//turn += -1;
 
 	} else if (ke.key == OIS::KC_RIGHT)  // Rotate Right
 	{
-		turn += 1;
+		//turn += 1;
 
 	}
 

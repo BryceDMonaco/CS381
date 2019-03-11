@@ -47,6 +47,10 @@ private:
 
 	bool shiftDown = false;
 	bool entityStopped = false;
+	bool speedUpButtonDown = false;
+	bool speedDownButtonDown = false;
+	bool headingLeftButtonDown = false;
+	bool headingRightButtonDown = false;
 
 protected:
 	// Ogre::WindowEventListener

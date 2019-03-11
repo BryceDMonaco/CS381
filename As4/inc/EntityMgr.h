@@ -30,6 +30,7 @@ public:
 	void IncrementSeclectedIndex (); //Index will loop back to 0
 
 	void ChangeEntityDesiredHeading (int index, float deltaDH);
+	void SetEntitySpeed (int index, float sentSpeed);
 	void SetEntityVelocity (int index, Ogre::Vector3* vel);
 	void AccelerateEntity (int index, Ogre::Vector3* vec);
 	Ogre::Vector3* GetEntityVelocity (int index);

@@ -29,6 +29,13 @@ void PhysicsAspect::SetVelocity (float x, float y, float z)
 
 }
 
+void PhysicsAspect::SetSpeed (float sentSpeed)
+{
+	mEntity381->desiredSpeed = sentSpeed;
+	mEntity381->speed = sentSpeed;
+
+}
+
 void PhysicsAspect::SetVelocity (Ogre::Vector3* vel)
 {
 	(*mVelocity) = (*vel);

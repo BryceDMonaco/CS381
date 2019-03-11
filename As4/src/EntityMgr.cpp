@@ -33,12 +33,6 @@ void EntityMgr::Tick (float dt)
 
 }
 
-void EntityMgr::LoadLevel ()
-{
-	// Entities are loaded in GameMgr
-
-}
-
 void EntityMgr::CreateEntityOfTypeAtPositionAndHeading(int entity381Type, std::string name, Ogre::Vector3* pos, float heading)
 {
 	Entity381* newEntity = nullptr;

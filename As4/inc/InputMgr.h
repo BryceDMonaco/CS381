@@ -46,6 +46,7 @@ private:
 	float turn = 0;
 
 	bool shiftDown = false;
+	bool entityStopped = false;
 
 protected:
 	// Ogre::WindowEventListener

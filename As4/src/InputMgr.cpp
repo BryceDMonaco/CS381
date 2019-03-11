@@ -20,6 +20,8 @@ InputMgr::~InputMgr ()
 
 void InputMgr::Init ()
 {
+	entityStopped = false;
+
 	Ogre::LogManager::getSingletonPtr()->logMessage("*** Initializing OIS ***");
 	OIS::ParamList pl;
 	size_t windowHnd = 0;
@@ -59,8 +61,20 @@ void InputMgr::Tick (float dt)
 	camNode->pitch (Ogre::Degree(cameraRot->x * 45 * dt));
 	camNode->yaw (Ogre::Degree(cameraRot->y * 45 * dt));
 
-	// Accelerate selected entity
-	engine->entityMgr->AccelerateEntity(engine->entityMgr->GetSelectedEntityIndex(), accVec);
+	if (!entityStopped)
+	{
+		// Accelerate selected entity
+		engine->entityMgr->AccelerateEntity(engine->entityMgr->GetSelectedEntityIndex(), accVec);
+
+	} else
+	{
+		(*accVec) = Ogre::Vector3::ZERO;
+
+		engine->entityMgr->SetEntityVelocity(engine->entityMgr->GetSelectedEntityIndex(), new Ogre::Vector3(Ogre::Vector3::ZERO));
+
+
+	}
+
 
 	// Turn selected entity
 	engine->entityMgr->ChangeEntityDesiredHeading(engine->entityMgr->GetSelectedEntityIndex(), turn);
@@ -115,7 +129,7 @@ bool InputMgr::frameRenderingQueued(const Ogre::FrameEvent& evt)
 bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 {
 	// Quit
-	if (ke.key == OIS::KC_Q)
+	if (ke.key == OIS::KC_Q || ke.key == OIS::KC_ESCAPE)
 	{
 		engine->keepRunning = false;
 
@@ -136,6 +150,7 @@ bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 
 		engine->entityMgr->SetEntityVelocity(engine->entityMgr->GetSelectedEntityIndex(), new Ogre::Vector3(Ogre::Vector3::ZERO));
 
+		entityStopped = !entityStopped;
 	}
 
 	if (ke.key == OIS::KC_LSHIFT)
@@ -213,11 +228,11 @@ bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 
 	} else if (ke.key == OIS::KC_LEFT)  // Rotate Left
 	{
-		turn += 10;
+		turn += 1;
 
 	} else if (ke.key == OIS::KC_RIGHT)  // Rotate Right
 	{
-		turn += -10;
+		turn += -1;
 
 	}
 
@@ -276,11 +291,11 @@ bool InputMgr::keyReleased(const OIS::KeyEvent& ke)
 
 	} else if (ke.key == OIS::KC_LEFT)  // Rotate Left
 	{
-		turn += -10;
+		turn += -1;
 
 	} else if (ke.key == OIS::KC_RIGHT)  // Rotate Right
 	{
-		turn += 10;
+		turn += 1;
 
 	}
 

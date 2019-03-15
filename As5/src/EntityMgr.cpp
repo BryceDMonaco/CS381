@@ -182,3 +182,21 @@ void EntityMgr::IncreaseEntityHeight (int index, float amount)
 	target->SetDesiredAltitude(amount + entities->at(selectedEntityIndex)->desiredAltitude);
 
 }
+
+std::vector<Entity381 *>* EntityMgr::GetEntities ()
+{
+	return entities;
+
+}
+
+void EntityMgr::SetSelectedIndex (int index)
+{
+	index = index % entities->size();
+
+	while (selectedEntityIndex != index)
+	{
+		this->IncrementSeclectedIndex();  // This func handles changing the bounding box already
+
+	}
+
+}

@@ -23,6 +23,8 @@ public:
 	void Tick (float dt);
 	void Stop ();
 
+	Ogre::Camera* mCamera;
+
 private:
 	Ogre::Root* mRoot;
 	Ogre::String mResourcesCfg;
@@ -32,7 +34,6 @@ private:
 
 	Ogre::SceneManager* mSceneMgr;
 
-	Ogre::Camera* mCamera;
 
 };
 

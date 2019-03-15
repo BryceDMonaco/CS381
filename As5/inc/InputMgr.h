@@ -10,6 +10,8 @@
 
 #include "Mgr.h"
 
+#include <vector>
+
 #include <OISEvents.h>
 #include <OISInputManager.h>
 #include <OISKeyboard.h>
@@ -21,7 +23,7 @@
 #include <OgreCamera.h>
 #include <OgreVector3.h>
 
-class InputMgr : public Mgr, public Ogre::WindowEventListener, public Ogre::FrameListener, public OIS::KeyListener
+class InputMgr : public Mgr, public Ogre::WindowEventListener, public Ogre::FrameListener, public OIS::KeyListener, public OIS::MouseListener
 {
 public:
 	InputMgr (Engine* engine);
@@ -64,6 +66,10 @@ protected:
 	// Buffered Input
 	virtual bool keyPressed(const OIS::KeyEvent& ke);
 	virtual bool keyReleased(const OIS::KeyEvent& ke);
+
+	bool mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id);
+	bool mouseMoved(const OIS::MouseEvent& me);
+	bool mouseReleased(const OIS::MouseEvent& me, OIS::MouseButtonID mid);
 
 };
 #endif /* INC_INPUTMGR_H_ */

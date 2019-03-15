@@ -1,6 +1,9 @@
 #include "Engine.h"
 #include "InputMgr.h"
+#include "GfxMgr.h"
 #include "EntityMgr.h"
+#include <OgreCamera.h>
+#include "RenderableAspect.h"
 
 InputMgr::InputMgr (Engine* engine) : Mgr (engine)
 {
@@ -44,7 +47,7 @@ void InputMgr::Init ()
 
 	mRoot->addFrameListener(this);
 
-	//mMouse->setEventCallback(this);
+	mMouse->setEventCallback(this);
 	mKeyboard->setEventCallback(this);
 
 }
@@ -314,3 +317,48 @@ bool InputMgr::keyReleased(const OIS::KeyEvent& ke)
 
 	return true;
 }
+
+bool InputMgr::mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id)
+{
+	const OIS::MouseState &ms = mMouse->getMouseState();
+
+	if (id == OIS::MB_Left)
+	{
+		std::vector<Entity381 *>* entities = engine->entityMgr->GetEntities();
+
+		Ogre::Ray ray = engine->gfxMgr->mCamera->getCameraToViewportRay(ms.X.abs / (float) ms.width, ms.Y.abs/ (float) ms.height);
+
+		for (unsigned int i = 0; i < entities->size(); i++)
+		{
+			RenderableAspect* renderer = (RenderableAspect*) entities->at(i)->GetAspect(0);
+
+			std::pair<bool, float> test = ray.intersects(renderer->mSceneNode->_getWorldAABB());
+
+			if (test.first) //Ray hit the entity's AABB
+			{
+				engine->entityMgr->SetSelectedIndex(i);
+
+			}
+
+		}
+
+	}
+
+	return true;
+
+}
+
+bool InputMgr::mouseMoved(const OIS::MouseEvent& me)
+{
+
+	return true;
+
+}
+
+bool InputMgr::mouseReleased(const OIS::MouseEvent& me, OIS::MouseButtonID mid)
+{
+
+	return true;
+
+}
+

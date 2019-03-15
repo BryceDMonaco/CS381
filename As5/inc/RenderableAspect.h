@@ -27,9 +27,10 @@ public:
 
 	void ShowAABB (bool state);
 
-private:
 	Ogre::Entity* mEntity = nullptr;
 	Ogre::SceneNode* mSceneNode = nullptr;
+
+private:
 	Ogre::Vector3* mPosition = nullptr;
 	Ogre::SceneManager* mSceneMgr = nullptr;
 	std::string mName;

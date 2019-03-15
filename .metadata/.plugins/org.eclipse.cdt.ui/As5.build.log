@@ -1,0 +1,15 @@
+11:08:08 **** Incremental Build of configuration Debug for project As5 ****
+make all 
+Building file: ../src/PhysicsAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As5/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PhysicsAspect.d" -MT"src/PhysicsAspect.o" -o "src/PhysicsAspect.o" "../src/PhysicsAspect.cpp"
+Finished building: ../src/PhysicsAspect.cpp
+ 
+Building target: As5
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As5"  ./src/Aspect.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As5
+ 
+
+11:08:23 Build Finished (took 15s.140ms)
+

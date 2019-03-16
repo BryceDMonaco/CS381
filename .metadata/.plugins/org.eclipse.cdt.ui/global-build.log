@@ -871,3 +871,18 @@ Finished building target: As5
 15:39:48 **** Incremental Build of configuration Debug for project As5 ****
 make all 
 make: Nothing to be done for 'all'.
+21:16:58 **** Incremental Build of configuration Debug for project As5 ****
+make all 
+Building file: ../src/InputMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/brycbuntu/CS381/As5/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
+Finished building: ../src/InputMgr.cpp
+ 
+Building target: As5
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As5"  ./src/Aspect.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As5
+ 
+21:17:30 **** Incremental Build of configuration Debug for project As5 ****
+make all 
+make: Nothing to be done for 'all'.

@@ -1,6 +1,6 @@
-21:17:30 **** Incremental Build of configuration Debug for project As5 ****
+16:06:15 **** Incremental Build of configuration Debug for project As5 ****
 make all 
 make: Nothing to be done for 'all'.
 
-21:17:30 Build Finished (took 840ms)
+16:06:16 Build Finished (took 264ms)
 

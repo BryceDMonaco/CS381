@@ -41,7 +41,9 @@ public:
 	MoveTo(Entity381* ent, Ogre::Vector3 target);
 	~MoveTo();
 
+	void init();
 	void tick(float dt);
+	bool done();
 
 	Ogre::Vector3 targetLocation;
 	float MOVE_DISTANCE_THRESHOLD;
@@ -51,7 +53,7 @@ public:
 class Intercept : public Command {
 
 public:
-	Intercept(Entity381* ent, Ogre::Vector3 target);
+	Intercept(Entity381* ent, Ogre::Vector3 location);
 	~Intercept();
 
 	void init();
@@ -60,8 +62,6 @@ public:
 
 	Ogre::Vector3 targetLocation;
 	float MOVE_DISTANCE_THRESHOLD;
-
-	float interceptRadius;
 };
 
 

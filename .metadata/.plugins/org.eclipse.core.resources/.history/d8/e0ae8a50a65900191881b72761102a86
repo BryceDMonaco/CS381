@@ -58,10 +58,8 @@ public:
 	void tick(float dt);
 	bool done();
 
-	Ogre::Vector3 targetLocation;
+	Ogre::Vector3 targetEntity;
 	float MOVE_DISTANCE_THRESHOLD;
-
-	float interceptRadius;
 };
 
 

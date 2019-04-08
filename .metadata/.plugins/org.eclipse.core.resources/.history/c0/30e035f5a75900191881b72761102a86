@@ -54,7 +54,7 @@ Intercept::~Intercept()
 
 }
 
-void Intercept::tick(float dt)
+void Intercepttick(float dt)
 {
 
 }

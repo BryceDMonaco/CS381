@@ -42,19 +42,17 @@ void MoveTo::tick(float dt)
 
 }
 
-Intercept::Intercept(Entity381* ent, Ogre::Vector3 target) : Command(ent)
-{
-	targetLocation = target;
-	MOVE_DISTANCE_THRESHOLD = 100;
-	interceptRadius = 100;
-}
-
-Intercept::~Intercept()
+Intercept(Entity381* ent, Ogre::Vector3 target)
 {
 
 }
 
-void Intercept::tick(float dt)
+~Intercept()
+{
+
+}
+
+void tick(float dt)
 {
 
 }

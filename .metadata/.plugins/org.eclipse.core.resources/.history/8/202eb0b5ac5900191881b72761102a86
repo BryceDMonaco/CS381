@@ -30,7 +30,6 @@ public:
 	virtual bool done();
 
 	Entity381* entity;
-	PhysicsAspect* physics;
 
 private:
 	bool isDone;

@@ -9,7 +9,6 @@ Command::Command(Entity381* ent)
 {
 	entity = ent;
 	isDone = false;
-	physics = nullptr;
 }
 
 virtual Command::~Command()
@@ -46,11 +45,9 @@ MoveTo::~MoveTo()
 
 void MoveTo::tick(float dt)
 {
-	Ogre::Vector3 squareDistance = entity->mPosition->squaredDistance(targetLocation);
-
-	if (squareDistance > acceptanceRadius * acceptanceRadius)
+	if (entity->mPosition->distance(targetLocation) > acceptanceRadius)
 	{
-		physics->Accelerate(Ogre::Vector3(squareDistance.normalise()));
+
 	}
 	else
 	{

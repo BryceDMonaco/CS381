@@ -52,7 +52,7 @@ void PhysicsAspect::SetVelocity (Ogre::Vector3* vel)
 
 void PhysicsAspect::Accelerate (Ogre::Vector3 vec)
 {
-	mEntity381->desiredSpeed += mEntity381->acceleration * vec.x * -1;
+	mEntity381->desiredSpeed += mEntity381->acceleration * vec->x * -1;
 
 	// Clamp the desiredSpeed
 	if (mEntity381->desiredSpeed > mEntity381->maxSpeed)

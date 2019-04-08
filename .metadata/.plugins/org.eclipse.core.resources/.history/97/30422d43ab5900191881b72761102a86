@@ -9,17 +9,11 @@ Command::Command(Entity381* ent)
 {
 	entity = ent;
 	isDone = false;
-	physics = nullptr;
 }
 
 virtual Command::~Command()
 {
 
-}
-
-void Command::init()
-{
-	physics = (PhysicsAspect*) entity->GetAspect(1);
 }
 
 virtual void Command::tick(float dt)
@@ -46,15 +40,9 @@ MoveTo::~MoveTo()
 
 void MoveTo::tick(float dt)
 {
-	Ogre::Vector3 squareDistance = entity->mPosition->squaredDistance(targetLocation);
+	if (entity->mPosition->distance(targetLocation) <= acceptanceRadius)
+	{
 
-	if (squareDistance > acceptanceRadius * acceptanceRadius)
-	{
-		physics->Accelerate(Ogre::Vector3(squareDistance.normalise()));
-	}
-	else
-	{
-		isDone = true;
 	}
 }
 

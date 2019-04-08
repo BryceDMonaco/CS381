@@ -17,7 +17,7 @@ public:
 	void SetSpeed (float sentSpeed);
 	void SetVelocity (float x, float y, float z);
 	void SetVelocity (Ogre::Vector3* vel);
-	void Accelerate (Ogre::Vector3 vec);
+	void Accelerate (Ogre::Vector3* vec);
 	void Rotate (float dt);
 	Ogre::Vector3* GetVelocity ();
 

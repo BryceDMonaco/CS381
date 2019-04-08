@@ -50,7 +50,7 @@ void MoveTo::tick(float dt)
 
 	if (squareDistance > acceptanceRadius * acceptanceRadius)
 	{
-		physics->Accelerate(Ogre::Vector3(squareDistance.normalise()));
+		physics->Accelerate(Ogre::Vector3());
 	}
 	else
 	{

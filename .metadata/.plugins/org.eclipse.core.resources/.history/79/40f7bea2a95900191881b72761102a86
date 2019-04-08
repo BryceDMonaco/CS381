@@ -25,12 +25,10 @@ public:
 	Command(Entity381* ent);
 	virtual ~Command();
 
-	void init();
 	virtual void tick(float dt);
 	virtual bool done();
 
 	Entity381* entity;
-	PhysicsAspect* physics;
 
 private:
 	bool isDone;
@@ -47,8 +45,6 @@ public:
 
 	Ogre::Vector3 targetLocation;
 	float MOVE_DISTANCE_THRESHOLD;
-
-	float acceptanceRadius;
 
 };
 

@@ -1,9 +1,9 @@
-02:59:49 **** Incremental Build of configuration Debug for project As6 ****
+03:31:38 **** Incremental Build of configuration Debug for project As6 ****
 make all 
-Building file: ../src/Command.cpp
+Building file: ../src/InputMgr.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Command.d" -MT"src/Command.o" -o "src/Command.o" "../src/Command.cpp"
-Finished building: ../src/Command.cpp
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
+Finished building: ../src/InputMgr.cpp
  
 Building target: As6
 Invoking: GCC C++ Linker
@@ -11,5 +11,5 @@ g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As6"  ./src/Aspect.o .
 Finished building target: As6
  
 
-02:59:52 Build Finished (took 2s.373ms)
+03:31:41 Build Finished (took 2s.723ms)
 

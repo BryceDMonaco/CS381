@@ -73,8 +73,8 @@ void InputMgr::Tick (float dt)
 
 	// Offset Camera
 	camNode->translate((*cameraOffset) * dt * 100, Ogre::Node::TS_LOCAL);
-	if (camNode->getPosition().y <= 5)
-		camNode->setPosition(camNode->getPosition().x, 5, camNode->getPosition().z);
+	if (camNode->getPosition().y <= 10)
+		camNode->setPosition(camNode->getPosition().x, 10, camNode->getPosition().z);
 	camNode->pitch (Ogre::Degree(cameraRot->x * 45 * dt));
 	camNode->yaw (Ogre::Degree(cameraRot->y * 45 * dt));
 

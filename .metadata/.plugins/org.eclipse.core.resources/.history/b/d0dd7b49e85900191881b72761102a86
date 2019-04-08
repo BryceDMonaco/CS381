@@ -73,8 +73,6 @@ void InputMgr::Tick (float dt)
 
 	// Offset Camera
 	camNode->translate((*cameraOffset) * dt * 100, Ogre::Node::TS_LOCAL);
-	if (camNode->getPosition().y <= 5)
-		camNode->setPosition(camNode->getPosition().x, 5, camNode->getPosition().z);
 	camNode->pitch (Ogre::Degree(cameraRot->x * 45 * dt));
 	camNode->yaw (Ogre::Degree(cameraRot->y * 45 * dt));
 
@@ -234,39 +232,39 @@ bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 		if (shiftDown)
 			cameraOffset->y = 3;
 		else
-			cameraOffset->y = 1;
+			cameraOffset->y = 3;
 
 	} else if (ke.key == OIS::KC_F)
 	{
 		if (shiftDown)
 			cameraOffset->y = -3;
 		else
-			cameraOffset->y = -1;
+			cameraOffset->y = -3;
 	} else if (ke.key == OIS::KC_Z)
 	{
 		if (shiftDown)
 			cameraRot->x = 3;
 		else
-			cameraRot->x = 1;
+			cameraRot->x = 3;
 	} else if (ke.key == OIS::KC_X)
 	{
 		if (shiftDown)
 			cameraRot->x = -3;
 		else
-			cameraRot->x = -1;
+			cameraRot->x = -3;
 	}
 	else if (ke.key == OIS::KC_Q)
 	{
 		if (shiftDown)
 			cameraRot->y = 3;
 		else
-			cameraRot->y = 1;
+			cameraRot->y = 3;
 	} else if (ke.key == OIS::KC_E)
 	{
 		if (shiftDown)
 			cameraRot->y = -3;
 		else
-			cameraRot->y = -1;
+			cameraRot->y = -3;
 	}
 
 	// Selected Entity Movement
@@ -344,15 +342,6 @@ bool InputMgr::keyReleased(const OIS::KeyEvent& ke)
 	else if (ke.key == OIS::KC_X)
 	{
 		cameraRot->x = 0;
-	}
-
-	if (ke.key == OIS::KC_Q)
-	{
-		cameraRot->y = 0;
-	}
-	else if (ke.key == OIS::KC_E)
-	{
-		cameraRot->y = 0;
 	}
 
 	if (ke.key == OIS::KC_UP)  // Forward

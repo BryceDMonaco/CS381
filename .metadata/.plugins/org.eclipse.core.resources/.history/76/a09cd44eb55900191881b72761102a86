@@ -6,7 +6,6 @@
  */
 
 #include "Command.h"
-#include "Entity381.h"
 
 Command::Command(Entity381* ent)
 {
@@ -15,7 +14,7 @@ Command::Command(Entity381* ent)
 	physics = nullptr;
 }
 
-Command::~Command()
+virtual Command::~Command()
 {
 
 }
@@ -25,12 +24,12 @@ void Command::init()
 	physics = (PhysicsAspect*) entity->GetAspect(1);
 }
 
-void Command::tick(float dt)
+virtual void Command::tick(float dt)
 {
 
 }
 
-bool Command::done()
+virtual bool Command::done()
 {
 	return isDone;
 }
@@ -49,11 +48,11 @@ MoveTo::~MoveTo()
 
 void MoveTo::tick(float dt)
 {
-	float squareDistance = entity->mPosition->squaredDistance(targetLocation);
+	Ogre::Vector3 squareDistance = entity->mPosition->squaredDistance(targetLocation);
 
 	if (squareDistance > acceptanceRadius * acceptanceRadius)
 	{
-		physics->Accelerate(Ogre::Vector3(squareDistance));
+		physics->Accelerate(Ogre::Vector3(squareDistance.normalise()));
 	}
 	else
 	{

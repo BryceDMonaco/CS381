@@ -6,7 +6,6 @@
  */
 
 #include "Command.h"
-#include "Entity381.h"
 
 Command::Command(Entity381* ent)
 {

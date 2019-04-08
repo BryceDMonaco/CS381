@@ -8,7 +8,7 @@
 #ifndef COMMAND_H_
 #define COMMAND_H_
 
-#include <PhysicsAspect.h>
+#include <Entity381.h>
 #include <OgreVector3.h>
 
 /*
@@ -18,8 +18,6 @@ enum COMMAND_TYPE
 	INTERCEPT_COMMAND
 };
 */
-
-class Entity381;
 
 class Command {
 
@@ -34,7 +32,7 @@ public:
 	Entity381* entity;
 	PhysicsAspect* physics;
 
-protected:
+private:
 	bool isDone;
 
 };

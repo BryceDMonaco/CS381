@@ -23,10 +23,6 @@ void UnitAI::Tick(float dt)
 	{
 		commands.front()->tick(dt);
 	}
-	else if (!commands.empty() && commands.front()->done())
-	{
-		commands.pop();
-	}
 }
 
 void UnitAI::SetCommand(Command *c)

@@ -165,7 +165,7 @@ void EntityMgr::SetEntityVelocity (int index, Ogre::Vector3* vel)
 void EntityMgr::AccelerateEntity (int index, Ogre::Vector3* vec)
 {
 	PhysicsAspect* target = (PhysicsAspect*) entities->at(selectedEntityIndex)->GetAspect(1);
-	target->Accelerate(*vec);
+	target->Accelerate(vec);
 
 }
 

@@ -81,7 +81,6 @@ void Entity381::Initialize (Ogre::SceneManager* manager, RenderableAspect::Types
 
 	this->AddAspect(renderable);
 	this->AddAspect(physics);
-	this->AddAspect(ai);
 
 }
 

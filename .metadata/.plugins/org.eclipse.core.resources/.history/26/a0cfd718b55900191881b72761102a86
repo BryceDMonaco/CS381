@@ -75,13 +75,11 @@ void Entity381::Initialize (Ogre::SceneManager* manager, RenderableAspect::Types
 
 	RenderableAspect* renderable = new RenderableAspect(this, mPosition, mSceneMgr, type, name);
 	PhysicsAspect* physics = new PhysicsAspect(this, mPosition);
-	UnitAI* ai = new UnitAI(this);
 
 	mSceneNode = renderable->GetSceneNode();
 
 	this->AddAspect(renderable);
 	this->AddAspect(physics);
-	this->AddAspect(ai);
 
 }
 

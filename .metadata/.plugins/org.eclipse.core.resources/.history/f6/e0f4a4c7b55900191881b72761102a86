@@ -6,7 +6,6 @@
  */
 
 #include "Command.h"
-#include "Entity381.h"
 
 Command::Command(Entity381* ent)
 {
@@ -53,7 +52,7 @@ void MoveTo::tick(float dt)
 
 	if (squareDistance > acceptanceRadius * acceptanceRadius)
 	{
-		physics->Accelerate(Ogre::Vector3(squareDistance));
+		physics->Accelerate(Ogre::Vector3());
 	}
 	else
 	{

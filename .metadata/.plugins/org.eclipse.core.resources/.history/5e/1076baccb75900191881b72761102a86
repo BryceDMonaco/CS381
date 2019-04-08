@@ -19,13 +19,9 @@ UnitAI::~UnitAI()
 
 void UnitAI::Tick(float dt)
 {
-	if (!commands.empty() && !commands.front()->done())
+	if (commands.empty() && !commands.front()->done())
 	{
 		commands.front()->tick(dt);
-	}
-	else if (!commands.empty() && commands.front()->done())
-	{
-		commands.pop();
 	}
 }
 

@@ -8,7 +8,7 @@
 #include "RenderableAspect.h"
 #include "PhysicsAspect.h"
 #include "RotatorAspect.h"
-#include "UnitAI.h"
+#include "UnitAI";
 
 #include <OgreVector3.h>
 #include <OgreSceneManager.h>

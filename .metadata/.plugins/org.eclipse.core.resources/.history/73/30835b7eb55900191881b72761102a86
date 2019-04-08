@@ -6,7 +6,6 @@
  */
 
 #include "Command.h"
-#include "Entity381.h"
 
 Command::Command(Entity381* ent)
 {
@@ -49,11 +48,11 @@ MoveTo::~MoveTo()
 
 void MoveTo::tick(float dt)
 {
-	float squareDistance = entity->mPosition->squaredDistance(targetLocation);
+	Ogre::Vector3 squareDistance = entity->mPosition->squaredDistance(targetLocation);
 
 	if (squareDistance > acceptanceRadius * acceptanceRadius)
 	{
-		physics->Accelerate(Ogre::Vector3(squareDistance));
+		physics->Accelerate(Ogre::Vector3(squareDistance.normalise()));
 	}
 	else
 	{

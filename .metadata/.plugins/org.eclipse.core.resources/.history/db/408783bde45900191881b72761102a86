@@ -386,6 +386,8 @@ bool InputMgr::mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id)
 
 		if (clickedOnEntity)
 		{
+			targetPos =->mPosition;
+
 			Intercept* cmd = new Intercept(engine->entityMgr->GetSelectedEntity(), entities->at(entityIndex));
 			cmd->init();
 			if (shiftDown)

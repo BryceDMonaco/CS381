@@ -86,7 +86,7 @@ Intercept::Intercept(Entity381* ent, Entity381* target) : Command(ent)
 	targetEntity = target;
 	MOVE_DISTANCE_THRESHOLD = 100;
 	acceptanceRadius = 100;
-	lastTargetPosition = *target->mPosition;
+	lastTargetPosition = target;
 }
 
 Intercept::~Intercept()
@@ -99,12 +99,9 @@ void Intercept::tick(float dt)
 	float distance = entity->mPosition->distance(*targetEntity->mPosition);
 
 	// get change in target position since last tick
-	Ogre::Vector3 deltaTargetPos = *targetEntity->mPosition - lastTargetPosition;
+	Ogre::Vector3 deltaPos = *targetPosition->mPosition - lastPosition;
 
-	// predict next position
-	Ogre::Vector3 nextTargetPos = *targetEntity->mPosition + deltaTargetPos;
-
-	Ogre::Vector3 direction = nextTargetPos - *entity->mPosition;
+	Ogre::Vector3 direction = *targetEntity->mPosition - *entity->mPosition;
 
 	if (distance > acceptanceRadius)
 	{

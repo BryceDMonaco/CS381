@@ -69,7 +69,7 @@ public:
 	float acceptanceRadius;
 
 private:
-	Ogre::Vector3 lastTargetPosition;
+	float lastTargetPosition;
 };
 
 

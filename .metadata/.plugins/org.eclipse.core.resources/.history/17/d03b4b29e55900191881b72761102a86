@@ -85,7 +85,7 @@ Intercept::Intercept(Entity381* ent, Entity381* target) : Command(ent)
 {
 	targetEntity = target;
 	MOVE_DISTANCE_THRESHOLD = 100;
-	acceptanceRadius = 100;
+	acceptanceRadius = 30;
 	lastTargetPosition = *target->mPosition;
 }
 

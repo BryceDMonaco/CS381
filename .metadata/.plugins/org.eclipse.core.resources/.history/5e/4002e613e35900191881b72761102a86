@@ -63,13 +63,13 @@ public:
 
 	void tick(float dt);
 
-	Entity381* targetEntity;
+	Ogre::Vector3 targetLocation;
 	float MOVE_DISTANCE_THRESHOLD;
 
 	float acceptanceRadius;
 
 private:
-	Ogre::Vector3 lastTargetPosition;
+	float lastTargetPosition;
 };
 
 

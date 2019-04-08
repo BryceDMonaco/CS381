@@ -36,8 +36,6 @@ public:
 
 protected:
 	bool isDone;
-	bool runOnce;
-	float startingDistance;
 
 };
 
@@ -53,6 +51,9 @@ public:
 	float MOVE_DISTANCE_THRESHOLD;
 
 	float acceptanceRadius;
+
+	float startingDistance;
+
 };
 
 class Intercept : public Command {

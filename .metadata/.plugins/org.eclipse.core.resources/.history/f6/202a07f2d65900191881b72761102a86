@@ -41,7 +41,7 @@ MoveTo::MoveTo(Entity381* ent, Ogre::Vector3 target) : Command(ent)
 {
 	targetLocation = target;
 	MOVE_DISTANCE_THRESHOLD = 100;
-	acceptanceRadius = 1;
+	acceptanceRadius = 5;
 }
 
 MoveTo::~MoveTo()
@@ -52,31 +52,26 @@ MoveTo::~MoveTo()
 void MoveTo::tick(float dt)
 {
 	float distance = entity->mPosition->distance(targetLocation);
+	if (!runOnce)
+	{
+		startingDistance = distance;
+		runOnce = true;
+	}
+
+	//Ogre::Vector3 direction = entity->HeaderToDirection();
+	//float turnAmt = direction.dotProduct(*entity->mPosition - targetLocation);
+	//entity->desiredHeading += turnAmt;
 
 	Ogre::Vector3 direction = targetLocation - *entity->mPosition;
 
 	if (distance > acceptanceRadius)
 	{
-		// set desired speed based on amount of turn remaining
-		if (Ogre::Math::Abs(entity->desiredHeading - entity->heading) > 90)
-		{
-			entity->desiredSpeed = 0;
-		}
-		else if (Ogre::Math::Abs(entity->desiredHeading - entity->heading) > 45)
-		{
-			entity->desiredSpeed = 25;
-		}
-		else
-		{
-			entity->desiredSpeed = entity->maxSpeed;
-		}
-
-		// set desired heading
-		entity->desiredHeading = FixAngle(Ogre::Math::ATan2(direction.x, direction.z).valueDegrees() - 90);
+		//physics->Accelerate(acc);
+		entity->desiredSpeed = entity->maxSpeed * (1 - (startingDistance / distance) + 0.1);
+		entity->desiredHeading = FixAngle(Ogre::Math::ATan2(direction.z, direction.x).valueDegrees());
 	}
 	else
 	{
-		entity->desiredSpeed = 0;
 		isDone = true;
 	}
 }

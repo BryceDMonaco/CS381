@@ -36,7 +36,6 @@ public:
 
 protected:
 	bool isDone;
-	bool runOnce;
 	float startingDistance;
 
 };

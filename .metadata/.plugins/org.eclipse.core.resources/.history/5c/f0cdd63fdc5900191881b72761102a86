@@ -52,26 +52,30 @@ MoveTo::~MoveTo()
 void MoveTo::tick(float dt)
 {
 	float distance = entity->mPosition->distance(targetLocation);
+	if (!runOnce)
+	{
+		startingDistance = distance;
+		runOnce = true;
+	}
+
+	//Ogre::Vector3 direction = entity->HeaderToDirection();
+	//float turnAmt = direction.dotProduct(*entity->mPosition - targetLocation);
+	//entity->desiredHeading += turnAmt;
 
 	Ogre::Vector3 direction = targetLocation - *entity->mPosition;
 
+	//std::cout << distance << std::endl;
 	if (distance > acceptanceRadius)
 	{
-		// set desired speed based on amount of turn remaining
-		if (Ogre::Math::Abs(entity->desiredHeading - entity->heading) > 90)
+		//physics->Accelerate(acc);
+		if (Ogre::Math::Abs(desiredHeading - heading) > 90)
 		{
 			entity->desiredSpeed = 0;
 		}
-		else if (Ogre::Math::Abs(entity->desiredHeading - entity->heading) > 45)
+		else if (Ogre::Math::Abs(desiredHeading - heading) > 45)
 		{
 			entity->desiredSpeed = 25;
 		}
-		else
-		{
-			entity->desiredSpeed = entity->maxSpeed;
-		}
-
-		// set desired heading
 		entity->desiredHeading = FixAngle(Ogre::Math::ATan2(direction.x, direction.z).valueDegrees() - 90);
 	}
 	else

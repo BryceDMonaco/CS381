@@ -10,13 +10,13 @@
 
 #include <Aspect.h>
 #include <Command.h>
-#include <list>
+#include <queue>
 
 class UnitAI: public Aspect {
 
 public:
 
-	std::list<Command*> commands;
+	std::queue<Command*> commands;
 
 	UnitAI(Entity381* ent);
 	~UnitAI();

@@ -48,7 +48,6 @@ public:
 
 	std::string meshFileName;
 
-
 	void AddAspect (Aspect* aspect);
 
 	Aspect* GetAspect (int index);

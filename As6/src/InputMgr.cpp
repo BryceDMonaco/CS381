@@ -356,6 +356,26 @@ bool InputMgr::mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id)
 
 	}
 
+	if (id == OIS::MB_Right)
+	{
+		Ogre::Vector3 targetPos;
+
+		UnitAI* ai = (UnitAI*) engine->entityMgr->GetSelectedEntity()->GetAspect(2);
+
+		Ogre::Ray ray = engine->gfxMgr->mCamera->getCameraToViewportRay(ms.X.abs / (float) ms.width, ms.Y.abs/ (float) ms.height);
+
+		std::pair<bool, float> test = ray.intersects(Ogre::Plane(Ogre::Vector3::UNIT_Y, 0));
+
+		if (test.first)
+		{
+			targetPos = ray.getPoint(test.second);
+
+			MoveTo* cmd = new MoveTo(engine->entityMgr->GetSelectedEntity(), targetPos);
+			cmd->init();
+			ai->SetCommand(cmd);
+		}
+	}
+
 	return true;
 
 }

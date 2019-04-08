@@ -7,6 +7,7 @@
 
 #include "Command.h"
 #include "Entity381.h"
+#include "Utils.h"
 
 Command::Command(Entity381* ent)
 {
@@ -49,11 +50,19 @@ MoveTo::~MoveTo()
 
 void MoveTo::tick(float dt)
 {
-	float squareDistance = entity->mPosition->squaredDistance(targetLocation);
+	float distance = entity->mPosition->distance(targetLocation);
 
-	if (squareDistance > acceptanceRadius * acceptanceRadius)
+	//Ogre::Vector3 direction = entity->HeaderToDirection();
+	//float turnAmt = direction.dotProduct(*entity->mPosition - targetLocation);
+	//entity->desiredHeading += turnAmt;
+
+	Ogre::Vector3 direction = targetLocation - *entity->mPosition;
+
+	if (distance > acceptanceRadius)
 	{
-		physics->Accelerate(Ogre::Vector3(squareDistance));
+		//physics->Accelerate(acc);
+		entity->desiredSpeed = entity->maxSpeed;
+		entity->desiredHeading = FixAngle(Ogre::Math::ATan2(direction.x, direction.z).valueDegrees());
 	}
 	else
 	{

@@ -24,6 +24,8 @@ public:
 	void TranslatePosition (Ogre::Vector3* trans);
 	void Initialize (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name);  // Call this after a subclass is constructed
 
+	Ogre::Vector3 HeaderToDirection();
+
 	Ogre::Entity* mEntity = nullptr;
 	Ogre::SceneNode* mSceneNode = nullptr;
 	Ogre::Vector3* mPosition = nullptr;

@@ -85,6 +85,17 @@ void Entity381::Initialize (Ogre::SceneManager* manager, RenderableAspect::Types
 
 }
 
+Ogre::Vector3 Entity381::HeaderToDirection()
+{
+	Ogre::Vector3 direction;
+
+	direction.x = Ogre::Math::Cos(Ogre::Radian(Ogre::Degree(heading)));
+	direction.y = 0;
+	direction.z = Ogre::Math::Sin(Ogre::Radian(Ogre::Degree(heading)));
+
+	return direction;
+}
+
 SphereEntity381::SphereEntity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head) : Entity381 (manager, type, name, head, true)
 {
 	meshFileName = "sphere.mesh";

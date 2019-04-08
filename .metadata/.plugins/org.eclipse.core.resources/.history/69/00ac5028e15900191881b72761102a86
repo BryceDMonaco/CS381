@@ -386,18 +386,12 @@ bool InputMgr::mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id)
 
 		if (clickedOnEntity)
 		{
-			targetPos = *entities->at(entityIndex)->mPosition;
-
-			Intercept* cmd = new Intercept(engine->entityMgr->GetSelectedEntity(), targetPos);
-			cmd->init();
-			if (shiftDown)
-				ai->AddCommand(cmd);
-			else
-				ai->SetCommand(cmd);
+			targetPos = *entities[i]->mPosition;
 		}
-		else if (planeTest.first)
+
+		if (planeTest.first)
 		{
-			targetPos = ray.getPoint(planeTest.second);
+			targetPos = ray.getPoint(test.second);
 
 			MoveTo* cmd = new MoveTo(engine->entityMgr->GetSelectedEntity(), targetPos);
 			cmd->init();

@@ -360,64 +360,39 @@ bool InputMgr::mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id)
 	{
 		Ogre::Vector3 targetPos;
 
-		std::vector<Entity381 *>* entities = engine->entityMgr->GetEntities();
-
 		UnitAI* ai = (UnitAI*) engine->entityMgr->GetSelectedEntity()->GetAspect(2);
 
 		Ogre::Ray ray = engine->gfxMgr->mCamera->getCameraToViewportRay(ms.X.abs / (float) ms.width, ms.Y.abs/ (float) ms.height);
 
-		std::pair<bool, float> planeTest = ray.intersects(Ogre::Plane(Ogre::Vector3::UNIT_Y, 0));
+		std::pair<bool, float> test = ray.intersects(Ogre::Plane(Ogre::Vector3::UNIT_Y, 0));
 
-		bool clickedOnEntity = false;
-		int entityIndex;
-		for (unsigned int i = 0; i < entities->size(); i++)
+		if (test.first)
 		{
-			RenderableAspect* renderer = (RenderableAspect*) entities->at(i)->GetAspect(0);
-
-			std::pair<bool, float> entityTest = ray.intersects(renderer->mSceneNode->_getWorldAABB());
-
-			if (entityTest.first) //Ray hit the entity's AABB
-			{
-				clickedOnEntity = true;
-				entityIndex = i;
-				break;
-			}
-		}
-
-		if (clickedOnEntity)
-		{
-			targetPos = *entities->at(entityIndex)->mPosition;
-
-			Intercept* cmd = new Intercept(engine->entityMgr->GetSelectedEntity(), targetPos);
-			cmd->init();
-			if (shiftDown)
-				ai->AddCommand(cmd);
-			else
-				ai->SetCommand(cmd);
-		}
-		else if (planeTest.first)
-		{
-			targetPos = ray.getPoint(planeTest.second);
+			targetPos = ray.getPoint(test.second);
 
 			MoveTo* cmd = new MoveTo(engine->entityMgr->GetSelectedEntity(), targetPos);
 			cmd->init();
 			if (shiftDown)
 				ai->AddCommand(cmd);
-			else
-				ai->SetCommand(cmd);
+			ai->SetCommand(cmd);
 		}
 	}
 
 	return true;
+
 }
 
 bool InputMgr::mouseMoved(const OIS::MouseEvent& me)
 {
+
 	return true;
+
 }
 
 bool InputMgr::mouseReleased(const OIS::MouseEvent& me, OIS::MouseButtonID mid)
 {
+
 	return true;
+
 }
 

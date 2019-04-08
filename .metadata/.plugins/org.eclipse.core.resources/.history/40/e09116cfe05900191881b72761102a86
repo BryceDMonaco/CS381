@@ -374,30 +374,20 @@ bool InputMgr::mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id)
 		{
 			RenderableAspect* renderer = (RenderableAspect*) entities->at(i)->GetAspect(0);
 
-			std::pair<bool, float> entityTest = ray.intersects(renderer->mSceneNode->_getWorldAABB());
+			std::pair<bool, float> test = ray.intersects(renderer->mSceneNode->_getWorldAABB());
 
-			if (entityTest.first) //Ray hit the entity's AABB
+			if (test.first) //Ray hit the entity's AABB
 			{
 				clickedOnEntity = true;
 				entityIndex = i;
 				break;
 			}
+
 		}
 
-		if (clickedOnEntity)
+		if (test.first)
 		{
-			targetPos = *entities->at(entityIndex)->mPosition;
-
-			Intercept* cmd = new Intercept(engine->entityMgr->GetSelectedEntity(), targetPos);
-			cmd->init();
-			if (shiftDown)
-				ai->AddCommand(cmd);
-			else
-				ai->SetCommand(cmd);
-		}
-		else if (planeTest.first)
-		{
-			targetPos = ray.getPoint(planeTest.second);
+			targetPos = ray.getPoint(test.second);
 
 			MoveTo* cmd = new MoveTo(engine->entityMgr->GetSelectedEntity(), targetPos);
 			cmd->init();

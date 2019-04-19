@@ -22,6 +22,15 @@ void GameMgr::LoadLevel ()
 	Ogre::Light* light = mSceneMgr->createLight("MainLight");
 	light->setPosition(20, 80, 50);
 
+	Ogre::SceneNode* camNode = mSceneMgr->getSceneNode("MainCamera");
+
+	// Offset Camera
+	//camNode->translate((*cameraOffset) * dt * 100, Ogre::Node::TS_LOCAL);
+	//if (camNode->getPosition().y <= 5)
+	//	camNode->setPosition(camNode->getPosition().x, 5, camNode->getPosition().z);
+	//camNode->pitch (Ogre::Degree(cameraRot->x * 45 * dt));
+	//camNode->yaw (Ogre::Degree(cameraRot->y * 45 * dt));
+
 	/*
 	for (int i = 0; i < 6; i ++)
 	{
@@ -41,6 +50,10 @@ void GameMgr::LoadLevel ()
 	groundEntity->setCastShadows(false);
 	groundEntity->setMaterialName("Ocean2_Cg");
 	*/
+
+	engine->entityMgr->CreateEntityOfType(
+		EntityType::ENTITY_DEFAULT,
+		"Player");
 
 
 }

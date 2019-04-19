@@ -10,6 +10,11 @@
 #include <OgreVector3.h>
 #include <stdio.h>
 
+enum EntityType
+{
+	ENTITY_DEFAULT
+};
+
 class EntityMgr : public Mgr
 {
 public:
@@ -20,7 +25,7 @@ public:
 	void Tick (float dt); // Update all entities in the manager
 
 	void CreateEntityOfType(
-		int entity381Type,
+		EntityType type,
 		std::string name,
 		std::string meshFileName = "cube.mesh",
 		Ogre::Vector3 position = Ogre::Vector3::ZERO,

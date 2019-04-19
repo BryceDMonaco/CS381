@@ -8,6 +8,7 @@
 #include <OgreSceneManager.h>
 #include <OgreMeshManager.h>
 #include <OgreVector3.h>
+#include <OgreCamera.h>
 #include <stdio.h>
 
 class GameMgr : public Mgr

@@ -43,7 +43,7 @@ void EntityMgr::Tick (float dt)
 }
 
 void EntityMgr::CreateEntityOfType(
-		int entity381Type,
+		EntityType type,
 		std::string name,
 		std::string meshFileName,
 		Ogre::Vector3 position,
@@ -53,7 +53,7 @@ void EntityMgr::CreateEntityOfType(
 	Entity381* newEntity;
 
 	// create the new entity based on the type parameter
-	switch (entity381Type)
+	switch (type)
 	{
 	default:
 		newEntity = new Entity381(
@@ -62,6 +62,9 @@ void EntityMgr::CreateEntityOfType(
 			name,
 			meshFileName);
 	}
+
+	// initialize the new entity
+	newEntity->Initialize();
 
 	// enable/disable the bounding box
 	newEntity->ShowAABB(showAabb);
@@ -101,7 +104,7 @@ void EntityMgr::IncrementSelectedID ()
 	if (it == mEntities->end())
 		it = mEntities->begin();
 
-	//set the selected id to the key
+	// set the selected id to the key
 	mSelectedEntityID = it->first;
 }
 

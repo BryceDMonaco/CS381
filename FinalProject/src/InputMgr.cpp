@@ -69,6 +69,7 @@ void InputMgr::Tick (float dt)
 	mKeyboard->capture();
 	mMouse->capture();
 
+	/*
 	Ogre::SceneNode* camNode = mSceneMgr->getSceneNode("MainCamera");
 
 	// Offset Camera
@@ -77,6 +78,7 @@ void InputMgr::Tick (float dt)
 		camNode->setPosition(camNode->getPosition().x, 5, camNode->getPosition().z);
 	camNode->pitch (Ogre::Degree(cameraRot->x * 45 * dt));
 	camNode->yaw (Ogre::Degree(cameraRot->y * 45 * dt));
+	*/
 
 	/*
 	if (!entityStopped)

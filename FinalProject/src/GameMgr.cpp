@@ -22,6 +22,7 @@ void GameMgr::LoadLevel ()
 	Ogre::Light* light = mSceneMgr->createLight("MainLight");
 	light->setPosition(20, 80, 50);
 
+	/*
 	for (int i = 0; i < 6; i ++)
 	{
 		engine->entityMgr->CreateEntityOfTypeAtPositionAndHeading (i, std::to_string(i), new Ogre::Vector3(500 * i, 0, 0), 45 * i);
@@ -39,6 +40,7 @@ void GameMgr::LoadLevel ()
 	groundNode->setPosition(0, 0, 0);
 	groundEntity->setCastShadows(false);
 	groundEntity->setMaterialName("Ocean2_Cg");
+	*/
 
 
 }

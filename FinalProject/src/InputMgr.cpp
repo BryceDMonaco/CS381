@@ -78,6 +78,7 @@ void InputMgr::Tick (float dt)
 	camNode->pitch (Ogre::Degree(cameraRot->x * 45 * dt));
 	camNode->yaw (Ogre::Degree(cameraRot->y * 45 * dt));
 
+	/*
 	if (!entityStopped)
 	{
 		// Accelerate selected entity
@@ -103,6 +104,7 @@ void InputMgr::Tick (float dt)
 	(*accVec) = Ogre::Vector3(Ogre::Vector3::ZERO);
 
 	//(*cameraOffset) = Ogre::Vector3(Ogre::Vector3::ZERO);
+	*/
 
 }
 
@@ -158,6 +160,7 @@ bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 
 	}
 
+	/*
 	// Change the selected entity
 	if (ke.key == OIS::KC_TAB)
 	{
@@ -295,12 +298,14 @@ bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 		height = 50;
 
 	}
+	*/
 
 	return true;
 }
 
 bool InputMgr::keyReleased(const OIS::KeyEvent& ke)
 {
+	/*
 	if (ke.key == OIS::KC_LSHIFT)
 	{
 		shiftDown = false;
@@ -372,12 +377,14 @@ bool InputMgr::keyReleased(const OIS::KeyEvent& ke)
 		//turn += 1;
 
 	}
+	*/
 
 	return true;
 }
 
 bool InputMgr::mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id)
 {
+	/*
 	const OIS::MouseState &ms = mMouse->getMouseState();
 
 	if (id == OIS::MB_Left)
@@ -451,6 +458,7 @@ bool InputMgr::mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id)
 				ai->SetCommand(cmd);
 		}
 	}
+	*/
 
 	return true;
 }

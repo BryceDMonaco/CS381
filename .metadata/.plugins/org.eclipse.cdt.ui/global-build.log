@@ -1,530 +1,90 @@
-02:36:26 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/InputMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
-Finished building: ../src/InputMgr.cpp
- 
-Building file: ../src/Mgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Mgr.d" -MT"src/Mgr.o" -o "src/Mgr.o" "../src/Mgr.cpp"
-Finished building: ../src/Mgr.cpp
- 
-Building file: ../src/PhysicsAspect.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PhysicsAspect.d" -MT"src/PhysicsAspect.o" -o "src/PhysicsAspect.o" "../src/PhysicsAspect.cpp"
-Finished building: ../src/PhysicsAspect.cpp
- 
-Building file: ../src/RenderableAspect.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RenderableAspect.d" -MT"src/RenderableAspect.o" -o "src/RenderableAspect.o" "../src/RenderableAspect.cpp"
-Finished building: ../src/RenderableAspect.cpp
- 
-Building file: ../src/RotatorAspect.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RotatorAspect.d" -MT"src/RotatorAspect.o" -o "src/RotatorAspect.o" "../src/RotatorAspect.cpp"
-Finished building: ../src/RotatorAspect.cpp
- 
-Building file: ../src/SphereEntity.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SphereEntity.d" -MT"src/SphereEntity.o" -o "src/SphereEntity.o" "../src/SphereEntity.cpp"
-Finished building: ../src/SphereEntity.cpp
- 
-Building file: ../src/UnitAI.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/UnitAI.d" -MT"src/UnitAI.o" -o "src/UnitAI.o" "../src/UnitAI.cpp"
-Finished building: ../src/UnitAI.cpp
- 
-Building file: ../src/Utils.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Utils.d" -MT"src/Utils.o" -o "src/Utils.o" "../src/Utils.cpp"
-Finished building: ../src/Utils.cpp
- 
-Building file: ../src/main.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
-Finished building: ../src/main.cpp
- 
-Building target: As6
-Invoking: GCC C++ Linker
-g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As6"  ./src/Aspect.o ./src/Command.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/UnitAI.o ./src/Utils.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
-Finished building target: As6
- 
-02:38:42 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-make: Nothing to be done for 'all'.
-02:55:42 **** Incremental Build of configuration Debug for project As6 ****
+21:10:07 **** Build of configuration Debug for project As7 ****
 make all 
 Building file: ../src/Aspect.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Aspect.d" -MT"src/Aspect.o" -o "src/Aspect.o" "../src/Aspect.cpp"
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As7/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Aspect.d" -MT"src/Aspect.o" -o "src/Aspect.o" "../src/Aspect.cpp"
 Finished building: ../src/Aspect.cpp
  
 Building file: ../src/Command.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Command.d" -MT"src/Command.o" -o "src/Command.o" "../src/Command.cpp"
-../src/Command.cpp: In constructor ‘Intercept::Intercept(Entity381*, Entity381*)’:
-../src/Command.cpp:89:23: error: cannot convert ‘Entity381*’ to ‘float’ in assignment
-  lastTargetPosition = target;
-                       ^~~~~~
-../src/Command.cpp: In member function ‘virtual void Intercept::tick(float)’:
-../src/Command.cpp:134:38: error: cannot convert ‘Ogre::Vector3’ to ‘float’ in assignment
-  lastTargetPosition = *targetEntity->mPosition;
-                                      ^~~~~~~~~
-make: *** [src/Command.o] Error 1
-src/subdir.mk:63: recipe for target 'src/Command.o' failed
-02:56:14 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/Command.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Command.d" -MT"src/Command.o" -o "src/Command.o" "../src/Command.cpp"
-../src/Command.cpp: In constructor ‘Intercept::Intercept(Entity381*, Entity381*)’:
-../src/Command.cpp:89:31: error: cannot convert ‘Ogre::Vector3*’ to ‘float’ in assignment
-  lastTargetPosition = target->mPosition;
-                               ^~~~~~~~~
-../src/Command.cpp: In member function ‘virtual void Intercept::tick(float)’:
-../src/Command.cpp:134:38: error: cannot convert ‘Ogre::Vector3’ to ‘float’ in assignment
-  lastTargetPosition = *targetEntity->mPosition;
-                                      ^~~~~~~~~
-make: *** [src/Command.o] Error 1
-src/subdir.mk:63: recipe for target 'src/Command.o' failed
-02:56:27 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/Command.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Command.d" -MT"src/Command.o" -o "src/Command.o" "../src/Command.cpp"
-../src/Command.cpp: In constructor ‘Intercept::Intercept(Entity381*, Entity381*)’:
-../src/Command.cpp:89:32: error: cannot convert ‘Ogre::Vector3’ to ‘float’ in assignment
-  lastTargetPosition = *target->mPosition;
-                                ^~~~~~~~~
-../src/Command.cpp: In member function ‘virtual void Intercept::tick(float)’:
-../src/Command.cpp:134:38: error: cannot convert ‘Ogre::Vector3’ to ‘float’ in assignment
-  lastTargetPosition = *targetEntity->mPosition;
-                                      ^~~~~~~~~
-make: *** [src/Command.o] Error 1
-src/subdir.mk:63: recipe for target 'src/Command.o' failed
-02:56:48 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/Command.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Command.d" -MT"src/Command.o" -o "src/Command.o" "../src/Command.cpp"
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As7/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Command.d" -MT"src/Command.o" -o "src/Command.o" "../src/Command.cpp"
 Finished building: ../src/Command.cpp
  
 Building file: ../src/Engine.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Engine.d" -MT"src/Engine.o" -o "src/Engine.o" "../src/Engine.cpp"
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As7/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Engine.d" -MT"src/Engine.o" -o "src/Engine.o" "../src/Engine.cpp"
 Finished building: ../src/Engine.cpp
  
 Building file: ../src/Entity381.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As7/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
 Finished building: ../src/Entity381.cpp
  
 Building file: ../src/EntityMgr.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As7/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
 Finished building: ../src/EntityMgr.cpp
  
 Building file: ../src/GameMgr.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/GameMgr.d" -MT"src/GameMgr.o" -o "src/GameMgr.o" "../src/GameMgr.cpp"
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As7/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/GameMgr.d" -MT"src/GameMgr.o" -o "src/GameMgr.o" "../src/GameMgr.cpp"
 Finished building: ../src/GameMgr.cpp
  
 Building file: ../src/GfxMgr.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/GfxMgr.d" -MT"src/GfxMgr.o" -o "src/GfxMgr.o" "../src/GfxMgr.cpp"
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As7/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/GfxMgr.d" -MT"src/GfxMgr.o" -o "src/GfxMgr.o" "../src/GfxMgr.cpp"
 Finished building: ../src/GfxMgr.cpp
  
 Building file: ../src/InputMgr.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
-../src/InputMgr.cpp: In member function ‘virtual bool InputMgr::mousePressed(const OIS::MouseEvent&, OIS::MouseButtonID)’:
-../src/InputMgr.cpp:391:84: error: no matching function for call to ‘Intercept::Intercept(Entity381*, Ogre::Vector3&)’
-    Intercept* cmd = new Intercept(engine->entityMgr->GetSelectedEntity(), targetPos);
-                                                                                    ^
-In file included from /home/alex/Documents/CS381Team/CS381/As6/inc/UnitAI.h:12:0,
-                 from /home/alex/Documents/CS381Team/CS381/As6/inc/Entity381.h:11,
-                 from /home/alex/Documents/CS381Team/CS381/As6/inc/EntityMgr.h:7,
-                 from ../src/InputMgr.cpp:4:
-/home/alex/Documents/CS381Team/CS381/As6/inc/Command.h:61:2: note: candidate: Intercept::Intercept(Entity381*, Entity381*)
-  Intercept(Entity381* ent, Entity381* target);
-  ^~~~~~~~~
-/home/alex/Documents/CS381Team/CS381/As6/inc/Command.h:61:2: note:   no known conversion for argument 2 from ‘Ogre::Vector3’ to ‘Entity381*’
-/home/alex/Documents/CS381Team/CS381/As6/inc/Command.h:58:7: note: candidate: constexpr Intercept::Intercept(const Intercept&)
- class Intercept : public Command {
-       ^~~~~~~~~
-/home/alex/Documents/CS381Team/CS381/As6/inc/Command.h:58:7: note:   candidate expects 1 argument, 2 provided
-make: *** [src/InputMgr.o] Error 1
-src/subdir.mk:63: recipe for target 'src/InputMgr.o' failed
-02:57:40 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/InputMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As7/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
 Finished building: ../src/InputMgr.cpp
  
 Building file: ../src/Mgr.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Mgr.d" -MT"src/Mgr.o" -o "src/Mgr.o" "../src/Mgr.cpp"
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As7/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Mgr.d" -MT"src/Mgr.o" -o "src/Mgr.o" "../src/Mgr.cpp"
 Finished building: ../src/Mgr.cpp
  
 Building file: ../src/PhysicsAspect.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PhysicsAspect.d" -MT"src/PhysicsAspect.o" -o "src/PhysicsAspect.o" "../src/PhysicsAspect.cpp"
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As7/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PhysicsAspect.d" -MT"src/PhysicsAspect.o" -o "src/PhysicsAspect.o" "../src/PhysicsAspect.cpp"
 Finished building: ../src/PhysicsAspect.cpp
  
 Building file: ../src/RenderableAspect.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RenderableAspect.d" -MT"src/RenderableAspect.o" -o "src/RenderableAspect.o" "../src/RenderableAspect.cpp"
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As7/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RenderableAspect.d" -MT"src/RenderableAspect.o" -o "src/RenderableAspect.o" "../src/RenderableAspect.cpp"
 Finished building: ../src/RenderableAspect.cpp
  
 Building file: ../src/RotatorAspect.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RotatorAspect.d" -MT"src/RotatorAspect.o" -o "src/RotatorAspect.o" "../src/RotatorAspect.cpp"
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As7/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RotatorAspect.d" -MT"src/RotatorAspect.o" -o "src/RotatorAspect.o" "../src/RotatorAspect.cpp"
 Finished building: ../src/RotatorAspect.cpp
  
 Building file: ../src/SphereEntity.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SphereEntity.d" -MT"src/SphereEntity.o" -o "src/SphereEntity.o" "../src/SphereEntity.cpp"
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As7/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SphereEntity.d" -MT"src/SphereEntity.o" -o "src/SphereEntity.o" "../src/SphereEntity.cpp"
 Finished building: ../src/SphereEntity.cpp
  
 Building file: ../src/UnitAI.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/UnitAI.d" -MT"src/UnitAI.o" -o "src/UnitAI.o" "../src/UnitAI.cpp"
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As7/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/UnitAI.d" -MT"src/UnitAI.o" -o "src/UnitAI.o" "../src/UnitAI.cpp"
 Finished building: ../src/UnitAI.cpp
  
 Building file: ../src/Utils.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Utils.d" -MT"src/Utils.o" -o "src/Utils.o" "../src/Utils.cpp"
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As7/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Utils.d" -MT"src/Utils.o" -o "src/Utils.o" "../src/Utils.cpp"
 Finished building: ../src/Utils.cpp
  
 Building file: ../src/main.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As7/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
 Finished building: ../src/main.cpp
  
-Building target: As6
+Building target: As7
 Invoking: GCC C++ Linker
-g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As6"  ./src/Aspect.o ./src/Command.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/UnitAI.o ./src/Utils.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
-Finished building target: As6
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As7"  ./src/Aspect.o ./src/Command.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/UnitAI.o ./src/Utils.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
+Finished building target: As7
  
-02:59:49 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/Command.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Command.d" -MT"src/Command.o" -o "src/Command.o" "../src/Command.cpp"
-Finished building: ../src/Command.cpp
- 
-Building target: As6
-Invoking: GCC C++ Linker
-g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As6"  ./src/Aspect.o ./src/Command.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/UnitAI.o ./src/Utils.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
-Finished building target: As6
- 
-03:07:22 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/Command.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Command.d" -MT"src/Command.o" -o "src/Command.o" "../src/Command.cpp"
-Finished building: ../src/Command.cpp
- 
-Building file: ../src/InputMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
-Finished building: ../src/InputMgr.cpp
- 
-Building target: As6
-Invoking: GCC C++ Linker
-g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As6"  ./src/Aspect.o ./src/Command.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/UnitAI.o ./src/Utils.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
-Finished building target: As6
- 
-03:19:16 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/InputMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
-Finished building: ../src/InputMgr.cpp
- 
-Building target: As6
-Invoking: GCC C++ Linker
-g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As6"  ./src/Aspect.o ./src/Command.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/UnitAI.o ./src/Utils.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
-Finished building target: As6
- 
-03:19:50 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-make: Nothing to be done for 'all'.
-03:23:21 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/InputMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
-Finished building: ../src/InputMgr.cpp
- 
-Building target: As6
-Invoking: GCC C++ Linker
-g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As6"  ./src/Aspect.o ./src/Command.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/UnitAI.o ./src/Utils.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
-Finished building target: As6
- 
-03:24:48 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/InputMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
-Finished building: ../src/InputMgr.cpp
- 
-Building target: As6
-Invoking: GCC C++ Linker
-g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As6"  ./src/Aspect.o ./src/Command.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/UnitAI.o ./src/Utils.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
-Finished building target: As6
- 
-03:27:25 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/Aspect.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Aspect.d" -MT"src/Aspect.o" -o "src/Aspect.o" "../src/Aspect.cpp"
-Finished building: ../src/Aspect.cpp
- 
-Building file: ../src/Command.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Command.d" -MT"src/Command.o" -o "src/Command.o" "../src/Command.cpp"
-Finished building: ../src/Command.cpp
- 
-Building file: ../src/Engine.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Engine.d" -MT"src/Engine.o" -o "src/Engine.o" "../src/Engine.cpp"
-Finished building: ../src/Engine.cpp
- 
-Building file: ../src/Entity381.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
-Finished building: ../src/Entity381.cpp
- 
-Building file: ../src/EntityMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
-Finished building: ../src/EntityMgr.cpp
- 
-Building file: ../src/GameMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/GameMgr.d" -MT"src/GameMgr.o" -o "src/GameMgr.o" "../src/GameMgr.cpp"
-Finished building: ../src/GameMgr.cpp
- 
-Building file: ../src/GfxMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/GfxMgr.d" -MT"src/GfxMgr.o" -o "src/GfxMgr.o" "../src/GfxMgr.cpp"
-Finished building: ../src/GfxMgr.cpp
- 
-Building file: ../src/InputMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
-../src/InputMgr.cpp: In member function ‘virtual void InputMgr::Tick(float)’:
-../src/InputMgr.cpp:76:15: error: ‘Ogre::Vector3 Ogre::Node::mPosition’ is protected within this context
-  if (camNode->mPosition.y <= 0)
-               ^~~~~~~~~
-In file included from /usr/local/include/OGRE/OgreSceneNode.h:33:0,
-                 from /usr/local/include/OGRE/OgreSceneManager.h:37,
-                 from /usr/local/include/OGRE/OgreSceneManagerEnumerator.h:33,
-                 from /usr/local/include/OGRE/OgreRoot.h:36,
-                 from /home/alex/Documents/CS381Team/CS381/As6/inc/InputMgr.h:21,
-                 from ../src/InputMgr.cpp:2:
-/usr/local/include/OGRE/OgreNode.h:153:17: note: declared protected here
-         Vector3 mPosition;
-                 ^~~~~~~~~
-../src/InputMgr.cpp:77:12: error: ‘Ogre::Vector3 Ogre::Node::mPosition’ is protected within this context
-   camNode->mPosition = 0;
-            ^~~~~~~~~
-In file included from /usr/local/include/OGRE/OgreSceneNode.h:33:0,
-                 from /usr/local/include/OGRE/OgreSceneManager.h:37,
-                 from /usr/local/include/OGRE/OgreSceneManagerEnumerator.h:33,
-                 from /usr/local/include/OGRE/OgreRoot.h:36,
-                 from /home/alex/Documents/CS381Team/CS381/As6/inc/InputMgr.h:21,
-                 from ../src/InputMgr.cpp:2:
-/usr/local/include/OGRE/OgreNode.h:153:17: note: declared protected here
-         Vector3 mPosition;
-                 ^~~~~~~~~
-src/subdir.mk:63: recipe for target 'src/InputMgr.o' failed
-make: *** [src/InputMgr.o] Error 1
-03:28:39 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/InputMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
-../src/InputMgr.cpp: In member function ‘virtual void InputMgr::Tick(float)’:
-../src/InputMgr.cpp:76:15: error: ‘Ogre::Vector3 Ogre::Node::mPosition’ is protected within this context
-  if (camNode->mPosition.y <= 0)
-               ^~~~~~~~~
-In file included from /usr/local/include/OGRE/OgreSceneNode.h:33:0,
-                 from /usr/local/include/OGRE/OgreSceneManager.h:37,
-                 from /usr/local/include/OGRE/OgreSceneManagerEnumerator.h:33,
-                 from /usr/local/include/OGRE/OgreRoot.h:36,
-                 from /home/alex/Documents/CS381Team/CS381/As6/inc/InputMgr.h:21,
-                 from ../src/InputMgr.cpp:2:
-/usr/local/include/OGRE/OgreNode.h:153:17: note: declared protected here
-         Vector3 mPosition;
-                 ^~~~~~~~~
-../src/InputMgr.cpp:77:33: error: ‘Ogre::Vector3 Ogre::Node::mPosition’ is protected within this context
-   camNode->setPosition(camNode->mPosition.x, 0, camNode->mPosition.z);
-                                 ^~~~~~~~~
-In file included from /usr/local/include/OGRE/OgreSceneNode.h:33:0,
-                 from /usr/local/include/OGRE/OgreSceneManager.h:37,
-                 from /usr/local/include/OGRE/OgreSceneManagerEnumerator.h:33,
-                 from /usr/local/include/OGRE/OgreRoot.h:36,
-                 from /home/alex/Documents/CS381Team/CS381/As6/inc/InputMgr.h:21,
-                 from ../src/InputMgr.cpp:2:
-/usr/local/include/OGRE/OgreNode.h:153:17: note: declared protected here
-         Vector3 mPosition;
-                 ^~~~~~~~~
-../src/InputMgr.cpp:77:58: error: ‘Ogre::Vector3 Ogre::Node::mPosition’ is protected within this context
-   camNode->setPosition(camNode->mPosition.x, 0, camNode->mPosition.z);
-                                                          ^~~~~~~~~
-In file included from /usr/local/include/OGRE/OgreSceneNode.h:33:0,
-                 from /usr/local/include/OGRE/OgreSceneManager.h:37,
-                 from /usr/local/include/OGRE/OgreSceneManagerEnumerator.h:33,
-                 from /usr/local/include/OGRE/OgreRoot.h:36,
-                 from /home/alex/Documents/CS381Team/CS381/As6/inc/InputMgr.h:21,
-                 from ../src/InputMgr.cpp:2:
-/usr/local/include/OGRE/OgreNode.h:153:17: note: declared protected here
-         Vector3 mPosition;
-                 ^~~~~~~~~
-src/subdir.mk:63: recipe for target 'src/InputMgr.o' failed
-make: *** [src/InputMgr.o] Error 1
-03:29:15 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/InputMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
-../src/InputMgr.cpp: In member function ‘virtual void InputMgr::Tick(float)’:
-../src/InputMgr.cpp:77:33: error: invalid use of member function ‘virtual const Ogre::Vector3& Ogre::Node::getPosition() const’ (did you forget the ‘()’ ?)
-   camNode->setPosition(camNode->getPosition.x, 0, camNode->getPosition.z);
-                        ~~~~~~~~~^~~~~~~~~~~
-../src/InputMgr.cpp:77:60: error: invalid use of member function ‘virtual const Ogre::Vector3& Ogre::Node::getPosition() const’ (did you forget the ‘()’ ?)
-   camNode->setPosition(camNode->getPosition.x, 0, camNode->getPosition.z);
-                                                   ~~~~~~~~~^~~~~~~~~~~
-src/subdir.mk:63: recipe for target 'src/InputMgr.o' failed
-make: *** [src/InputMgr.o] Error 1
-03:29:35 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/InputMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
-Finished building: ../src/InputMgr.cpp
- 
-Building file: ../src/Mgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Mgr.d" -MT"src/Mgr.o" -o "src/Mgr.o" "../src/Mgr.cpp"
-Finished building: ../src/Mgr.cpp
- 
-Building file: ../src/PhysicsAspect.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PhysicsAspect.d" -MT"src/PhysicsAspect.o" -o "src/PhysicsAspect.o" "../src/PhysicsAspect.cpp"
-Finished building: ../src/PhysicsAspect.cpp
- 
-Building file: ../src/RenderableAspect.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RenderableAspect.d" -MT"src/RenderableAspect.o" -o "src/RenderableAspect.o" "../src/RenderableAspect.cpp"
-Finished building: ../src/RenderableAspect.cpp
- 
-Building file: ../src/RotatorAspect.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RotatorAspect.d" -MT"src/RotatorAspect.o" -o "src/RotatorAspect.o" "../src/RotatorAspect.cpp"
-Finished building: ../src/RotatorAspect.cpp
- 
-Building file: ../src/SphereEntity.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SphereEntity.d" -MT"src/SphereEntity.o" -o "src/SphereEntity.o" "../src/SphereEntity.cpp"
-Finished building: ../src/SphereEntity.cpp
- 
-Building file: ../src/UnitAI.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/UnitAI.d" -MT"src/UnitAI.o" -o "src/UnitAI.o" "../src/UnitAI.cpp"
-Finished building: ../src/UnitAI.cpp
- 
-Building file: ../src/Utils.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Utils.d" -MT"src/Utils.o" -o "src/Utils.o" "../src/Utils.cpp"
-Finished building: ../src/Utils.cpp
- 
-Building file: ../src/main.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
-Finished building: ../src/main.cpp
- 
-Building target: As6
-Invoking: GCC C++ Linker
-g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As6"  ./src/Aspect.o ./src/Command.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/UnitAI.o ./src/Utils.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
-Finished building target: As6
- 
-03:30:23 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/InputMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
-Finished building: ../src/InputMgr.cpp
- 
-Building target: As6
-Invoking: GCC C++ Linker
-g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As6"  ./src/Aspect.o ./src/Command.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/UnitAI.o ./src/Utils.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
-Finished building target: As6
- 
-03:30:39 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/InputMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
-Finished building: ../src/InputMgr.cpp
- 
-Building target: As6
-Invoking: GCC C++ Linker
-g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As6"  ./src/Aspect.o ./src/Command.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/UnitAI.o ./src/Utils.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
-Finished building target: As6
- 
-03:30:54 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/InputMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
-Finished building: ../src/InputMgr.cpp
- 
-Building target: As6
-Invoking: GCC C++ Linker
-g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As6"  ./src/Aspect.o ./src/Command.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/UnitAI.o ./src/Utils.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
-Finished building target: As6
- 
-03:31:08 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/InputMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
-Finished building: ../src/InputMgr.cpp
- 
-Building target: As6
-Invoking: GCC C++ Linker
-g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As6"  ./src/Aspect.o ./src/Command.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/UnitAI.o ./src/Utils.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
-Finished building target: As6
- 
-03:31:22 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/InputMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
-Finished building: ../src/InputMgr.cpp
- 
-Building target: As6
-Invoking: GCC C++ Linker
-g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As6"  ./src/Aspect.o ./src/Command.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/UnitAI.o ./src/Utils.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
-Finished building target: As6
- 
-03:31:38 **** Incremental Build of configuration Debug for project As6 ****
-make all 
-Building file: ../src/InputMgr.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I"/home/alex/Documents/CS381Team/CS381/As6/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
-Finished building: ../src/InputMgr.cpp
- 
-Building target: As6
-Invoking: GCC C++ Linker
-g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -o "As6"  ./src/Aspect.o ./src/Command.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SphereEntity.o ./src/UnitAI.o ./src/Utils.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system
-Finished building target: As6
- 
-12:57:56 **** Incremental Build of configuration Debug for project As6 ****
+21:11:05 **** Incremental Build of configuration Debug for project As7 ****
 make all 
 make: Nothing to be done for 'all'.

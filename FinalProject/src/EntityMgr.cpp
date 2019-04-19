@@ -3,96 +3,130 @@
 EntityMgr::EntityMgr (Engine* engine) : Mgr (engine)
 {
 	mSceneMgr = nullptr;  // Should be passed by graphics when it is init'd
-	entities = new std::vector<Entity381*>;
-
+	mEntities = new std::map<int, Entity381*>();
+	mSelectedEntityID = -1;
+	mNextEntityID = 0;
 }
 
 EntityMgr::EntityMgr (Ogre::SceneManager* mgr, Engine* engine) : Mgr (engine)
 {
 	mSceneMgr = mgr;
-	entities = new std::vector<Entity381*>;
-
+	mEntities = new std::map<int, Entity381*>();
+	mSelectedEntityID = -1;
+	mNextEntityID = 0;
 }
 
 EntityMgr::~EntityMgr ()
 {
-	delete entities;
+	delete mEntities;
 
 	mSceneMgr = nullptr;
-	entities = nullptr;
+	mEntities = nullptr;
 
 }
 
 void EntityMgr::Tick (float dt)
 {
-	for (int i = 0; i < (int) entities->size(); i++)
+	/*
+	for (int i = 0; i < (int) mEntities->size(); i++)
 	{
-		entities->at(i)->Tick(dt);
+		mEntities->at(i)->Tick(dt);
 
+	}
+	*/
+	for (std::map<int, Entity381*>::iterator it = mEntities->begin();
+			it != mEntities->end(); it++)
+	{
+		it->second->Tick(dt);
 	}
 
 }
 
-void EntityMgr::CreateEntityOfTypeAtPositionAndHeading(int entity381Type, std::string name, Ogre::Vector3* pos, float heading)
+void EntityMgr::CreateEntityOfType(
+		int entity381Type,
+		std::string name,
+		std::string meshFileName,
+		Ogre::Vector3 position,
+		Ogre::Quaternion orientation,
+		bool showAabb)
 {
-	Entity381* newEntity = nullptr;
+	Entity381* newEntity;
 
-	if (entity381Type == 5)  // CVN68
+	// create the new entity based on the type parameter
+	switch (entity381Type)
 	{
-		newEntity = new CVN68Entity381 (mSceneMgr, RenderableAspect::OTHER, name, heading);
-
-	} else if (entity381Type == 1)  // Cig
-	{
-		newEntity = new CigBoatEntity381 (mSceneMgr, RenderableAspect::OTHER, name, heading);
-
-	} else if (entity381Type == 2)  // DDG51
-	{
-		newEntity = new DDG51Entity381 (mSceneMgr, RenderableAspect::OTHER, name, heading);
-
-	} else if (entity381Type == 3)  // Sleek
-	{
-		newEntity = new SleekEntity381 (mSceneMgr, RenderableAspect::OTHER, name, heading);
-
-	} else if (entity381Type == 4)  // Alienship
-	{
-		newEntity = new AShipEntity381 (mSceneMgr, RenderableAspect::OTHER, name, heading);
-
-	} else if (entity381Type == 0)  // Banshee
-	{
-		newEntity = new BansheeEntity381 (mSceneMgr, RenderableAspect::OTHER, name, heading);
-
-	} else
-	{
-		//By default, create a cube
-		newEntity = new Entity381(mSceneMgr, RenderableAspect::CUBE, name, heading, false);
-
+	default:
+		newEntity = new Entity381(
+			mSceneMgr,
+			mNextEntityID,
+			name,
+			meshFileName);
 	}
 
-	newEntity->SetPosition (pos);
-	newEntity->heading = heading;
-	newEntity->entityName = name;
+	// enable/disable the bounding box
+	newEntity->ShowAABB(showAabb);
 
-	entities->push_back(newEntity);
-
-	//If this is the first entity, show the box
-	if (entities->size() == 1)
-	{
-		RenderableAspect* target = (RenderableAspect*) entities->at(selectedEntityIndex)->GetAspect(0);
-		target->ShowAABB (true);
-
-	}
-
-	return;
-
-
+	// add the entity to the map
+	mEntities->insert(std::pair<int, Entity381*>(mNextEntityID, newEntity));
+	mNextEntityID++;
 }
 
-void EntityMgr::DestroyEntity()
+void EntityMgr::DestroyEntity(int entityID)
 {
+	// get the iterator to the entity
+	std::map<int, Entity381*>::iterator it = mEntities->find(entityID);
 
+	// if it exists, destroy it
+	if (it != mEntities->end())
+		mEntities->erase(it);
 
 }
 
+void EntityMgr::IncrementSelectedID ()
+{
+	// if map is empty set to -1
+	if (mEntities->size() <= 0)
+	{
+		mSelectedEntityID = -1;
+		return;
+	}
+
+	// get the iterator to the entity
+	std::map<int, Entity381*>::iterator it = mEntities->find(mSelectedEntityID);
+
+	// increment it
+	it++;
+
+	// if at the end, loop back
+	if (it == mEntities->end())
+		it = mEntities->begin();
+
+	//set the selected id to the key
+	mSelectedEntityID = it->first;
+}
+
+Entity381* EntityMgr::GetSelectedEntity ()
+{
+	// get the iterator to the entity
+	std::map<int, Entity381*>::iterator it = mEntities->find(mSelectedEntityID);
+
+	// if it exists, return it
+	if (it != mEntities->end())
+		return it->second;
+	else
+		return nullptr;
+
+}
+
+std::map<int, Entity381*>* EntityMgr::GetEntities ()
+{
+	return mEntities;
+}
+
+int EntityMgr::GetSelectedEntityID ()
+{
+	return mSelectedEntityID;
+}
 
 bool EntityMgr::SetSceneMgr (Ogre::SceneManager* mgr) //Should only be called once
 {
@@ -108,34 +142,17 @@ bool EntityMgr::SetSceneMgr (Ogre::SceneManager* mgr) //Should only be called on
 
 }
 
-Entity381* EntityMgr::GetSelectedEntity ()
+void EntityMgr::SetSelectedEntityID (int id)
 {
-	return entities->at(selectedEntityIndex);
+	// get the iterator to the entity
+	std::map<int, Entity381*>::iterator it = mEntities->find(id);
 
+	// if it exists, return it
+	if (it != mEntities->end())
+		mSelectedEntityID = id;
 }
 
-void EntityMgr::IncrementSeclectedIndex ()
-{
-	//Turn off the old bounding box
-	RenderableAspect* target = (RenderableAspect*) entities->at(selectedEntityIndex)->GetAspect(0);
-	target->ShowAABB (false);
-
-	selectedEntityIndex = (selectedEntityIndex + 1) % entities->size();
-
-	//Turn on the new bounding box
-	target = (RenderableAspect*) entities->at(selectedEntityIndex)->GetAspect(0);
-	target->ShowAABB (true);
-
-	return;
-
-}
-
-int EntityMgr::GetSelectedEntityIndex ()
-{
-	return selectedEntityIndex;
-
-}
-
+/*
 void EntityMgr::ChangeEntityDesiredHeading (int index, float deltaDH)
 {
 	entities->at(selectedEntityIndex)->desiredHeading += deltaDH;
@@ -182,21 +199,4 @@ void EntityMgr::IncreaseEntityHeight (int index, float amount)
 	target->SetDesiredAltitude(amount + entities->at(selectedEntityIndex)->desiredAltitude);
 
 }
-
-std::vector<Entity381 *>* EntityMgr::GetEntities ()
-{
-	return entities;
-
-}
-
-void EntityMgr::SetSelectedIndex (int index)
-{
-	index = index % entities->size();
-
-	while (selectedEntityIndex != index)
-	{
-		this->IncrementSeclectedIndex();  // This func handles changing the bounding box already
-
-	}
-
-}
+*/

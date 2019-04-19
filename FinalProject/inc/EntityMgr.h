@@ -3,14 +3,12 @@
 
 #include "Mgr.h"
 
-#include <vector>
+#include <deque>
 #include "Entity381.h"
 #include <OgreSceneManager.h>
 #include <OgreMeshManager.h>
 #include <OgreVector3.h>
 #include <stdio.h>
-
-#include "RenderableAspect.h" //Used to toggle bounding box
 
 class EntityMgr : public Mgr
 {
@@ -21,31 +19,39 @@ public:
 
 	void Tick (float dt); // Update all entities in the manager
 
-	void CreateEntityOfTypeAtPositionAndHeading(int entity381Type, std::string name, Ogre::Vector3* pos, float heading);
-	void DestroyEntity ();
+	void CreateEntityOfType(
+		int entity381Type,
+		std::string name,
+		std::string meshFileName = "cube.mesh",
+		Ogre::Vector3 position = Ogre::Vector3::ZERO,
+		Ogre::Quaternion orientation = Ogre::Quaternion::IDENTITY,
+		bool showAabb = false);
+	void DestroyEntity (int entityIndex);
 
-	bool SetSceneMgr (Ogre::SceneManager* mgr); //Should only be called once
+	void IncrementSelectedID (); //Index will loop back to 0
 
 	Entity381* GetSelectedEntity ();
-	void IncrementSeclectedIndex (); //Index will loop back to 0
-	void SetSelectedIndex (int index);
+	std::map<int, Entity381*>* GetEntities ();
+	int GetSelectedEntityID ();
 
+	bool SetSceneMgr (Ogre::SceneManager* mgr); //Should only be called once
+	void SetSelectedEntityID (int id);
+
+	/*
 	void ChangeEntityDesiredHeading (int index, float deltaDH);
 	void SetEntitySpeed (int index, float sentSpeed);
 	void SetEntityVelocity (int index, Ogre::Vector3* vel);
 	void AccelerateEntity (int index, Ogre::Vector3* vec);
 	void IncreaseEntityHeight (int index, float amount);
 	Ogre::Vector3* GetEntityVelocity (int index);
-
-	int GetSelectedEntityIndex ();
+	*/
 
 	Ogre::SceneManager* mSceneMgr = nullptr;
 
-	std::vector<Entity381 *>* GetEntities ();
-
 private:
-	std::vector<Entity381 *>* entities = nullptr;
-	int selectedEntityIndex = 0;
+	std::map<int, Entity381*>* mEntities;
+	int mSelectedEntityID;
+	int mNextEntityID;
 
 };
 

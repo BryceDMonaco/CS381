@@ -51,6 +51,7 @@ MoveTo::~MoveTo()
 
 void MoveTo::tick(float dt)
 {
+	/*
 	float distance = entity->mPosition->distance(targetLocation);
 
 	Ogre::Vector3 direction = targetLocation - *entity->mPosition;
@@ -79,6 +80,7 @@ void MoveTo::tick(float dt)
 		entity->desiredSpeed = 0;
 		isDone = true;
 	}
+	*/
 }
 
 Intercept::Intercept(Entity381* ent, Entity381* target) : Command(ent)
@@ -86,7 +88,7 @@ Intercept::Intercept(Entity381* ent, Entity381* target) : Command(ent)
 	targetEntity = target;
 	MOVE_DISTANCE_THRESHOLD = 100;
 	acceptanceRadius = 100;
-	lastTargetPosition = *target->mPosition;
+	lastTargetPosition = target->mPosition;
 }
 
 Intercept::~Intercept()
@@ -96,6 +98,7 @@ Intercept::~Intercept()
 
 void Intercept::tick(float dt)
 {
+	/*
 	float distance = entity->mPosition->distance(*targetEntity->mPosition);
 
 	// get change in target position since last tick
@@ -132,4 +135,5 @@ void Intercept::tick(float dt)
 	}
 
 	lastTargetPosition = *targetEntity->mPosition;
+	*/
 }

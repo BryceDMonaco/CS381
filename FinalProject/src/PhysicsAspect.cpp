@@ -3,53 +3,17 @@
 
 #define PI 3.14159265
 
-PhysicsAspect::PhysicsAspect (Entity381* ent, Ogre::Vector3* pos) : Aspect (ent)
+PhysicsAspect::PhysicsAspect (Entity381* ent) : Aspect (ent)
 {
-	mPosition = pos;
-	mVelocity = new Ogre::Vector3(0, 0, 0);
-
-	mEntity381->desiredHeading = 45;
 
 }
 
 PhysicsAspect::~PhysicsAspect ()
 {
-	mPosition = nullptr;
-	mVelocity = nullptr;
 
 }
 
-void PhysicsAspect::SetVelocity (float x, float y, float z)
-{
-	mVelocity->x = x;
-	mVelocity->y = y;
-	mVelocity->z = z;
-
-	return;
-
-}
-
-void PhysicsAspect::SetDesiredAltitude (float sentAlt)
-{
-	mEntity381->desiredAltitude = sentAlt;
-
-}
-
-void PhysicsAspect::SetSpeed (float sentSpeed)
-{
-	mEntity381->desiredSpeed = sentSpeed;
-	mEntity381->speed = sentSpeed;
-
-}
-
-void PhysicsAspect::SetVelocity (Ogre::Vector3* vel)
-{
-	(*mVelocity) = (*vel);
-
-	return;
-
-}
-
+/*
 void PhysicsAspect::Accelerate (Ogre::Vector3 vec)
 {
 	mEntity381->desiredSpeed += mEntity381->acceleration * vec.x * -1;
@@ -66,7 +30,9 @@ void PhysicsAspect::Accelerate (Ogre::Vector3 vec)
 	}
 
 }
+*/
 
+/*
 void PhysicsAspect::Rotate (float dt)
 {
 	mEntity381->desiredHeading = ClampRotation(mEntity381->desiredHeading);
@@ -110,15 +76,11 @@ void PhysicsAspect::Rotate (float dt)
 	mEntity381->heading = ClampRotation(mEntity381->heading);
 
 }
-
-Ogre::Vector3* PhysicsAspect::GetVelocity ()
-{
-	return mVelocity;
-
-}
+*/
 
 void PhysicsAspect::Tick (float dt)
 {
+	/*
 	// Update speed
 	if (mEntity381->speed < mEntity381->desiredSpeed)
 	{
@@ -160,30 +122,5 @@ void PhysicsAspect::Tick (float dt)
 	Rotate (dt);
 
 	return;
-
-}
-
-// Just a small helper function to clamp a float in [0, 360)
-float PhysicsAspect::ClampRotation (float rotation)
-{
-	if (rotation < 0)
-	{
-		while (rotation < 0)
-		{
-			rotation += 360;
-
-		}
-
-	} else if (rotation >= 360)
-	{
-		while (rotation >= 360)
-		{
-			rotation -= 360;
-
-		}
-
-	}
-
-	return rotation;
-
+	*/
 }

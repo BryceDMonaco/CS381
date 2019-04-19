@@ -10,24 +10,13 @@
 
 class PhysicsAspect : public Aspect {
 public:
-	PhysicsAspect (Entity381* ent, Ogre::Vector3* pos);
+	PhysicsAspect (Entity381* ent);
 	~PhysicsAspect ();
 
-	void SetDesiredAltitude (float sentAlt);
-	void SetSpeed (float sentSpeed);
-	void SetVelocity (float x, float y, float z);
-	void SetVelocity (Ogre::Vector3* vel);
-	void Accelerate (Ogre::Vector3 vec);
-	void Rotate (float dt);
-	Ogre::Vector3* GetVelocity ();
+	//void Accelerate (Ogre::Vector3 vec);
+	//void Rotate (float dt);
 
 	virtual void Tick (float dt);
-
-private:
-	float ClampRotation (float rotation);
-
-	Ogre::Vector3* mPosition;  // Pointer passed from Entity381
-	Ogre::Vector3* mVelocity;  // Pointer passed from Entity381
 
 };
 

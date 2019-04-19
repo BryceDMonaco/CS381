@@ -16,91 +16,44 @@
 class Entity381
 {
 public:
-	Entity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head, bool isSubClass);
+	Entity381 (
+		Ogre::SceneManager* manager,
+		int entityId,
+		std::string entityName,
+		std::string meshFileName = "cube.mesh",
+		Ogre::Vector3 position = Ogre::Vector3::ZERO,
+		Ogre::Quaternion orientation = Ogre::Quaternion::IDENTITY);
 	~Entity381 ();
 
+	void Initialize ();
 	void Tick (float dt); // The update function
-	void SetPosition (Ogre::Vector3* pos);
-	void TranslatePosition (Ogre::Vector3* trans);
-	void Initialize (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name);  // Call this after a subclass is constructed
 
-	Ogre::Vector3 HeaderToDirection();
-
-	Ogre::Entity* mEntity = nullptr;
-	Ogre::SceneNode* mSceneNode = nullptr;
-	Ogre::Vector3* mPosition = nullptr;
-	Ogre::Vector3* mVelocity = nullptr;
-	Ogre::SceneManager* mSceneMgr = nullptr;
-
-	// As3
-	int entityID = -1;
-	std::string entityName;
-
-	float minSpeed = 0;
-	float maxSpeed = 200;
-	float speed = 0;  // The current speed, [minSpeed, maxSpeed]
-	float desiredSpeed = 0; // The speed to accelerate to
-	float acceleration = 5;
-	float climbRate = 0;
-	float desiredAltitude = 0;
-	float altitude = 0;
-
-	float heading = 0;  // [0, 360)
-	float desiredHeading = 0;  // The heading to rotate to
-	float turnRate = 5;
-
-	std::string meshFileName;
+	void ShowAABB (bool state);
 
 	void AddAspect (Aspect* aspect);
 
 	Aspect* GetAspect (int index);
 
+	//void TranslatePosition (Ogre::Vector3* trans);
+	//Ogre::Vector3 HeaderToDirection();
+
+	Ogre::Entity* mEntity = nullptr;
+	Ogre::SceneNode* mSceneNode = nullptr;
+	Ogre::Vector3 mPosition;
+	Ogre::Vector3 mVelocity;
+	Ogre::Quaternion mOrientation;
+	Ogre::SceneManager* mSceneMgr = nullptr;
+
+	int mEntityID;
+	std::string mEntityName;
+	std::string mMeshFileName;
+
+	float mSpeed = 0;
+	float mTurnRate = 5;
+
 private:
-	std::vector<Aspect*>* aspects;
+	std::vector<Aspect*>* mAspects;
 
-};
-
-// Kept as an example of a subclass
-class SphereEntity381 : public Entity381
-{
-public:
-	SphereEntity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head);
-};
-
-class CVN68Entity381 : public Entity381
-{
-public:
-	CVN68Entity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head);
-};
-
-class CigBoatEntity381 : public Entity381
-{
-public:
-	CigBoatEntity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head);
-};
-
-class DDG51Entity381 : public Entity381
-{
-public:
-	DDG51Entity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head);
-};
-
-class SleekEntity381 : public Entity381
-{
-public:
-	SleekEntity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head);
-};
-
-class AShipEntity381 : public Entity381
-{
-public:
-	AShipEntity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head);
-};
-
-class BansheeEntity381 : public Entity381
-{
-public:
-	BansheeEntity381 (Ogre::SceneManager* manager, RenderableAspect::Types type, std::string name, float head);
 };
 
 #endif /* INC_ENTITY381_H_ */

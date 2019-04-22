@@ -1,69 +1,84 @@
+/*
+ * engine.cpp
+ *
+ *  Created on: Mar 9, 2017
+ *      Author: sushil
+ */
+
 #include <Engine.h>
-#include <EntityMgr.h>
-#include <GameMgr.h>
-#include <GfxMgr.h>
-#include <InputMgr.h>
+#include <OgreTimer.h>
 
-Engine::Engine() {
-	entityMgr = 0; //null
-	gameMgr   = 0;
-	gfxMgr    = 0;
-	inputMgr  = 0;
-
+Engine::Engine(){
+	gfxMgr = 0;
+	inputMgr = 0;
+	entityMgr = 0;
+	gameMgr = 0;
 	keepRunning = true;
 
 }
 
-Engine::~Engine() {
+Engine::~Engine(){
 
+}
+
+void Engine::Stop(){
+	keepRunning = false;
 }
 
 void Engine::Init(){
-	entityMgr = new EntityMgr(this);
-	gameMgr   = new GameMgr(this);
+// construct
 	gfxMgr    = new GfxMgr(this);
-	inputMgr  = new InputMgr(this);
-
-	//--------------------------------------------------------------
-	entityMgr->Init();
+	std::cout << "Constructed GfxMgr" << std::endl;
+	inputMgr = new InputMgr(this);
+	entityMgr = new EntityMgr(this);
+	gameMgr = new GameMgr(this);
+	soundMgr = new OgreSND::SoundMgr(this);
+// initialize
 	gfxMgr->Init();
-	inputMgr->Init(); // must initialize AFTER gfx manager
+	inputMgr->Init();
+	entityMgr->Init();
 	gameMgr->Init();
-
-	//--------------------------------------------------------------
-	entityMgr->LoadLevel();
+	soundMgr->Init();
+// load level to play
 	gfxMgr->LoadLevel();
 	inputMgr->LoadLevel();
+	entityMgr->LoadLevel();
 	gameMgr->LoadLevel();
+	soundMgr->LoadLevel();
 }
-
 
 void Engine::TickAll(float dt){
 	gfxMgr->Tick(dt);
 	inputMgr->Tick(dt);
 	entityMgr->Tick(dt);
 	gameMgr->Tick(dt);
+	soundMgr->Tick(dt);
 }
 
-
+void Engine::Shutdown(){
+	inputMgr->Stop();
+	gfxMgr->Stop();
+	entityMgr->Stop();
+	gameMgr->Stop();
+}
 void Engine::Run(){
-	const float MICROSECONDS_PER_SECOND = 1000000.0f;
 	Ogre::Timer* timer = new Ogre::Timer();
-
-	float oldTime = timer->getMicroseconds()/MICROSECONDS_PER_SECOND;
-	float newTime = timer->getMicroseconds()/MICROSECONDS_PER_SECOND;
-	float dt = newTime - oldTime;
-
+	std::cout << "Got ogre timer" << std::endl;
+	float oldTime = timer->getMilliseconds()/1000.0f;
+	std::cout << "Time: " << oldTime << std::endl;
+	float newTime;
+	float dt = 0.001f;
+	std::cout << "Entering while loop" << std::endl;
 	while(keepRunning){
-
-		TickAll(dt);
-
-		newTime = timer->getMicroseconds()/MICROSECONDS_PER_SECOND;
+		newTime = timer->getMilliseconds()/1000.0f;
 		dt = newTime - oldTime;
 		oldTime = newTime;
-
+//		std::cout << "dt: " << dt << std::endl;
+		TickAll(dt);
 	}
-	// main must call cleanup or bad stuff happens->Cleanup()
+	Shutdown();
+
+	return;
 }
 
 void Engine::Cleanup(){

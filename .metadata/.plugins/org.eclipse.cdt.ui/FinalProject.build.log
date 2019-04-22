@@ -1,0 +1,117 @@
+22:23:50 **** Incremental Build of configuration Debug for project FinalProject ****
+make all 
+Building file: ../src/Aspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I/usr/include/AL -I/usr/include/audio -I"/home/brycbuntu/CS381/FinalProject/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Aspect.d" -MT"src/Aspect.o" -o "src/Aspect.o" "../src/Aspect.cpp"
+Finished building: ../src/Aspect.cpp
+ 
+Building file: ../src/Command.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I/usr/include/AL -I/usr/include/audio -I"/home/brycbuntu/CS381/FinalProject/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Command.d" -MT"src/Command.o" -o "src/Command.o" "../src/Command.cpp"
+Finished building: ../src/Command.cpp
+ 
+Building file: ../src/Engine.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I/usr/include/AL -I/usr/include/audio -I"/home/brycbuntu/CS381/FinalProject/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Engine.d" -MT"src/Engine.o" -o "src/Engine.o" "../src/Engine.cpp"
+Finished building: ../src/Engine.cpp
+ 
+Building file: ../src/Entity381.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I/usr/include/AL -I/usr/include/audio -I"/home/brycbuntu/CS381/FinalProject/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Entity381.d" -MT"src/Entity381.o" -o "src/Entity381.o" "../src/Entity381.cpp"
+Finished building: ../src/Entity381.cpp
+ 
+Building file: ../src/EntityMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I/usr/include/AL -I/usr/include/audio -I"/home/brycbuntu/CS381/FinalProject/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EntityMgr.d" -MT"src/EntityMgr.o" -o "src/EntityMgr.o" "../src/EntityMgr.cpp"
+Finished building: ../src/EntityMgr.cpp
+ 
+Building file: ../src/GameMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I/usr/include/AL -I/usr/include/audio -I"/home/brycbuntu/CS381/FinalProject/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/GameMgr.d" -MT"src/GameMgr.o" -o "src/GameMgr.o" "../src/GameMgr.cpp"
+../src/GameMgr.cpp: In member function ‘virtual void GameMgr::LoadLevel()’:
+../src/GameMgr.cpp:25:19: warning: unused variable ‘camNode’ [-Wunused-variable]
+  Ogre::SceneNode* camNode = mSceneMgr->getSceneNode("MainCamera");
+                   ^
+Finished building: ../src/GameMgr.cpp
+ 
+Building file: ../src/GfxMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I/usr/include/AL -I/usr/include/audio -I"/home/brycbuntu/CS381/FinalProject/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/GfxMgr.d" -MT"src/GfxMgr.o" -o "src/GfxMgr.o" "../src/GfxMgr.cpp"
+Finished building: ../src/GfxMgr.cpp
+ 
+Building file: ../src/InputMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I/usr/include/AL -I/usr/include/audio -I"/home/brycbuntu/CS381/FinalProject/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InputMgr.d" -MT"src/InputMgr.o" -o "src/InputMgr.o" "../src/InputMgr.cpp"
+Finished building: ../src/InputMgr.cpp
+ 
+Building file: ../src/Mgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I/usr/include/AL -I/usr/include/audio -I"/home/brycbuntu/CS381/FinalProject/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Mgr.d" -MT"src/Mgr.o" -o "src/Mgr.o" "../src/Mgr.cpp"
+Finished building: ../src/Mgr.cpp
+ 
+Building file: ../src/PhysicsAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I/usr/include/AL -I/usr/include/audio -I"/home/brycbuntu/CS381/FinalProject/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/PhysicsAspect.d" -MT"src/PhysicsAspect.o" -o "src/PhysicsAspect.o" "../src/PhysicsAspect.cpp"
+Finished building: ../src/PhysicsAspect.cpp
+ 
+Building file: ../src/RenderableAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I/usr/include/AL -I/usr/include/audio -I"/home/brycbuntu/CS381/FinalProject/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RenderableAspect.d" -MT"src/RenderableAspect.o" -o "src/RenderableAspect.o" "../src/RenderableAspect.cpp"
+Finished building: ../src/RenderableAspect.cpp
+ 
+Building file: ../src/RotatorAspect.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I/usr/include/AL -I/usr/include/audio -I"/home/brycbuntu/CS381/FinalProject/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RotatorAspect.d" -MT"src/RotatorAspect.o" -o "src/RotatorAspect.o" "../src/RotatorAspect.cpp"
+Finished building: ../src/RotatorAspect.cpp
+ 
+Building file: ../src/SoundMgr.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I/usr/include/AL -I/usr/include/audio -I"/home/brycbuntu/CS381/FinalProject/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SoundMgr.d" -MT"src/SoundMgr.o" -o "src/SoundMgr.o" "../src/SoundMgr.cpp"
+../src/SoundMgr.cpp:566:1: warning: "/*" within comment [-Wcomment]
+ /**
+ ^
+../src/SoundMgr.cpp: In member function ‘void OgreSND::SoundMgr::attachSelectedNodeToSoundIndex(Entity381*, unsigned int)’:
+../src/SoundMgr.cpp:240:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if (index == -1) //if there is no defined sound for the specified type, don't do anything
+                   ^
+../src/SoundMgr.cpp: In member function ‘bool OgreSND::SoundMgr::isAudioPlaying(ALuint)’:
+../src/SoundMgr.cpp:906:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/SoundMgr.cpp: At global scope:
+../src/SoundMgr.cpp:235:15: warning: ‘tmpT’ defined but not used [-Wunused-variable]
+ double static tmpT = 0.0;
+               ^
+../src/SoundMgr.cpp:236:13: warning: ‘paused’ defined but not used [-Wunused-variable]
+ bool static paused = false;
+             ^
+Finished building: ../src/SoundMgr.cpp
+ 
+Building file: ../src/SphereEntity.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I/usr/include/AL -I/usr/include/audio -I"/home/brycbuntu/CS381/FinalProject/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SphereEntity.d" -MT"src/SphereEntity.o" -o "src/SphereEntity.o" "../src/SphereEntity.cpp"
+Finished building: ../src/SphereEntity.cpp
+ 
+Building file: ../src/UnitAI.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I/usr/include/AL -I/usr/include/audio -I"/home/brycbuntu/CS381/FinalProject/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/UnitAI.d" -MT"src/UnitAI.o" -o "src/UnitAI.o" "../src/UnitAI.cpp"
+Finished building: ../src/UnitAI.cpp
+ 
+Building file: ../src/Utils.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I/usr/include/AL -I/usr/include/audio -I"/home/brycbuntu/CS381/FinalProject/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Utils.d" -MT"src/Utils.o" -o "src/Utils.o" "../src/Utils.cpp"
+Finished building: ../src/Utils.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/local/include/OGRE/Terrain -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/local/include/OGRE/RTShaderSystem -I/usr/include/OIS -I/usr/include/AL -I/usr/include/audio -I"/home/brycbuntu/CS381/FinalProject/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FinalProject
+Invoking: GCC C++ Linker
+g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -L/usr/include/AL -L/usr/include/audio -o "FinalProject"  ./src/Aspect.o ./src/Command.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SoundMgr.o ./src/SphereEntity.o ./src/UnitAI.o ./src/Utils.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system -laudio -lopenal
+Finished building target: FinalProject
+ 
+
+22:31:11 Build Finished (took 7m:21s.358ms)
+

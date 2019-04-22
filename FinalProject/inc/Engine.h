@@ -1,34 +1,47 @@
 /*
- * Engine.h
+ * engine.h
  *
- *  Created on: Mar 8, 2019
- *      Author: brycbuntu
+ *  Created on: Mar 9, 2017
+ *      Author: sushil
  */
 
-#ifndef INC_ENGINE_H_
-#define INC_ENGINE_H_
+#ifndef ENGINE_H_
+#define ENGINE_H_
 
-class EntityMgr;
-class GameMgr;
-class GfxMgr;
-class InputMgr;
+#include <GfxMgr.h>
+#include <InputMgr.h>
+#include <EntityMgr.h>
+#include <GameMgr.h>
+#include <SoundMgr.h>
 
 class Engine {
+private:
 public:
 	Engine();
-	virtual ~Engine();
+	~Engine();
 
-	EntityMgr *entityMgr;
-	GameMgr   *gameMgr;
-	GfxMgr    *gfxMgr;
-	InputMgr  *inputMgr;
+
+	EntityMgr*      entityMgr;
+	GfxMgr*         gfxMgr;
+	InputMgr*       inputMgr;
+	GameMgr*        gameMgr;
+	OgreSND::SoundMgr*		soundMgr;
+	//SelectionMgr* selectionMgr;
+	//ControlMgr*   controlMgr;
 
 	void Init();
 	void Run();
 	void TickAll(float dt);
+	void Stop();
+	void Shutdown();
 	void Cleanup();
 
+	//
 	bool keepRunning;
+
+
 };
 
-#endif /* INC_ENGINE_H_ */
+
+
+#endif /* ENGINE_H_ */

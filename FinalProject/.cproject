@@ -29,6 +29,8 @@
 									<listOptionValue builtIn="false" value="/usr/local/include/OGRE/Overlay"/>
 									<listOptionValue builtIn="false" value="/usr/local/include/OGRE/RTShaderSystem"/>
 									<listOptionValue builtIn="false" value="/usr/include/OIS"/>
+									<listOptionValue builtIn="false" value="/usr/include/AL"/>
+									<listOptionValue builtIn="false" value="/usr/include/audio"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/FinalProject/inc}&quot;"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.dialect.std.518786107" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.c++11" valueType="enumerated"/>
@@ -45,13 +47,17 @@
 								<option id="gnu.cpp.link.option.paths.898254541" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
 									<listOptionValue builtIn="false" value="/usr/local/lib/OGRE"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu"/>
+									<listOptionValue builtIn="false" value="/usr/include/AL"/>
+									<listOptionValue builtIn="false" value="/usr/include/audio"/>
 								</option>
 								<option id="gnu.cpp.link.option.libs.871270147" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="OgreMain"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="OgreTerrain"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="OgreOverlay"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="OIS"/>
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="boost_system"/>
+									<listOptionValue builtIn="false" value="OgreMain"/>
+									<listOptionValue builtIn="false" value="OgreTerrain"/>
+									<listOptionValue builtIn="false" value="OgreOverlay"/>
+									<listOptionValue builtIn="false" value="OIS"/>
+									<listOptionValue builtIn="false" value="boost_system"/>
+									<listOptionValue builtIn="false" value="audio"/>
+									<listOptionValue builtIn="false" value="openal"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.317451797" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>

@@ -51,6 +51,10 @@ public:
 	float mSpeed = 0;
 	float mTurnRate = 5;
 
+	int auioId = 1;
+	bool didSelectSoundPlay = false;
+	std::string soundFile = "";
+
 private:
 	std::vector<Aspect*>* mAspects;
 

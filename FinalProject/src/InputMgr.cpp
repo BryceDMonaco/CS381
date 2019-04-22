@@ -11,6 +11,10 @@ InputMgr::InputMgr (Engine* engine) : Mgr (engine)
 	cameraRot = new Ogre::Vector3(Ogre::Vector3::ZERO);
 	accVec = new Ogre::Vector3(Ogre::Vector3::ZERO);
 
+	isADown = false;
+	isDDown = false;
+	isSDown = false;
+	isWDown = false;
 }
 
 InputMgr::~InputMgr ()
@@ -162,6 +166,26 @@ bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 
 	}
 
+	if (ke.key == OIS::KC_A)
+	{
+		isADown = true;
+	}
+
+	if (ke.key == OIS::KC_D)
+	{
+		isDDown = true;
+	}
+
+	if (ke.key == OIS::KC_S)
+	{
+		isSDown = true;
+	}
+
+	if (ke.key == OIS::KC_W)
+	{
+		isWDown = true;
+	}
+
 	/*
 	// Change the selected entity
 	if (ke.key == OIS::KC_TAB)
@@ -307,6 +331,26 @@ bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 
 bool InputMgr::keyReleased(const OIS::KeyEvent& ke)
 {
+	if (ke.key == OIS::KC_A)
+	{
+		isADown = false;
+	}
+
+	if (ke.key == OIS::KC_D)
+	{
+		isDDown = false;
+	}
+
+	if (ke.key == OIS::KC_S)
+	{
+		isSDown = false;
+	}
+
+	if (ke.key == OIS::KC_W)
+	{
+		isWDown = false;
+	}
+
 	/*
 	if (ke.key == OIS::KC_LSHIFT)
 	{

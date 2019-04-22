@@ -13,6 +13,8 @@ Engine::Engine(){
 	inputMgr = 0;
 	entityMgr = 0;
 	gameMgr = 0;
+	soundMgr = 0;
+	uiMgr = 0;
 	keepRunning = true;
 
 }
@@ -33,18 +35,21 @@ void Engine::Init(){
 	entityMgr = new EntityMgr(this);
 	gameMgr = new GameMgr(this);
 	soundMgr = new OgreSND::SoundMgr(this);
+	uiMgr = new UIMgr(this);
 // initialize
 	gfxMgr->Init();
 	inputMgr->Init();
 	entityMgr->Init();
 	gameMgr->Init();
 	soundMgr->Init();
+	uiMgr->Init();
 // load level to play
 	gfxMgr->LoadLevel();
 	inputMgr->LoadLevel();
 	entityMgr->LoadLevel();
 	gameMgr->LoadLevel();
 	soundMgr->LoadLevel();
+	uiMgr->LoadLevel();
 }
 
 void Engine::TickAll(float dt){
@@ -53,6 +58,7 @@ void Engine::TickAll(float dt){
 	entityMgr->Tick(dt);
 	gameMgr->Tick(dt);
 	soundMgr->Tick(dt);
+	uiMgr->Tick(dt);
 }
 
 void Engine::Shutdown(){
@@ -60,6 +66,7 @@ void Engine::Shutdown(){
 	gfxMgr->Stop();
 	entityMgr->Stop();
 	gameMgr->Stop();
+	uiMgr->Stop();
 }
 void Engine::Run(){
 	Ogre::Timer* timer = new Ogre::Timer();
@@ -86,4 +93,5 @@ void Engine::Cleanup(){
 	gfxMgr->Stop();
 	entityMgr->Stop();
 	gameMgr->Stop();
+	uiMgr->Stop();
 }

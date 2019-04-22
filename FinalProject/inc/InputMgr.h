@@ -33,6 +33,10 @@ public:
 	void Tick (float dt);
 	void Stop ();
 
+	OIS::Keyboard* getKeyboard();
+	OIS::Mouse* getMouse();
+
+
 	Ogre::RenderWindow* mWindow;  // Passed by GfxMgr
 	Ogre::Root* mRoot;  // Passed by GfxMgr
 	Ogre::SceneManager* mSceneMgr;  // Passed by GfxMgr

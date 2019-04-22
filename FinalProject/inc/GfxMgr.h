@@ -23,6 +23,8 @@ public:
 	void Tick (float dt);
 	void Stop ();
 
+	Ogre::RenderWindow* getWindow();
+
 	Ogre::Camera* mCamera;
 
 private:

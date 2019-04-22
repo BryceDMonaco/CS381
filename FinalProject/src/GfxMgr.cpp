@@ -4,6 +4,7 @@
 #include "EntityMgr.h"
 #include "GameMgr.h"
 #include "SoundMgr.h"
+#include "UIMgr.h"
 
 GfxMgr::GfxMgr (Engine* engine) : Mgr (engine),
 mRoot(0),
@@ -91,6 +92,7 @@ void GfxMgr::Init ()
 	engine->inputMgr->mSceneMgr = mSceneMgr;
 	engine->gameMgr->mSceneMgr = mSceneMgr;
 	engine->soundMgr->mSceneMgr = mSceneMgr;
+	engine->uiMgr->mSceneMgr = mSceneMgr;
 
 	Ogre::LogManager::getSingletonPtr()->logMessage("*** GfxMgr Init Done! ***");
 
@@ -119,4 +121,9 @@ void GfxMgr::Stop ()
 {
 
 
+}
+
+Ogre::RenderWindow* GfxMgr::getWindow()
+{
+	return mWindow;
 }

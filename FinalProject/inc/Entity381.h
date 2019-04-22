@@ -61,7 +61,7 @@ public:
 	float pitchDegree, yawDegree, rollDegree;
 
 	float mSpeed = 0;
-	float mTurnRate = 0.01f;
+	float mTurnRate = 80.0f;
 
 	int auioId = 1;
 	bool didSelectSoundPlay = false;

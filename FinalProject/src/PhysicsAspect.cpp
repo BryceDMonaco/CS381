@@ -174,7 +174,7 @@ void PhysicsAspect::Tick (float dt)
 			Ogre::Radian(pitch + mEntity381->mTurnRate),
 			Ogre::Node::TransformSpace::TS_WORLD);
 		*/
-		mEntity381->pitchDegree += mEntity381->mTurnRate;
+		mEntity381->pitchDegree += mEntity381->mTurnRate * dt;
 	}
 	else
 	{
@@ -183,7 +183,7 @@ void PhysicsAspect::Tick (float dt)
 			Ogre::Radian(pitch - mEntity381->mTurnRate),
 			Ogre::Node::TransformSpace::TS_WORLD);
 		*/
-		mEntity381->pitchDegree -= mEntity381->mTurnRate;
+		mEntity381->pitchDegree -= mEntity381->mTurnRate * dt;
 	}
 
 
@@ -194,7 +194,7 @@ void PhysicsAspect::Tick (float dt)
 			Ogre::Radian(roll + mEntity381->mTurnRate),
 			Ogre::Node::TransformSpace::TS_WORLD);
 		*/
-		mEntity381->rollDegree += mEntity381->mTurnRate;
+		mEntity381->rollDegree += mEntity381->mTurnRate * dt;
 	}
 	else
 	{
@@ -203,7 +203,7 @@ void PhysicsAspect::Tick (float dt)
 			Ogre::Radian(roll -mEntity381->mTurnRate),
 			Ogre::Node::TransformSpace::TS_WORLD);
 		*/
-		mEntity381->rollDegree -= mEntity381->mTurnRate;
+		mEntity381->rollDegree -= mEntity381->mTurnRate * dt;
 	}
 
 	/*

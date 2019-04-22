@@ -124,30 +124,93 @@ void PhysicsAspect::Tick (float dt)
 	return;
 	*/
 
+	// get world Orientation from local orientation
 	Ogre::Quaternion localOrientation = mEntity381->mSceneNode->getOrientation();
-	mEntity381->mOrientation = mEntity381->mSceneNode->convertLocalToWorldOrientation(
+	Ogre::Quaternion worldOrientation = mEntity381->mSceneNode->convertLocalToWorldOrientation(
 		localOrientation);
 
-	float pitch = mEntity381->mOrientation.getPitch().valueDegrees();
-	float roll = mEntity381->mOrientation.getRoll().valueDegrees();
+	Ogre::Matrix3 rotationMatrix;
 
-	if (pitch < mEntity381->targetPitch)
-		mEntity381->mSceneNode->pitch(
-			Ogre::Radian(mEntity381->mTurnRate),
-			Ogre::Node::TransformSpace::TS_WORLD);
+	worldOrientation.ToRotationMatrix(rotationMatrix);
+
+	Ogre::Radian yaw;
+	Ogre::Radian pitch;
+	Ogre::Radian roll;
+
+	rotationMatrix.ToEulerAnglesXYZ(yaw, pitch, roll);
+
+	Ogre::Degree yawDegree = yaw;
+	Ogre::Degree pitchDegree = pitch;
+	Ogre::Degree rollDegree = roll;
+
+	/*
+	// used to check if at north pole or south pole
+	float poleCheck = worldOrientation.x * worldOrientation.y + worldOrientation.z * worldOrientation.w;
+
+	// set roll to zero if at north pole or south pole, else set it normally
+	if ((poleCheck > 0.499 && poleCheck < 0.501)
+	 || (poleCheck > -0.501 && poleCheck < -0.499))
+	{
+		roll = Ogre::Radian(0.0f);
+	}
 	else
+	{
+		roll = Ogre::Math::ATan2(2 * worldOrientation.x * worldOrientation.w - 2 * worldOrientation.y * worldOrientation.z,
+			1 - 2 * Ogre::Math::Sqr(worldOrientation.x) - 2 * Ogre::Math::Sqr(worldOrientation.z));
+	}
+
+	// set pitch
+	pitch = Ogre::Math::ASin(2 * worldOrientation.x * worldOrientation.y
+		+ 2 * worldOrientation.z * worldOrientation.w);
+	*/
+
+
+	if (pitchDegree.valueDegrees() < mEntity381->targetPitch)
+	{
+		/*
 		mEntity381->mSceneNode->pitch(
-			Ogre::Radian(mEntity381->mTurnRate),
+			Ogre::Radian(pitch + mEntity381->mTurnRate),
 			Ogre::Node::TransformSpace::TS_WORLD);
-
-	if (pitch < mEntity381->targetPitch)
-		mEntity381->mSceneNode->roll(
-			Ogre::Radian(mEntity381->mTurnRate),
-			Ogre::Node::TransformSpace::TS_WORLD);
+		*/
+		pitchDegree += Ogre::Degree(mEntity381->mTurnRate) * dt;
+	}
 	else
-		mEntity381->mSceneNode->roll(
-			Ogre::Radian(mEntity381->mTurnRate),
+	{
+		/*
+		mEntity381->mSceneNode->pitch(
+			Ogre::Radian(pitch - mEntity381->mTurnRate),
 			Ogre::Node::TransformSpace::TS_WORLD);
+		*/
+		pitchDegree -= Ogre::Degree(mEntity381->mTurnRate) * dt;
+	}
 
+
+	if (rollDegree.valueDegrees() < mEntity381->targetRoll)
+	{
+		/*
+		mEntity381->mSceneNode->roll(
+			Ogre::Radian(roll + mEntity381->mTurnRate),
+			Ogre::Node::TransformSpace::TS_WORLD);
+		*/
+		rollDegree += Ogre::Degree(mEntity381->mTurnRate) * dt;
+	}
+	else
+	{
+		/*
+		mEntity381->mSceneNode->roll(
+			Ogre::Radian(roll -mEntity381->mTurnRate),
+			Ogre::Node::TransformSpace::TS_WORLD);
+		*/
+		rollDegree -= Ogre::Degree(mEntity381->mTurnRate) * dt;
+	}
+
+	//yawDegree = Ogre::Degree(0.0);
+
+	rotationMatrix.FromEulerAnglesYXZ(
+		yawDegree,
+		pitchDegree,
+		rollDegree);
+
+	mEntity381->mOrientation.FromRotationMatrix(rotationMatrix);
 
 }

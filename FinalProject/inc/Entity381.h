@@ -54,11 +54,13 @@ public:
 	std::string mEntityName;
 	std::string mMeshFileName;
 
+	Ogre::Vector3 targetPosition = Ogre::Vector3::ZERO;
+
 	Ogre::Vector3 rotation = Ogre::Vector3::ZERO;
 	float targetPitch, targetYaw, targetRoll;
 
 	float mSpeed = 0;
-	float mTurnRate = 5;
+	float mTurnRate = 0.01f;
 
 	int auioId = 1;
 	bool didSelectSoundPlay = false;
@@ -67,6 +69,8 @@ public:
 	InputMgr* inputMgr;
 
 private:
+	void HandleInput();
+
 	std::vector<Aspect*>* mAspects;
 
 };

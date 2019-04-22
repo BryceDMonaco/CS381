@@ -46,16 +46,20 @@ void Entity381::Initialize ()
 	// create the aspects
 	RenderableAspect* renderable = new RenderableAspect(this);
 	PhysicsAspect* physics = new PhysicsAspect(this);
-	UnitAI* ai = new UnitAI(this);
 
 	// add the aspects
 	this->AddAspect(renderable);
 	this->AddAspect(physics);
-	this->AddAspect(ai);
+
+	//this->AddAspect(ai);
+
+	inputMgr = mEntityMgr->engine->inputMgr;
 }
 
 void Entity381::Tick (float dt)
 {
+	HandleInput();
+
 	for (int i = 0; i < (int) mAspects->size(); i++)
 	{
 		mAspects->at(i)->Tick(dt);
@@ -81,6 +85,29 @@ Aspect* Entity381::GetAspect (int index)
 {
 	return mAspects->at(index);
 
+}
+
+void Entity381::HandleInput()
+{
+	float angleBounds = 45.0f;
+
+	if (inputMgr->isWDown)
+		targetPitch = angleBounds;
+
+	if (inputMgr->isSDown)
+		targetPitch = -angleBounds;
+
+	if (!inputMgr->isWDown && !inputMgr->isSDown)
+		targetPitch = 0.0f;
+
+	if (inputMgr->isADown)
+		targetRoll = angleBounds;
+
+	if (inputMgr->isDDown)
+		targetRoll = -angleBounds;
+
+	if (!inputMgr->isADown && !inputMgr->isDDown)
+		targetRoll = 0.0f;
 }
 
 /*

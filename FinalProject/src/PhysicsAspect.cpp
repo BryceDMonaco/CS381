@@ -123,4 +123,31 @@ void PhysicsAspect::Tick (float dt)
 
 	return;
 	*/
+
+	Ogre::Quaternion localOrientation = mEntity381->mSceneNode->getOrientation();
+	mEntity381->mOrientation = mEntity381->mSceneNode->convertLocalToWorldOrientation(
+		localOrientation);
+
+	float pitch = mEntity381->mOrientation.getPitch();
+	float roll = mEntity381->mOrientation.getRoll();
+
+	if (pitch < mEntity381->targetPitch)
+		mEntity381->mSceneNode->pitch(
+			Ogre::Radian(mEntity381->mTurnRate),
+			Ogre::Node::TransformSpace::TS_WORLD);
+	else
+		mEntity381->mSceneNode->pitch(
+			Ogre::Radian(mEntity381->mTurnRate),
+			Ogre::Node::TransformSpace::TS_WORLD);
+
+	if (pitch < mEntity381->targetPitch)
+		mEntity381->mSceneNode->roll(
+			Ogre::Radian(mEntity381->mTurnRate),
+			Ogre::Node::TransformSpace::TS_WORLD);
+	else
+		mEntity381->mSceneNode->roll(
+			Ogre::Radian(mEntity381->mTurnRate),
+			Ogre::Node::TransformSpace::TS_WORLD);
+
+
 }

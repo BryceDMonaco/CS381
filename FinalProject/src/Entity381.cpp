@@ -1,4 +1,6 @@
 #include "Entity381.h"
+#include "Engine.h"
+#include "InputMgr.h"
 
 Entity381::Entity381 (
 		Ogre::SceneManager* manager,

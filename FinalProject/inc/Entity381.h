@@ -60,7 +60,7 @@ public:
 	float targetPitch, targetYaw, targetRoll;
 	float pitchDegree, yawDegree, rollDegree;
 
-	float mSpeed = 0;
+	float mSpeed = 80.0f;
 	float mTurnRate = 80.0f;
 
 	int auioId = 1;

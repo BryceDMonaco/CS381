@@ -1,9 +1,11 @@
 #include "Entity381.h"
 #include "Engine.h"
+#include "EntityMgr.h"
 #include "InputMgr.h"
 
 Entity381::Entity381 (
 		Ogre::SceneManager* manager,
+		EntityMgr* entityMgr,
 		int entityId,
 		std::string name,
 		std::string meshFileName,
@@ -13,6 +15,7 @@ Entity381::Entity381 (
 	mAspects = new std::vector<Aspect*>;
 
 	mSceneMgr = manager;
+	mEntityMgr = entityMgr;
 	mEntityID = entityId;
 	mEntityName = name;
 	mMeshFileName = meshFileName;
@@ -22,6 +25,8 @@ Entity381::Entity381 (
 	targetPitch = 0.0f;
 	targetYaw = 0.0f;
 	targetRoll = 0.0f;
+
+	inputMgr = nullptr;
 }
 
 Entity381::~Entity381 ()

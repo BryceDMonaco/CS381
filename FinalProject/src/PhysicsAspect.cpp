@@ -128,8 +128,8 @@ void PhysicsAspect::Tick (float dt)
 	mEntity381->mOrientation = mEntity381->mSceneNode->convertLocalToWorldOrientation(
 		localOrientation);
 
-	float pitch = mEntity381->mOrientation.getPitch();
-	float roll = mEntity381->mOrientation.getRoll();
+	float pitch = mEntity381->mOrientation.getPitch().valueDegrees();
+	float roll = mEntity381->mOrientation.getRoll().valueDegrees();
 
 	if (pitch < mEntity381->targetPitch)
 		mEntity381->mSceneNode->pitch(

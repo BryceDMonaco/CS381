@@ -13,11 +13,16 @@
 #include <OgreVector3.h>
 #include <OgreSceneManager.h>
 
+class EntityMgr;
+
+class InputMgr;
+
 class Entity381
 {
 public:
 	Entity381 (
 		Ogre::SceneManager* manager,
+		EntityMgr* entityMgr,
 		int entityId,
 		std::string entityName,
 		std::string meshFileName = "cube.mesh",
@@ -44,6 +49,7 @@ public:
 	Ogre::Quaternion mOrientation;
 	Ogre::SceneManager* mSceneMgr = nullptr;
 
+	EntityMgr* mEntityMgr;
 	int mEntityID;
 	std::string mEntityName;
 	std::string mMeshFileName;
@@ -57,6 +63,8 @@ public:
 	int auioId = 1;
 	bool didSelectSoundPlay = false;
 	std::string soundFile = "";
+
+	InputMgr* inputMgr;
 
 private:
 	std::vector<Aspect*>* mAspects;

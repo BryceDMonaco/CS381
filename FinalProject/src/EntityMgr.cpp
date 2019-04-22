@@ -58,6 +58,7 @@ void EntityMgr::CreateEntityOfType(
 	default:
 		newEntity = new Entity381(
 			mSceneMgr,
+			this,
 			mNextEntityID,
 			name,
 			meshFileName);

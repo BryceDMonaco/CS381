@@ -166,43 +166,51 @@ void PhysicsAspect::Tick (float dt)
 		+ 2 * worldOrientation.z * worldOrientation.w);
 	*/
 
+	// position
+	if (mEntity381->mPosition.x < mEntity381->targetPosition.x)
+	{
+		mEntity381->mPosition.x += mEntity381->mSpeed * dt;
+	}
+	else
+	{
+		mEntity381->mPosition.x -= mEntity381->mSpeed * dt;
+	}
 
+	if (mEntity381->mPosition.y < mEntity381->targetPosition.y)
+	{
+		mEntity381->mPosition.y += mEntity381->mSpeed * dt;
+	}
+	else
+	{
+		mEntity381->mPosition.y -= mEntity381->mSpeed * dt;
+	}
+
+	if (mEntity381->mPosition.z < mEntity381->targetPosition.z)
+	{
+		mEntity381->mPosition.z += mEntity381->mSpeed * dt;
+	}
+	else
+	{
+		mEntity381->mPosition.z -= mEntity381->mSpeed * dt;
+	}
+
+	// rotation
 	if (mEntity381->pitchDegree < mEntity381->targetPitch)
 	{
-		/*
-		mEntity381->mSceneNode->pitch(
-			Ogre::Radian(pitch + mEntity381->mTurnRate),
-			Ogre::Node::TransformSpace::TS_WORLD);
-		*/
 		mEntity381->pitchDegree += mEntity381->mTurnRate * dt;
 	}
 	else
 	{
-		/*
-		mEntity381->mSceneNode->pitch(
-			Ogre::Radian(pitch - mEntity381->mTurnRate),
-			Ogre::Node::TransformSpace::TS_WORLD);
-		*/
 		mEntity381->pitchDegree -= mEntity381->mTurnRate * dt;
 	}
 
 
 	if (mEntity381->rollDegree < mEntity381->targetRoll)
 	{
-		/*
-		mEntity381->mSceneNode->roll(
-			Ogre::Radian(roll + mEntity381->mTurnRate),
-			Ogre::Node::TransformSpace::TS_WORLD);
-		*/
 		mEntity381->rollDegree += mEntity381->mTurnRate * dt;
 	}
 	else
 	{
-		/*
-		mEntity381->mSceneNode->roll(
-			Ogre::Radian(roll -mEntity381->mTurnRate),
-			Ogre::Node::TransformSpace::TS_WORLD);
-		*/
 		mEntity381->rollDegree -= mEntity381->mTurnRate * dt;
 	}
 

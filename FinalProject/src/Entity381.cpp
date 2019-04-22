@@ -17,7 +17,9 @@ Entity381::Entity381 (
 	mPosition = position;
 	mOrientation = orientation;
 
-
+	targetPitch = 0.0f;
+	targetYaw = 0.0f;
+	targetRoll = 0.0f;
 }
 
 Entity381::~Entity381 ()

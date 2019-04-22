@@ -119,3 +119,6 @@ Invoking: GCC C++ Linker
 g++ -L/usr/local/lib/OGRE -L/usr/lib/x86_64-linux-gnu -L/usr/include/AL -L/usr/include/audio -o "FinalProject"  ./src/Aspect.o ./src/Command.o ./src/Engine.o ./src/Entity381.o ./src/EntityMgr.o ./src/GameMgr.o ./src/GfxMgr.o ./src/InputMgr.o ./src/Mgr.o ./src/PhysicsAspect.o ./src/RenderableAspect.o ./src/RotatorAspect.o ./src/SoundMgr.o ./src/SphereEntity.o ./src/UnitAI.o ./src/Utils.o ./src/main.o   -lOgreMain -lOgreTerrain -lOgreOverlay -lOIS -lboost_system -laudio -lopenal
 Finished building target: FinalProject
  
+22:58:47 **** Build of configuration Debug for project FinalProject ****
+make all 
+make: Nothing to be done for 'all'.

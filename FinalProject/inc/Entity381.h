@@ -58,6 +58,7 @@ public:
 
 	Ogre::Vector3 rotation = Ogre::Vector3::ZERO;
 	float targetPitch, targetYaw, targetRoll;
+	float pitchDegree, yawDegree, rollDegree;
 
 	float mSpeed = 0;
 	float mTurnRate = 0.01f;

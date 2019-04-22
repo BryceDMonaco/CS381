@@ -22,5 +22,8 @@ void RenderableAspect::SetMaterial(std::string material)
 void RenderableAspect::Tick (float dt)
 {
 	mEntity381->mSceneNode->setPosition(mEntity381->mPosition);
-	mEntity381->mSceneNode->setOrientation(mEntity381->mOrientation);
+	//mEntity381->mSceneNode->setOrientation(mEntity381->mOrientation);
+	mEntity381->mSceneNode->setOrientation(Ogre::Quaternion(Ogre::Degree(mEntity381->pitchDegree), Ogre::Vector3(1,0,0)));
+	mEntity381->mSceneNode->setOrientation(Ogre::Quaternion(Ogre::Degree(mEntity381->rollDegree), Ogre::Vector3(0,0,1)));
+
 }

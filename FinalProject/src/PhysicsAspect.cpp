@@ -124,6 +124,7 @@ void PhysicsAspect::Tick (float dt)
 	return;
 	*/
 
+	/*
 	// get world Orientation from local orientation
 	Ogre::Quaternion localOrientation = mEntity381->mSceneNode->getOrientation();
 	Ogre::Quaternion worldOrientation = mEntity381->mSceneNode->convertLocalToWorldOrientation(
@@ -142,6 +143,7 @@ void PhysicsAspect::Tick (float dt)
 	Ogre::Degree yawDegree = yaw;
 	Ogre::Degree pitchDegree = pitch;
 	Ogre::Degree rollDegree = roll;
+	*/
 
 	/*
 	// used to check if at north pole or south pole
@@ -165,14 +167,14 @@ void PhysicsAspect::Tick (float dt)
 	*/
 
 
-	if (pitchDegree.valueDegrees() < mEntity381->targetPitch)
+	if (mEntity381->pitchDegree < mEntity381->targetPitch)
 	{
 		/*
 		mEntity381->mSceneNode->pitch(
 			Ogre::Radian(pitch + mEntity381->mTurnRate),
 			Ogre::Node::TransformSpace::TS_WORLD);
 		*/
-		pitchDegree += Ogre::Degree(mEntity381->mTurnRate) * dt;
+		mEntity381->pitchDegree += mEntity381->mTurnRate;
 	}
 	else
 	{
@@ -181,18 +183,18 @@ void PhysicsAspect::Tick (float dt)
 			Ogre::Radian(pitch - mEntity381->mTurnRate),
 			Ogre::Node::TransformSpace::TS_WORLD);
 		*/
-		pitchDegree -= Ogre::Degree(mEntity381->mTurnRate) * dt;
+		mEntity381->pitchDegree -= mEntity381->mTurnRate;
 	}
 
 
-	if (rollDegree.valueDegrees() < mEntity381->targetRoll)
+	if (mEntity381->rollDegree < mEntity381->targetRoll)
 	{
 		/*
 		mEntity381->mSceneNode->roll(
 			Ogre::Radian(roll + mEntity381->mTurnRate),
 			Ogre::Node::TransformSpace::TS_WORLD);
 		*/
-		rollDegree += Ogre::Degree(mEntity381->mTurnRate) * dt;
+		mEntity381->rollDegree += mEntity381->mTurnRate;
 	}
 	else
 	{
@@ -201,16 +203,16 @@ void PhysicsAspect::Tick (float dt)
 			Ogre::Radian(roll -mEntity381->mTurnRate),
 			Ogre::Node::TransformSpace::TS_WORLD);
 		*/
-		rollDegree -= Ogre::Degree(mEntity381->mTurnRate) * dt;
+		mEntity381->rollDegree -= mEntity381->mTurnRate;
 	}
 
-	//yawDegree = Ogre::Degree(0.0);
-
+	/*
 	rotationMatrix.FromEulerAnglesYXZ(
 		yawDegree,
 		pitchDegree,
 		rollDegree);
 
 	mEntity381->mOrientation.FromRotationMatrix(rotationMatrix);
+	*/
 
 }

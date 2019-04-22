@@ -26,6 +26,10 @@ Entity381::Entity381 (
 	targetYaw = 0.0f;
 	targetRoll = 0.0f;
 
+	pitchDegree = 0.0f;
+	yawDegree = 0.0f;
+	rollDegree = 0.0f;
+
 	inputMgr = nullptr;
 }
 

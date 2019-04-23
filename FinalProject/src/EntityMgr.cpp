@@ -105,8 +105,8 @@ void EntityMgr::CreateEntityOfType(
 
 		}
 
-		UnitAI* obstacleAI = (UnitAI*) newEntity->GetAspect(2);
-		obstacleAI->AddCommand(new MoveTo(newEntity, position + Ogre::Vector3::UNIT_Z * 2000));
+		//This comment can be changed to actual code once Alex's targetPosition code is merged
+		//newEntity->targetPosition = newEntity->mPosition + Ogre::Vector3::UNIT_Z * 200000;
 
 	} else if (type == ENTITY_DESTRUCTIBLE)
 	{

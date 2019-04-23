@@ -1,4 +1,5 @@
 #include "EntityMgr.h"
+#include "Command.h"
 
 EntityMgr::EntityMgr (Engine* engine) : Mgr (engine)
 {
@@ -47,6 +48,7 @@ void EntityMgr::CreateEntityOfType(
 		std::string name,
 		std::string meshFileName,
 		Ogre::Vector3 position,
+		Ogre::Vector3 scale,
 		Ogre::Quaternion orientation,
 		bool showAabb)
 {
@@ -55,6 +57,16 @@ void EntityMgr::CreateEntityOfType(
 	// create the new entity based on the type parameter
 	switch (type)
 	{
+	case ENTITY_OBSTACLE:
+		newEntity = new Entity381(
+				mSceneMgr,
+				mNextEntityID,
+				name,
+				meshFileName);
+
+		//newEntity->mEntity->setMaterialName("Template/Red");
+
+		break;
 	default:
 		newEntity = new Entity381(
 			mSceneMgr,
@@ -68,6 +80,41 @@ void EntityMgr::CreateEntityOfType(
 
 	// enable/disable the bounding box
 	newEntity->ShowAABB(showAabb);
+
+	// Scale the entity
+	newEntity->mPosition = position;
+	newEntity->mSceneNode->setScale(scale);
+
+	//For obstacles, randomly assign colors for now and give them a target
+	if (type == ENTITY_OBSTACLE)
+	{
+		int choice = rand() % 3;  // If more than 3 colors, increase mod value
+		//int choice = mNextEntityID % 3;
+
+		if (choice == 0)
+		{
+			newEntity->mEntity->setMaterialName("Red");
+
+		} else if (choice == 1)
+		{
+			newEntity->mEntity->setMaterialName("RadioactiveGreen");
+
+		} else if (choice == 2)
+		{
+			newEntity->mEntity->setMaterialName("Blue");
+
+		}
+
+		UnitAI* obstacleAI = (UnitAI*) newEntity->GetAspect(2);
+		obstacleAI->AddCommand(new MoveTo(newEntity, position + Ogre::Vector3::UNIT_Z * 2000));
+
+	} else if (type == ENTITY_DESTRUCTIBLE)
+	{
+		// Give health here
+
+	}
+
+	//newEntity->mEntity->setMaterialName("Template/Red");
 
 	// add the entity to the map
 	mEntities->insert(std::pair<int, Entity381*>(mNextEntityID, newEntity));

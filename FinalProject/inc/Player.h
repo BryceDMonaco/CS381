@@ -23,6 +23,9 @@ protected:
 
 private:
 
+	Ogre::Vector3 stationaryPosition;
+	bool moving;
+
 };
 
 #endif /* _PLAYER_H_ */

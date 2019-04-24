@@ -19,7 +19,8 @@ Player::Player (
 : Entity381 (manager,entityMgr,entityId,entityName,meshFileName,position,
 	orientation)
 {
-
+	stationaryPosition = Ogre::Vector3::ZERO;
+	moving = false;
 }
 
 Player::~Player ()
@@ -52,17 +53,27 @@ void Player::HandleInput()
 	{
 		targetPosition.y = positionBounds;
 		targetPitch = angleBounds;
+
+		moving = true;
 	}
 
 	if (inputMgr->isSDown)
 	{
 		targetPosition.y = -positionBounds;
 		targetPitch = -angleBounds;
+
+		moving = true;
 	}
 
 	if (!inputMgr->isWDown && !inputMgr->isSDown)
 	{
-		targetPosition.y = mPosition.y;
+		if (moving)
+		{
+			moving = false;
+			stationaryPosition = mPosition;
+		}
+
+		targetPosition.y = stationaryPosition.y;
 		targetPitch = 0.0f;
 	}
 
@@ -70,17 +81,27 @@ void Player::HandleInput()
 	{
 		targetPosition.x = -positionBounds;
 		targetRoll = angleBounds;
+
+		moving = true;
 	}
 
 	if (inputMgr->isDDown)
 	{
 		targetPosition.x = positionBounds;
 		targetRoll = -angleBounds;
+
+		moving = true;
 	}
 
 	if (!inputMgr->isADown && !inputMgr->isDDown)
 	{
-		targetPosition.x = mPosition.x;
+		if (moving)
+		{
+			moving = false;
+			stationaryPosition = mPosition;
+		}
+
+		targetPosition.x = stationaryPosition.x;
 		targetRoll = 0.0f;
 	}
 }

@@ -9,7 +9,10 @@
 #include <OgreMeshManager.h>
 #include <OgreVector3.h>
 #include <OgreCamera.h>
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 class GameMgr : public Mgr
 {
@@ -20,6 +23,8 @@ public:
 	void LoadLevel ();
 	void Tick (float dt);
 	void Stop ();
+
+	void LoadLevel1 ();
 
 	Ogre::SceneManager* mSceneMgr = nullptr;
 

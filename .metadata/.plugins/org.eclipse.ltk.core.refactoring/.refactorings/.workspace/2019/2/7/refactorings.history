@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;As2/inc/Aspect&apos;" deleteContents="false" description="Delete resource &apos;As2/inc/Aspect&apos;" element1="/As2/inc/Aspect" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1549922205877"/>&#x0A;<refactoring comment="Delete resource &apos;As2/src/SphereEntity.cpp&apos;" deleteContents="false" description="Delete resource &apos;As2/src/SphereEntity.cpp&apos;" element1="/As2/src/SphereEntity.cpp" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1549923159207"/>
-</session>

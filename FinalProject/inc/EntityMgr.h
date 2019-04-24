@@ -6,15 +6,18 @@
 #include <deque>
 #include "Entity381.h"
 #include "Player.h"
+#include "Command.h"
 #include <OgreSceneManager.h>
 #include <OgreMeshManager.h>
 #include <OgreVector3.h>
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 enum EntityType
 {
-	ENTITY_DEFAULT,
-	PLAYER
+	ENTITY_DEFAULT, ENTITY_OBSTACLE, ENTITY_DESTRUCTIBLE, PLAYER
 };
 
 class EntityMgr : public Mgr
@@ -31,6 +34,7 @@ public:
 		std::string name,
 		std::string meshFileName = "cube.mesh",
 		Ogre::Vector3 position = Ogre::Vector3::ZERO,
+		Ogre::Vector3 scale = Ogre::Vector3::UNIT_SCALE,
 		Ogre::Quaternion orientation = Ogre::Quaternion::IDENTITY,
 		bool showAabb = false);
 	void DestroyEntity (int entityIndex);

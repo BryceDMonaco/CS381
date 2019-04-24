@@ -55,6 +55,14 @@ void EntityMgr::CreateEntityOfType(
 	// create the new entity based on the type parameter
 	switch (type)
 	{
+	case EntityType::PLAYER:
+		newEntity = new Player(
+			mSceneMgr,
+			this,
+			mNextEntityID,
+			name,
+			meshFileName);
+		break;
 	default:
 		newEntity = new Entity381(
 			mSceneMgr,

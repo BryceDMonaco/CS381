@@ -1,3 +1,6 @@
+#ifndef _PLAYER_H_
+#define _PLAYER_H_
+
 #include "Entity381.h"
 
 class Player : public Entity381
@@ -21,3 +24,5 @@ protected:
 private:
 
 };
+
+#endif /* _PLAYER_H_ */

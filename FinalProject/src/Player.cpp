@@ -20,7 +20,8 @@ Player::Player (
 	orientation)
 {
 	stationaryPosition = Ogre::Vector3::ZERO;
-	moving = false;
+	movingVertical = false;
+	movingHorizontal = false;
 }
 
 Player::~Player ()
@@ -54,7 +55,7 @@ void Player::HandleInput()
 		targetPosition.y = positionBounds;
 		targetPitch = angleBounds;
 
-		moving = true;
+		movingVertical = true;
 	}
 
 	if (inputMgr->isSDown)
@@ -62,15 +63,15 @@ void Player::HandleInput()
 		targetPosition.y = -positionBounds;
 		targetPitch = -angleBounds;
 
-		moving = true;
+		movingVertical = true;
 	}
 
 	if (!inputMgr->isWDown && !inputMgr->isSDown)
 	{
-		if (moving)
+		if (movingVertical)
 		{
-			moving = false;
-			stationaryPosition = mPosition;
+			movingVertical = false;
+			stationaryPosition.y = mPosition.y;
 		}
 
 		targetPosition.y = stationaryPosition.y;
@@ -82,7 +83,7 @@ void Player::HandleInput()
 		targetPosition.x = -positionBounds;
 		targetRoll = angleBounds;
 
-		moving = true;
+		movingHorizontal = true;
 	}
 
 	if (inputMgr->isDDown)
@@ -90,15 +91,15 @@ void Player::HandleInput()
 		targetPosition.x = positionBounds;
 		targetRoll = -angleBounds;
 
-		moving = true;
+		movingHorizontal = true;
 	}
 
 	if (!inputMgr->isADown && !inputMgr->isDDown)
 	{
-		if (moving)
+		if (movingHorizontal)
 		{
-			moving = false;
-			stationaryPosition = mPosition;
+			movingHorizontal = false;
+			stationaryPosition.x = mPosition.x;
 		}
 
 		targetPosition.x = stationaryPosition.x;

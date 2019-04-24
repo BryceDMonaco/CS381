@@ -24,7 +24,7 @@ protected:
 private:
 
 	Ogre::Vector3 stationaryPosition;
-	bool moving;
+	bool movingVertical, movingHorizontal;
 
 };
 

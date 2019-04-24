@@ -41,6 +41,11 @@ public:
 	Ogre::Root* mRoot;  // Passed by GfxMgr
 	Ogre::SceneManager* mSceneMgr;  // Passed by GfxMgr
 
+	bool isADown;
+	bool isDDown;
+	bool isSDown;
+	bool isWDown;
+
 private:
 	OIS::InputManager* mInputManager;
 	OIS::Mouse* mMouse;

@@ -1,7 +1,11 @@
 #include "Entity381.h"
+#include "Engine.h"
+#include "EntityMgr.h"
+#include "InputMgr.h"
 
 Entity381::Entity381 (
 		Ogre::SceneManager* manager,
+		EntityMgr* entityMgr,
 		int entityId,
 		std::string name,
 		std::string meshFileName,
@@ -11,13 +15,22 @@ Entity381::Entity381 (
 	mAspects = new std::vector<Aspect*>;
 
 	mSceneMgr = manager;
+	mEntityMgr = entityMgr;
 	mEntityID = entityId;
 	mEntityName = name;
 	mMeshFileName = meshFileName;
 	mPosition = position;
 	mOrientation = orientation;
 
+	targetPitch = 0.0f;
+	targetYaw = 0.0f;
+	targetRoll = 0.0f;
 
+	pitchDegree = 0.0f;
+	yawDegree = 0.0f;
+	rollDegree = 0.0f;
+
+	inputMgr = nullptr;
 }
 
 Entity381::~Entity381 ()
@@ -37,16 +50,20 @@ void Entity381::Initialize ()
 	// create the aspects
 	RenderableAspect* renderable = new RenderableAspect(this);
 	PhysicsAspect* physics = new PhysicsAspect(this);
-	UnitAI* ai = new UnitAI(this);
 
 	// add the aspects
 	this->AddAspect(renderable);
 	this->AddAspect(physics);
-	this->AddAspect(ai);
+
+	//this->AddAspect(ai);
+
+	inputMgr = mEntityMgr->engine->inputMgr;
 }
 
 void Entity381::Tick (float dt)
 {
+	HandleInput();
+
 	for (int i = 0; i < (int) mAspects->size(); i++)
 	{
 		mAspects->at(i)->Tick(dt);
@@ -71,6 +88,11 @@ void Entity381::AddAspect (Aspect* aspect)
 Aspect* Entity381::GetAspect (int index)
 {
 	return mAspects->at(index);
+
+}
+
+void Entity381::HandleInput()
+{
 
 }
 

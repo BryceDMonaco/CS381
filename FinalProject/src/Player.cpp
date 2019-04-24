@@ -42,7 +42,44 @@ void Player::Tick(float dt)
 
 void Player::HandleInput()
 {
+	float positionBounds = 1000.0f;
+	float angleBounds = 45.0f;
 
+	if (inputMgr->isWDown)
+	{
+		targetPosition.y = positionBounds;
+		targetPitch = angleBounds;
+	}
+
+	if (inputMgr->isSDown)
+	{
+		targetPosition.y = -positionBounds;
+		targetPitch = -angleBounds;
+	}
+
+	if (!inputMgr->isWDown && !inputMgr->isSDown)
+	{
+		targetPosition.y = mPosition.y;
+		targetPitch = 0.0f;
+	}
+
+	if (inputMgr->isADown)
+	{
+		targetPosition.x = -positionBounds;
+		targetRoll = angleBounds;
+	}
+
+	if (inputMgr->isDDown)
+	{
+		targetPosition.x = positionBounds;
+		targetRoll = -angleBounds;
+	}
+
+	if (!inputMgr->isADown && !inputMgr->isDDown)
+	{
+		targetPosition.x = mPosition.x;
+		targetRoll = 0.0f;
+	}
 }
 
 

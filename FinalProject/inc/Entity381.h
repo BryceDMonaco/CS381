@@ -28,10 +28,10 @@ public:
 		std::string meshFileName = "cube.mesh",
 		Ogre::Vector3 position = Ogre::Vector3::ZERO,
 		Ogre::Quaternion orientation = Ogre::Quaternion::IDENTITY);
-	~Entity381 ();
+	virtual ~Entity381 ();
 
 	void Initialize ();
-	void Tick (float dt); // The update function
+	virtual void Tick (float dt); // The update function
 
 	void ShowAABB (bool state);
 
@@ -69,8 +69,8 @@ public:
 
 	InputMgr* inputMgr;
 
-private:
-	void HandleInput();
+protected:
+	virtual void HandleInput();
 
 	std::vector<Aspect*>* mAspects;
 

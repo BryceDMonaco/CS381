@@ -13,11 +13,24 @@
 
 UIMgr::UIMgr(Engine* eng) : Mgr(eng) {
 	// Initialize the OverlaySystem (changed for Ogre 1.9)
+
+	std::cout << "Constructing UI\n";
+
 	mOverlaySystem = new Ogre::OverlaySystem();
-	mSceneMgr->addRenderQueueListener(mOverlaySystem);
+
+	std::cout << "OverlaySystem initialized...\n";
+
+	engine->gfxMgr->getSceneMgr()->addRenderQueueListener(mOverlaySystem);
+
+	std::cout << "RenderQueue initialized...\n";
+
 	mTrayMgr = 0;
 
+	std::cout << "TrayMgr initialized...\n";
+
 	//Ogre::WindowEventUtilities::addWindowEventListener(engine->gfxMgr->ogreRenderWindow, this);
+
+	std::cout << "UI Constructor finished\n";
 }
 
 UIMgr::~UIMgr() {

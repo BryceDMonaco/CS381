@@ -5,6 +5,9 @@
  *      Author: alex
  */
 
+#include "Player.h"
+#include "InputMgr.h"
+
 Player::Player (
 	Ogre::SceneManager* manager,
 	EntityMgr* entityMgr,

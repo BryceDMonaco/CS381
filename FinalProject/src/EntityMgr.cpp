@@ -57,6 +57,13 @@ void EntityMgr::CreateEntityOfType(
 	// create the new entity based on the type parameter
 	switch (type)
 	{
+	case EntityType::PLAYER:
+		newEntity = new Player(
+			mSceneMgr,
+			this,
+			mNextEntityID,
+			name,
+			meshFileName);
 	case ENTITY_OBSTACLE:
 		newEntity = new Entity381(
 				mSceneMgr,
@@ -70,6 +77,7 @@ void EntityMgr::CreateEntityOfType(
 	default:
 		newEntity = new Entity381(
 			mSceneMgr,
+			this,
 			mNextEntityID,
 			name,
 			meshFileName);

@@ -5,6 +5,7 @@
 
 #include <deque>
 #include "Entity381.h"
+#include "Player.h"
 #include "Command.h"
 #include <OgreSceneManager.h>
 #include <OgreMeshManager.h>
@@ -16,7 +17,7 @@
 
 enum EntityType
 {
-	ENTITY_DEFAULT, ENTITY_OBSTACLE, ENTITY_DESTRUCTIBLE
+	ENTITY_DEFAULT, ENTITY_OBSTACLE, ENTITY_DESTRUCTIBLE, PLAYER
 };
 
 class EntityMgr : public Mgr

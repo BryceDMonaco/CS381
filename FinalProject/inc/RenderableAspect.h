@@ -2,6 +2,7 @@
 #define INC_RENDERABLEASPECT_H_
 
 #include "Aspect.h"
+#include "Utils.h"
 
 #include <OgreSceneNode.h>
 #include <OgreEntity.h>

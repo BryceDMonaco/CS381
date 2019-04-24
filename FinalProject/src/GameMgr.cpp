@@ -54,7 +54,7 @@ void GameMgr::LoadLevel ()
 	LoadLevel1();
 
 	engine->entityMgr->CreateEntityOfType(
-		EntityType::ENTITY_DEFAULT,
+		EntityType::PLAYER,
 		"Player");
 
 

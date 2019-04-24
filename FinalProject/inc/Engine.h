@@ -27,7 +27,7 @@ public:
 	InputMgr*       	inputMgr;
 	GameMgr*        	gameMgr;
 	OgreSND::SoundMgr*	soundMgr;
-	//UIMgr* 				uiMgr;
+	UIMgr* 				uiMgr;
 	//SelectionMgr* selectionMgr;
 	//ControlMgr*   controlMgr;
 

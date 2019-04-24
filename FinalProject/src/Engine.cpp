@@ -30,8 +30,8 @@ void Engine::Init(){
 // construct
 	gfxMgr    = new GfxMgr(this);
 	std::cout << "Constructed GfxMgr" << std::endl;
-//	uiMgr = new UIMgr(this);
-//	std::cout << "Constructed UIMgr" << std::endl;
+	uiMgr = new UIMgr(this);
+	std::cout << "Constructed UIMgr" << std::endl;
 	inputMgr = new InputMgr(this);
 	std::cout << "Constructed inputMgr" << std::endl;
 	entityMgr = new EntityMgr(this);
@@ -42,14 +42,14 @@ void Engine::Init(){
 	std::cout << "Constructed SoundMgr" << std::endl;
 // initialize
 	gfxMgr->Init();
-	//uiMgr->Init();
+	uiMgr->Init();
 	inputMgr->Init();
 	entityMgr->Init();
 	gameMgr->Init();
 	soundMgr->Init();
 // load level to play
 	gfxMgr->LoadLevel();
-	//uiMgr->LoadLevel();
+	uiMgr->LoadLevel();
 	inputMgr->LoadLevel();
 	entityMgr->LoadLevel();
 	gameMgr->LoadLevel();
@@ -62,7 +62,7 @@ void Engine::TickAll(float dt){
 	entityMgr->Tick(dt);
 	gameMgr->Tick(dt);
 	soundMgr->Tick(dt);
-	//uiMgr->Tick(dt);
+	uiMgr->Tick(dt);
 }
 
 void Engine::Shutdown(){

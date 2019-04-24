@@ -18,7 +18,7 @@
 
 #include <SdkTrays.h>
 
-class UIMgr : public Mgr, public Ogre::FrameListener, public OIS::KeyListener, public OIS::MouseListener, public Ogre::WindowEventListener, public OgreBites::SdkTrayListener
+class UIMgr : public Mgr, public OgreBites::SdkTrayListener
 {
 private:
 
@@ -26,11 +26,6 @@ protected:
 	virtual void windowResized(Ogre::RenderWindow *rw);
 	virtual void windowClosed(Ogre::RenderWindow *rw);
 
-	virtual bool keyPressed(const OIS::KeyEvent &arg);
-	virtual bool keyReleased(const OIS::KeyEvent &arg);
-	virtual bool mouseMoved(const OIS::MouseEvent &arg);
-	virtual bool mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id);
-	virtual bool mouseReleased(const OIS::MouseEvent &arg, OIS::MouseButtonID id);
 
 public:
 	UIMgr(Engine* engine);
@@ -44,10 +39,7 @@ public:
 	OgreBites::SdkTrayManager* mTrayMgr;
 	Ogre::OverlaySystem* mOverlaySystem;
 	Ogre::SceneManager* mSceneMgr = nullptr;
-//	OgreBites::Label *mLabel;
-//	OgreBites::Label *infoLabel;
-//	OgreBites::Label *infoLabel2;
-//	OgreBites::Label *infoLabel3;
+
 };
 
 

@@ -67,6 +67,7 @@ void EntityMgr::CreateEntityOfType(
 	case ENTITY_OBSTACLE:
 		newEntity = new Entity381(
 				mSceneMgr,
+				this,
 				mNextEntityID,
 				name,
 				meshFileName);

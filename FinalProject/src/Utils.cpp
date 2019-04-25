@@ -46,3 +46,12 @@ Ogre::Quaternion EulerToQuaternion(float pitch, float yaw, float roll)
 
 	return output;
 }
+
+double PercentDiff (double v1, double v2)
+{
+	double diff = v1 - v2;
+	(diff < 0) ? diff *= -1 : diff *= 1; //cmath.abs was returning an int, using this instead
+
+	return 100.0 * (diff) / ((v1 + v2) / 2);
+
+}

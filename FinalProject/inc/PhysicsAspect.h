@@ -3,8 +3,10 @@
 
 #include <cmath>
 #include <math.h>
+#include <iostream>
 
 #include "Aspect.h"
+#include "Utils.h"
 
 #include <OgreVector3.h>
 
@@ -12,9 +14,6 @@ class PhysicsAspect : public Aspect {
 public:
 	PhysicsAspect (Entity381* ent);
 	~PhysicsAspect ();
-
-	//void Accelerate (Ogre::Vector3 vec);
-	//void Rotate (float dt);
 
 	virtual void Tick (float dt);
 

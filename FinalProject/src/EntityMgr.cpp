@@ -64,6 +64,8 @@ void EntityMgr::CreateEntityOfType(
 			mNextEntityID,
 			name,
 			meshFileName);
+
+		break;
 	case ENTITY_OBSTACLE:
 		newEntity = new Entity381(
 			mSceneMgr,
@@ -75,6 +77,17 @@ void EntityMgr::CreateEntityOfType(
 		//newEntity->mEntity->setMaterialName("Template/Red");
 
 		break;
+	case ENTITY_DESTRUCTIBLE:
+			newEntity = new Entity381(
+				mSceneMgr,
+				this,
+				mNextEntityID,
+				name,
+				meshFileName);
+
+			//newEntity->mEntity->setMaterialName("Template/Red");
+
+			break;
 	default:
 		newEntity = new Entity381(
 			mSceneMgr,
@@ -95,7 +108,7 @@ void EntityMgr::CreateEntityOfType(
 	newEntity->mSceneNode->setScale(scale);
 
 	//For obstacles, randomly assign colors for now and give them a target
-	if (type == ENTITY_OBSTACLE)
+	if (type == ENTITY_OBSTACLE || type == ENTITY_DESTRUCTIBLE)
 	{
 		newEntity->AddAspect(new ObstacleHide(newEntity, 100));
 
@@ -118,6 +131,7 @@ void EntityMgr::CreateEntityOfType(
 
 		//This comment can be changed to actual code once Alex's targetPosition code is merged
 		newEntity->targetPosition = newEntity->mPosition + Ogre::Vector3::UNIT_Z * 200000;
+		newEntity->mSpeed *= 5;
 
 	} else if (type == ENTITY_DESTRUCTIBLE)
 	{

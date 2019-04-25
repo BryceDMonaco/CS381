@@ -9,6 +9,7 @@
 #include "PhysicsAspect.h"
 #include "RotatorAspect.h"
 #include "UnitAI.h"
+#include "ObstacleHide.h"
 
 #include <OgreVector3.h>
 #include <OgreSceneManager.h>

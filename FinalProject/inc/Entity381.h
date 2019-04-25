@@ -68,7 +68,7 @@ public:
 	bool didSelectSoundPlay = false;
 	std::string soundFile = "";
 
-	InputMgr* inputMgr;
+	InputMgr* inputMgr = nullptr;
 
 protected:
 	virtual void HandleInput();

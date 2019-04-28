@@ -2,6 +2,7 @@
 #define _COLLISION_APSECT_H_
 
 #include <vector>
+#include <map>
 #include "Aspect.h"
 
 class CollisionAspect : public Aspect

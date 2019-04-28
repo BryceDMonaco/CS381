@@ -19,6 +19,8 @@ Player::Player (
 : Entity381 (manager,entityMgr,entityId,entityName,meshFileName,position,
 	orientation)
 {
+	mTag = "Player";
+
 	mSpeed = 200.0f;
 
 	stationaryPosition = Ogre::Vector3::ZERO;

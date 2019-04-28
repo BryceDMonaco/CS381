@@ -54,6 +54,7 @@ public:
 	int mEntityID;
 	std::string mEntityName;
 	std::string mMeshFileName;
+	std::string mTag;
 
 	Ogre::Vector3 targetPosition = Ogre::Vector3::ZERO;
 

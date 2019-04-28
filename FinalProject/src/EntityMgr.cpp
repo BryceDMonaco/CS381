@@ -74,7 +74,7 @@ void EntityMgr::CreateEntityOfType(
 			name,
 			meshFileName);
 
-		//newEntity->mEntity->setMaterialName("Template/Red");
+		newEntity->mTag = "Obstacle";
 
 		break;
 	case ENTITY_DESTRUCTIBLE:
@@ -85,7 +85,7 @@ void EntityMgr::CreateEntityOfType(
 				name,
 				meshFileName);
 
-			//newEntity->mEntity->setMaterialName("Template/Red");
+			newEntity->mTag = "Destructible";
 
 			break;
 	default:

@@ -117,7 +117,11 @@ void Player::OnCollision(Entity381* collider)
 		|| collider->mTag == "Destructible"
 		|| collider->mTag == "Enemy")
 	{
-
+		mHealth -= 25;
+		if (mHealth <= 0)
+		{
+			// kill player
+		}
 	}
 }
 

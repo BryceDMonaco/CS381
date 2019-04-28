@@ -64,6 +64,7 @@ public:
 
 	float mSpeed = 80.0f;
 	float mTurnRate = 80.0f;
+	int mHealth = 100;
 
 	int auioId = 1;
 	bool didSelectSoundPlay = false;

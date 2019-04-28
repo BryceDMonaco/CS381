@@ -35,6 +35,28 @@ Player::~Player ()
 	mAspects = nullptr;
 }
 
+void Player::Initialize()
+{
+	// create and attach entity and scene node
+	mEntity = mSceneMgr->createEntity(mMeshFileName);
+	mSceneNode = mSceneMgr->getRootSceneNode()->createChildSceneNode(mEntityName + "Node");
+	mSceneNode->attachObject(mEntity);
+
+	// create the aspects
+	RenderableAspect* renderable = new RenderableAspect(this);
+	PhysicsAspect* physics = new PhysicsAspect(this);
+	CollisionAspect* collisions = new CollisionAspect(this);
+
+	// add the aspects
+	this->AddAspect(renderable);
+	this->AddAspect(physics);
+	this->AddAspect(collisions);
+
+	//this->AddAspect(ai);
+
+	inputMgr = mEntityMgr->engine->inputMgr;
+}
+
 void Player::Tick(float dt)
 {
 	HandleInput();

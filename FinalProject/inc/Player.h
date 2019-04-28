@@ -2,6 +2,7 @@
 #define _PLAYER_H_
 
 #include "Entity381.h"
+#include "CollisionAspect.h"
 
 class Player : public Entity381
 {
@@ -16,6 +17,7 @@ public:
 		Ogre::Quaternion orientation = Ogre::Quaternion::IDENTITY);
 	~Player ();
 
+	void Initialize();
 	void Tick(float dt);
 
 protected:

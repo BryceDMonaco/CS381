@@ -31,7 +31,7 @@ public:
 		Ogre::Quaternion orientation = Ogre::Quaternion::IDENTITY);
 	virtual ~Entity381 ();
 
-	void Initialize ();
+	virtual void Initialize ();
 	virtual void Tick (float dt); // The update function
 
 	void ShowAABB (bool state);

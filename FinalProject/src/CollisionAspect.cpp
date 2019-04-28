@@ -18,10 +18,14 @@ void CollisionAspect::Tick(float dt)
 	bool collisionHappened = CheckCollisions();
 
 	// for each collision, call OnCollision function for this entity
-	for (int i = 0; i < mCollisions.size(); i++)
+	if (collisionHappened)
 	{
-
+		for (int i = 0; i < mCollisions.size(); i++)
+		{
+			mEntity381->OnCollision(mCollisions[i]);
+		}
 	}
+
 }
 
 bool CollisionAspect::CheckCollisions()
@@ -46,5 +50,5 @@ bool CollisionAspect::CheckCollisions()
 		}
 	}
 
-	return false;
+	return collisionHappened;
 }

@@ -26,13 +26,24 @@ void CollisionAspect::Tick(float dt)
 
 bool CollisionAspect::CheckCollisions()
 {
+	bool collisionHappened = false;
+
 	mCollisions.clear();
 
 	std::map<int, Entity381*>* entities = mEntity381->mEntityMgr->GetEntities();
 	std::map<int, Entity381*>::iterator it;
 	for (it = entities->begin(); it != entities->end(); it++)
 	{
-
+		// ensure iteration is not this entity
+		if (it->first != mEntity381->mEntityID)
+		{
+			// compare the distance between these entities
+			if (mEntity381->mPosition.distance(it->second->mPosition) >= mCollisionRadius)
+			{
+				collisionHappened = true;
+				mCollisions.push_back(it->second);
+			}
+		}
 	}
 
 	return false;

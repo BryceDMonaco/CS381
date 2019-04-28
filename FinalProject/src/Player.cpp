@@ -113,6 +113,11 @@ void Player::HandleInput()
 
 void Player::OnCollision(Entity381* collider)
 {
+	if (collider->mTag == "Obstacle"
+		|| collider->mTag == "Destructible"
+		|| collider->mTag == "Enemy")
+	{
 
+	}
 }
 

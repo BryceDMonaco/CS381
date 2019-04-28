@@ -8,6 +8,7 @@
 #ifndef INC_UIMGR_H_
 #define INC_UIMGR_H_
 
+#include <OgreOverlaySystem.h>
 #include <OgreWindowEventUtilities.h>
 #include <OISEvents.h>
 #include <OISInputManager.h>
@@ -38,7 +39,6 @@ public:
 	OgreBites::InputContext mInputContext;
 	OgreBites::SdkTrayManager* mTrayMgr;
 	Ogre::OverlaySystem* mOverlaySystem;
-	Ogre::SceneManager* mSceneMgr = nullptr;
 
 };
 

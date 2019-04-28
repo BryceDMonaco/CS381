@@ -130,3 +130,8 @@ Ogre::RenderWindow* GfxMgr::getWindow()
 {
 	return mWindow;
 }
+
+void GfxMgr::addQListener(Ogre::OverlaySystem* mOS)
+{
+	mSceneMgr->addRenderQueueListener(mOS);
+}

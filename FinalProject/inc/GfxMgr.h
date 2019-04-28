@@ -26,6 +26,7 @@ public:
 	Ogre::SceneManager* getSceneMgr();
 
 	Ogre::RenderWindow* getWindow();
+	void addQListener(Ogre::OverlaySystem* mOS);
 
 	Ogre::Camera* mCamera;
 

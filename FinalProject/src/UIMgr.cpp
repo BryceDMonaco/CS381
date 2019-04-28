@@ -12,8 +12,8 @@
 #include <EntityMgr.h>
 
 UIMgr::UIMgr(Engine* eng) : Mgr(eng) {
-	//mOverlaySystem = new Ogre::OverlaySystem();
-	Ogre::SceneManager* help = engine->gfxMgr->getSceneMgr();
+	mOverlaySystem = new Ogre::OverlaySystem();
+	engine->gfxMgr->addQListener(mOverlaySystem);
 }
 
 UIMgr::~UIMgr() {
@@ -21,7 +21,9 @@ UIMgr::~UIMgr() {
 }
 
 void UIMgr::Init() {
-
+	mInputContext.mKeyboard = engine->inputMgr->mKeyboard;
+	mInputContext.mMouse = engine->inputMgr->mMouse;
+	mTrayMgr = new OgreBites::SdkTrayManager("InterfaceName", engine->gfxMgr->mWindow, mInputContext, this);
 }
 
 void UIMgr::Stop() {
@@ -29,11 +31,13 @@ void UIMgr::Stop() {
 }
 
 void UIMgr::LoadLevel() {
-
+	OgreBites::ProgressBar *pbar;
+	pbar = mTrayMgr->createProgressBar(OgreBites::TL_BOTTOMLEFT, "HealthBar", "Health", 300, 200);
+	pbar->setProgress(100);
 }
 
 void UIMgr::Tick(float dt) {
-
+	mTrayMgr->refreshCursor();
 }
 
 void UIMgr::windowResized(Ogre::RenderWindow* rw){
@@ -43,25 +47,3 @@ void UIMgr::windowResized(Ogre::RenderWindow* rw){
 void UIMgr::windowClosed(Ogre::RenderWindow* rw){
 
 }
-
-//bool UIMgr::keyPressed(const OIS::KeyEvent &arg) {
-//	std::cout << "Key Pressed: " << arg.key << std::endl;
-//	return true;
-//}
-//bool UIMgr::keyReleased(const OIS::KeyEvent &arg){
-//	return true;
-//}
-//bool UIMgr::mouseMoved(const OIS::MouseEvent &arg){
-//    if (mTrayMgr->injectMouseMove(arg)) return true;
-//	return false;
-//}
-//bool UIMgr::mousePressed(const OIS::MouseEvent &me, OIS::MouseButtonID mid) {
-//	std::cout << "mouse clicked" << std::endl;
-//	if (mTrayMgr->injectMouseDown(me, mid)) return true;
-//	return false;
-//}
-//bool UIMgr::mouseReleased(const OIS::MouseEvent &arg, OIS::MouseButtonID id){
-//    if (mTrayMgr->injectMouseUp(arg, id)) return true;
-//    /* normal mouse processing here... */
-//	return false;
-//}

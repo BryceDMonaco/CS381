@@ -109,4 +109,8 @@ void Player::HandleInput()
 	}
 }
 
+void Player::OnCollision(Entity381* collider)
+{
+
+}
 

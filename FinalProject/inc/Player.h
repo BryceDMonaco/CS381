@@ -20,6 +20,7 @@ public:
 
 protected:
 	void HandleInput();
+	void OnCollision(Entity381* collider);
 
 private:
 

@@ -73,6 +73,8 @@ public:
 protected:
 	virtual void HandleInput();
 
+	virtual void OnCollision(Entity381* collider);
+
 	std::vector<Aspect*>* mAspects;
 
 };

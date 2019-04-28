@@ -102,6 +102,6 @@ void GameMgr::LoadLevel1 ()
 	engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_DESTRUCTIBLE, "obstacle12", "cube.mesh", Ogre::Vector3(-225, -225, -5000), Ogre::Vector3(2, 2, 0.3f), Ogre::Quaternion::IDENTITY, false);
 	engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_DESTRUCTIBLE, "obstacle13", "cube.mesh", Ogre::Vector3(225, -225, -5000), Ogre::Vector3(2, 2, 0.3f), Ogre::Quaternion::IDENTITY, false);
 
-
+	return;
 
 }

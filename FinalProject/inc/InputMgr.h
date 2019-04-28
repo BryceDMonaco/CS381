@@ -33,6 +33,10 @@ public:
 	void Tick (float dt);
 	void Stop ();
 
+	OIS::Keyboard* getKeyboard();
+	OIS::Mouse* getMouse();
+
+
 	Ogre::RenderWindow* mWindow;  // Passed by GfxMgr
 	Ogre::Root* mRoot;  // Passed by GfxMgr
 	Ogre::SceneManager* mSceneMgr;  // Passed by GfxMgr
@@ -75,6 +79,8 @@ protected:
 	bool mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id);
 	bool mouseMoved(const OIS::MouseEvent& me);
 	bool mouseReleased(const OIS::MouseEvent& me, OIS::MouseButtonID mid);
+
+	friend class UIMgr;
 
 };
 #endif /* INC_INPUTMGR_H_ */

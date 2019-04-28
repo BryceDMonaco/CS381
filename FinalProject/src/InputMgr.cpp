@@ -2,6 +2,7 @@
 #include "InputMgr.h"
 #include "GfxMgr.h"
 #include "EntityMgr.h"
+#include "UIMgr.h"
 #include <OgreCamera.h>
 #include "RenderableAspect.h"
 
@@ -118,6 +119,16 @@ void InputMgr::Stop ()
 {
 
 
+}
+
+OIS::Keyboard* InputMgr::getKeyboard()
+{
+	return mKeyboard;
+}
+
+OIS::Mouse* InputMgr::getMouse()
+{
+	return mMouse;
 }
 
 //Adjust mouse clipping area

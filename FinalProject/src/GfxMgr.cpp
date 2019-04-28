@@ -57,6 +57,9 @@ void GfxMgr::Init ()
 
 	}
 
+	mOverlaySystem = new Ogre::OverlaySystem();
+	//addQListener(mOverlaySystem);
+
 	mWindow = mRoot->initialise(true, "TutorialApplication Render Window");
 
 	Ogre::TextureManager::getSingleton().setDefaultNumMipmaps(5);
@@ -119,4 +122,19 @@ void GfxMgr::Stop ()
 {
 
 
+}
+
+Ogre::SceneManager* GfxMgr::getSceneMgr()
+{
+	return mSceneMgr;
+}
+
+Ogre::RenderWindow* GfxMgr::getWindow()
+{
+	return mWindow;
+}
+
+void GfxMgr::addQListener(Ogre::OverlaySystem* mOS)
+{
+	mSceneMgr->addRenderQueueListener(mOS);
 }

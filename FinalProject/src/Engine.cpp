@@ -13,6 +13,7 @@ Engine::Engine(){
 	inputMgr = 0;
 	entityMgr = 0;
 	gameMgr = 0;
+	soundMgr = 0;
 	keepRunning = true;
 
 }
@@ -29,18 +30,26 @@ void Engine::Init(){
 // construct
 	gfxMgr    = new GfxMgr(this);
 	std::cout << "Constructed GfxMgr" << std::endl;
+	uiMgr = new UIMgr(this);
+	std::cout << "Constructed UIMgr" << std::endl;
 	inputMgr = new InputMgr(this);
+	std::cout << "Constructed inputMgr" << std::endl;
 	entityMgr = new EntityMgr(this);
+	std::cout << "Constructed EntityMgr" << std::endl;
 	gameMgr = new GameMgr(this);
+	std::cout << "Constructed GameMgr" << std::endl;
 	soundMgr = new OgreSND::SoundMgr(this);
+	std::cout << "Constructed SoundMgr" << std::endl;
 // initialize
 	gfxMgr->Init();
+	uiMgr->Init();
 	inputMgr->Init();
 	entityMgr->Init();
 	gameMgr->Init();
 	soundMgr->Init();
 // load level to play
 	gfxMgr->LoadLevel();
+	uiMgr->LoadLevel();
 	inputMgr->LoadLevel();
 	entityMgr->LoadLevel();
 	gameMgr->LoadLevel();
@@ -53,6 +62,7 @@ void Engine::TickAll(float dt){
 	entityMgr->Tick(dt);
 	gameMgr->Tick(dt);
 	soundMgr->Tick(dt);
+	uiMgr->Tick(dt);
 }
 
 void Engine::Shutdown(){

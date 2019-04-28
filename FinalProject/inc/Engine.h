@@ -13,6 +13,7 @@
 #include <EntityMgr.h>
 #include <GameMgr.h>
 #include <SoundMgr.h>
+#include <UIMgr.h>
 
 class Engine {
 private:
@@ -21,11 +22,12 @@ public:
 	~Engine();
 
 
-	EntityMgr*      entityMgr;
-	GfxMgr*         gfxMgr;
-	InputMgr*       inputMgr;
-	GameMgr*        gameMgr;
-	OgreSND::SoundMgr*		soundMgr;
+	EntityMgr*      	entityMgr;
+	GfxMgr*         	gfxMgr;
+	InputMgr*       	inputMgr;
+	GameMgr*        	gameMgr;
+	OgreSND::SoundMgr*	soundMgr;
+	UIMgr* 				uiMgr;
 	//SelectionMgr* selectionMgr;
 	//ControlMgr*   controlMgr;
 

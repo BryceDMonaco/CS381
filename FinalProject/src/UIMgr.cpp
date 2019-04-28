@@ -12,8 +12,8 @@
 #include <EntityMgr.h>
 
 UIMgr::UIMgr(Engine* eng) : Mgr(eng) {
-	mOverlaySystem = new Ogre::OverlaySystem();
-	engine->gfxMgr->addQListener(mOverlaySystem);
+	//mOverlaySystem = new Ogre::OverlaySystem();
+	//engine->gfxMgr->addQListener(mOverlaySystem);
 }
 
 UIMgr::~UIMgr() {
@@ -21,6 +21,9 @@ UIMgr::~UIMgr() {
 }
 
 void UIMgr::Init() {
+	mOverlaySystem = engine->gfxMgr->mOverlaySystem;
+	engine->gfxMgr->addQListener(mOverlaySystem);
+
 	mInputContext.mKeyboard = engine->inputMgr->mKeyboard;
 	mInputContext.mMouse = engine->inputMgr->mMouse;
 	mTrayMgr = new OgreBites::SdkTrayManager("InterfaceName", engine->gfxMgr->mWindow, mInputContext, this);

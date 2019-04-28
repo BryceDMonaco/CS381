@@ -80,5 +80,7 @@ protected:
 	bool mouseMoved(const OIS::MouseEvent& me);
 	bool mouseReleased(const OIS::MouseEvent& me, OIS::MouseButtonID mid);
 
+	friend class UIMgr;
+
 };
 #endif /* INC_INPUTMGR_H_ */

@@ -10,6 +10,7 @@
 #include <OgreCamera.h>
 #include "OgreViewport.h"
 #include <OgreWindowEventUtilities.h>
+#include <OgreOverlaySystem.h>
 
 
 
@@ -39,6 +40,9 @@ private:
 
 	Ogre::SceneManager* mSceneMgr;
 
+	Ogre::OverlaySystem* mOverlaySystem;
+
+	friend class UIMgr;
 
 };
 

@@ -9,6 +9,7 @@
 #include "Engine.h"
 #include "EntityMgr.h"
 #include "InputMgr.h"
+#include "UIMgr.h"
 
 Player::Player (
 	Ogre::SceneManager* manager,
@@ -68,6 +69,8 @@ void Player::Tick(float dt)
 		mAspects->at(i)->Tick(dt);
 
 	}
+
+	mEntityMgr->engine->uiMgr->mProgressBar->setProgress(((float)mHealth)/100.0f);
 
 	return;
 

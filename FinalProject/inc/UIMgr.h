@@ -40,6 +40,8 @@ public:
 	OgreBites::SdkTrayManager* mTrayMgr;
 	Ogre::OverlaySystem* mOverlaySystem;
 
+	OgreBites::ProgressBar *mProgressBar;
+
 };
 
 

@@ -34,9 +34,8 @@ void UIMgr::Stop() {
 }
 
 void UIMgr::LoadLevel() {
-	OgreBites::ProgressBar *pbar;
-	pbar = mTrayMgr->createProgressBar(OgreBites::TL_BOTTOMLEFT, "HealthBar", "Health", 300, 200);
-	pbar->setProgress(100);
+	mProgressBar = mTrayMgr->createProgressBar(OgreBites::TL_BOTTOMLEFT, "HealthBar", "Health", 300, 200);
+	mProgressBar->setProgress(100);
 }
 
 void UIMgr::Tick(float dt) {

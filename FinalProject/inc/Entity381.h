@@ -18,6 +18,8 @@ class EntityMgr;
 
 class InputMgr;
 
+class UIMgr;
+
 class Entity381
 {
 public:

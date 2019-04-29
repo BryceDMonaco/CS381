@@ -18,6 +18,7 @@ protected:
 
 	std::vector<Entity381*> mCollisions;
 	float mCollisionRadius;
+	float mCollisionTimer;
 };
 
 #endif /* _COLLISION_APSECT_H_ */

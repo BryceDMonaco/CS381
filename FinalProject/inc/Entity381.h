@@ -34,6 +34,8 @@ public:
 	virtual void Initialize ();
 	virtual void Tick (float dt); // The update function
 
+	virtual void OnCollision(Entity381* collider, float timeSinceLastCollision);
+
 	void ShowAABB (bool state);
 
 	void AddAspect (Aspect* aspect);
@@ -74,8 +76,6 @@ public:
 
 protected:
 	virtual void HandleInput();
-
-	virtual void OnCollision(Entity381* collider);
 
 	std::vector<Aspect*>* mAspects;
 

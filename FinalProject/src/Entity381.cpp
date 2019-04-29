@@ -96,7 +96,7 @@ void Entity381::HandleInput()
 
 }
 
-void Entity381::OnCollision(Entity381* collider)
+void Entity381::OnCollision(Entity381* collider, float timeSinceLastCollision)
 {
 
 }

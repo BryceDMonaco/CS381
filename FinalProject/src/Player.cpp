@@ -6,6 +6,8 @@
  */
 
 #include "Player.h"
+#include "Engine.h"
+#include "EntityMgr.h"
 #include "InputMgr.h"
 
 Player::Player (
@@ -133,15 +135,17 @@ void Player::HandleInput()
 	}
 }
 
-void Player::OnCollision(Entity381* collider)
+void Player::OnCollision(Entity381* collider, float timeSinceLastCollision)
 {
 	if (collider->mTag == "Obstacle"
 		|| collider->mTag == "Destructible"
 		|| collider->mTag == "Enemy")
 	{
 		mHealth -= 25;
+		Ogre::LogManager::getSingletonPtr()->logMessage("Player took damage");
 		if (mHealth <= 0)
 		{
+			Ogre::LogManager::getSingletonPtr()->logMessage("Player is destroyed");
 			// kill player
 		}
 	}

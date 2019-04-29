@@ -22,7 +22,7 @@ public:
 
 protected:
 	void HandleInput();
-	void OnCollision(Entity381* collider);
+	void OnCollision(Entity381* collider, float timeSinceLastCollision);
 
 private:
 

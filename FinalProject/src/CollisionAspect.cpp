@@ -4,7 +4,8 @@
 
 CollisionAspect::CollisionAspect(Entity381* entity) : Aspect(entity)
 {
-	mCollisionRadius = 50.0f;
+	mCollisionRadius = 200.0f;
+	mCollisionTimer = 0.0f;
 }
 
 CollisionAspect::~CollisionAspect()
@@ -42,7 +43,7 @@ bool CollisionAspect::CheckCollisions()
 		if (it->first != mEntity381->mEntityID)
 		{
 			// compare the distance between these entities
-			if (mEntity381->mPosition.distance(it->second->mPosition) >= mCollisionRadius)
+			if (mEntity381->mPosition.distance(it->second->mPosition) <= mCollisionRadius)
 			{
 				collisionHappened = true;
 				mCollisions.push_back(it->second);

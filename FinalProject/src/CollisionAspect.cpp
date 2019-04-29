@@ -15,6 +15,8 @@ CollisionAspect::~CollisionAspect()
 
 void CollisionAspect::Tick(float dt)
 {
+	mCollisionTimer += dt;
+
 	// check for collisions
 	bool collisionHappened = CheckCollisions();
 
@@ -23,8 +25,10 @@ void CollisionAspect::Tick(float dt)
 	{
 		for (int i = 0; i < mCollisions.size(); i++)
 		{
-			mEntity381->OnCollision(mCollisions[i]);
+			mEntity381->OnCollision(mCollisions[i], mCollisionTimer);
 		}
+
+		mCollisionTimer = 0.0f;
 	}
 
 }

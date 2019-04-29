@@ -34,13 +34,22 @@ public:
 	virtual void Init();
 	virtual void Tick(float dt);
 	virtual void LoadLevel();
+	void LoadMainMenu();
 	virtual void Stop();
+
+    virtual bool mouseMoved(const OIS::MouseEvent &arg);
+    virtual bool mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id);
+    virtual bool mouseReleased(const OIS::MouseEvent &arg, OIS::MouseButtonID id);
+
+    void buttonHit(OgreBites::Button *b);
 
 	OgreBites::InputContext mInputContext;
 	OgreBites::SdkTrayManager* mTrayMgr;
 	Ogre::OverlaySystem* mOverlaySystem;
 
 	OgreBites::ProgressBar *mProgressBar;
+
+	unsigned int width, height;
 
 };
 

@@ -57,6 +57,7 @@ void GfxMgr::Init ()
 
 	}
 
+	//For uiMgr
 	mOverlaySystem = new Ogre::OverlaySystem();
 	//addQListener(mOverlaySystem);
 

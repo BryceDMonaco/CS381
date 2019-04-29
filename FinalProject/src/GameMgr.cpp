@@ -24,6 +24,9 @@ void GameMgr::LoadLevel ()
 
 	Ogre::SceneNode* camNode = mSceneMgr->getSceneNode("MainCamera");
 
+	//For main menu
+	playGame = false;
+
 	// Offset Camera
 	//camNode->translate((*cameraOffset) * dt * 100, Ogre::Node::TS_LOCAL);
 	//if (camNode->getPosition().y <= 5)
@@ -51,13 +54,6 @@ void GameMgr::LoadLevel ()
 	groundEntity->setMaterialName("Ocean2_Cg");
 	*/
 
-	LoadLevel1();
-
-	engine->entityMgr->CreateEntityOfType(
-		EntityType::PLAYER,
-		"Player");
-
-
 }
 
 void GameMgr::Tick (float dt)
@@ -70,6 +66,18 @@ void GameMgr::Stop ()
 {
 
 
+}
+
+void GameMgr::changeGameState(bool state) {
+	playGame = state;
+
+	if (playGame) {
+		LoadLevel1();
+
+		engine->entityMgr->CreateEntityOfType(
+				EntityType::PLAYER,
+				"Player");
+	}
 }
 
 void GameMgr::LoadLevel1 ()

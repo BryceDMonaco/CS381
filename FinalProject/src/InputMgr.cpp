@@ -441,9 +441,10 @@ bool InputMgr::keyReleased(const OIS::KeyEvent& ke)
 
 bool InputMgr::mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id)
 {
-	/*
-	const OIS::MouseState &ms = mMouse->getMouseState();
 
+	const OIS::MouseState &ms = mMouse->getMouseState();
+	std::cout << "presing mouse\n";
+	/*
 	if (id == OIS::MB_Left)
 	{
 		std::vector<Entity381 *>* entities = engine->entityMgr->GetEntities();

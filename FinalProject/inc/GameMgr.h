@@ -24,9 +24,11 @@ public:
 	void Tick (float dt);
 	void Stop ();
 
+	void changeGameState(bool state);
 	void LoadLevel1 ();
 
 	Ogre::SceneManager* mSceneMgr = nullptr;
+	bool playGame;
 
 };
 

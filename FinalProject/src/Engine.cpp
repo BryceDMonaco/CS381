@@ -49,7 +49,7 @@ void Engine::Init(){
 	soundMgr->Init();
 // load level to play
 	gfxMgr->LoadLevel();
-	uiMgr->LoadLevel();
+	uiMgr->LoadMainMenu();
 	inputMgr->LoadLevel();
 	entityMgr->LoadLevel();
 	gameMgr->LoadLevel();

@@ -441,9 +441,12 @@ bool InputMgr::keyReleased(const OIS::KeyEvent& ke)
 
 bool InputMgr::mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id)
 {
+	if (engine->uiMgr->mTrayMgr->injectMouseDown(arg, id)) return true;
 
-	const OIS::MouseState &ms = mMouse->getMouseState();
-	std::cout << "presing mouse\n";
+
+
+	//const OIS::MouseState &ms = mMouse->getMouseState();
+//	std::cout << "presing mouse\n";
 	/*
 	if (id == OIS::MB_Left)
 	{
@@ -523,11 +526,15 @@ bool InputMgr::mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id)
 
 bool InputMgr::mouseMoved(const OIS::MouseEvent& me)
 {
+	if (engine->uiMgr->mTrayMgr->injectMouseMove(me)) return true;
+
 	return true;
 }
 
 bool InputMgr::mouseReleased(const OIS::MouseEvent& me, OIS::MouseButtonID mid)
 {
+	if (engine->uiMgr->mTrayMgr->injectMouseUp(me, mid)) return true;
+
 	return true;
 }
 

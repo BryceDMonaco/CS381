@@ -48,9 +48,6 @@ public:
 	Ogre::OverlaySystem* mOverlaySystem;
 
 	OgreBites::ProgressBar *mProgressBar;
-
-	unsigned int width, height;
-
 };
 
 

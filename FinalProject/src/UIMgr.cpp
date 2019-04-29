@@ -42,6 +42,13 @@ void UIMgr::LoadMainMenu() {
 }
 
 void UIMgr::LoadLevel() {
+	//Hide the MainMenu
+	mTrayMgr->hideBackdrop();
+	//Destroy the button
+	mTrayMgr->destroyWidget("NewGame");
+
+
+	//Now load the UI for the game
 	mProgressBar = mTrayMgr->createProgressBar(OgreBites::TL_BOTTOMLEFT, "HealthBar", "Health", 300, 200);
 	mProgressBar->setProgress(100);
 	std::cout << "Break.\n";
@@ -52,7 +59,7 @@ void UIMgr::Tick(float dt) {
 }
 
 void UIMgr::windowResized(Ogre::RenderWindow* rw){
-	unsigned int depth;
+	unsigned int width, height, depth;
 	int left, top;
 	rw->getMetrics(width, height, depth, left, top);
 
@@ -66,6 +73,7 @@ void UIMgr::windowClosed(Ogre::RenderWindow* rw){
 }
 
 bool UIMgr::mouseMoved(const OIS::MouseEvent &arg){
+	std::cout << "moving mouse";
     if (mTrayMgr->injectMouseMove(arg)) return true;
 	return false;
 }

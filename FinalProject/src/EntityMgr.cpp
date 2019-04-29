@@ -63,16 +63,19 @@ void EntityMgr::CreateEntityOfType(
 			this,
 			mNextEntityID,
 			name,
-			meshFileName);
+			"pCube2.mesh");
+
+		scale *= 50;
+		scale.z *= -1;
 
 		break;
 	case ENTITY_OBSTACLE:
 		newEntity = new Entity381(
-			mSceneMgr,
-			this,
-			mNextEntityID,
-			name,
-			meshFileName);
+				mSceneMgr,
+				this,
+				mNextEntityID,
+				name,
+				meshFileName);
 
 		newEntity->mTag = "Obstacle";
 

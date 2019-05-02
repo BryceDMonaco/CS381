@@ -69,6 +69,18 @@ void EntityMgr::CreateEntityOfType(
 		scale.z *= -1;
 
 		break;
+	case EntityType::ENEMY:
+		newEntity = new Entity381(
+			mSceneMgr,
+			this,
+			mNextEntityID,
+			name,
+			"pCube3.mesh");
+
+		scale *= 50;
+		//scale.z *= -1;
+
+		break;
 	case ENTITY_OBSTACLE:
 		newEntity = new Entity381(
 				mSceneMgr,
@@ -86,7 +98,7 @@ void EntityMgr::CreateEntityOfType(
 				this,
 				mNextEntityID,
 				name,
-				meshFileName);
+				"pCube1.mesh");
 
 			newEntity->mTag = "Destructible";
 
@@ -111,7 +123,7 @@ void EntityMgr::CreateEntityOfType(
 	newEntity->mSceneNode->setScale(scale);
 
 	//For obstacles, randomly assign colors for now and give them a target
-	if (type == ENTITY_OBSTACLE || type == ENTITY_DESTRUCTIBLE)
+	if (type == ENTITY_OBSTACLE)
 	{
 		newEntity->AddAspect(new ObstacleHide(newEntity, 100));
 
@@ -138,6 +150,11 @@ void EntityMgr::CreateEntityOfType(
 
 	} else if (type == ENTITY_DESTRUCTIBLE)
 	{
+		//This comment can be changed to actual code once Alex's targetPosition code is merged
+		newEntity->targetPosition = newEntity->mPosition + Ogre::Vector3::UNIT_Z * 200000;
+		newEntity->mSpeed *= 5;
+		scale *= 20;
+		newEntity->mSceneNode->setScale(scale);
 		// Give health here
 
 	}

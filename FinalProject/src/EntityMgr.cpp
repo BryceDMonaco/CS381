@@ -66,6 +66,18 @@ void EntityMgr::CreateEntityOfType(
 			"pCube2.mesh");
 
 		scale *= 50;
+		scale.z *= -1;
+
+		break;
+	case EntityType::ENEMY:
+		newEntity = new Entity381(
+			mSceneMgr,
+			this,
+			mNextEntityID,
+			name,
+			"pCube3.mesh");
+
+		scale *= 50;
 		//scale.z *= -1;
 
 		break;

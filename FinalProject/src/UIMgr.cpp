@@ -35,27 +35,50 @@ void UIMgr::Stop() {
 
 void UIMgr::LoadMainMenu() {
 	mTrayMgr->showCursor();
-	mTrayMgr->createButton(OgreBites::TL_CENTER, "NewGame", "New Game", 100);
+	mTrayMgr->createButton(OgreBites::TL_CENTER, "NewGame", "New Game", 200);
+	mTrayMgr->createSeparator(OgreBites::TL_CENTER, "menu1Separator", 200);
+	mTrayMgr->createButton(OgreBites::TL_CENTER, "Tips", "How to Play", 200);
+	mTrayMgr->createSeparator(OgreBites::TL_CENTER, "menu2Separator", 200);
+	mTrayMgr->createButton(OgreBites::TL_CENTER, "QuitGame", "Quit", 200);
 	mTrayMgr->showBackdrop("menu");
 
 	mTrayMgr->showAll();
 }
 
-void UIMgr::LoadLevel() {
+void UIMgr::cleanMenu() {
 	//Hide the MainMenu
 	mTrayMgr->hideBackdrop();
-	//Destroy the button
-	mTrayMgr->destroyWidget("NewGame");
+	//Destroy the buttons
+	mTrayMgr->clearTray(OgreBites::TL_CENTER);
 
+	//These break the program WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+	//mTrayMgr->destroyWidget("NewGame");
+	//mTrayMgr->destroyAllWidgets();
+}
 
-	//Now load the UI for the game
-	mProgressBar = mTrayMgr->createProgressBar(OgreBites::TL_BOTTOMLEFT, "HealthBar", "Health", 300, 200);
+void UIMgr::LoadLevel() {
+//	loaded = true; //Testing purposes
+
+ 	mProgressBar = mTrayMgr->createProgressBar(OgreBites::TL_BOTTOMLEFT, "HealthBar", "Health", 300, 200);
 	mProgressBar->setProgress(100);
+
+	//Initialize the score label
+	mScoreLabel = mTrayMgr->createLabel(OgreBites::TL_TOPRIGHT, "Score", "0", 50);
+
 	std::cout << "Break.\n";
+}
+
+void UIMgr::openPauseScreen() {
+	mTrayMgr->showBackdrop();
 }
 
 void UIMgr::Tick(float dt) {
 	mTrayMgr->refreshCursor();
+
+	//Testing purposes
+//	if (loaded) {
+//		mScoreLabel->setCaption(std::to_string(score));
+//	}
 }
 
 void UIMgr::windowResized(Ogre::RenderWindow* rw){
@@ -90,12 +113,33 @@ bool UIMgr::mouseReleased(const OIS::MouseEvent &arg, OIS::MouseButtonID id){
 	return false;
 }
 
+bool UIMgr::keyPressed(const OIS::KeyEvent &arg) {
+	if (arg.key == OIS::KC_ESCAPE) {
+		openPauseScreen();
+	}
+
+	return true;
+}
+
 void UIMgr::buttonHit(OgreBites::Button *b){
-	std::cout << "Buttons..\n";
 	if (b->getName() == "NewGame") {
 		std::cout << "Hitting button...\n";
 		engine->gameMgr->changeGameState(true);
+
+		//Perform cleanup
+		cleanMenu();
+
+		//Load the level
 		LoadLevel();
+	}
+
+	if (b->getName() == "QuitGame") {
+		std::cout << "Exiting game...\n";
+		engine->keepRunning = false;
+	}
+
+	if (b->getName() == "Tips") {
+		std::cout << "Heres how to play!\n";
 	}
 }
 

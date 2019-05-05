@@ -151,7 +151,6 @@ void Player::OnCollision(Entity381* collider, float timeSinceLastCollision)
 		{
 			Ogre::LogManager::getSingletonPtr()->logMessage("Player is destroyed");
 			// kill player
-			//mEntityMgr->engine->gameMgr->changeGameState()
 		}
 	}
 }

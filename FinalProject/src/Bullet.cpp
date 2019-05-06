@@ -16,7 +16,7 @@ Bullet::Bullet (
 {
 	mTag = "Bullet";
 
-	mSpeed = 200.0f;
+	mSpeed = 400.0f;
 
 	initialPos = position;
 
@@ -94,7 +94,7 @@ void PlayerBullet::OnCollision(Entity381* collider, float timeSinceLastCollision
 	//{
 		if (collider->mTag == "Destructible" /*&& hitTimer >= hitInterval*/)
 		{
-			Ogre::LogManager::getSingletonPtr()->logMessage("destructible hit");
+			//Ogre::LogManager::getSingletonPtr()->logMessage("destructible hit");
 			collider->mHealth -= 25;
 			if (collider->mHealth <= 0)
 			{
@@ -106,7 +106,7 @@ void PlayerBullet::OnCollision(Entity381* collider, float timeSinceLastCollision
 		}
 		else if (collider->mTag == "Obstacle")
 		{
-			Ogre::LogManager::getSingletonPtr()->logMessage("obstacle hit");
+			//Ogre::LogManager::getSingletonPtr()->logMessage("obstacle hit");
 			Reset();
 		}
 	//}

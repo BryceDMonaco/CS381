@@ -6,7 +6,8 @@
 GameMgr::GameMgr (Engine* engine) : Mgr (engine)
 {
 	srand (time(NULL));
-
+	currentState = GameState::GAME_START;
+	player = nullptr;
 }
 
 GameMgr::~GameMgr ()
@@ -26,6 +27,9 @@ void GameMgr::LoadLevel ()
 
 	//For main menu
 	playGame = false;
+
+	winTrigger = (WinTrigger*) engine->entityMgr->CreateEntityOfType(EntityType::WIN_TRIGGER, "winTrigger", "cube.mesh");
+	winTriggerID = winTrigger->mEntityID;
 
 	// Offset Camera
 	//camNode->translate((*cameraOffset) * dt * 100, Ogre::Node::TS_LOCAL);
@@ -68,18 +72,71 @@ void GameMgr::Stop ()
 
 }
 
-void GameMgr::changeGameState(bool state) {
+void GameMgr::NextLevel()
+{
+	std::cout << "next level" << std::endl;
+	switch (currentState)
+	{
+	case GameState::GAME_START:
+		changeGameState(GameState::LEVEL_ONE);
+		break;
+	case GameState::LEVEL_ONE:
+		changeGameState(GameState::LEVEL_TWO);
+		break;
+	case GameState::LEVEL_TWO:
+		changeGameState(GameState::LEVEL_THREE);
+		break;
+	case GameState::LEVEL_THREE:
+		changeGameState(GameState::GAME_START);
+		break;
+	default:
+		break;
+	}
+}
+
+void GameMgr::changeGameState(GameState state) {
 	playGame = state;
 
-	if (playGame) {
+	//if (playGame) {
+		/*
 		mSceneMgr->setSkyBox(true, "Examples/SpaceSkyBox");
 
 		//LoadLevel1();
-		LoadRandomLevel (20, 1000);
+		//LoadRandomLevel (20, 1000);
 
 		engine->entityMgr->CreateEntityOfType(
 				EntityType::PLAYER,
 				"Player");
+				*/
+
+	switch (state)
+	{
+	case 0:
+		// load main menu
+		engine->entityMgr->DestroyAll();
+		currentState = GameState::GAME_START;
+		mSceneMgr->setSkyBox(false, "Examples/SpaceSkyBox");
+		engine->uiMgr->ReloadMainMenu();
+		break;
+	case 1:
+		currentState = GameState::LEVEL_ONE;
+		mSceneMgr->setSkyBox(true, "Examples/SpaceSkyBox");
+		LoadRandomLevel(10, 1000);
+		player = (Player*) engine->entityMgr->CreateEntityOfType(
+				EntityType::PLAYER,
+				"Player");
+		player->winTriggerID = winTriggerID;
+		break;
+	case 2:
+		currentState = GameState::LEVEL_TWO;
+		LoadRandomLevel(10, 900);
+		break;
+	case 3:
+		currentState = GameState::LEVEL_THREE;
+		LoadRandomLevel(10, 800);
+		break;
+	default:
+		break;
 	}
 }
 
@@ -130,11 +187,15 @@ void GameMgr::LoadRandomLevel (int size, float distanceBetweenPieces)
 
 		} while (choice == lastChoice);  // Prevents the same piece multiple times in a row
 
-		GenerateLevelPiece (i * -distanceBetweenPieces, std::string("obstacle") + std::to_string(i), choice);
+		GenerateLevelPiece (i * -distanceBetweenPieces, std::string("obstacle") + std::to_string(obstacleIndex), choice);
 
 		lastChoice = choice;
 
+		obstacleIndex++;
+
 	}
+
+	winTrigger->mPosition = Ogre::Vector3(0, 0, (size + 1) * -distanceBetweenPieces);
 
 	return;
 

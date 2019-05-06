@@ -76,7 +76,7 @@ void Player::Initialize()
 			"Bullet" + std::to_string(i),		// name
 			"sphere.mesh",						// mesh file
 			Ogre::Vector3(4000, 4000, 4000),	// position
-			Ogre::Vector3(0.25f,0.25f,0.25f)));	// scale
+			Ogre::Vector3(0.15f,0.15f,0.15f)));	// scale
 	}
 
 	inputMgr = mEntityMgr->engine->inputMgr;
@@ -96,11 +96,24 @@ void Player::Tick(float dt)
 
 	mEntityMgr->engine->uiMgr->mProgressBar->setProgress(((float)mHealth)/100.0f);
 
+	bool nextLevel = CheckVictory();
+	if (nextLevel)
+	{
+		mEntityMgr->engine->gameMgr->NextLevel();
+	}
+
+	if (mHealth <= 0)
+	{
+		Ogre::LogManager::getSingletonPtr()->logMessage("Player is destroyed");
+		// kill player
+		mEntityMgr->engine->gameMgr->changeGameState(GameState::GAME_START);
+	}
+
 }
 
 void Player::HandleInput()
 {
-	float positionBounds = 1000.0f;
+	float positionBounds = 200.0f;
 	float angleBounds = 45.0f;
 
 	if (inputMgr->isWDown)
@@ -177,13 +190,22 @@ void Player::OnCollision(Entity381* collider, float timeSinceLastCollision)
 	{
 		mHealth -= 25;
 		Ogre::LogManager::getSingletonPtr()->logMessage("Player took damage");
-		if (mHealth <= 0)
-		{
-			Ogre::LogManager::getSingletonPtr()->logMessage("Player is destroyed");
-			// kill player
-		}
 
 		obstacleHitTimer = 0.0f;
 	}
+}
+
+bool Player::CheckVictory()
+{
+	std::map<int, Entity381*>::iterator it = mEntityMgr->GetEntities()->find(winTriggerID);
+	if (it != mEntityMgr->GetEntities()->end())
+	{
+		if (it->second->mPosition.z > 0)
+		{
+			return true;
+		}
+	}
+
+	return false;
 }
 

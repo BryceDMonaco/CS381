@@ -7,6 +7,7 @@
 #include "Entity381.h"
 #include "Player.h"
 #include "Bullet.h"
+#include "WinTrigger.h"
 #include "Command.h"
 #include <OgreSceneManager.h>
 #include <OgreMeshManager.h>
@@ -24,7 +25,8 @@ enum EntityType
 	PLAYER,
 	ENEMY,
 	PLAYER_BULLET,
-	ENEMY_BULLET
+	ENEMY_BULLET,
+	WIN_TRIGGER
 };
 
 class EntityMgr : public Mgr
@@ -45,6 +47,7 @@ public:
 		Ogre::Quaternion orientation = Ogre::Quaternion::IDENTITY,
 		bool showAabb = false);
 	void DestroyEntity (int entityIndex);
+	void DestroyAll();
 
 	void IncrementSelectedID (); //Index will loop back to 0
 

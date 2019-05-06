@@ -35,11 +35,20 @@ void EntityMgr::Tick (float dt)
 
 	}
 	*/
-	for (std::map<int, Entity381*>::iterator it = mEntities->begin();
-			it != mEntities->end(); it++)
+	//std::cout << mEntities->size() << std::endl;
+	if (mEntities->size() > 0)
 	{
-		it->second->Tick(dt);
+		for (std::map<int, Entity381*>::iterator it = mEntities->begin();
+				it != mEntities->end(); it++)
+		{
+			//std::cout << "in loop: " + std::to_string((int)mEntities->size() )<< std::endl;
+			if (mEntities->size() > 0)
+				it->second->Tick(dt);
+			else
+				break;
+		}
 	}
+
 
 }
 
@@ -116,6 +125,15 @@ Entity381* EntityMgr::CreateEntityOfType(
 			meshFileName,
 			position);
 		break;
+	case WIN_TRIGGER:
+		newEntity = new WinTrigger(
+			mSceneMgr,
+			this,
+			mNextEntityID,
+			name,
+			"pCube1.mesh",
+			position);
+		break;
 	default:
 		newEntity = new Entity381(
 			mSceneMgr,
@@ -176,6 +194,12 @@ Entity381* EntityMgr::CreateEntityOfType(
 		newEntity->mSceneNode->setScale(scale);
 		// Give health here
 
+	} else if (type == WIN_TRIGGER)
+	{
+		newEntity->targetPosition = newEntity->mPosition + Ogre::Vector3::UNIT_Z * 200000;
+		newEntity->mSpeed *= 5;
+		scale *= 0;
+		newEntity->mSceneNode->setScale(scale);
 	}
 
 	//newEntity->mEntity->setMaterialName("Template/Red");
@@ -191,10 +215,22 @@ void EntityMgr::DestroyEntity(int entityID)
 	if (it != mEntities->end())
 	{
 		mSceneMgr->destroySceneNode(it->second->mSceneNode);
+		//delete it->second;
+		mEntities->erase(it);
+	}
+}
+
+void EntityMgr::DestroyAll()
+{
+	std::map<int, Entity381*>::iterator it;
+	for (it = mEntities->begin(); it != mEntities->end(); it++)
+	{
+		mSceneMgr->destroySceneNode(it->second->mSceneNode);
+		//delete it->second;
 		mEntities->erase(it);
 	}
 
-
+	mEntities->clear();
 }
 
 void EntityMgr::IncrementSelectedID ()

@@ -150,7 +150,8 @@ void EntityMgr::CreateEntityOfType(
 
 	} else if (type == ENTITY_DESTRUCTIBLE)
 	{
-		//This comment can be changed to actual code once Alex's targetPosition code is merged
+		newEntity->AddAspect(new ObstacleHide(newEntity, 100));
+
 		newEntity->targetPosition = newEntity->mPosition + Ogre::Vector3::UNIT_Z * 200000;
 		newEntity->mSpeed *= 5;
 		scale *= 20;

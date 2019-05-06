@@ -35,9 +35,15 @@ public:
 	virtual void Tick(float dt);
 	virtual void LoadLevel();
 	void LoadMainMenu();
+	void LoadKillScreen();
+	void cleanMenu();
+	void cleanGame();
+	void openPauseScreen();
+	void closePauseScreen();
 	void ReloadMainMenu();
 	virtual void Stop();
 
+	virtual bool keyPressed(const OIS::KeyEvent &arg);
     virtual bool mouseMoved(const OIS::MouseEvent &arg);
     virtual bool mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id);
     virtual bool mouseReleased(const OIS::MouseEvent &arg, OIS::MouseButtonID id);
@@ -49,6 +55,17 @@ public:
 	Ogre::OverlaySystem* mOverlaySystem;
 
 	OgreBites::ProgressBar *mProgressBar;
+	OgreBites::Button *mNewGame;
+	OgreBites::Button *mHowTo;
+	OgreBites::Button *mQuit;
+	OgreBites::Button *mRestartGame;
+	OgreBites::Button *mMainMenu;
+	OgreBites::Button *mExitTips;
+	OgreBites::Label *mScoreLabel;
+
+	bool isPauseScreenOpen;
+	int score = 0;
+	//bool loaded = false;
 };
 
 

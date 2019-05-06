@@ -36,6 +36,7 @@ private:
 
 	Ogre::Vector3 stationaryPosition;
 	bool movingVertical, movingHorizontal;
+	bool alreadyDead = false;
 
 	ShootingAspect* mShooting;
 	float shootInterval;

@@ -171,11 +171,27 @@ bool InputMgr::frameRenderingQueued(const Ogre::FrameEvent& evt)
 bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 {
 	// Quit
-	if (ke.key == OIS::KC_ESCAPE)
+	if (ke.key == OIS::KC_Q)
 	{
 		engine->keepRunning = false;
 
 	}
+
+	if (ke.key == OIS::KC_ESCAPE && !engine->uiMgr->isPauseScreenOpen)
+	{
+		engine->uiMgr->openPauseScreen();
+	}
+	else if (ke.key == OIS::KC_ESCAPE && engine->uiMgr->isPauseScreenOpen)
+	{
+		engine->uiMgr->closePauseScreen();
+	}
+
+	//Testing purposes
+//	if (ke.key == OIS::KC_SPACE)
+//	{
+//		engine->uiMgr->score += 10;
+//		std::cout << "update score\n";
+//	}
 
 	if (ke.key == OIS::KC_A)
 	{

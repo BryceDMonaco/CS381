@@ -63,7 +63,8 @@ Entity381* EntityMgr::CreateEntityOfType(
 			this,
 			mNextEntityID,
 			name,
-			"pCube2.mesh");
+			"pCube2.mesh",
+			position);
 
 		scale *= 50;
 		scale.z *= -1;
@@ -75,7 +76,8 @@ Entity381* EntityMgr::CreateEntityOfType(
 			this,
 			mNextEntityID,
 			name,
-			"pCube3.mesh");
+			"pCube3.mesh",
+			position);
 
 		scale *= 50;
 		//scale.z *= -1;
@@ -87,7 +89,8 @@ Entity381* EntityMgr::CreateEntityOfType(
 				this,
 				mNextEntityID,
 				name,
-				meshFileName);
+				meshFileName,
+				position);
 
 		newEntity->mTag = "Obstacle";
 
@@ -98,7 +101,8 @@ Entity381* EntityMgr::CreateEntityOfType(
 			this,
 			mNextEntityID,
 			name,
-			"pCube1.mesh");
+			"pCube1.mesh",
+			position);
 
 		newEntity->mTag = "Destructible";
 
@@ -109,7 +113,8 @@ Entity381* EntityMgr::CreateEntityOfType(
 			this,
 			mNextEntityID,
 			name,
-			meshFileName);
+			meshFileName,
+			position);
 		break;
 	default:
 		newEntity = new Entity381(
@@ -117,7 +122,8 @@ Entity381* EntityMgr::CreateEntityOfType(
 			this,
 			mNextEntityID,
 			name,
-			meshFileName);
+			meshFileName,
+			position);
 	}
 
 	// add the entity to the map
@@ -131,7 +137,7 @@ Entity381* EntityMgr::CreateEntityOfType(
 	newEntity->ShowAABB(showAabb);
 
 	// Scale the entity
-	newEntity->mPosition = position;
+	//newEntity->mPosition = position;
 	newEntity->mSceneNode->setScale(scale);
 
 	//For obstacles, randomly assign colors for now and give them a target

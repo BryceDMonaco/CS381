@@ -28,8 +28,12 @@ public:
 	void Initialize();
 	void Tick(float dt);
 
+	void Reset();
+
 protected:
 	virtual void OnCollision(Entity381* collider, float timeSinceLastCollision);
+
+	Ogre::Vector3 initialPos;
 
 	float hitInterval;
 	float hitTimer;

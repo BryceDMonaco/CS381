@@ -27,6 +27,8 @@ public:
 	void changeGameState(bool state);
 	void LoadLevel1 ();
 
+	void GenerateLevelPiece (float zPos);
+
 	Ogre::SceneManager* mSceneMgr = nullptr;
 	bool playGame;
 

@@ -37,6 +37,9 @@ private:
 	float shootInterval;
 	float shootTimer;
 
+	float obstacleHitInterval;
+	float obstacleHitTimer;
+
 };
 
 #endif /* _PLAYER_H_ */

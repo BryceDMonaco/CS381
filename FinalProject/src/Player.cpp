@@ -33,6 +33,9 @@ Player::Player (
 	mShooting = nullptr;
 	shootInterval = 0.25f;
 	shootTimer = shootInterval;
+
+	obstacleHitInterval = 0.5f;
+	obstacleHitTimer = obstacleHitInterval;
 }
 
 Player::~Player ()
@@ -82,6 +85,7 @@ void Player::Initialize()
 void Player::Tick(float dt)
 {
 	shootTimer += dt;
+	obstacleHitTimer += dt;
 
 	HandleInput();
 
@@ -166,7 +170,7 @@ void Player::OnCollision(Entity381* collider, float timeSinceLastCollision)
 {
 	//Ogre::LogManager::getSingletonPtr()->logMessage("Player hit " + collider->mEntityName);
 
-	if (timeSinceLastCollision >= 0.5f
+	if (obstacleHitTimer >= obstacleHitInterval
 		&& (collider->mTag == "Obstacle"
 			|| collider->mTag == "Destructible"
 			|| collider->mTag == "Enemy"))
@@ -178,6 +182,8 @@ void Player::OnCollision(Entity381* collider, float timeSinceLastCollision)
 			Ogre::LogManager::getSingletonPtr()->logMessage("Player is destroyed");
 			// kill player
 		}
+
+		obstacleHitTimer = 0.0f;
 	}
 }
 

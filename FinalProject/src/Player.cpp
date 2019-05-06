@@ -47,7 +47,7 @@ void Player::Initialize()
 			EntityType::BULLET,					// type
 			"Bullet" + std::to_string(i),		// name
 			"sphere.mesh",						// mesh file
-			Ogre::Vector3(0,0, 2000),			// position
+			Ogre::Vector3(4000, 4000, 4000),	// position
 			Ogre::Vector3(0.25f,0.25f,0.25f));	// scale
 	}
 
@@ -151,6 +151,8 @@ void Player::HandleInput()
 
 void Player::OnCollision(Entity381* collider, float timeSinceLastCollision)
 {
+	//Ogre::LogManager::getSingletonPtr()->logMessage("Player hit " + collider->mEntityName);
+
 	if (timeSinceLastCollision >= 0.5f
 		&& (collider->mTag == "Obstacle"
 			|| collider->mTag == "Destructible"

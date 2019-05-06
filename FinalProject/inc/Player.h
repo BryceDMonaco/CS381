@@ -2,6 +2,7 @@
 #define _PLAYER_H_
 
 #include "Entity381.h"
+#include "EntityMgr.h"
 #include "Bullet.h"
 #include "CollisionAspect.h"
 

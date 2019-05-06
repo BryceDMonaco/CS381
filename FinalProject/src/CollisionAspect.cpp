@@ -49,6 +49,7 @@ bool CollisionAspect::CheckCollisions()
 			// compare the distance between these entities
 			if (mEntity381->mPosition.distance(it->second->mPosition) <= mCollisionRadius)
 			{
+				//Ogre::LogManager::getSingletonPtr()->logMessage("Collision happened with " + it->second->mEntityName);
 				collisionHappened = true;
 				mCollisions.push_back(it->second);
 			}

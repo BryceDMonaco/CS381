@@ -120,6 +120,10 @@ void EntityMgr::CreateEntityOfType(
 			meshFileName);
 	}
 
+	// add the entity to the map
+	mEntities->insert(std::pair<int, Entity381*>(mNextEntityID, newEntity));
+	mNextEntityID++;
+
 	// initialize the new entity
 	newEntity->Initialize();
 
@@ -169,9 +173,6 @@ void EntityMgr::CreateEntityOfType(
 
 	//newEntity->mEntity->setMaterialName("Template/Red");
 
-	// add the entity to the map
-	mEntities->insert(std::pair<int, Entity381*>(mNextEntityID, newEntity));
-	mNextEntityID++;
 }
 
 void EntityMgr::DestroyEntity(int entityID)

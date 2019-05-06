@@ -16,6 +16,14 @@
 #include <stdlib.h>
 #include <time.h>
 
+enum GameState
+{
+	GAME_START = 0,
+	LEVEL_ONE,
+	LEVEL_TWO,
+	LEVEL_THREE
+};
+
 class GameMgr : public Mgr
 {
 public:
@@ -26,7 +34,7 @@ public:
 	void Tick (float dt);
 	void Stop ();
 
-	void changeGameState(bool state);
+	void changeGameState(GameState state);
 	void LoadLevel1 ();
 	void LoadRandomLevel (int size, float distanceBetweenPieces);
 

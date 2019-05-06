@@ -68,18 +68,43 @@ void GameMgr::Stop ()
 
 }
 
-void GameMgr::changeGameState(bool state) {
+void GameMgr::changeGameState(GameState state) {
 	playGame = state;
 
-	if (playGame) {
+	//if (playGame) {
+		/*
 		mSceneMgr->setSkyBox(true, "Examples/SpaceSkyBox");
 
 		//LoadLevel1();
-		LoadRandomLevel (20, 1000);
+		//LoadRandomLevel (20, 1000);
 
 		engine->entityMgr->CreateEntityOfType(
 				EntityType::PLAYER,
 				"Player");
+				*/
+
+	switch (state)
+	{
+	case 0:
+		// load main menu
+		mSceneMgr->setSkyBox(false, "Examples/SpaceSkyBox");
+		engine->uiMgr->ReloadMainMenu();
+		break;
+	case 1:
+		mSceneMgr->setSkyBox(true, "Examples/SpaceSkyBox");
+		LoadRandomLevel(20, 1000);
+		engine->entityMgr->CreateEntityOfType(
+				EntityType::PLAYER,
+				"Player");
+		break;
+	case 2:
+		LoadRandomLevel(20, 1000);
+		break;
+	case 3:
+		LoadRandomLevel(20, 1000);
+		break;
+	default:
+		break;
 	}
 }
 

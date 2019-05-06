@@ -100,7 +100,7 @@ void UIMgr::buttonHit(OgreBites::Button *b){
 	std::cout << "Buttons..\n";
 	if (b->getName() == "NewGame") {
 		std::cout << "Hitting button...\n";
-		engine->gameMgr->changeGameState(true);
+		engine->gameMgr->changeGameState(GameState::LEVEL_ONE);
 		LoadLevel();
 	}
 }

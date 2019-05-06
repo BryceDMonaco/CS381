@@ -76,7 +76,7 @@ void Player::Initialize()
 			"Bullet" + std::to_string(i),		// name
 			"sphere.mesh",						// mesh file
 			Ogre::Vector3(4000, 4000, 4000),	// position
-			Ogre::Vector3(0.25f,0.25f,0.25f)));	// scale
+			Ogre::Vector3(0.15f,0.15f,0.15f)));	// scale
 	}
 
 	inputMgr = mEntityMgr->engine->inputMgr;
@@ -113,7 +113,7 @@ void Player::Tick(float dt)
 
 void Player::HandleInput()
 {
-	float positionBounds = 1000.0f;
+	float positionBounds = 200.0f;
 	float angleBounds = 45.0f;
 
 	if (inputMgr->isWDown)

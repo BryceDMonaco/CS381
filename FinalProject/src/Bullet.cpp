@@ -16,7 +16,7 @@ Bullet::Bullet (
 {
 	mTag = "Bullet";
 
-	mSpeed = 200.0f;
+	mSpeed = 400.0f;
 
 	initialPos = position;
 

@@ -121,7 +121,7 @@ void GameMgr::changeGameState(GameState state) {
 	case 1:
 		currentState = GameState::LEVEL_ONE;
 		mSceneMgr->setSkyBox(true, "Examples/SpaceSkyBox");
-		LoadRandomLevel(5, 1000);
+		LoadRandomLevel(10, 1000);
 		player = (Player*) engine->entityMgr->CreateEntityOfType(
 				EntityType::PLAYER,
 				"Player");
@@ -129,11 +129,11 @@ void GameMgr::changeGameState(GameState state) {
 		break;
 	case 2:
 		currentState = GameState::LEVEL_TWO;
-		LoadRandomLevel(20, 900);
+		LoadRandomLevel(10, 900);
 		break;
 	case 3:
 		currentState = GameState::LEVEL_THREE;
-		LoadRandomLevel(20, 800);
+		LoadRandomLevel(10, 800);
 		break;
 	default:
 		break;

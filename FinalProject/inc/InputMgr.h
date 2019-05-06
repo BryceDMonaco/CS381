@@ -45,6 +45,7 @@ public:
 	bool isDDown;
 	bool isSDown;
 	bool isWDown;
+	bool isSpaceDown;
 
 private:
 	OIS::InputManager* mInputManager;

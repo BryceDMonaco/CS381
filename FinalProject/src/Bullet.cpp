@@ -85,7 +85,7 @@ EnemyBullet::EnemyBullet (
 : Entity381 (manager,entityMgr,entityId,entityName,meshFileName,position,
 	orientation)
 {
-	mTag = "PlayerBullet";
+	mTag = "EnemyBullet";
 }
 
 EnemyBullet::~EnemyBullet()

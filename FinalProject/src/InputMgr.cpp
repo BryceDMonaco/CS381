@@ -213,6 +213,11 @@ bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 		isWDown = true;
 	}
 
+	if (ke.key == OIS::KC_SPACE)
+	{
+		isSpaceDown = true;
+	}
+
 	/*
 	// Change the selected entity
 	if (ke.key == OIS::KC_TAB)
@@ -376,6 +381,11 @@ bool InputMgr::keyReleased(const OIS::KeyEvent& ke)
 	if (ke.key == OIS::KC_W)
 	{
 		isWDown = false;
+	}
+
+	if (ke.key == OIS::KC_SPACE)
+	{
+		isSpaceDown = false;
 	}
 
 	/*

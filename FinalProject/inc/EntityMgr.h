@@ -6,6 +6,8 @@
 #include <deque>
 #include "Entity381.h"
 #include "Player.h"
+#include "Bullet.h"
+#include "WinTrigger.h"
 #include "Command.h"
 #include <OgreSceneManager.h>
 #include <OgreMeshManager.h>
@@ -17,7 +19,14 @@
 
 enum EntityType
 {
-	ENTITY_DEFAULT, ENTITY_OBSTACLE, ENTITY_DESTRUCTIBLE, PLAYER, ENEMY
+	ENTITY_DEFAULT,
+	ENTITY_OBSTACLE,
+	ENTITY_DESTRUCTIBLE,
+	PLAYER,
+	ENEMY,
+	PLAYER_BULLET,
+	ENEMY_BULLET,
+	WIN_TRIGGER
 };
 
 class EntityMgr : public Mgr
@@ -29,7 +38,7 @@ public:
 
 	void Tick (float dt); // Update all entities in the manager
 
-	void CreateEntityOfType(
+	Entity381* CreateEntityOfType(
 		EntityType type,
 		std::string name,
 		std::string meshFileName = "cube.mesh",
@@ -38,6 +47,7 @@ public:
 		Ogre::Quaternion orientation = Ogre::Quaternion::IDENTITY,
 		bool showAabb = false);
 	void DestroyEntity (int entityIndex);
+	void DestroyAll();
 
 	void IncrementSelectedID (); //Index will loop back to 0
 

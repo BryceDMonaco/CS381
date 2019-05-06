@@ -46,6 +46,18 @@ void UIMgr::LoadMainMenu() {
 }
 
 void UIMgr::cleanMenu() {
+  mTrayMgr->hideBackdrop();
+  
+  mTrayMgr->clearTray(OgreBites::TL_CENTER);
+}
+
+void UIMgr::ReloadMainMenu()
+{
+	mTrayMgr->destroyWidget(mProgressBar);
+	LoadMainMenu();
+}
+
+void UIMgr::LoadLevel() {
 	//Hide the MainMenu
 	mTrayMgr->hideBackdrop();
 	//Destroy the buttons
@@ -144,6 +156,8 @@ void UIMgr::buttonHit(OgreBites::Button *b){
 		cleanMenu();
 
 		//Load the level
+		engine->gameMgr->changeGameState(GameState::LEVEL_ONE);
+    
 		LoadLevel();
 	}
 

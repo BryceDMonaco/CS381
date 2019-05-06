@@ -35,15 +35,24 @@ void EntityMgr::Tick (float dt)
 
 	}
 	*/
-	for (std::map<int, Entity381*>::iterator it = mEntities->begin();
-			it != mEntities->end(); it++)
+	//std::cout << mEntities->size() << std::endl;
+	if (mEntities->size() > 0)
 	{
-		it->second->Tick(dt);
+		for (std::map<int, Entity381*>::iterator it = mEntities->begin();
+				it != mEntities->end(); it++)
+		{
+			//std::cout << "in loop: " + std::to_string((int)mEntities->size() )<< std::endl;
+			if (mEntities->size() > 0)
+				it->second->Tick(dt);
+			else
+				break;
+		}
 	}
+
 
 }
 
-void EntityMgr::CreateEntityOfType(
+Entity381* EntityMgr::CreateEntityOfType(
 		EntityType type,
 		std::string name,
 		std::string meshFileName,
@@ -63,7 +72,8 @@ void EntityMgr::CreateEntityOfType(
 			this,
 			mNextEntityID,
 			name,
-			"pCube2.mesh");
+			"pCube2.mesh",
+			position);
 
 		scale *= 50;
 		scale.z *= -1;
@@ -75,7 +85,8 @@ void EntityMgr::CreateEntityOfType(
 			this,
 			mNextEntityID,
 			name,
-			"pCube3.mesh");
+			"pCube3.mesh",
+			position);
 
 		scale *= 50;
 		//scale.z *= -1;
@@ -87,30 +98,55 @@ void EntityMgr::CreateEntityOfType(
 				this,
 				mNextEntityID,
 				name,
-				meshFileName);
+				meshFileName,
+				position);
 
 		newEntity->mTag = "Obstacle";
 
 		break;
 	case ENTITY_DESTRUCTIBLE:
-			newEntity = new Entity381(
-				mSceneMgr,
-				this,
-				mNextEntityID,
-				name,
-				"pCube1.mesh");
+		newEntity = new Entity381(
+			mSceneMgr,
+			this,
+			mNextEntityID,
+			name,
+			"pCube1.mesh",
+			position);
 
-			newEntity->mTag = "Destructible";
+		newEntity->mTag = "Destructible";
 
-			break;
+		break;
+	case PLAYER_BULLET:
+		newEntity = new PlayerBullet(
+			mSceneMgr,
+			this,
+			mNextEntityID,
+			name,
+			meshFileName,
+			position);
+		break;
+	case WIN_TRIGGER:
+		newEntity = new WinTrigger(
+			mSceneMgr,
+			this,
+			mNextEntityID,
+			name,
+			"pCube1.mesh",
+			position);
+		break;
 	default:
 		newEntity = new Entity381(
 			mSceneMgr,
 			this,
 			mNextEntityID,
 			name,
-			meshFileName);
+			meshFileName,
+			position);
 	}
+
+	// add the entity to the map
+	mEntities->insert(std::pair<int, Entity381*>(mNextEntityID, newEntity));
+	mNextEntityID++;
 
 	// initialize the new entity
 	newEntity->Initialize();
@@ -119,7 +155,7 @@ void EntityMgr::CreateEntityOfType(
 	newEntity->ShowAABB(showAabb);
 
 	// Scale the entity
-	newEntity->mPosition = position;
+	//newEntity->mPosition = position;
 	newEntity->mSceneNode->setScale(scale);
 
 	//For obstacles, randomly assign colors for now and give them a target
@@ -150,20 +186,24 @@ void EntityMgr::CreateEntityOfType(
 
 	} else if (type == ENTITY_DESTRUCTIBLE)
 	{
-		//This comment can be changed to actual code once Alex's targetPosition code is merged
+		newEntity->AddAspect(new ObstacleHide(newEntity, 100));
+
 		newEntity->targetPosition = newEntity->mPosition + Ogre::Vector3::UNIT_Z * 200000;
 		newEntity->mSpeed *= 5;
 		scale *= 20;
 		newEntity->mSceneNode->setScale(scale);
 		// Give health here
 
+	} else if (type == WIN_TRIGGER)
+	{
+		newEntity->targetPosition = newEntity->mPosition + Ogre::Vector3::UNIT_Z * 200000;
+		newEntity->mSpeed *= 5;
+		scale *= 0;
+		newEntity->mSceneNode->setScale(scale);
 	}
 
 	//newEntity->mEntity->setMaterialName("Template/Red");
-
-	// add the entity to the map
-	mEntities->insert(std::pair<int, Entity381*>(mNextEntityID, newEntity));
-	mNextEntityID++;
+	return newEntity;
 }
 
 void EntityMgr::DestroyEntity(int entityID)
@@ -173,8 +213,24 @@ void EntityMgr::DestroyEntity(int entityID)
 
 	// if it exists, destroy it
 	if (it != mEntities->end())
+	{
+		mSceneMgr->destroySceneNode(it->second->mSceneNode);
+		//delete it->second;
 		mEntities->erase(it);
+	}
+}
 
+void EntityMgr::DestroyAll()
+{
+	std::map<int, Entity381*>::iterator it;
+	for (it = mEntities->begin(); it != mEntities->end(); it++)
+	{
+		mSceneMgr->destroySceneNode(it->second->mSceneNode);
+		//delete it->second;
+		mEntities->erase(it);
+	}
+
+	mEntities->clear();
 }
 
 void EntityMgr::IncrementSelectedID ()

@@ -39,7 +39,7 @@ SoundMgr::~SoundMgr(){
 	int ret;
 	ret = alcMakeContextCurrent(NULL);
 	if (!ret) {
-		std::cerr << "Null current context" << std::endl;
+		std::cout << "Null current context" << std::endl;
 	}
 	alcDestroyContext(context);
 	//printError("Destroy Context");
@@ -55,14 +55,16 @@ void SoundMgr::init(){
 }
 
 void SoundMgr::initialize(void){
+	std::cout << "SoundMgr::initialize" << std::endl;
+
 	this->device = alcOpenDevice(NULL);
 	if(!device){
-		std::cerr << "Sound ERROR: Bye, could not open default sound device" << std::endl;
+		std::cout << "Sound ERROR: Bye, could not open default sound device" << std::endl;
 	}
 	alGetError();
 	this->context = alcCreateContext(this->device, NULL);
 	if (!alcMakeContextCurrent(this->context)) {
-		std::cerr << "Sound ERROR: Cannot make default context" << std::endl;
+		std::cout << "Sound ERROR: Cannot make default context" << std::endl;
 	}
 	//this->buffersInfo.buffersInUseCount = 0;
 	for(int i = 0; i < OgreSND::maxAudioBuffers; i++){
@@ -100,11 +102,15 @@ void SoundMgr::initialize(void){
 
 	unsigned int sid;
         //background music
-	std::string filename = "data/watercraft/sounds/backgroundMusic.wav";
+	std::string filename = "data/MetroidThemeNES.wav";
 	if (this->reserveAudio(filename, true, sid)){
 		std::cout << "background music loaded" << std::endl;
                 backgroundMusicSource = sourceInfo[sid].source;
                 this->loadStartBackground();
+        } else
+        {
+        	std::cout << "Could not load background" << std::endl;
+
         }
 	std::cout << "background music loaded" << std::endl;
         
@@ -117,6 +123,8 @@ void SoundMgr::initialize(void){
             alSourcei(this->battleSoundSource, AL_REFERENCE_DISTANCE, 2000.0f);
             alSourcei(this->battleSoundSource, AL_MAX_DISTANCE, 8000.0f);
         }
+
+    	std::cout << "SoundMgr::initialize done" << std::endl;
 
 	return;
 
@@ -383,7 +391,7 @@ void SoundMgr::printAudioDevices(const ALCchar *devices){
 int SoundMgr::printError(const char *ermsg){
 	ALCenum error = alGetError();
 	if (error != AL_NO_ERROR){
-		std::cerr << "SoundManager: ERROR: "<< ermsg << std::endl;
+		std::cout << "SoundManager: ERROR: "<< ermsg << std::endl;
 		return -1;
 	}
 	return 0;
@@ -430,7 +438,7 @@ int SoundMgr::getBufferId(std::string filename){
 			if (loadAudio(filename, i)){
 				return i;
 			} else {
-				std::cerr << "getBufferId::cannot load audio from file: " << filename << std::endl;
+				std::cout << "getBufferId::cannot load audio from file: " << filename << std::endl;
 				return -1;
 			}
 		}
@@ -640,11 +648,11 @@ bool SoundMgr::releaseSourceIndex(int sid){
 
 	ALuint source = this->sourceInfo[sid].source;
 	if (! alIsSource(source)){
-		std::cerr << "ReleaseSource:: is not a source!" << source << std::endl;
+		std::cout << "ReleaseSource:: is not a source!" << source << std::endl;
 		return false;
 	}
 	if(!stopAudio(source)){
-		std::cerr << "ReleaseSource:: Could not stop audio before release" << source << std::endl;
+		std::cout << "ReleaseSource:: Could not stop audio before release" << source << std::endl;
 		return false;
 	}
 	alDeleteSources(1, &this->sourceInfo[sid].source);
@@ -720,23 +728,23 @@ bool SoundMgr::loadAudio(std::string filename, int index){
 	this->bufferInfo[index].wave = WaveOpenFileForReading(filename.c_str());
 
 	if(!this->bufferInfo[index].wave){
-		std::cerr << "SoundMgr::loadAudio::ERROR: Cannot open wave file for reading" << std::endl;
+		std::cout << "SoundMgr::loadAudio::ERROR: Cannot open wave file for reading" << std::endl;
 		return false;
 	}
 	int ret = WaveSeekFile(0, this->bufferInfo[index].wave);
 	if (ret) {
-		std::cerr << "SoundMgr::loadAudio::ERROR: Cannot seek" << std::endl;
+		std::cout << "SoundMgr::loadAudio::ERROR: Cannot seek" << std::endl;
 		return false;
 	}
 	char *tmpBuf = (char *) malloc(this->bufferInfo[index].wave->dataSize);
 	//this->backgroundBufferData = (char *) malloc(this->backgroundWaveInfo->dataSize);
 	if(!tmpBuf){
-		std::cerr << "SoundMgr::loadAudio::ERROR: in malloc" << std::endl;
+		std::cout << "SoundMgr::loadAudio::ERROR: in malloc" << std::endl;
 		return false;
 	}
 	ret = WaveReadFile(tmpBuf, this->bufferInfo[index].wave->dataSize, this->bufferInfo[index].wave);
 	if(ret != (int) this->bufferInfo[index].wave->dataSize){
-		std::cerr << "ERROR: SoundMgr::loadAudio: short read " << ret << " wanted: " << this->bufferInfo[index].wave->dataSize << std::endl;
+		std::cout << "ERROR: SoundMgr::loadAudio: short read " << ret << " wanted: " << this->bufferInfo[index].wave->dataSize << std::endl;
 		return false;
 	}
 
@@ -794,23 +802,23 @@ bool SoundMgr::loadStartBackground(){
 
 	this->backgroundWaveInfo = WaveOpenFileForReading(fqfn.c_str());
 	if(!this->backgroundWaveInfo){
-		std::cerr << "ERROR: Cannot open wave file for reading" << std::endl;
+		std::cout << "ERROR: Cannot open wave file for reading" << std::endl;
 		return false;
 	}
 	int ret = WaveSeekFile(0, this->backgroundWaveInfo);
 	if (ret) {
-		std::cerr << "ERROR: Cannot seek" << std::endl;
+		std::cout << "ERROR: Cannot seek" << std::endl;
 		return false;
 	}
 	char *tmpBuf = (char *) malloc(this->backgroundWaveInfo->dataSize);
 	//this->backgroundBufferData = (char *) malloc(this->backgroundWaveInfo->dataSize);
 	if(!tmpBuf){
-		std::cerr << "ERROR: in malloc" << std::endl;
+		std::cout << "ERROR: in malloc" << std::endl;
 		return false;
 	}
 	ret = WaveReadFile(tmpBuf, this->backgroundWaveInfo->dataSize, this->backgroundWaveInfo);
 	if(ret != (int) this->backgroundWaveInfo->dataSize){
-		std::cerr << "ERROR: short read " << ret << " wanted: " << this->backgroundWaveInfo->dataSize << std::endl;
+		std::cout << "ERROR: short read " << ret << " wanted: " << this->backgroundWaveInfo->dataSize << std::endl;
 		return false;
 	}
 	alBufferData(this->backgroundMusicBuffer,
@@ -880,7 +888,7 @@ bool SoundMgr::stopAudio(ALuint audioId){
 			return false;
 		}
 	} else {
-		std::cerr << "StopAudio:: Is not a source: " << audioId << std::endl;
+		std::cout << "StopAudio:: Is not a source: " << audioId << std::endl;
 		return false;
 	}
 	return true;

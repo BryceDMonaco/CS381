@@ -40,6 +40,7 @@ public:
 	void cleanGame();
 	void openPauseScreen();
 	void closePauseScreen();
+	void ReloadMainMenu();
 	virtual void Stop();
 
 	virtual bool keyPressed(const OIS::KeyEvent &arg);

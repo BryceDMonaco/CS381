@@ -35,11 +35,20 @@ void EntityMgr::Tick (float dt)
 
 	}
 	*/
-	for (std::map<int, Entity381*>::iterator it = mEntities->begin();
-			it != mEntities->end(); it++)
+	std::cout << mEntities->size() << std::endl;
+	if (mEntities->size() > 0)
 	{
-		it->second->Tick(dt);
+		for (std::map<int, Entity381*>::iterator it = mEntities->begin();
+				it != mEntities->end(); it++)
+		{
+			//std::cout << "in loop: " + std::to_string((int)mEntities->size() )<< std::endl;
+			if (mEntities->size() > 0)
+				it->second->Tick(dt);
+			else
+				break;
+		}
 	}
+
 
 }
 
@@ -206,10 +215,22 @@ void EntityMgr::DestroyEntity(int entityID)
 	if (it != mEntities->end())
 	{
 		mSceneMgr->destroySceneNode(it->second->mSceneNode);
+		//delete it->second;
+		mEntities->erase(it);
+	}
+}
+
+void EntityMgr::DestroyAll()
+{
+	std::map<int, Entity381*>::iterator it;
+	for (it = mEntities->begin(); it != mEntities->end(); it++)
+	{
+		mSceneMgr->destroySceneNode(it->second->mSceneNode);
+		//delete it->second;
 		mEntities->erase(it);
 	}
 
-
+	mEntities->clear();
 }
 
 void EntityMgr::IncrementSelectedID ()

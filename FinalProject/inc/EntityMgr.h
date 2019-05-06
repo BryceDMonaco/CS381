@@ -47,6 +47,7 @@ public:
 		Ogre::Quaternion orientation = Ogre::Quaternion::IDENTITY,
 		bool showAabb = false);
 	void DestroyEntity (int entityIndex);
+	void DestroyAll();
 
 	void IncrementSelectedID (); //Index will loop back to 0
 

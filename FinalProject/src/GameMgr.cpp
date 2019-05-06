@@ -104,6 +104,7 @@ void GameMgr::changeGameState(GameState state) {
 	{
 	case 0:
 		// load main menu
+		engine->entityMgr->DestroyAll();
 		currentState = GameState::GAME_START;
 		mSceneMgr->setSkyBox(false, "Examples/SpaceSkyBox");
 		engine->uiMgr->ReloadMainMenu();

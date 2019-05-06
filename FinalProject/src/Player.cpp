@@ -196,6 +196,7 @@ void Player::OnCollision(Entity381* collider, float timeSinceLastCollision)
 			// kill player
 			alreadyDead = true;
 			mEntityMgr->engine->uiMgr->LoadKillScreen();
+		}
 
 		obstacleHitTimer = 0.0f;
 	}

@@ -57,6 +57,7 @@ void UIMgr::ReloadMainMenu()
 	LoadMainMenu();
 }
 
+/*
 void UIMgr::LoadLevel() {
 	//Hide the MainMenu
 	mTrayMgr->hideBackdrop();
@@ -67,10 +68,20 @@ void UIMgr::LoadLevel() {
 //	mTrayMgr->destroyWidget(mNewGame);
 //	mTrayMgr->destroyWidget(mHowTo);
 //	mTrayMgr->destroyWidget(mQuit);
-}
+}*/
 
 void UIMgr::LoadLevel() {
 //	loaded = true; //Testing purposes
+
+	//Hide the MainMenu
+	mTrayMgr->hideBackdrop();
+	//Destroy the buttons
+	mTrayMgr->clearTray(OgreBites::TL_CENTER);
+
+	//These break the program WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+//	mTrayMgr->destroyWidget(mNewGame);
+//	mTrayMgr->destroyWidget(mHowTo);
+//	mTrayMgr->destroyWidget(mQuit);
 
  	mProgressBar = mTrayMgr->createProgressBar(OgreBites::TL_BOTTOMLEFT, "HealthBar", "Health", 300, 200);
 	mProgressBar->setProgress(100);
@@ -150,7 +161,7 @@ bool UIMgr::keyPressed(const OIS::KeyEvent &arg) {
 void UIMgr::buttonHit(OgreBites::Button *b){
 	if (b->getName() == "NewGame") {
 		std::cout << "Hitting button...\n";
-		engine->gameMgr->changeGameState(true);
+		//engine->gameMgr->changeGameState(GameState::LEVEL_ONE);
 
 		//Perform cleanup
 		cleanMenu();

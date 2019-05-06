@@ -16,7 +16,7 @@ Bullet::Bullet (
 {
 	mTag = "Bullet";
 
-	mSpeed = 1000.0f;
+	mSpeed = 0.0f;
 }
 
 Bullet::~Bullet()
@@ -44,5 +44,8 @@ void Bullet::Initialize()
 
 void Bullet::Tick(float dt)
 {
-
+	for (int i = 0; i < (int) mAspects->size(); i++)
+	{
+		mAspects->at(i)->Tick(dt);
+	}
 }

@@ -47,7 +47,7 @@ void Player::Initialize()
 			EntityType::BULLET,					// type
 			"Bullet" + std::to_string(i),		// name
 			"sphere.mesh",						// mesh file
-			Ogre::Vector3(0,0, -20),			// position
+			Ogre::Vector3(0,0, 2000),			// position
 			Ogre::Vector3(0.25f,0.25f,0.25f));	// scale
 	}
 

@@ -72,6 +72,8 @@ void GameMgr::changeGameState(bool state) {
 	playGame = state;
 
 	if (playGame) {
+		mSceneMgr->setSkyBox(true, "Examples/SpaceSkyBox");
+
 		//LoadLevel1();
 		LoadRandomLevel (20, 1000);
 
@@ -83,8 +85,6 @@ void GameMgr::changeGameState(bool state) {
 
 void GameMgr::LoadLevel1 ()
 {
-	mSceneMgr->setSkyBox(true, "Examples/SpaceSkyBox");
-
 	// Wall, left
 	engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_OBSTACLE, "obstacle1", "cube.mesh", Ogre::Vector3(-150, 0, -1000), Ogre::Vector3(3, 5, 1), Ogre::Quaternion::IDENTITY, false);
 

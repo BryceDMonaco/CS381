@@ -29,6 +29,10 @@ Player::Player (
 	stationaryPosition = Ogre::Vector3::ZERO;
 	movingVertical = false;
 	movingHorizontal = false;
+
+	mShooting = nullptr;
+	shootInterval = 0.25f;
+	shootTimer = shootInterval;
 }
 
 Player::~Player ()
@@ -49,30 +53,44 @@ void Player::Initialize()
 	RenderableAspect* renderable = new RenderableAspect(this);
 	PhysicsAspect* physics = new PhysicsAspect(this);
 	CollisionAspect* collisions = new CollisionAspect(this);
+	ShootingAspect* shooting = new ShootingAspect(this);
 
 	// add the aspects
 	this->AddAspect(renderable);
 	this->AddAspect(physics);
 	this->AddAspect(collisions);
+	this->AddAspect(shooting);
 
-	//this->AddAspect(ai);
+	mShooting = shooting;
+	mShooting->mBullets.clear();
+	mShooting->mBulletCount = 20;
+
+	// create all the bullets
+	for (int i = 0; i < mShooting->mBulletCount; i++)
+	{
+		mShooting->mBullets.push_back((PlayerBullet*)mEntityMgr->CreateEntityOfType(
+			EntityType::PLAYER_BULLET,			// type
+			"Bullet" + std::to_string(i),		// name
+			"sphere.mesh",						// mesh file
+			Ogre::Vector3(4000, 4000, 4000),	// position
+			Ogre::Vector3(0.25f,0.25f,0.25f)));	// scale
+	}
 
 	inputMgr = mEntityMgr->engine->inputMgr;
 }
 
 void Player::Tick(float dt)
 {
+	shootTimer += dt;
+
 	HandleInput();
 
 	for (int i = 0; i < (int) mAspects->size(); i++)
 	{
 		mAspects->at(i)->Tick(dt);
-
 	}
 
 	mEntityMgr->engine->uiMgr->mProgressBar->setProgress(((float)mHealth)/100.0f);
-
-	return;
 
 }
 
@@ -136,10 +154,18 @@ void Player::HandleInput()
 		targetPosition.x = stationaryPosition.x;
 		targetRoll = 0.0f;
 	}
+
+	if (inputMgr->isSpaceDown && shootTimer >= shootInterval)
+	{
+		mShooting->Fire();
+		shootTimer = 0.0f;
+	}
 }
 
 void Player::OnCollision(Entity381* collider, float timeSinceLastCollision)
 {
+	//Ogre::LogManager::getSingletonPtr()->logMessage("Player hit " + collider->mEntityName);
+
 	if (timeSinceLastCollision >= 0.5f
 		&& (collider->mTag == "Obstacle"
 			|| collider->mTag == "Destructible"

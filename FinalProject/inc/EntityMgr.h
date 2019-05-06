@@ -6,6 +6,7 @@
 #include <deque>
 #include "Entity381.h"
 #include "Player.h"
+#include "Bullet.h"
 #include "Command.h"
 #include <OgreSceneManager.h>
 #include <OgreMeshManager.h>
@@ -17,7 +18,13 @@
 
 enum EntityType
 {
-	ENTITY_DEFAULT, ENTITY_OBSTACLE, ENTITY_DESTRUCTIBLE, PLAYER, ENEMY
+	ENTITY_DEFAULT,
+	ENTITY_OBSTACLE,
+	ENTITY_DESTRUCTIBLE,
+	PLAYER,
+	ENEMY,
+	PLAYER_BULLET,
+	ENEMY_BULLET
 };
 
 class EntityMgr : public Mgr
@@ -29,7 +36,7 @@ public:
 
 	void Tick (float dt); // Update all entities in the manager
 
-	void CreateEntityOfType(
+	Entity381* CreateEntityOfType(
 		EntityType type,
 		std::string name,
 		std::string meshFileName = "cube.mesh",

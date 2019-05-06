@@ -43,7 +43,7 @@ void EntityMgr::Tick (float dt)
 
 }
 
-void EntityMgr::CreateEntityOfType(
+Entity381* EntityMgr::CreateEntityOfType(
 		EntityType type,
 		std::string name,
 		std::string meshFileName,
@@ -93,16 +93,24 @@ void EntityMgr::CreateEntityOfType(
 
 		break;
 	case ENTITY_DESTRUCTIBLE:
-			newEntity = new Entity381(
-				mSceneMgr,
-				this,
-				mNextEntityID,
-				name,
-				"pCube1.mesh");
+		newEntity = new Entity381(
+			mSceneMgr,
+			this,
+			mNextEntityID,
+			name,
+			"pCube1.mesh");
 
-			newEntity->mTag = "Destructible";
+		newEntity->mTag = "Destructible";
 
-			break;
+		break;
+	case PLAYER_BULLET:
+		newEntity = new PlayerBullet(
+			mSceneMgr,
+			this,
+			mNextEntityID,
+			name,
+			meshFileName);
+		break;
 	default:
 		newEntity = new Entity381(
 			mSceneMgr,
@@ -111,6 +119,10 @@ void EntityMgr::CreateEntityOfType(
 			name,
 			meshFileName);
 	}
+
+	// add the entity to the map
+	mEntities->insert(std::pair<int, Entity381*>(mNextEntityID, newEntity));
+	mNextEntityID++;
 
 	// initialize the new entity
 	newEntity->Initialize();
@@ -161,10 +173,7 @@ void EntityMgr::CreateEntityOfType(
 	}
 
 	//newEntity->mEntity->setMaterialName("Template/Red");
-
-	// add the entity to the map
-	mEntities->insert(std::pair<int, Entity381*>(mNextEntityID, newEntity));
-	mNextEntityID++;
+	return newEntity;
 }
 
 void EntityMgr::DestroyEntity(int entityID)
@@ -174,7 +183,11 @@ void EntityMgr::DestroyEntity(int entityID)
 
 	// if it exists, destroy it
 	if (it != mEntities->end())
+	{
+		mSceneMgr->destroySceneNode(it->second->mSceneNode);
 		mEntities->erase(it);
+	}
+
 
 }
 

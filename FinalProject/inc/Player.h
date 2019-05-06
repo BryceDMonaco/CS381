@@ -2,7 +2,12 @@
 #define _PLAYER_H_
 
 #include "Entity381.h"
+#include "EntityMgr.h"
+#include "Bullet.h"
 #include "CollisionAspect.h"
+#include "ShootingAspect.h"
+
+#include <vector>
 
 class Player : public Entity381
 {
@@ -25,9 +30,12 @@ protected:
 	void OnCollision(Entity381* collider, float timeSinceLastCollision);
 
 private:
-
 	Ogre::Vector3 stationaryPosition;
 	bool movingVertical, movingHorizontal;
+
+	ShootingAspect* mShooting;
+	float shootInterval;
+	float shootTimer;
 
 };
 

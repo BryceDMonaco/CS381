@@ -5,6 +5,7 @@
 #include "EntityMgr.h"
 #include "Bullet.h"
 #include "CollisionAspect.h"
+#include "ShootingAspect.h"
 
 #include <vector>
 
@@ -29,11 +30,12 @@ protected:
 	void OnCollision(Entity381* collider, float timeSinceLastCollision);
 
 private:
-
-	int bulletCount = 20;
-	std::vector<Bullet*> bullets;
 	Ogre::Vector3 stationaryPosition;
 	bool movingVertical, movingHorizontal;
+
+	ShootingAspect* mShooting;
+	float shootInterval;
+	float shootTimer;
 
 };
 

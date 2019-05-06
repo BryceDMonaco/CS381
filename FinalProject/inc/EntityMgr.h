@@ -35,7 +35,7 @@ public:
 
 	void Tick (float dt); // Update all entities in the manager
 
-	void CreateEntityOfType(
+	Entity381* CreateEntityOfType(
 		EntityType type,
 		std::string name,
 		std::string meshFileName = "cube.mesh",

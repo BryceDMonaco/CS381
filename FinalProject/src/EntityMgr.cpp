@@ -43,7 +43,7 @@ void EntityMgr::Tick (float dt)
 
 }
 
-void EntityMgr::CreateEntityOfType(
+Entity381* EntityMgr::CreateEntityOfType(
 		EntityType type,
 		std::string name,
 		std::string meshFileName,
@@ -172,7 +172,7 @@ void EntityMgr::CreateEntityOfType(
 	}
 
 	//newEntity->mEntity->setMaterialName("Template/Red");
-
+	return newEntity;
 }
 
 void EntityMgr::DestroyEntity(int entityID)

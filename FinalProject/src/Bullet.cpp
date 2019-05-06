@@ -16,7 +16,7 @@ Bullet::Bullet (
 {
 	mTag = "Bullet";
 
-	mSpeed = 0.0f;
+	mSpeed = 200.0f;
 }
 
 Bullet::~Bullet()
@@ -50,6 +50,11 @@ void Bullet::Tick(float dt)
 	}
 }
 
+void Bullet::OnCollision(Entity381* collider, float timeSinceLastCollision)
+{
+
+}
+
 PlayerBullet::PlayerBullet (
 	Ogre::SceneManager* manager,
 	EntityMgr* entityMgr,
@@ -58,7 +63,7 @@ PlayerBullet::PlayerBullet (
 	std::string meshFileName,
 	Ogre::Vector3 position,
 	Ogre::Quaternion orientation)
-: Entity381 (manager,entityMgr,entityId,entityName,meshFileName,position,
+: Bullet (manager,entityMgr,entityId,entityName,meshFileName,position,
 	orientation)
 {
 	mTag = "PlayerBullet";
@@ -82,7 +87,7 @@ EnemyBullet::EnemyBullet (
 	std::string meshFileName,
 	Ogre::Vector3 position,
 	Ogre::Quaternion orientation)
-: Entity381 (manager,entityMgr,entityId,entityName,meshFileName,position,
+: Bullet (manager,entityMgr,entityId,entityName,meshFileName,position,
 	orientation)
 {
 	mTag = "EnemyBullet";

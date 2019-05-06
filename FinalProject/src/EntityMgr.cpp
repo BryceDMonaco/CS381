@@ -93,16 +93,24 @@ void EntityMgr::CreateEntityOfType(
 
 		break;
 	case ENTITY_DESTRUCTIBLE:
-			newEntity = new Entity381(
-				mSceneMgr,
-				this,
-				mNextEntityID,
-				name,
-				"pCube1.mesh");
+		newEntity = new Entity381(
+			mSceneMgr,
+			this,
+			mNextEntityID,
+			name,
+			"pCube1.mesh");
 
-			newEntity->mTag = "Destructible";
+		newEntity->mTag = "Destructible";
 
-			break;
+		break;
+	case BULLET:
+		newEntity = new Bullet(
+			mSceneMgr,
+			this,
+			mNextEntityID,
+			name,
+			meshFileName);
+		break;
 	default:
 		newEntity = new Entity381(
 			mSceneMgr,

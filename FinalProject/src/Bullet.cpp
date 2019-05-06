@@ -16,8 +16,7 @@ Bullet::Bullet (
 {
 	mTag = "Bullet";
 
-	targetPosition = Ogre::Vector3(0,0,999999);
-	mSpeed = 200.0f;
+	mSpeed = 1000.0f;
 }
 
 Bullet::~Bullet()

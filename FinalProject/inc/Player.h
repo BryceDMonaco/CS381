@@ -2,7 +2,10 @@
 #define _PLAYER_H_
 
 #include "Entity381.h"
+#include "Bullet.h"
 #include "CollisionAspect.h"
+
+#include <vector>
 
 class Player : public Entity381
 {
@@ -26,6 +29,8 @@ protected:
 
 private:
 
+	int bulletCount = 20;
+	std::vector<Bullet*> bullets;
 	Ogre::Vector3 stationaryPosition;
 	bool movingVertical, movingHorizontal;
 

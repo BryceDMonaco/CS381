@@ -40,6 +40,17 @@ Player::~Player ()
 
 void Player::Initialize()
 {
+	// create all the bullets
+	for (int i = 0; i < bulletCount; i++)
+	{
+		mEntityMgr->CreateEntityOfType(
+			EntityType::BULLET,					// type
+			"Bullet" + std::to_string(i),		// name
+			"sphere.mesh",						// mesh file
+			Ogre::Vector3(0,0, -20),			// position
+			Ogre::Vector3(0.25f,0.25f,0.25f));	// scale
+	}
+
 	// create and attach entity and scene node
 	mEntity = mSceneMgr->createEntity(mMeshFileName);
 	mSceneNode = mSceneMgr->getRootSceneNode()->createChildSceneNode(mEntityName + "Node");

@@ -102,6 +102,13 @@ void Player::Tick(float dt)
 		mEntityMgr->engine->gameMgr->NextLevel();
 	}
 
+	if (mHealth <= 0)
+	{
+		Ogre::LogManager::getSingletonPtr()->logMessage("Player is destroyed");
+		// kill player
+		mEntityMgr->engine->gameMgr->changeGameState(GameState::GAME_START);
+	}
+
 }
 
 void Player::HandleInput()
@@ -183,11 +190,6 @@ void Player::OnCollision(Entity381* collider, float timeSinceLastCollision)
 	{
 		mHealth -= 25;
 		Ogre::LogManager::getSingletonPtr()->logMessage("Player took damage");
-		if (mHealth <= 0)
-		{
-			Ogre::LogManager::getSingletonPtr()->logMessage("Player is destroyed");
-			// kill player
-		}
 
 		obstacleHitTimer = 0.0f;
 	}

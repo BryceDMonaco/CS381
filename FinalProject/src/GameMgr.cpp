@@ -28,6 +28,9 @@ void GameMgr::LoadLevel ()
 	//For main menu
 	playGame = false;
 
+	winTrigger = (WinTrigger*) engine->entityMgr->CreateEntityOfType(EntityType::WIN_TRIGGER, "winTrigger", "cube.mesh");
+	winTriggerID = winTrigger->mEntityID;
+
 	// Offset Camera
 	//camNode->translate((*cameraOffset) * dt * 100, Ogre::Node::TS_LOCAL);
 	//if (camNode->getPosition().y <= 5)
@@ -78,6 +81,12 @@ void GameMgr::NextLevel()
 		changeGameState(GameState::LEVEL_ONE);
 		break;
 	case GameState::LEVEL_ONE:
+		changeGameState(GameState::LEVEL_TWO);
+		break;
+	case GameState::LEVEL_TWO:
+		changeGameState(GameState::LEVEL_THREE);
+		break;
+	case GameState::LEVEL_THREE:
 		changeGameState(GameState::GAME_START);
 		break;
 	default:
@@ -120,11 +129,11 @@ void GameMgr::changeGameState(GameState state) {
 		break;
 	case 2:
 		currentState = GameState::LEVEL_TWO;
-		LoadRandomLevel(20, 1000);
+		LoadRandomLevel(20, 900);
 		break;
 	case 3:
 		currentState = GameState::LEVEL_THREE;
-		LoadRandomLevel(20, 1000);
+		LoadRandomLevel(20, 800);
 		break;
 	default:
 		break;
@@ -178,14 +187,15 @@ void GameMgr::LoadRandomLevel (int size, float distanceBetweenPieces)
 
 		} while (choice == lastChoice);  // Prevents the same piece multiple times in a row
 
-		GenerateLevelPiece (i * -distanceBetweenPieces, std::string("obstacle") + std::to_string(i), choice);
+		GenerateLevelPiece (i * -distanceBetweenPieces, std::string("obstacle") + std::to_string(obstacleIndex), choice);
 
 		lastChoice = choice;
 
+		obstacleIndex++;
+
 	}
 
-	WinTrigger* winTrigger = (WinTrigger*) engine->entityMgr->CreateEntityOfType(EntityType::WIN_TRIGGER, "winTrigger", "cube.mesh", Ogre::Vector3(0, 0, (size + 1) * -distanceBetweenPieces));
-	winTriggerID = winTrigger->mEntityID;
+	winTrigger->mPosition = Ogre::Vector3(0, 0, (size + 1) * -distanceBetweenPieces);
 
 	return;
 

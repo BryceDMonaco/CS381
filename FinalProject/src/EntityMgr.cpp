@@ -35,7 +35,7 @@ void EntityMgr::Tick (float dt)
 
 	}
 	*/
-	std::cout << mEntities->size() << std::endl;
+	//std::cout << mEntities->size() << std::endl;
 	if (mEntities->size() > 0)
 	{
 		for (std::map<int, Entity381*>::iterator it = mEntities->begin();

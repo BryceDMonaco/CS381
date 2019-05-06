@@ -46,8 +46,10 @@ public:
 	Ogre::SceneManager* mSceneMgr = nullptr;
 	GameState currentState;
 	bool playGame;
+	int obstacleIndex = 0;
 
 	Player* player;
+	WinTrigger* winTrigger = nullptr;
 	int winTriggerID = 0;
 
 };

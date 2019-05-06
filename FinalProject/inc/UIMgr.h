@@ -35,6 +35,7 @@ public:
 	virtual void Tick(float dt);
 	virtual void LoadLevel();
 	void LoadMainMenu();
+	void ReloadMainMenu();
 	virtual void Stop();
 
     virtual bool mouseMoved(const OIS::MouseEvent &arg);

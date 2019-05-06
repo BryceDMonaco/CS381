@@ -41,6 +41,12 @@ void UIMgr::LoadMainMenu() {
 	mTrayMgr->showAll();
 }
 
+void UIMgr::ReloadMainMenu()
+{
+	mTrayMgr->destroyWidget(mProgressBar);
+	LoadMainMenu();
+}
+
 void UIMgr::LoadLevel() {
 	//Hide the MainMenu
 	mTrayMgr->hideBackdrop();

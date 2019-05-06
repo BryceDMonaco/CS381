@@ -23,10 +23,47 @@ public:
 		std::string meshFileName = "cube.mesh",
 		Ogre::Vector3 position = Ogre::Vector3::ZERO,
 		Ogre::Quaternion orientation = Ogre::Quaternion::IDENTITY);
-	~Bullet();
+	virtual ~Bullet();
 
 	void Initialize();
 	void Tick(float dt);
+
+protected:
+	virtual void OnCollision(Entity381* collider, float timeSinceLastCollision);
+};
+
+class PlayerBullet : public Bullet
+{
+public:
+	PlayerBullet(
+		Ogre::SceneManager* manager,
+		EntityMgr* entityMgr,
+		int entityId,
+		std::string entityName,
+		std::string meshFileName = "cube.mesh",
+		Ogre::Vector3 position = Ogre::Vector3::ZERO,
+		Ogre::Quaternion orientation = Ogre::Quaternion::IDENTITY);
+	virtual ~PlayerBullet();
+
+protected:
+	void OnCollision(Entity381* collider, float timeSinceLastCollision);
+};
+
+class EnemyBullet : public Bullet
+{
+public:
+	EnemyBullet(
+		Ogre::SceneManager* manager,
+		EntityMgr* entityMgr,
+		int entityId,
+		std::string entityName,
+		std::string meshFileName = "cube.mesh",
+		Ogre::Vector3 position = Ogre::Vector3::ZERO,
+		Ogre::Quaternion orientation = Ogre::Quaternion::IDENTITY);
+	virtual ~EnemyBullet();
+
+protected:
+	void OnCollision(Entity381* collider, float timeSinceLastCollision);
 };
 
 #endif /* _BULLET_H */

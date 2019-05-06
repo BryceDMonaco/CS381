@@ -49,3 +49,51 @@ void Bullet::Tick(float dt)
 		mAspects->at(i)->Tick(dt);
 	}
 }
+
+PlayerBullet::PlayerBullet (
+	Ogre::SceneManager* manager,
+	EntityMgr* entityMgr,
+	int entityId,
+	std::string entityName,
+	std::string meshFileName,
+	Ogre::Vector3 position,
+	Ogre::Quaternion orientation)
+: Entity381 (manager,entityMgr,entityId,entityName,meshFileName,position,
+	orientation)
+{
+	mTag = "PlayerBullet";
+}
+
+PlayerBullet::~PlayerBullet()
+{
+
+}
+
+void PlayerBullet::OnCollision(Entity381* collider, float timeSinceLastCollision)
+{
+	// TODO: handle player bullet collision
+}
+
+EnemyBullet::EnemyBullet (
+	Ogre::SceneManager* manager,
+	EntityMgr* entityMgr,
+	int entityId,
+	std::string entityName,
+	std::string meshFileName,
+	Ogre::Vector3 position,
+	Ogre::Quaternion orientation)
+: Entity381 (manager,entityMgr,entityId,entityName,meshFileName,position,
+	orientation)
+{
+	mTag = "PlayerBullet";
+}
+
+EnemyBullet::~EnemyBullet()
+{
+
+}
+
+void EnemyBullet::OnCollision(Entity381* collider, float timeSinceLastCollision)
+{
+	// TODO: handle enemy bullet collision
+}

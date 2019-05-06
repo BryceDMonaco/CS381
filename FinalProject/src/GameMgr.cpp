@@ -28,8 +28,7 @@ void GameMgr::LoadLevel ()
 	//For main menu
 	playGame = false;
 
-	winTrigger = (WinTrigger*) engine->entityMgr->CreateEntityOfType(EntityType::WIN_TRIGGER, "winTrigger", "cube.mesh");
-	winTriggerID = winTrigger->mEntityID;
+
 
 	// Offset Camera
 	//camNode->translate((*cameraOffset) * dt * 100, Ogre::Node::TS_LOCAL);
@@ -119,6 +118,8 @@ void GameMgr::changeGameState(GameState state) {
 		engine->uiMgr->ReloadMainMenu();
 		break;
 	case 1:
+		winTrigger = (WinTrigger*) engine->entityMgr->CreateEntityOfType(EntityType::WIN_TRIGGER, "winTrigger", "cube.mesh");
+		winTriggerID = winTrigger->mEntityID;
 		currentState = GameState::LEVEL_ONE;
 		mSceneMgr->setSkyBox(true, "Examples/SpaceSkyBox");
 		LoadRandomLevel(10, 1000);

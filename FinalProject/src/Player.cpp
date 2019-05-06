@@ -113,7 +113,7 @@ void Player::Tick(float dt)
 
 void Player::HandleInput()
 {
-	float positionBounds = 200.0f;
+	float positionBounds = 250.0f;
 	float angleBounds = 45.0f;
 
 	if (inputMgr->isWDown)

@@ -96,6 +96,12 @@ void Player::Tick(float dt)
 
 	mEntityMgr->engine->uiMgr->mProgressBar->setProgress(((float)mHealth)/100.0f);
 
+	bool nextLevel = CheckVictory();
+	if (nextLevel)
+	{
+		mEntityMgr->engine->gameMgr->NextLevel();
+	}
+
 }
 
 void Player::HandleInput()
@@ -185,5 +191,19 @@ void Player::OnCollision(Entity381* collider, float timeSinceLastCollision)
 
 		obstacleHitTimer = 0.0f;
 	}
+}
+
+bool Player::CheckVictory()
+{
+	std::map<int, Entity381*>::iterator it = mEntityMgr->GetEntities()->find(winTriggerID);
+	if (it != mEntityMgr->GetEntities()->end())
+	{
+		if (it->second->mPosition.z > 0)
+		{
+			return true;
+		}
+	}
+
+	return false;
 }
 

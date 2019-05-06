@@ -25,11 +25,15 @@ public:
 	void Initialize();
 	void Tick(float dt);
 
+	int winTriggerID = 0;
+
 protected:
 	void HandleInput();
 	void OnCollision(Entity381* collider, float timeSinceLastCollision);
 
 private:
+	bool CheckVictory();
+
 	Ogre::Vector3 stationaryPosition;
 	bool movingVertical, movingHorizontal;
 
@@ -39,6 +43,8 @@ private:
 
 	float obstacleHitInterval;
 	float obstacleHitTimer;
+
+
 
 };
 

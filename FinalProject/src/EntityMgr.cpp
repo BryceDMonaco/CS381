@@ -116,6 +116,15 @@ Entity381* EntityMgr::CreateEntityOfType(
 			meshFileName,
 			position);
 		break;
+	case WIN_TRIGGER:
+		newEntity = new WinTrigger(
+			mSceneMgr,
+			this,
+			mNextEntityID,
+			name,
+			"pCube1.mesh",
+			position);
+		break;
 	default:
 		newEntity = new Entity381(
 			mSceneMgr,
@@ -176,6 +185,12 @@ Entity381* EntityMgr::CreateEntityOfType(
 		newEntity->mSceneNode->setScale(scale);
 		// Give health here
 
+	} else if (type == WIN_TRIGGER)
+	{
+		newEntity->targetPosition = newEntity->mPosition + Ogre::Vector3::UNIT_Z * 200000;
+		newEntity->mSpeed *= 5;
+		scale *= 0;
+		newEntity->mSceneNode->setScale(scale);
 	}
 
 	//newEntity->mEntity->setMaterialName("Template/Red");

@@ -6,7 +6,8 @@
 GameMgr::GameMgr (Engine* engine) : Mgr (engine)
 {
 	srand (time(NULL));
-
+	currentState = GameState::GAME_START;
+	player = nullptr;
 }
 
 GameMgr::~GameMgr ()
@@ -68,6 +69,22 @@ void GameMgr::Stop ()
 
 }
 
+void GameMgr::NextLevel()
+{
+	std::cout << "next level" << std::endl;
+	switch (currentState)
+	{
+	case GameState::GAME_START:
+		changeGameState(GameState::LEVEL_ONE);
+		break;
+	case GameState::LEVEL_ONE:
+		changeGameState(GameState::GAME_START);
+		break;
+	default:
+		break;
+	}
+}
+
 void GameMgr::changeGameState(GameState state) {
 	playGame = state;
 
@@ -87,20 +104,25 @@ void GameMgr::changeGameState(GameState state) {
 	{
 	case 0:
 		// load main menu
+		currentState = GameState::GAME_START;
 		mSceneMgr->setSkyBox(false, "Examples/SpaceSkyBox");
 		engine->uiMgr->ReloadMainMenu();
 		break;
 	case 1:
+		currentState = GameState::LEVEL_ONE;
 		mSceneMgr->setSkyBox(true, "Examples/SpaceSkyBox");
-		LoadRandomLevel(20, 1000);
-		engine->entityMgr->CreateEntityOfType(
+		LoadRandomLevel(5, 1000);
+		player = (Player*) engine->entityMgr->CreateEntityOfType(
 				EntityType::PLAYER,
 				"Player");
+		player->winTriggerID = winTriggerID;
 		break;
 	case 2:
+		currentState = GameState::LEVEL_TWO;
 		LoadRandomLevel(20, 1000);
 		break;
 	case 3:
+		currentState = GameState::LEVEL_THREE;
 		LoadRandomLevel(20, 1000);
 		break;
 	default:
@@ -160,6 +182,9 @@ void GameMgr::LoadRandomLevel (int size, float distanceBetweenPieces)
 		lastChoice = choice;
 
 	}
+
+	WinTrigger* winTrigger = (WinTrigger*) engine->entityMgr->CreateEntityOfType(EntityType::WIN_TRIGGER, "winTrigger", "cube.mesh", Ogre::Vector3(0, 0, (size + 1) * -distanceBetweenPieces));
+	winTriggerID = winTrigger->mEntityID;
 
 	return;
 

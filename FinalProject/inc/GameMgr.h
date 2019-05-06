@@ -7,6 +7,8 @@
 #include <string>
 
 #include "Entity381.h"
+#include "Player.h"
+#include "WinTrigger.h"
 #include <OgreSceneManager.h>
 #include <OgreMeshManager.h>
 #include <OgreVector3.h>
@@ -35,13 +37,18 @@ public:
 	void Stop ();
 
 	void changeGameState(GameState state);
+	void NextLevel();
 	void LoadLevel1 ();
 	void LoadRandomLevel (int size, float distanceBetweenPieces);
 
 	void GenerateLevelPiece (float zPos, std::string name, int choice);
 
 	Ogre::SceneManager* mSceneMgr = nullptr;
+	GameState currentState;
 	bool playGame;
+
+	Player* player;
+	int winTriggerID = 0;
 
 };
 

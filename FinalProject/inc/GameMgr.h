@@ -4,6 +4,8 @@
 #include "Mgr.h"
 
 #include <vector>
+#include <string>
+
 #include "Entity381.h"
 #include <OgreSceneManager.h>
 #include <OgreMeshManager.h>
@@ -26,8 +28,9 @@ public:
 
 	void changeGameState(bool state);
 	void LoadLevel1 ();
+	void LoadRandomLevel (int size, float distanceBetweenPieces);
 
-	void GenerateLevelPiece (float zPos);
+	void GenerateLevelPiece (float zPos, std::string name, int choice);
 
 	Ogre::SceneManager* mSceneMgr = nullptr;
 	bool playGame;

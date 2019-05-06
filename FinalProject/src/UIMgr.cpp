@@ -35,11 +35,11 @@ void UIMgr::Stop() {
 
 void UIMgr::LoadMainMenu() {
 	mTrayMgr->showCursor();
-	mTrayMgr->createButton(OgreBites::TL_CENTER, "NewGame", "New Game", 200);
+	mNewGame = mTrayMgr->createButton(OgreBites::TL_CENTER, "NewGame", "New Game", 200);
 	mTrayMgr->createSeparator(OgreBites::TL_CENTER, "menu1Separator", 200);
-	mTrayMgr->createButton(OgreBites::TL_CENTER, "Tips", "How to Play", 200);
+	mHowTo = mTrayMgr->createButton(OgreBites::TL_CENTER, "Tips", "How to Play", 200);
 	mTrayMgr->createSeparator(OgreBites::TL_CENTER, "menu2Separator", 200);
-	mTrayMgr->createButton(OgreBites::TL_CENTER, "QuitGame", "Quit", 200);
+	mQuit = mTrayMgr->createButton(OgreBites::TL_CENTER, "QuitGame", "Quit", 200);
 	mTrayMgr->showBackdrop("menu");
 
 	mTrayMgr->showAll();
@@ -52,8 +52,9 @@ void UIMgr::cleanMenu() {
 	mTrayMgr->clearTray(OgreBites::TL_CENTER);
 
 	//These break the program WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
-	//mTrayMgr->destroyWidget("NewGame");
-	//mTrayMgr->destroyAllWidgets();
+//	mTrayMgr->destroyWidget(mNewGame);
+//	mTrayMgr->destroyWidget(mHowTo);
+//	mTrayMgr->destroyWidget(mQuit);
 }
 
 void UIMgr::LoadLevel() {
@@ -68,8 +69,24 @@ void UIMgr::LoadLevel() {
 	std::cout << "Break.\n";
 }
 
+void UIMgr::LoadKillScreen() {
+	mRestartGame = mTrayMgr->createButton(OgreBites::TL_CENTER, "RestartGame", "Restart", 200);
+	mTrayMgr->createSeparator(OgreBites::TL_CENTER, "deadSeparator", 200);
+	mMainMenu = mTrayMgr->createButton(OgreBites::TL_CENTER, "ReturnToMenu", "Main Menu", 200);
+}
+
+void UIMgr::cleanGame() {
+	mTrayMgr->clearAllTrays();
+}
+
 void UIMgr::openPauseScreen() {
 	mTrayMgr->showBackdrop();
+	isPauseScreenOpen = true;
+}
+
+void UIMgr::closePauseScreen() {
+	mTrayMgr->hideBackdrop();
+	isPauseScreenOpen = false;
 }
 
 void UIMgr::Tick(float dt) {
@@ -114,9 +131,6 @@ bool UIMgr::mouseReleased(const OIS::MouseEvent &arg, OIS::MouseButtonID id){
 }
 
 bool UIMgr::keyPressed(const OIS::KeyEvent &arg) {
-	if (arg.key == OIS::KC_ESCAPE) {
-		openPauseScreen();
-	}
 
 	return true;
 }
@@ -138,8 +152,28 @@ void UIMgr::buttonHit(OgreBites::Button *b){
 		engine->keepRunning = false;
 	}
 
+	if (b->getName() == "ReturnToMenu") {
+		//Cleanup killscreen UI and game UI
+		cleanGame();
+
+		//Load main menu
+		LoadMainMenu();
+	}
+
 	if (b->getName() == "Tips") {
+		//mTrayMgr->hideBackdrop();
 		std::cout << "Heres how to play!\n";
+		mTrayMgr->showBackdrop("how");
+
+		//Exit tips button
+		mExitTips = mTrayMgr->createButton(OgreBites::TL_BOTTOMRIGHT, "exitTips", "Exit", 200);
+	}
+
+	if (b->getName() == "exitTips") {
+		std::cout << "Exit tips\n";
+		mTrayMgr->hideBackdrop();
+		mTrayMgr->clearTray(OgreBites::TL_BOTTOMRIGHT);
+		mTrayMgr->showBackdrop("menu");
 	}
 }
 

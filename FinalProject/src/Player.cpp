@@ -147,10 +147,12 @@ void Player::OnCollision(Entity381* collider, float timeSinceLastCollision)
 	{
 		mHealth -= 25;
 		Ogre::LogManager::getSingletonPtr()->logMessage("Player took damage");
-		if (mHealth <= 0)
+		if (mHealth <= 0 && !alreadyDead)
 		{
 			Ogre::LogManager::getSingletonPtr()->logMessage("Player is destroyed");
 			// kill player
+			alreadyDead = true;
+			mEntityMgr->engine->uiMgr->LoadKillScreen();
 		}
 	}
 }

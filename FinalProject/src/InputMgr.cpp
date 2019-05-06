@@ -177,6 +177,15 @@ bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 
 	}
 
+	if (ke.key == OIS::KC_ESCAPE && !engine->uiMgr->isPauseScreenOpen)
+	{
+		engine->uiMgr->openPauseScreen();
+	}
+	else if (ke.key == OIS::KC_ESCAPE && engine->uiMgr->isPauseScreenOpen)
+	{
+		engine->uiMgr->closePauseScreen();
+	}
+
 	//Testing purposes
 //	if (ke.key == OIS::KC_SPACE)
 //	{

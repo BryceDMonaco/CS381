@@ -46,7 +46,7 @@ void Engine::Init(){
 	inputMgr->Init();
 	entityMgr->Init();
 	gameMgr->Init();
-	soundMgr->Init();
+	soundMgr->init();
 // load level to play
 	gfxMgr->LoadLevel();
 	uiMgr->LoadMainMenu();
@@ -70,6 +70,7 @@ void Engine::Shutdown(){
 	gfxMgr->Stop();
 	entityMgr->Stop();
 	gameMgr->Stop();
+
 }
 void Engine::Run(){
 	Ogre::Timer* timer = new Ogre::Timer();

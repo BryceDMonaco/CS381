@@ -72,7 +72,10 @@ void GameMgr::changeGameState(bool state) {
 	playGame = state;
 
 	if (playGame) {
-		LoadLevel1();
+		mSceneMgr->setSkyBox(true, "Examples/SpaceSkyBox");
+
+		//LoadLevel1();
+		LoadRandomLevel (20, 1000);
 
 		engine->entityMgr->CreateEntityOfType(
 				EntityType::PLAYER,
@@ -82,8 +85,6 @@ void GameMgr::changeGameState(bool state) {
 
 void GameMgr::LoadLevel1 ()
 {
-	mSceneMgr->setSkyBox(true, "Examples/SpaceSkyBox");
-
 	// Wall, left
 	engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_OBSTACLE, "obstacle1", "cube.mesh", Ogre::Vector3(-150, 0, -1000), Ogre::Vector3(3, 5, 1), Ogre::Quaternion::IDENTITY, false);
 
@@ -109,6 +110,100 @@ void GameMgr::LoadLevel1 ()
 	engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_DESTRUCTIBLE, "obstacle11", "cube.mesh", Ogre::Vector3(0, -225, -5000), Ogre::Vector3(2, 2, 0.3f), Ogre::Quaternion::IDENTITY, false);
 	engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_DESTRUCTIBLE, "obstacle12", "cube.mesh", Ogre::Vector3(-225, -225, -5000), Ogre::Vector3(2, 2, 0.3f), Ogre::Quaternion::IDENTITY, false);
 	engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_DESTRUCTIBLE, "obstacle13", "cube.mesh", Ogre::Vector3(225, -225, -5000), Ogre::Vector3(2, 2, 0.3f), Ogre::Quaternion::IDENTITY, false);
+
+	return;
+
+}
+
+// Note: Keep in mind that Level 1's distanceBeteenPieces is 1000
+void GameMgr::LoadRandomLevel (int size, float distanceBetweenPieces)
+{
+	int lastChoice = -1;
+
+	for (int i = 1; i <= size; i++)
+	{
+		int choice = -1;
+
+		do
+		{
+			choice = rand() % 5;
+
+		} while (choice == lastChoice);  // Prevents the same piece multiple times in a row
+
+		GenerateLevelPiece (i * -distanceBetweenPieces, std::string("obstacle") + std::to_string(i), choice);
+
+		lastChoice = choice;
+
+	}
+
+	return;
+
+}
+
+void GameMgr::GenerateLevelPiece (float zPos, std::string name, int choice)
+{
+	std::cout << "name=" << name << std::endl;
+	std::cout << "choice=" << choice << std::endl;
+
+	if (choice == 0)
+	{
+		// Wall, left
+		engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_OBSTACLE, name, "cube.mesh", Ogre::Vector3(-150, 0, zPos), Ogre::Vector3(3, 5, 1), Ogre::Quaternion::IDENTITY, false);
+
+	} else if (choice == 1)
+	{
+		// Wall, right
+		engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_OBSTACLE, name, "cube.mesh", Ogre::Vector3(150, 0, zPos), Ogre::Vector3(3, 5, 1), Ogre::Quaternion::IDENTITY, false);
+
+	} else if (choice == 2)
+	{
+		// Wall, up
+		engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_OBSTACLE, name, "cube.mesh", Ogre::Vector3(0, 150, zPos), Ogre::Vector3(5, 3, 1), Ogre::Quaternion::IDENTITY, false);
+
+	} else if (choice == 3)
+	{
+		// Wall, down
+		engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_OBSTACLE, name, "cube.mesh", Ogre::Vector3(0, -150, zPos), Ogre::Vector3(5, 3, 1), Ogre::Quaternion::IDENTITY, false);
+
+	} else if (choice == 4)
+	{
+		// Generates an up to 3x3 destructible grid, chance to generate 1x3 and 2x3 as well
+		int subChoice = std::rand() % 3;
+
+		if (subChoice >= 0) //This will always happen
+		{
+			// Middle row
+			engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_DESTRUCTIBLE, name + "00", "cube.mesh", Ogre::Vector3(0, 0, zPos), Ogre::Vector3(2, 2, 0.3f), Ogre::Quaternion::IDENTITY, false);
+			engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_DESTRUCTIBLE, name + "01", "cube.mesh", Ogre::Vector3(-225, 0, zPos), Ogre::Vector3(2, 2, 0.3f), Ogre::Quaternion::IDENTITY, false);
+			engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_DESTRUCTIBLE, name + "02", "cube.mesh", Ogre::Vector3(225, 0, zPos), Ogre::Vector3(2, 2, 0.3f), Ogre::Quaternion::IDENTITY, false);
+
+		}
+
+		if (subChoice >= 1)
+		{
+			// Top row
+			engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_DESTRUCTIBLE, name + "10", "cube.mesh", Ogre::Vector3(0, 225, zPos), Ogre::Vector3(2, 2, 0.3f), Ogre::Quaternion::IDENTITY, false);
+			engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_DESTRUCTIBLE, name + "11", "cube.mesh", Ogre::Vector3(-225, 225, zPos), Ogre::Vector3(2, 2, 0.3f), Ogre::Quaternion::IDENTITY, false);
+			engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_DESTRUCTIBLE, name + "12", "cube.mesh", Ogre::Vector3(225, 225, zPos), Ogre::Vector3(2, 2, 0.3f), Ogre::Quaternion::IDENTITY, false);
+
+		}
+
+		if (subChoice >= 2)
+		{
+			// Bottom row
+			engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_DESTRUCTIBLE, name + "20", "cube.mesh", Ogre::Vector3(0, -225, zPos), Ogre::Vector3(2, 2, 0.3f), Ogre::Quaternion::IDENTITY, false);
+			engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_DESTRUCTIBLE, name + "21", "cube.mesh", Ogre::Vector3(-225, -225, zPos), Ogre::Vector3(2, 2, 0.3f), Ogre::Quaternion::IDENTITY, false);
+			engine->entityMgr->CreateEntityOfType (EntityType::ENTITY_DESTRUCTIBLE, name + "22", "cube.mesh", Ogre::Vector3(225, -225, zPos), Ogre::Vector3(2, 2, 0.3f), Ogre::Quaternion::IDENTITY, false);
+
+
+		}
+	} else
+	{
+		std::cout << "No level piece generated for choice = " << choice << std::endl;
+
+	}
+
+	std::cout << "Done" << std::endl;
 
 	return;
 

@@ -68,8 +68,8 @@ void Player::Initialize()
 	// create all the bullets
 	for (int i = 0; i < mShooting->mBulletCount; i++)
 	{
-		mShooting->mBullets.push_back((Bullet*)mEntityMgr->CreateEntityOfType(
-			EntityType::BULLET,					// type
+		mShooting->mBullets.push_back((PlayerBullet*)mEntityMgr->CreateEntityOfType(
+			EntityType::PLAYER_BULLET,			// type
 			"Bullet" + std::to_string(i),		// name
 			"sphere.mesh",						// mesh file
 			Ogre::Vector3(4000, 4000, 4000),	// position

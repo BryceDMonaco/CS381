@@ -17,6 +17,9 @@ Bullet::Bullet (
 	mTag = "Bullet";
 
 	mSpeed = 200.0f;
+
+	hitInterval = 0.5f;
+	hitTimer = hitInterval;
 }
 
 Bullet::~Bullet()
@@ -44,6 +47,8 @@ void Bullet::Initialize()
 
 void Bullet::Tick(float dt)
 {
+	hitTimer += dt;
+
 	for (int i = 0; i < (int) mAspects->size(); i++)
 	{
 		mAspects->at(i)->Tick(dt);
@@ -77,6 +82,20 @@ PlayerBullet::~PlayerBullet()
 void PlayerBullet::OnCollision(Entity381* collider, float timeSinceLastCollision)
 {
 	// TODO: handle player bullet collision
+	//if (timeSinceLastCollision > 0.5f)
+	//{
+		if (collider->mTag == "Destructible" && hitTimer >= hitInterval)
+		{
+			Ogre::LogManager::getSingletonPtr()->logMessage("destructible hit");
+			collider->mHealth -= 25;
+			if (collider->mHealth <= 0)
+			{
+				mEntityMgr->DestroyEntity(collider->mEntityID);
+			}
+
+			hitTimer = 0.0f;
+		}
+	//}
 }
 
 EnemyBullet::EnemyBullet (

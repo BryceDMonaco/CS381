@@ -23,7 +23,8 @@ enum EntityType
 	ENTITY_DESTRUCTIBLE,
 	PLAYER,
 	ENEMY,
-	BULLET
+	PLAYER_BULLET,
+	ENEMY_BULLET
 };
 
 class EntityMgr : public Mgr

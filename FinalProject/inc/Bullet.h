@@ -30,6 +30,9 @@ public:
 
 protected:
 	virtual void OnCollision(Entity381* collider, float timeSinceLastCollision);
+
+	float hitInterval;
+	float hitTimer;
 };
 
 class PlayerBullet : public Bullet

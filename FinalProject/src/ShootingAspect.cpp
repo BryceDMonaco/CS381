@@ -25,7 +25,8 @@ void ShootingAspect::Fire()
 
 		// reset bullet position and fire
 		currentBullet->mPosition = mEntity381->mPosition;
-		currentBullet->targetPosition = (mEntity381->mSceneNode->getOrientation() * Ogre::Vector3::NEGATIVE_UNIT_Z * 5000) + mEntity381->mSceneNode->getPosition();
+		currentBullet->targetPosition =
+			(mEntity381->mSceneNode->getOrientation() * Ogre::Vector3::NEGATIVE_UNIT_Z * 5000) + mEntity381->mSceneNode->getPosition();
 
 		// set next bullet
 		mBulletIndex = (mBulletIndex + 1) % mBulletCount;

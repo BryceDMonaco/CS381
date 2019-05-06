@@ -103,8 +103,8 @@ Entity381* EntityMgr::CreateEntityOfType(
 		newEntity->mTag = "Destructible";
 
 		break;
-	case BULLET:
-		newEntity = new Bullet(
+	case PLAYER_BULLET:
+		newEntity = new PlayerBullet(
 			mSceneMgr,
 			this,
 			mNextEntityID,
@@ -182,7 +182,11 @@ void EntityMgr::DestroyEntity(int entityID)
 
 	// if it exists, destroy it
 	if (it != mEntities->end())
+	{
+		mSceneMgr->destroySceneNode(it->second->mSceneNode);
 		mEntities->erase(it);
+	}
+
 
 }
 

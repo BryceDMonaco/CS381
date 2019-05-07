@@ -35,7 +35,11 @@ public:
 	virtual void Tick(float dt);
 	virtual void LoadLevel();
 	void LoadMainMenu();
-	void ReloadMainMenu();
+	void cleanMenu();
+	void showMenu();
+	void hideGameUI();
+	void LoadPauseScreen();
+	void ClosePauseScreen();
 	virtual void Stop();
 
     virtual bool mouseMoved(const OIS::MouseEvent &arg);
@@ -46,9 +50,31 @@ public:
 
 	OgreBites::InputContext mInputContext;
 	OgreBites::SdkTrayManager* mTrayMgr;
+	OgreBites::SdkTrayManager* mTipsMgr;
+	OgreBites::SdkTrayManager* mGameUIMgr;
+	OgreBites::SdkTrayManager* mPauseMgr;
 	Ogre::OverlaySystem* mOverlaySystem;
 
+	//Game UI
 	OgreBites::ProgressBar *mProgressBar;
+	int currentScore = 0;
+	OgreBites::Label *mScore;
+	//Pause Screen
+	bool 	pauseOpen = false,
+			pauseCreated = false,
+			gameOpen = false;
+	OgreBites::Button *mResume;
+	OgreBites::Separator *mPauseSeparator1;
+	OgreBites::Button *mReturnToMenu;
+
+	//Main Menu
+	OgreBites::Button *mNewGame;
+	OgreBites::Button *mHowToPlay;
+	OgreBites::Button *mExitTips;
+	bool exitLoaded = false;
+	OgreBites::Button *mQuitGame;
+	OgreBites::Separator *mMenuSeparator;
+	OgreBites::Separator *mMenuSeparator2;
 };
 
 

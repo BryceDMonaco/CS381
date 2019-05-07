@@ -202,6 +202,9 @@ bool Player::CheckVictory()
 	{
 		if (it->second->mPosition.z > 0)
 		{
+			//Victory points
+			//mEntityMgr->engine->uiMgr->currentScore += 100;
+
 			return true;
 		}
 	}

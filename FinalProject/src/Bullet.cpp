@@ -99,6 +99,9 @@ void PlayerBullet::OnCollision(Entity381* collider, float timeSinceLastCollision
 			if (collider->mHealth <= 0)
 			{
 				mEntityMgr->DestroyEntity(collider->mEntityID);
+
+				mEntityMgr->engine->uiMgr->currentScore += 50;
+				mEntityMgr->engine->uiMgr->mScore->setCaption(std::to_string(mEntityMgr->engine->uiMgr->currentScore));
 			}
 
 			hitTimer = 0.0f;

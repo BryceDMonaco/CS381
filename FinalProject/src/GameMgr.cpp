@@ -115,7 +115,10 @@ void GameMgr::changeGameState(GameState state) {
 		engine->entityMgr->DestroyAll();
 		currentState = GameState::GAME_START;
 		mSceneMgr->setSkyBox(false, "Examples/SpaceSkyBox");
-		engine->uiMgr->ReloadMainMenu();
+		engine->uiMgr->hideGameUI();
+		engine->uiMgr->showMenu();
+
+		//engine->uiMgr->ReloadMainMenu();
 		break;
 	case 1:
 		winTrigger = (WinTrigger*) engine->entityMgr->CreateEntityOfType(EntityType::WIN_TRIGGER, "winTrigger", "cube.mesh");
@@ -129,10 +132,18 @@ void GameMgr::changeGameState(GameState state) {
 		player->winTriggerID = winTriggerID;
 		break;
 	case 2:
+		//Victory points
+		engine->uiMgr->currentScore += 100;
+		engine->uiMgr->mScore->setCaption(std::to_string(engine->uiMgr->currentScore));
+
 		currentState = GameState::LEVEL_TWO;
 		LoadRandomLevel(10, 900);
 		break;
 	case 3:
+		//Victory points
+		engine->uiMgr->currentScore += 100;
+		engine->uiMgr->mScore->setCaption(std::to_string(engine->uiMgr->currentScore));
+
 		currentState = GameState::LEVEL_THREE;
 		LoadRandomLevel(10, 800);
 		break;

@@ -83,9 +83,11 @@ void UIMgr::showMenu() {
 }
 
 void UIMgr::LoadPauseScreen() {
-	mPauseMgr->showBackdrop("menu");
+	//mPauseMgr->showBackdrop("menu");
 	mPauseMgr->showTrays();
 	mPauseMgr->showCursor();
+
+	engine->state = engine->EngineState::PAUSED;
 
 	if (!pauseCreated) {
 		mResume = mPauseMgr->createButton(OgreBites::TL_CENTER, "ResumePlaying", "Resume Game", 200);
@@ -101,13 +103,15 @@ void UIMgr::LoadPauseScreen() {
 }
 
 void UIMgr::ClosePauseScreen() {
-	mPauseMgr->hideBackdrop();
+	//mPauseMgr->hideBackdrop();
 	mPauseMgr->hideTrays();
 	mResume->hide();
 	mPauseSeparator1->hide();
 	mReturnToMenu->hide();
 	pauseOpen = false;
 	mPauseMgr->hideCursor();
+
+	engine->state = engine->EngineState::RUNNING;
 }
 
 void UIMgr::LoadLevel() {

@@ -182,22 +182,22 @@ bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 		engine->uiMgr->ClosePauseScreen();
 	}
 
-	if (ke.key == OIS::KC_A)
+	if (ke.key == OIS::KC_A || ke.key == OIS::KC_LEFT)
 	{
 		isADown = true;
 	}
 
-	if (ke.key == OIS::KC_D)
+	if (ke.key == OIS::KC_D || ke.key == OIS::KC_RIGHT)
 	{
 		isDDown = true;
 	}
 
-	if (ke.key == OIS::KC_S)
+	if (ke.key == OIS::KC_S || ke.key == OIS::KC_DOWN)
 	{
 		isSDown = true;
 	}
 
-	if (ke.key == OIS::KC_W)
+	if (ke.key == OIS::KC_W || ke.key == OIS::KC_UP)
 	{
 		isWDown = true;
 	}
@@ -352,22 +352,22 @@ bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 
 bool InputMgr::keyReleased(const OIS::KeyEvent& ke)
 {
-	if (ke.key == OIS::KC_A)
+	if (ke.key == OIS::KC_A || ke.key == OIS::KC_LEFT)
 	{
 		isADown = false;
 	}
 
-	if (ke.key == OIS::KC_D)
+	if (ke.key == OIS::KC_D || ke.key == OIS::KC_RIGHT)
 	{
 		isDDown = false;
 	}
 
-	if (ke.key == OIS::KC_S)
+	if (ke.key == OIS::KC_S || ke.key == OIS::KC_DOWN)
 	{
 		isSDown = false;
 	}
 
-	if (ke.key == OIS::KC_W)
+	if (ke.key == OIS::KC_W || ke.key == OIS::KC_UP)
 	{
 		isWDown = false;
 	}

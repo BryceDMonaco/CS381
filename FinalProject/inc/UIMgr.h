@@ -74,6 +74,8 @@ public:
 	OgreBites::Button *mReturnToMenu;
 
 	//Death screen
+	OgreBites::Label *mDeathLabel;
+	OgreBites::Separator *mDeathSep;
 	OgreBites::Button *mDeathRestart;
 	OgreBites::Separator *mDeathSeparator1;
 	OgreBites::Button *mDeathReturnToMenu;

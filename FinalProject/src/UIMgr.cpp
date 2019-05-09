@@ -32,6 +32,8 @@ void UIMgr::Init() {
 	mPauseMgr = new OgreBites::SdkTrayManager("PauseInterface", engine->gfxMgr->mWindow, mInputContext, this);
 
 	mDeadMgr = new OgreBites::SdkTrayManager("DeathInterface", engine->gfxMgr->mWindow, mInputContext, this);
+	mDeathLabel = mDeadMgr->createLabel(OgreBites::TL_CENTER, "DeathLabel", "You Died!", 200);
+	mDeathSep = mDeadMgr->createSeparator(OgreBites::TL_CENTER, "LabelSeparator", 200);
 	mDeathRestart = mDeadMgr->createButton(OgreBites::TL_CENTER, "DeathRestart", "New Game", 200);
 	mDeathSeparator1 = mDeadMgr->createSeparator(OgreBites::TL_CENTER, "deathseparator", 200);
 	mDeathReturnToMenu = mDeadMgr->createButton(OgreBites::TL_CENTER, "DeathMenu", "Return to Main Menu", 200);

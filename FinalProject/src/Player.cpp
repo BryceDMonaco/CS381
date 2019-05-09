@@ -106,7 +106,9 @@ void Player::Tick(float dt)
 	{
 		Ogre::LogManager::getSingletonPtr()->logMessage("Player is destroyed");
 		// kill player
-		mEntityMgr->engine->gameMgr->changeGameState(GameState::GAME_START);
+		mEntityMgr->engine->uiMgr->deadUI();
+		mEntityMgr->engine->uiMgr->gameOpen = false;
+		//mEntityMgr->engine->gameMgr->changeGameState(GameState::GAME_START);
 	}
 
 }

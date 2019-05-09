@@ -51,6 +51,7 @@ public:
 	Player* player;
 	WinTrigger* winTrigger = nullptr;
 	int winTriggerID = 0;
+	bool exists = false;
 
 };
 

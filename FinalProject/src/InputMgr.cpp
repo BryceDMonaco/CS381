@@ -455,6 +455,7 @@ bool InputMgr::mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id)
 	if (engine->uiMgr->mTipsMgr->injectMouseDown(arg, id)) return true;
 	if (engine->uiMgr->mPauseMgr->injectMouseDown(arg, id)) return true;
 	if (engine->uiMgr->mGameUIMgr->injectMouseDown(arg, id)) return true;
+	if (engine->uiMgr->mDeadMgr->injectMouseDown(arg, id)) return true;
 
 
 	//const OIS::MouseState &ms = mMouse->getMouseState();
@@ -542,6 +543,7 @@ bool InputMgr::mouseMoved(const OIS::MouseEvent& me)
 	if (engine->uiMgr->mTipsMgr->injectMouseMove(me)) return true;
 	if (engine->uiMgr->mPauseMgr->injectMouseMove(me)) return true;
 	if (engine->uiMgr->mGameUIMgr->injectMouseMove(me)) return true;
+	if (engine->uiMgr->mDeadMgr->injectMouseMove(me)) return true;
 
 	return true;
 }
@@ -552,6 +554,7 @@ bool InputMgr::mouseReleased(const OIS::MouseEvent& me, OIS::MouseButtonID mid)
 	if (engine->uiMgr->mTipsMgr->injectMouseUp(me, mid)) return true;
 	if (engine->uiMgr->mPauseMgr->injectMouseUp(me, mid)) return true;
 	if (engine->uiMgr->mGameUIMgr->injectMouseUp(me, mid)) return true;
+	if (engine->uiMgr->mDeadMgr->injectMouseUp(me, mid)) return true;
 
 	return true;
 }

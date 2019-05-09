@@ -30,6 +30,14 @@ void UIMgr::Init() {
 	mTipsMgr = new OgreBites::SdkTrayManager("TooltipsInterface", engine->gfxMgr->mWindow, mInputContext, this);
 	mGameUIMgr = new OgreBites::SdkTrayManager("GameInterface", engine->gfxMgr->mWindow, mInputContext, this);
 	mPauseMgr = new OgreBites::SdkTrayManager("PauseInterface", engine->gfxMgr->mWindow, mInputContext, this);
+
+	mDeadMgr = new OgreBites::SdkTrayManager("DeathInterface", engine->gfxMgr->mWindow, mInputContext, this);
+	mDeathRestart = mDeadMgr->createButton(OgreBites::TL_CENTER, "DeathRestart", "New Game", 200);
+	mDeathSeparator1 = mDeadMgr->createSeparator(OgreBites::TL_CENTER, "deathseparator", 200);
+	mDeathReturnToMenu = mDeadMgr->createButton(OgreBites::TL_CENTER, "DeathMenu", "Return to Main Menu", 200);
+	mDeadMgr->hideCursor();
+	mDeadMgr->hideAll();
+
 	mNextLevelMgr = new OgreBites::SdkTrayManager("NextLevelLabel", engine->gfxMgr->mWindow, mInputContext, this);
 	mNextLevelMgr->hideCursor();
 	mNextLevel = mNextLevelMgr->createLabel(OgreBites::TL_CENTER, "NextLevel", "Next Level!", 200);
@@ -142,12 +150,21 @@ void UIMgr::hideGameUI() {
 	gameOpen = false;
 }
 
+void UIMgr::deadUI() {
+	//Pause game
+	engine->state = engine->EngineState::PAUSED;
+
+	//Load UI
+	mDeadMgr->showAll();
+}
+
 
 void UIMgr::Tick(float dt) {
 	mTrayMgr->refreshCursor();
 	mTipsMgr->refreshCursor();
 	mPauseMgr->refreshCursor();
 	mGameUIMgr->refreshCursor();
+	mDeadMgr->refreshCursor();
 
 	if (advance) {
 		timer += dt;
@@ -185,6 +202,7 @@ bool UIMgr::mouseMoved(const OIS::MouseEvent &arg){
     if (mTipsMgr->injectMouseMove(arg)) return true;
     if (mPauseMgr->injectMouseMove(arg)) return true;
     if (mGameUIMgr->injectMouseMove(arg)) return true;
+    if (mDeadMgr->injectMouseMove(arg)) return true;
 	return false;
 }
 
@@ -194,6 +212,7 @@ bool UIMgr::mousePressed(const OIS::MouseEvent &me, OIS::MouseButtonID mid) {
 	if (mTipsMgr->injectMouseDown(me, mid)) return true;
 	if (mPauseMgr->injectMouseDown(me, mid)) return true;
 	if (mGameUIMgr->injectMouseDown(me, mid)) return true;
+	if (mDeadMgr->injectMouseDown(me, mid)) return true;
 	return false;
 }
 
@@ -202,6 +221,7 @@ bool UIMgr::mouseReleased(const OIS::MouseEvent &arg, OIS::MouseButtonID id){
     if (mTipsMgr->injectMouseUp(arg, id)) return true;
     if (mPauseMgr->injectMouseUp(arg, id)) return true;
     if (mGameUIMgr->injectMouseUp(arg, id)) return true;
+    if (mDeadMgr->injectMouseUp(arg, id)) return true;
     /* normal mouse processing here... */
 	return false;
 }
@@ -248,6 +268,33 @@ void UIMgr::buttonHit(OgreBites::Button *b){
 	if (b->getName() == "ReturnToMenu") {
 		ClosePauseScreen();
 		engine->gameMgr->changeGameState(GameState::GAME_START);
+	}
+
+	//Death screen stuff
+	if (b->getName() == "DeathRestart") {
+
+		//Hide death stuff
+		mDeadMgr->hideAll();
+
+		engine->state = engine->EngineState::RUNNING;
+
+		engine->gameMgr->changeGameState(GameState::GAME_START);
+		engine->gameMgr->changeGameState(GameState::LEVEL_ONE);
+
+		//Clean Menu
+		cleanMenu();
+
+		LoadLevel();
+	}
+
+	if (b->getName() == "DeathMenu") {
+		//Clean game
+		hideGameUI();
+
+		//Hide death stuff
+		mDeadMgr->hideAll();
+
+		showMenu();
 	}
 
 }

@@ -40,6 +40,7 @@ public:
 	void hideGameUI();
 	void LoadPauseScreen();
 	void ClosePauseScreen();
+	void deadUI();
 	virtual void Stop();
 
     virtual bool mouseMoved(const OIS::MouseEvent &arg);
@@ -54,6 +55,7 @@ public:
 	OgreBites::SdkTrayManager* mGameUIMgr;
 	OgreBites::SdkTrayManager* mPauseMgr;
 	OgreBites::SdkTrayManager* mNextLevelMgr;
+	OgreBites::SdkTrayManager* mDeadMgr;
 	Ogre::OverlaySystem* mOverlaySystem;
 
 	//Game UI
@@ -70,6 +72,11 @@ public:
 	OgreBites::Button *mResume;
 	OgreBites::Separator *mPauseSeparator1;
 	OgreBites::Button *mReturnToMenu;
+
+	//Death screen
+	OgreBites::Button *mDeathRestart;
+	OgreBites::Separator *mDeathSeparator1;
+	OgreBites::Button *mDeathReturnToMenu;
 
 	//Main Menu
 	OgreBites::Button *mNewGame;

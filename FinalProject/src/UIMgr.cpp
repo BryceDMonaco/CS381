@@ -288,13 +288,11 @@ void UIMgr::buttonHit(OgreBites::Button *b){
 	}
 
 	if (b->getName() == "DeathMenu") {
-		//Clean game
-		hideGameUI();
-
 		//Hide death stuff
 		mDeadMgr->hideAll();
 
-		showMenu();
+		engine->state = engine->EngineState::RUNNING;
+		engine->gameMgr->changeGameState(GameState::GAME_START);
 	}
 
 }

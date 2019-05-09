@@ -115,11 +115,10 @@ void GameMgr::changeGameState(GameState state) {
 		// load main menu
 		engine->entityMgr->DestroyAll();
 		currentState = GameState::GAME_START;
-		mSceneMgr->setSkyBox(false, "Examples/SpaceSkyBox");
 		engine->uiMgr->hideGameUI();
 		engine->uiMgr->showMenu();
 
-		//engine->uiMgr->ReloadMainMenu();
+		mSceneMgr->setSkyBox(false, "5dim");
 		break;
 	case 1:
 		if (!exists) {
@@ -127,7 +126,7 @@ void GameMgr::changeGameState(GameState state) {
 		}
 		winTriggerID = winTrigger->mEntityID;
 		currentState = GameState::LEVEL_ONE;
-		mSceneMgr->setSkyBox(true, "Examples/SpaceSkyBox");
+		mSceneMgr->setSkyBox(true, "5dim");
 		LoadRandomLevel(10, 1000);
 		player = (Player*) engine->entityMgr->CreateEntityOfType(
 				EntityType::PLAYER,

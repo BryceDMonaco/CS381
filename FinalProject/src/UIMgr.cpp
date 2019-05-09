@@ -30,6 +30,10 @@ void UIMgr::Init() {
 	mTipsMgr = new OgreBites::SdkTrayManager("TooltipsInterface", engine->gfxMgr->mWindow, mInputContext, this);
 	mGameUIMgr = new OgreBites::SdkTrayManager("GameInterface", engine->gfxMgr->mWindow, mInputContext, this);
 	mPauseMgr = new OgreBites::SdkTrayManager("PauseInterface", engine->gfxMgr->mWindow, mInputContext, this);
+	mNextLevelMgr = new OgreBites::SdkTrayManager("NextLevelLabel", engine->gfxMgr->mWindow, mInputContext, this);
+	mNextLevelMgr->hideCursor();
+	mNextLevel = mNextLevelMgr->createLabel(OgreBites::TL_CENTER, "NextLevel", "Next Level!", 200);
+
 }
 
 void UIMgr::Stop() {
@@ -83,7 +87,6 @@ void UIMgr::showMenu() {
 }
 
 void UIMgr::LoadPauseScreen() {
-	//mPauseMgr->showBackdrop("menu");
 	mPauseMgr->showTrays();
 	mPauseMgr->showCursor();
 
@@ -103,7 +106,6 @@ void UIMgr::LoadPauseScreen() {
 }
 
 void UIMgr::ClosePauseScreen() {
-	//mPauseMgr->hideBackdrop();
 	mPauseMgr->hideTrays();
 	mResume->hide();
 	mPauseSeparator1->hide();
@@ -131,7 +133,6 @@ void UIMgr::LoadLevel() {
 	mProgressBar->setProgress(100);
 	std::cout << "Buttons..\n";
 	mScore = mGameUIMgr->createLabel(OgreBites::TL_TOPRIGHT, "Score", "0", 50);
-
 	std::cout << "Break.\n";
 }
 
@@ -141,11 +142,27 @@ void UIMgr::hideGameUI() {
 	gameOpen = false;
 }
 
+
 void UIMgr::Tick(float dt) {
 	mTrayMgr->refreshCursor();
 	mTipsMgr->refreshCursor();
 	mPauseMgr->refreshCursor();
 	mGameUIMgr->refreshCursor();
+
+	if (advance) {
+		timer += dt;
+
+		mNextLevelMgr->showTrays();
+		mNextLevel->show();
+
+		if (timer >= 1)
+			advance = false;
+
+	} else {
+		timer = 0;
+		mNextLevelMgr->hideTrays();
+		mNextLevel->hide();
+	}
 }
 
 void UIMgr::windowResized(Ogre::RenderWindow* rw){

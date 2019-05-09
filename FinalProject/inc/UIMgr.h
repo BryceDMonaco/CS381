@@ -53,16 +53,20 @@ public:
 	OgreBites::SdkTrayManager* mTipsMgr;
 	OgreBites::SdkTrayManager* mGameUIMgr;
 	OgreBites::SdkTrayManager* mPauseMgr;
+	OgreBites::SdkTrayManager* mNextLevelMgr;
 	Ogre::OverlaySystem* mOverlaySystem;
 
 	//Game UI
 	OgreBites::ProgressBar *mProgressBar;
 	int currentScore = 0;
 	OgreBites::Label *mScore;
+	OgreBites::Label *mNextLevel;
 	//Pause Screen
 	bool 	pauseOpen = false,
 			pauseCreated = false,
-			gameOpen = false;
+			gameOpen = false,
+			advance = false;
+	float	timer;
 	OgreBites::Button *mResume;
 	OgreBites::Separator *mPauseSeparator1;
 	OgreBites::Button *mReturnToMenu;

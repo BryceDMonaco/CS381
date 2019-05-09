@@ -83,6 +83,7 @@ void GameMgr::NextLevel()
 		changeGameState(GameState::LEVEL_TWO);
 		break;
 	case GameState::LEVEL_TWO:
+		//Next Level UI
 		changeGameState(GameState::LEVEL_THREE);
 		break;
 	case GameState::LEVEL_THREE:
@@ -136,6 +137,9 @@ void GameMgr::changeGameState(GameState state) {
 		engine->uiMgr->currentScore += 100;
 		engine->uiMgr->mScore->setCaption(std::to_string(engine->uiMgr->currentScore));
 
+		//Next Level UI
+		engine->uiMgr->advance = true;
+
 		currentState = GameState::LEVEL_TWO;
 		LoadRandomLevel(10, 900);
 		break;
@@ -143,6 +147,8 @@ void GameMgr::changeGameState(GameState state) {
 		//Victory points
 		engine->uiMgr->currentScore += 100;
 		engine->uiMgr->mScore->setCaption(std::to_string(engine->uiMgr->currentScore));
+
+		engine->uiMgr->advance = true;
 
 		currentState = GameState::LEVEL_THREE;
 		LoadRandomLevel(10, 800);

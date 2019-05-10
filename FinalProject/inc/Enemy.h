@@ -5,7 +5,11 @@
  * Description: This is the base enemy class. Two types of
  * 	enemies will inherit from this class. These enemies'
  * 	objectives and capabilities will be different, but they
- * 	will both do damage to the player
+ * 	will both do damage to the player. One enemy is the
+ * 	static enemy which behaves like an obstacle such that
+ * 	it simply moves forwards. The other is the
+ * 	dynamic enemy which moves towards the player and shoots
+ * 	in the direction it faces every shootInterval seconds.
  */
 
 #ifndef _ENEMY_H_

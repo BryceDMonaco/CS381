@@ -91,3 +91,52 @@ void StaticEnemy::Tick(float dt)
 		mAspects->at(i)->Tick(dt);
 	}
 }
+
+DynamicEnemy::DynamicEnemy (
+	Ogre::SceneManager* manager,
+	EntityMgr* entityMgr,
+	int entityId,
+	std::string entityName,
+	std::string meshFileName,
+	Ogre::Vector3 position,
+	Ogre::Quaternion orientation)
+: Enemy (manager,entityMgr,entityId,entityName,meshFileName,position,
+	orientation)
+{
+	mShooting = nullptr;
+	shootInterval = 1.0f;
+	shootTimer = 0.0f;
+}
+
+DynamicEnemy::~DynamicEnemy ()
+{
+	mSceneMgr = nullptr;
+	delete mAspects;
+	mAspects = nullptr;
+}
+
+void DynamicEnemy::Initialize()
+{
+	// create and attach entity and scene node
+	mEntity = mSceneMgr->createEntity(mMeshFileName);
+	mSceneNode = mSceneMgr->getRootSceneNode()->createChildSceneNode(mEntityName + "Node");
+	mSceneNode->attachObject(mEntity);
+
+	// create the aspects
+	RenderableAspect* renderable = new RenderableAspect(this);
+	PhysicsAspect* physics = new PhysicsAspect(this);
+	ShootingAspect* shooting = new ShootingAspect(this);
+
+	// add the aspects
+	this->AddAspect(renderable);
+	this->AddAspect(physics);
+	this->AddAspect(shooting);
+}
+
+void DynamicEnemy::Tick(float dt)
+{
+	for (int i = 0; i < (int) mAspects->size(); i++)
+	{
+		mAspects->at(i)->Tick(dt);
+	}
+}

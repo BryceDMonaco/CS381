@@ -21,6 +21,10 @@ public:
 	Engine();
 	~Engine();
 
+	enum EngineState {
+		RUNNING,
+		PAUSED,
+	};
 
 	EntityMgr*      	entityMgr;
 	GfxMgr*         	gfxMgr;
@@ -40,8 +44,7 @@ public:
 
 	//
 	bool keepRunning;
-
-
+	int state = EngineState::RUNNING;
 };
 
 

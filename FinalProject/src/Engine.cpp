@@ -57,13 +57,36 @@ void Engine::Init(){
 }
 
 void Engine::TickAll(float dt){
-	gfxMgr->Tick(dt);
-	inputMgr->Tick(dt);
-	entityMgr->Tick(dt);
-	gameMgr->Tick(dt);
-	soundMgr->Tick(dt);
-	uiMgr->Tick(dt);
+
+	switch (state) {
+	case 0: //Running
+		gfxMgr->Tick(dt);
+		inputMgr->Tick(dt);
+		entityMgr->Tick(dt);
+		gameMgr->Tick(dt);
+		soundMgr->Tick(dt);
+		uiMgr->Tick(dt);
+		break;
+
+	case 1: //Paused
+		gfxMgr->Tick(dt);
+		inputMgr->Tick(dt);
+		gameMgr->Tick(dt);
+		soundMgr->Tick(dt);
+		uiMgr->Tick(dt);
+		break;
+
+	default:
+		gfxMgr->Tick(dt);
+		inputMgr->Tick(dt);
+		entityMgr->Tick(dt);
+		gameMgr->Tick(dt);
+		soundMgr->Tick(dt);
+		uiMgr->Tick(dt);
+		break;
+	}
 }
+
 
 void Engine::Shutdown(){
 	inputMgr->Stop();

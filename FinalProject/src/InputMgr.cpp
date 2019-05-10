@@ -171,28 +171,28 @@ bool InputMgr::frameRenderingQueued(const Ogre::FrameEvent& evt)
 bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 {
 	// Quit
-	if (ke.key == OIS::KC_ESCAPE)
-	{
-		engine->keepRunning = false;
-
+	if (ke.key == OIS::KC_ESCAPE && !engine->uiMgr->pauseOpen && engine->uiMgr->gameOpen) {
+		engine->uiMgr->LoadPauseScreen();
+	} else if (ke.key == OIS::KC_ESCAPE && engine->uiMgr->pauseOpen && engine->uiMgr->gameOpen) {
+		engine->uiMgr->ClosePauseScreen();
 	}
 
-	if (ke.key == OIS::KC_A)
+	if (ke.key == OIS::KC_A || ke.key == OIS::KC_LEFT)
 	{
 		isADown = true;
 	}
 
-	if (ke.key == OIS::KC_D)
+	if (ke.key == OIS::KC_D || ke.key == OIS::KC_RIGHT)
 	{
 		isDDown = true;
 	}
 
-	if (ke.key == OIS::KC_S)
+	if (ke.key == OIS::KC_S || ke.key == OIS::KC_DOWN)
 	{
 		isSDown = true;
 	}
 
-	if (ke.key == OIS::KC_W)
+	if (ke.key == OIS::KC_W || ke.key == OIS::KC_UP)
 	{
 		isWDown = true;
 	}
@@ -347,22 +347,22 @@ bool InputMgr::keyPressed(const OIS::KeyEvent& ke)
 
 bool InputMgr::keyReleased(const OIS::KeyEvent& ke)
 {
-	if (ke.key == OIS::KC_A)
+	if (ke.key == OIS::KC_A || ke.key == OIS::KC_LEFT)
 	{
 		isADown = false;
 	}
 
-	if (ke.key == OIS::KC_D)
+	if (ke.key == OIS::KC_D || ke.key == OIS::KC_RIGHT)
 	{
 		isDDown = false;
 	}
 
-	if (ke.key == OIS::KC_S)
+	if (ke.key == OIS::KC_S || ke.key == OIS::KC_DOWN)
 	{
 		isSDown = false;
 	}
 
-	if (ke.key == OIS::KC_W)
+	if (ke.key == OIS::KC_W || ke.key == OIS::KC_UP)
 	{
 		isWDown = false;
 	}
@@ -452,7 +452,10 @@ bool InputMgr::keyReleased(const OIS::KeyEvent& ke)
 bool InputMgr::mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id)
 {
 	if (engine->uiMgr->mTrayMgr->injectMouseDown(arg, id)) return true;
-
+	if (engine->uiMgr->mTipsMgr->injectMouseDown(arg, id)) return true;
+	if (engine->uiMgr->mPauseMgr->injectMouseDown(arg, id)) return true;
+	if (engine->uiMgr->mGameUIMgr->injectMouseDown(arg, id)) return true;
+	if (engine->uiMgr->mDeadMgr->injectMouseDown(arg, id)) return true;
 
 
 	//const OIS::MouseState &ms = mMouse->getMouseState();
@@ -537,6 +540,10 @@ bool InputMgr::mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id)
 bool InputMgr::mouseMoved(const OIS::MouseEvent& me)
 {
 	if (engine->uiMgr->mTrayMgr->injectMouseMove(me)) return true;
+	if (engine->uiMgr->mTipsMgr->injectMouseMove(me)) return true;
+	if (engine->uiMgr->mPauseMgr->injectMouseMove(me)) return true;
+	if (engine->uiMgr->mGameUIMgr->injectMouseMove(me)) return true;
+	if (engine->uiMgr->mDeadMgr->injectMouseMove(me)) return true;
 
 	return true;
 }
@@ -544,6 +551,10 @@ bool InputMgr::mouseMoved(const OIS::MouseEvent& me)
 bool InputMgr::mouseReleased(const OIS::MouseEvent& me, OIS::MouseButtonID mid)
 {
 	if (engine->uiMgr->mTrayMgr->injectMouseUp(me, mid)) return true;
+	if (engine->uiMgr->mTipsMgr->injectMouseUp(me, mid)) return true;
+	if (engine->uiMgr->mPauseMgr->injectMouseUp(me, mid)) return true;
+	if (engine->uiMgr->mGameUIMgr->injectMouseUp(me, mid)) return true;
+	if (engine->uiMgr->mDeadMgr->injectMouseUp(me, mid)) return true;
 
 	return true;
 }

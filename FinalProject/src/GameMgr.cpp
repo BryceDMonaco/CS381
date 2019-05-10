@@ -83,6 +83,7 @@ void GameMgr::NextLevel()
 		changeGameState(GameState::LEVEL_TWO);
 		break;
 	case GameState::LEVEL_TWO:
+		//Next Level UI
 		changeGameState(GameState::LEVEL_THREE);
 		break;
 	case GameState::LEVEL_THREE:
@@ -114,11 +115,15 @@ void GameMgr::changeGameState(GameState state) {
 		// load main menu
 		engine->entityMgr->DestroyAll();
 		currentState = GameState::GAME_START;
+		engine->uiMgr->hideGameUI();
+		engine->uiMgr->showMenu();
+
 		mSceneMgr->setSkyBox(false, "5dim");
-		engine->uiMgr->ReloadMainMenu();
 		break;
 	case 1:
-		winTrigger = (WinTrigger*) engine->entityMgr->CreateEntityOfType(EntityType::WIN_TRIGGER, "winTrigger", "cube.mesh");
+		if (!exists) {
+			winTrigger = (WinTrigger*) engine->entityMgr->CreateEntityOfType(EntityType::WIN_TRIGGER, "winTrigger", "cube.mesh");
+		}
 		winTriggerID = winTrigger->mEntityID;
 		currentState = GameState::LEVEL_ONE;
 		mSceneMgr->setSkyBox(true, "5dim");
@@ -129,10 +134,23 @@ void GameMgr::changeGameState(GameState state) {
 		player->winTriggerID = winTriggerID;
 		break;
 	case 2:
+		//Victory points
+		engine->uiMgr->currentScore += 100;
+		engine->uiMgr->mScore->setCaption(std::to_string(engine->uiMgr->currentScore));
+
+		//Next Level UI
+		engine->uiMgr->advance = true;
+
 		currentState = GameState::LEVEL_TWO;
 		LoadRandomLevel(10, 900);
 		break;
 	case 3:
+		//Victory points
+		engine->uiMgr->currentScore += 100;
+		engine->uiMgr->mScore->setCaption(std::to_string(engine->uiMgr->currentScore));
+
+		engine->uiMgr->advance = true;
+
 		currentState = GameState::LEVEL_THREE;
 		LoadRandomLevel(10, 800);
 		break;

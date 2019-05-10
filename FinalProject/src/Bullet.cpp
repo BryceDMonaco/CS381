@@ -19,6 +19,7 @@ Bullet::Bullet (
 	mSpeed = 400.0f;
 
 	initialPos = position;
+	targetPosition = position;
 
 	hitInterval = 0.5f;
 	hitTimer = hitInterval;

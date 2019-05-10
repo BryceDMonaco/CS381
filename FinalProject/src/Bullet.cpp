@@ -101,7 +101,7 @@ void PlayerBullet::OnCollision(Entity381* collider, float timeSinceLastCollision
 			{
 				mEntityMgr->DestroyEntity(collider->mEntityID);
 
-				mEntityMgr->engine->uiMgr->currentScore += 50;
+				mEntityMgr->engine->uiMgr->currentScore += 25;
 				mEntityMgr->engine->uiMgr->mScore->setCaption(std::to_string(mEntityMgr->engine->uiMgr->currentScore));
 			}
 
@@ -112,6 +112,13 @@ void PlayerBullet::OnCollision(Entity381* collider, float timeSinceLastCollision
 		{
 			//Ogre::LogManager::getSingletonPtr()->logMessage("obstacle hit");
 			Reset();
+		}
+		else if (collider->mTag == "Enemy")
+		{
+			mEntityMgr->DestroyEntity(collider->mEntityID);
+
+			mEntityMgr->engine->uiMgr->currentScore += 50;
+			mEntityMgr->engine->uiMgr->mScore->setCaption(std::to_string(mEntityMgr->engine->uiMgr->currentScore));
 		}
 	//}
 }

@@ -16,7 +16,9 @@
 #define _ENEMY_H_
 
 #include "Entity381.h"
+#include "Player.h"
 #include "ShootingAspect.h"
+#include "EnemyAI.h"
 
 class Enemy : public Entity381
 {
@@ -71,6 +73,7 @@ public:
 	void Tick(float dt);
 
 private:
+	Player* mPlayer;
 	ShootingAspect* mShooting;
 	float shootInterval;
 	float shootTimer;

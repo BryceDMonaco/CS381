@@ -103,6 +103,7 @@ DynamicEnemy::DynamicEnemy (
 : Enemy (manager,entityMgr,entityId,entityName,meshFileName,position,
 	orientation)
 {
+	mPlayer = nullptr;
 	mShooting = nullptr;
 	shootInterval = 1.0f;
 	shootTimer = 0.0f;
@@ -126,11 +127,25 @@ void DynamicEnemy::Initialize()
 	RenderableAspect* renderable = new RenderableAspect(this);
 	PhysicsAspect* physics = new PhysicsAspect(this);
 	ShootingAspect* shooting = new ShootingAspect(this);
+	EnemyAI* ai = new EnemyAI(this);
 
 	// add the aspects
 	this->AddAspect(renderable);
 	this->AddAspect(physics);
 	this->AddAspect(shooting);
+	this->AddAspect(ai);
+
+	// get the player
+	std::map<int, Entity381*>* entities = mEntityMgr->GetEntities();
+	std::map<int, Entity381*>::iterator it;
+	for (it = entities->begin(); it != entities->end(); it++)
+	{
+		if (it->second->mEntityName == "Player")
+			mPlayer = (Player*) it->second;
+	}
+
+	// set the player in the ai aspect
+	ai->SetPlayer(mPlayer);
 }
 
 void DynamicEnemy::Tick(float dt)

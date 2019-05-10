@@ -92,6 +92,19 @@ Entity381* EntityMgr::CreateEntityOfType(
 		//scale.z *= -1;
 
 		break;
+	case EntityType::ENEMY_DYNAMIC:
+		newEntity = new StaticEnemy(
+			mSceneMgr,
+			this,
+			mNextEntityID,
+			name,
+			"pCube3.mesh",
+			position);
+
+		scale *= 50;
+		//scale.z *= -1;
+
+		break;
 	case ENTITY_OBSTACLE:
 		newEntity = new Entity381(
 				mSceneMgr,

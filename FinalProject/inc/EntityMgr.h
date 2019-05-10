@@ -6,6 +6,7 @@
 #include <deque>
 #include "Entity381.h"
 #include "Player.h"
+#include "Enemy.h"
 #include "Bullet.h"
 #include "WinTrigger.h"
 #include "Command.h"
@@ -23,7 +24,8 @@ enum EntityType
 	ENTITY_OBSTACLE,
 	ENTITY_DESTRUCTIBLE,
 	PLAYER,
-	ENEMY,
+	ENEMY_STATIC,
+	ENEMY_DYNAMIC,
 	PLAYER_BULLET,
 	ENEMY_BULLET,
 	WIN_TRIGGER

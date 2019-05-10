@@ -14,6 +14,7 @@ Enemy::Enemy (
 	orientation)
 {
 	mTag = "Enemy";
+	mSpeed *= 5;
 }
 
 Enemy::~Enemy ()

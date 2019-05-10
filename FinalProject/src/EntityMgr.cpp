@@ -79,8 +79,8 @@ Entity381* EntityMgr::CreateEntityOfType(
 		scale.z *= -1;
 
 		break;
-	case EntityType::ENEMY:
-		newEntity = new Entity381(
+	case EntityType::ENEMY_STATIC:
+		newEntity = new StaticEnemy(
 			mSceneMgr,
 			this,
 			mNextEntityID,

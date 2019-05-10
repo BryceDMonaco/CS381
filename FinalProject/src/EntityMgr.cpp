@@ -182,14 +182,13 @@ Entity381* EntityMgr::CreateEntityOfType(
 
 		//This comment can be changed to actual code once Alex's targetPosition code is merged
 		newEntity->targetPosition = newEntity->mPosition + Ogre::Vector3::UNIT_Z * 200000;
-		newEntity->mSpeed *= 5;
+		//newEntity->mSpeed *= 5;
 
 	} else if (type == ENTITY_DESTRUCTIBLE)
 	{
 		newEntity->AddAspect(new ObstacleHide(newEntity, 100));
 
 		newEntity->targetPosition = newEntity->mPosition + Ogre::Vector3::UNIT_Z * 200000;
-		newEntity->mSpeed *= 5;
 		scale *= 20;
 		newEntity->mSceneNode->setScale(scale);
 		// Give health here
@@ -197,7 +196,6 @@ Entity381* EntityMgr::CreateEntityOfType(
 	} else if (type == WIN_TRIGGER)
 	{
 		newEntity->targetPosition = newEntity->mPosition + Ogre::Vector3::UNIT_Z * 200000;
-		newEntity->mSpeed *= 5;
 		scale *= 0;
 		newEntity->mSceneNode->setScale(scale);
 	}

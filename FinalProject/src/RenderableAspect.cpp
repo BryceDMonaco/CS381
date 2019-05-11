@@ -21,9 +21,6 @@ void RenderableAspect::SetMaterial(std::string material)
 
 void RenderableAspect::Tick (float dt)
 {
-	if (mEntity381->mEntityName == "Player")
-			std::cout << "Rendered Position: " << mEntity381->mPosition << std::endl;
-
 	mEntity381->mSceneNode->setPosition(mEntity381->mPosition);
 	//mEntity381->mSceneNode->setOrientation(mEntity381->mOrientation);
 	//mEntity381->mSceneNode->setOrientation(Ogre::Quaternion(Ogre::Degree(mEntity381->pitchDegree), Ogre::Vector3(1,0,0)));

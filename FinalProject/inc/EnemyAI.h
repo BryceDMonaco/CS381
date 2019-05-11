@@ -26,11 +26,9 @@ public:
 
 	void SetPlayer(Player* player);
 
-	Entity381* mEntity381 = nullptr;
+	Player* mPlayer;
 
 private:
-
-	Player* mPlayer;
 };
 
 #endif /* _ENEMY_AI_H_ */

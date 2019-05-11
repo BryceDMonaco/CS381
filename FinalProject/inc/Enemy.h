@@ -72,11 +72,16 @@ public:
 	void Initialize();
 	void Tick(float dt);
 
+	void SetPlayer(Player* player);
+
 private:
 	Player* mPlayer;
+
 	ShootingAspect* mShooting;
 	float shootInterval;
 	float shootTimer;
+
+	EnemyAI* mAI;
 
 };
 

@@ -107,6 +107,7 @@ DynamicEnemy::DynamicEnemy (
 	mShooting = nullptr;
 	shootInterval = 1.0f;
 	shootTimer = 0.0f;
+	mAI = nullptr;
 }
 
 DynamicEnemy::~DynamicEnemy ()
@@ -127,13 +128,13 @@ void DynamicEnemy::Initialize()
 	RenderableAspect* renderable = new RenderableAspect(this);
 	PhysicsAspect* physics = new PhysicsAspect(this);
 	ShootingAspect* shooting = new ShootingAspect(this);
-	EnemyAI* ai = new EnemyAI(this);
+	mAI = new EnemyAI(this);
 
 	// add the aspects
 	this->AddAspect(renderable);
 	this->AddAspect(physics);
 	this->AddAspect(shooting);
-	this->AddAspect(ai);
+	this->AddAspect(mAI);
 
 	// get the player
 	std::map<int, Entity381*>* entities = mEntityMgr->GetEntities();
@@ -143,15 +144,30 @@ void DynamicEnemy::Initialize()
 		if (it->second->mEntityName == "Player")
 			mPlayer = (Player*) it->second;
 	}
+	std::cout << "Enemy position from enemy entity: " << mPosition << std::endl;
+	std::cout << "Player position from enemy entity: " << mPlayer->mPosition << std::endl;
 
 	// set the player in the ai aspect
-	ai->SetPlayer(mPlayer);
+	mAI->SetPlayer(mPlayer);
+	std::cout << "Enemy position from enemy physics aspect: " << physics->mEntity381->mPosition << std::endl;
+	std::cout << "Enemy position from enemy ai aspect: " << mAI->mEntity381->mPosition << std::endl;
+	std::cout << "Player position from enemy ai aspect: " << mAI->mPlayer->mPosition << std::endl;
 }
 
 void DynamicEnemy::Tick(float dt)
 {
+	std::cout << "pitch before render: " << pitchDegree << std::endl;
+
 	for (int i = 0; i < (int) mAspects->size(); i++)
 	{
 		mAspects->at(i)->Tick(dt);
 	}
+
+	std::cout << "pitch after render: " << pitchDegree << std::endl;
+}
+
+void DynamicEnemy::SetPlayer(Player* player)
+{
+	mPlayer = player;
+	mAI->SetPlayer(player);
 }

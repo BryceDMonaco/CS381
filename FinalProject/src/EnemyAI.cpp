@@ -13,19 +13,32 @@ EnemyAI::~EnemyAI ()
 
 void EnemyAI::Tick (float dt)
 {
-	// set target position
-	mEntity381->targetPosition = mPlayer->mPosition;
+	if (mEntity381->mPosition.z < -200)
+	{
+		// set target position
+		mEntity381->targetPosition = mPlayer->mPosition;
 
-	// set target orientation
-	Ogre::Quaternion orientation;
-	mEntity381->mSceneNode->lookAt(mPlayer->mPosition, Ogre::Node::TransformSpace::TS_WORLD);
-	orientation = mEntity381->mSceneNode->getOrientation();
-	mEntity381->targetPitch = orientation.getPitch().valueDegrees();
-	mEntity381->targetYaw = orientation.getYaw().valueDegrees();
-	mEntity381->targetRoll = orientation.getRoll().valueDegrees();
-	mEntity381->pitchDegree = mEntity381->targetPitch;
-	mEntity381->yawDegree = mEntity381->targetYaw;
-	mEntity381->rollDegree = mEntity381->targetRoll;
+		// set target orientation
+		Ogre::Quaternion orientation;
+		mEntity381->mSceneNode->lookAt(mPlayer->mPosition, Ogre::Node::TransformSpace::TS_WORLD);
+		orientation = mEntity381->mSceneNode->getOrientation();
+		mEntity381->targetPitch = orientation.getPitch().valueDegrees();
+		mEntity381->targetYaw = orientation.getYaw().valueDegrees();
+		mEntity381->targetRoll = orientation.getRoll().valueDegrees();
+		//mEntity381->pitchDegree = mEntity381->targetPitch;
+		//mEntity381->yawDegree = mEntity381->targetYaw;
+		//mEntity381->rollDegree = mEntity381->targetRoll;
+	}
+	else
+	{
+		mEntity381->targetPosition = Ogre::Vector3(0,0,200000);
+
+		Ogre::Quaternion orientation = Ogre::Quaternion::IDENTITY;
+		mEntity381->targetPitch = orientation.getPitch().valueDegrees();
+		mEntity381->targetYaw = orientation.getYaw().valueDegrees() - 180;
+		mEntity381->targetRoll = orientation.getRoll().valueDegrees();
+	}
+
 
 }
 

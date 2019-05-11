@@ -66,7 +66,7 @@ Entity381* EntityMgr::CreateEntityOfType(
 	// create the new entity based on the type parameter
 	switch (type)
 	{
-	case EntityType::PLAYER:
+	case PLAYER:
 		newEntity = new Player(
 			mSceneMgr,
 			this,
@@ -79,7 +79,7 @@ Entity381* EntityMgr::CreateEntityOfType(
 		scale.z *= -1;
 
 		break;
-	case EntityType::ENEMY_STATIC:
+	case ENEMY_STATIC:
 		newEntity = new StaticEnemy(
 			mSceneMgr,
 			this,
@@ -92,8 +92,8 @@ Entity381* EntityMgr::CreateEntityOfType(
 		//scale.z *= -1;
 
 		break;
-	case EntityType::ENEMY_DYNAMIC:
-		newEntity = new StaticEnemy(
+	case ENEMY_DYNAMIC:
+		newEntity = new DynamicEnemy(
 			mSceneMgr,
 			this,
 			mNextEntityID,
@@ -211,7 +211,26 @@ Entity381* EntityMgr::CreateEntityOfType(
 		newEntity->targetPosition = newEntity->mPosition + Ogre::Vector3::UNIT_Z * 200000;
 		scale *= 0;
 		newEntity->mSceneNode->setScale(scale);
-	}
+	} /*else if (type == ENEMY_DYNAMIC)
+	{
+		DynamicEnemy* newEnemy = (DynamicEnemy*) newEntity;
+
+		std::cout << "Adding player to enemy..." << std::endl;
+		std::cout << "newEnemy location: " << newEnemy->mPosition << std::endl;
+
+		std::map<int, Entity381*>::iterator it;
+		for (it = mEntities->begin(); it != mEntities->end(); it++)
+		{
+			if (it->second->mEntityName == "Player")
+				newEnemy->SetPlayer((Player*) it->second);
+		}
+
+		std::cout << "player location: " << newEnemy->mPlayer->mPosition << std::endl;
+
+		newEntity = newEnemy;
+
+		std::cout << "new entity location: " << newEntity->mPlayer->mPosition << std::endl;
+	}*/
 
 	//newEntity->mEntity->setMaterialName("Template/Red");
 	return newEntity;

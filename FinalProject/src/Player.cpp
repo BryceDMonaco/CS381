@@ -34,7 +34,7 @@ Player::Player (
 	shootInterval = 0.25f;
 	shootTimer = shootInterval;
 
-	obstacleHitInterval = 0.5f;
+	obstacleHitInterval = 1.0f;
 	obstacleHitTimer = obstacleHitInterval;
 }
 

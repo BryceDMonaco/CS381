@@ -29,6 +29,7 @@ public:
 	Player* mPlayer;
 
 private:
+
 };
 
 #endif /* _ENEMY_AI_H_ */

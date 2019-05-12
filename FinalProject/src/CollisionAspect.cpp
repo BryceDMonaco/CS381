@@ -4,7 +4,7 @@
 
 CollisionAspect::CollisionAspect(Entity381* entity) : Aspect(entity)
 {
-	mCollisionRadius = 200.0f;
+	mCollisionRadius = 100.0f;
 	mCollisionTimer = 0.0f;
 }
 

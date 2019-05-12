@@ -147,6 +147,7 @@ void DynamicEnemy::Initialize()
 	std::cout << "Enemy position from enemy entity: " << mPosition << std::endl;
 	std::cout << "Player position from enemy entity: " << mPlayer->mPosition << std::endl;
 
+
 	// set the player in the ai aspect
 	mAI->SetPlayer(mPlayer);
 	std::cout << "Enemy position from enemy physics aspect: " << physics->mEntity381->mPosition << std::endl;

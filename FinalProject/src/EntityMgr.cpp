@@ -202,7 +202,6 @@ Entity381* EntityMgr::CreateEntityOfType(
 
 		}
 
-		//This comment can be changed to actual code once Alex's targetPosition code is merged
 		newEntity->targetPosition = newEntity->mPosition + Ogre::Vector3::UNIT_Z * 200000;
 		//newEntity->mSpeed *= 5;
 

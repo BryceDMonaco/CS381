@@ -15,7 +15,10 @@ PhysicsAspect::~PhysicsAspect ()
 
 void PhysicsAspect::Tick (float dt)
 {
+	Ogre::Vector3 distanceVector = mEntity381->targetPosition - mEntity381->mPosition;
+
 	// position
+	/*
 	if (mEntity381->mPosition.x < mEntity381->targetPosition.x)
 	{
 		mEntity381->mPosition.x += mEntity381->mSpeed * dt;
@@ -42,6 +45,11 @@ void PhysicsAspect::Tick (float dt)
 	{
 		mEntity381->mPosition.z -= mEntity381->mSpeed * dt;
 	}
+	*/
+
+	// position
+	mEntity381->mVelocity = distanceVector.normalisedCopy() * mEntity381->mSpeed;
+	mEntity381->mPosition = mEntity381->mPosition + mEntity381->mVelocity * dt;
 
 	// rotation
 	if (mEntity381->pitchDegree < mEntity381->targetPitch)

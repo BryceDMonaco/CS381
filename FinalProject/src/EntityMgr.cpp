@@ -66,7 +66,7 @@ Entity381* EntityMgr::CreateEntityOfType(
 	// create the new entity based on the type parameter
 	switch (type)
 	{
-	case EntityType::PLAYER:
+	case PLAYER:
 		newEntity = new Player(
 			mSceneMgr,
 			this,
@@ -79,8 +79,21 @@ Entity381* EntityMgr::CreateEntityOfType(
 		scale.z *= -1;
 
 		break;
-	case EntityType::ENEMY:
-		newEntity = new Entity381(
+	case ENEMY_STATIC:
+		newEntity = new StaticEnemy(
+			mSceneMgr,
+			this,
+			mNextEntityID,
+			name,
+			"pCube3.mesh",
+			position);
+
+		scale *= 50;
+		//scale.z *= -1;
+
+		break;
+	case ENEMY_DYNAMIC:
+		newEntity = new DynamicEnemy(
 			mSceneMgr,
 			this,
 			mNextEntityID,
@@ -182,14 +195,13 @@ Entity381* EntityMgr::CreateEntityOfType(
 
 		//This comment can be changed to actual code once Alex's targetPosition code is merged
 		newEntity->targetPosition = newEntity->mPosition + Ogre::Vector3::UNIT_Z * 200000;
-		newEntity->mSpeed *= 5;
+		//newEntity->mSpeed *= 5;
 
 	} else if (type == ENTITY_DESTRUCTIBLE)
 	{
 		newEntity->AddAspect(new ObstacleHide(newEntity, 100));
 
 		newEntity->targetPosition = newEntity->mPosition + Ogre::Vector3::UNIT_Z * 200000;
-		newEntity->mSpeed *= 5;
 		scale *= 20;
 		newEntity->mSceneNode->setScale(scale);
 		// Give health here
@@ -197,10 +209,28 @@ Entity381* EntityMgr::CreateEntityOfType(
 	} else if (type == WIN_TRIGGER)
 	{
 		newEntity->targetPosition = newEntity->mPosition + Ogre::Vector3::UNIT_Z * 200000;
-		newEntity->mSpeed *= 5;
 		scale *= 0;
 		newEntity->mSceneNode->setScale(scale);
-	}
+	} /*else if (type == ENEMY_DYNAMIC)
+	{
+		DynamicEnemy* newEnemy = (DynamicEnemy*) newEntity;
+
+		std::cout << "Adding player to enemy..." << std::endl;
+		std::cout << "newEnemy location: " << newEnemy->mPosition << std::endl;
+
+		std::map<int, Entity381*>::iterator it;
+		for (it = mEntities->begin(); it != mEntities->end(); it++)
+		{
+			if (it->second->mEntityName == "Player")
+				newEnemy->SetPlayer((Player*) it->second);
+		}
+
+		std::cout << "player location: " << newEnemy->mPlayer->mPosition << std::endl;
+
+		newEntity = newEnemy;
+
+		std::cout << "new entity location: " << newEntity->mPlayer->mPosition << std::endl;
+	}*/
 
 	//newEntity->mEntity->setMaterialName("Template/Red");
 	return newEntity;

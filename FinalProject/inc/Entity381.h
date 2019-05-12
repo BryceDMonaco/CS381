@@ -66,7 +66,7 @@ public:
 	float targetPitch, targetYaw, targetRoll;
 	float pitchDegree, yawDegree, rollDegree;
 
-	float mSpeed = 80.0f;
+	float mSpeed = 400.0f;
 	float mTurnRate = 80.0f;
 	int mHealth = 100;
 

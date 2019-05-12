@@ -125,12 +125,12 @@ void GameMgr::changeGameState(GameState state) {
 			winTrigger = (WinTrigger*) engine->entityMgr->CreateEntityOfType(EntityType::WIN_TRIGGER, "winTrigger", "cube.mesh");
 		}
 		winTriggerID = winTrigger->mEntityID;
+		player = (Player*) engine->entityMgr->CreateEntityOfType(
+			EntityType::PLAYER,
+			"Player");
 		currentState = GameState::LEVEL_ONE;
 		mSceneMgr->setSkyBox(true, "5dim");
 		LoadRandomLevel(10, 1000);
-		player = (Player*) engine->entityMgr->CreateEntityOfType(
-				EntityType::PLAYER,
-				"Player");
 		player->winTriggerID = winTriggerID;
 		break;
 	case 2:
@@ -199,18 +199,44 @@ void GameMgr::LoadRandomLevel (int size, float distanceBetweenPieces)
 	for (int i = 1; i <= size; i++)
 	{
 		int choice = -1;
+		int decisionAmount = 7;
+
+		// can't spawn enemies on last piece (enemies take up two pieces)
+		if (i == size)
+			decisionAmount = 5;
 
 		do
 		{
-			choice = rand() % 5;
+			choice = rand() % decisionAmount;
 
 		} while (choice == lastChoice);  // Prevents the same piece multiple times in a row
 
-		GenerateLevelPiece (i * -distanceBetweenPieces, std::string("obstacle") + std::to_string(obstacleIndex), choice);
+		std::cout << choice << std::endl;
+
+		if (choice == 5)
+		{
+			// spawn static enemy
+			float offset = distanceBetweenPieces / 5;
+			SpawnEnemy(i * -distanceBetweenPieces, std::string("enemy"), choice, offset);
+			i++;
+		}
+		else if (choice == 6)
+		{
+			// spawn dynamic enemy
+			float offset = distanceBetweenPieces / 5;
+			SpawnEnemy(i * -distanceBetweenPieces, std::string("enemy"), choice, offset);
+			i++;
+		}
+		else
+		{
+			// generate level piece
+			GenerateLevelPiece (i * -distanceBetweenPieces, std::string("obstacle") + std::to_string(obstacleIndex), choice);
+			obstacleIndex++;
+		}
 
 		lastChoice = choice;
 
-		obstacleIndex++;
+
 
 	}
 
@@ -218,6 +244,206 @@ void GameMgr::LoadRandomLevel (int size, float distanceBetweenPieces)
 
 	return;
 
+}
+
+void GameMgr::SpawnEnemy (float zPos, std::string name, int choice, float offset)
+{
+	if (choice == 5)
+	{
+		// 75% chance an obstacle spawns along with static enemy
+		bool spawnObstacle[2];
+		int spawnObstacleDecision = std::rand() % 100;
+		if (spawnObstacleDecision < 75)
+		{
+			spawnObstacle[0] = true;
+		}
+		else spawnObstacle[0] = false;
+		spawnObstacleDecision = std::rand() % 100;
+		if (spawnObstacleDecision < 75)
+		{
+			spawnObstacle[1] = true;
+		} else spawnObstacle[1] = false;
+
+		int obstacleType[2];
+		obstacleType[0] = std::rand() % 2;
+		obstacleType[1] = std::rand() % 2;
+
+		// get the enemy position
+
+		Ogre::Vector3 enemyPos;
+		int posIndex = std::rand() % 9;
+
+		switch (posIndex)
+		{
+		case 0:
+			enemyPos = Ogre::Vector3(-225, -225, zPos);
+			for (int i = 0; i < 2; i++)
+			{
+				if (spawnObstacle[i])
+				{
+					if (obstacleType[i] == 0)
+					{
+						GenerateLevelPiece(zPos - (offset * 5 * i), std::string("obstacle") + std::to_string(obstacleIndex), 1);
+					}
+					else GenerateLevelPiece(zPos - (offset * 5 * i), std::string("obstacle") + std::to_string(obstacleIndex), 2);
+
+					obstacleIndex++;
+				}
+			}
+			break;
+		case 1:
+			enemyPos = Ogre::Vector3(-225, 0, zPos);
+			for (int i = 0; i < 2; i++)
+			{
+				if (spawnObstacle[i])
+				{
+					GenerateLevelPiece(zPos - (offset * 5 * i), std::string("obstacle") + std::to_string(obstacleIndex), 1);
+					obstacleIndex++;
+				}
+			}
+			break;
+		case 2:
+			enemyPos = Ogre::Vector3(-225, 225, zPos);
+			for (int i = 0; i < 2; i++)
+			{
+				if (spawnObstacle[i])
+				{
+					if (obstacleType[i] == 0)
+					{
+						GenerateLevelPiece(zPos - (offset * 5 * i), std::string("obstacle") + std::to_string(obstacleIndex), 1);
+					}
+					else GenerateLevelPiece(zPos - (offset * 5 * i), std::string("obstacle") + std::to_string(obstacleIndex), 3);
+
+					obstacleIndex++;
+				}
+			}
+			break;
+		case 3:
+			enemyPos = Ogre::Vector3(0, -225, zPos);
+			for (int i = 0; i < 2; i++)
+			{
+				if (spawnObstacle[i])
+				{
+					GenerateLevelPiece(zPos - (offset * 5 * i), std::string("obstacle") + std::to_string(obstacleIndex), 2);
+					obstacleIndex++;
+				}
+			}
+			break;
+		case 4:
+			enemyPos = Ogre::Vector3(0, 0, zPos);
+			break;
+		case 5:
+			enemyPos = Ogre::Vector3(0, 225, zPos);
+			for (int i = 0; i < 2; i++)
+			{
+				if (spawnObstacle[i])
+				{
+					GenerateLevelPiece(zPos - (offset * 5 * i), std::string("obstacle") + std::to_string(obstacleIndex), 3);
+					obstacleIndex++;
+				}
+			}
+			break;
+		case 6:
+			enemyPos = Ogre::Vector3(225, -225, zPos);
+			for (int i = 0; i < 2; i++)
+			{
+				if (spawnObstacle[i])
+				{
+					if (obstacleType[i] == 0)
+					{
+						GenerateLevelPiece(zPos - (offset * 5 * i), std::string("obstacle") + std::to_string(obstacleIndex), 0);
+					}
+					else GenerateLevelPiece(zPos - (offset * 5 * i), std::string("obstacle") + std::to_string(obstacleIndex), 2);
+
+					obstacleIndex++;
+				}
+			}
+			break;
+		case 7:
+			enemyPos = Ogre::Vector3(225, 0, zPos);
+			for (int i = 0; i < 2; i++)
+			{
+				if (spawnObstacle[i])
+				{
+					GenerateLevelPiece(zPos - (offset * 5 * i), std::string("obstacle") + std::to_string(obstacleIndex), 0);
+					obstacleIndex++;
+				}
+			}
+			break;
+		case 8:
+			enemyPos = Ogre::Vector3(225, 225, zPos);
+			for (int i = 0; i < 2; i++)
+			{
+				if (spawnObstacle[i])
+				{
+					if (obstacleType[i] == 0)
+					{
+						GenerateLevelPiece(zPos - (offset * 5 * i), std::string("obstacle") + std::to_string(obstacleIndex), 0);
+					}
+					else GenerateLevelPiece(zPos - (offset * 5 * i), std::string("obstacle") + std::to_string(obstacleIndex), 3);
+
+					obstacleIndex++;
+				}
+			}
+			break;
+		default:
+			break;
+		}
+
+		// spawn 5 in a row with generated position at offset distance apart
+		for (int i = 0; i < 5; i++)
+		{
+			engine->entityMgr->CreateEntityOfType(EntityType::ENEMY_STATIC, name + std::to_string(enemyIndex), "pCube3.mesh", enemyPos);
+			enemyPos.z -= offset;
+			enemyIndex++;
+		}
+	}
+	else if (choice == 6)
+	{
+		// get the enemy starting position
+
+		Ogre::Vector3 enemyPos;
+		int posIndex = std::rand() % 9;
+
+		zPos -= offset * 5;
+
+		switch (posIndex)
+		{
+		case 0:
+			enemyPos = Ogre::Vector3(-225, -225, zPos);
+			break;
+		case 1:
+			enemyPos = Ogre::Vector3(-225, 0, zPos);
+			break;
+		case 2:
+			enemyPos = Ogre::Vector3(-225, 225, zPos);
+			break;
+		case 3:
+			enemyPos = Ogre::Vector3(0, -225, zPos);
+			break;
+		case 4:
+			enemyPos = Ogre::Vector3(0, 0, zPos);
+			break;
+		case 5:
+			enemyPos = Ogre::Vector3(0, 225, zPos);
+			break;
+		case 6:
+			enemyPos = Ogre::Vector3(225, -225, zPos);
+			break;
+		case 7:
+			enemyPos = Ogre::Vector3(225, 0, zPos);
+			break;
+		case 8:
+			enemyPos = Ogre::Vector3(225, 225, zPos);
+			break;
+		default:
+			break;
+		}
+
+		// spawn the enemy
+		engine->entityMgr->CreateEntityOfType(EntityType::ENEMY_DYNAMIC, name + std::to_string(enemyIndex), "pCube3.mesh", enemyPos);
+		enemyIndex++;
+	}
 }
 
 void GameMgr::GenerateLevelPiece (float zPos, std::string name, int choice)

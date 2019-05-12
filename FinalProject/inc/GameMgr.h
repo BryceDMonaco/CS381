@@ -41,12 +41,14 @@ public:
 	void LoadLevel1 ();
 	void LoadRandomLevel (int size, float distanceBetweenPieces);
 
+	void SpawnEnemy (float zPos, std::string name, int choice, float offset);
 	void GenerateLevelPiece (float zPos, std::string name, int choice);
 
 	Ogre::SceneManager* mSceneMgr = nullptr;
 	GameState currentState;
 	bool playGame;
 	int obstacleIndex = 0;
+	int enemyIndex = 0;
 
 	Player* player;
 	WinTrigger* winTrigger = nullptr;

@@ -2,6 +2,7 @@
 #include "Engine.h"
 
 #include "EntityMgr.h"
+#include "UIMgr.h"
 
 GameMgr::GameMgr (Engine* engine) : Mgr (engine)
 {

@@ -142,6 +142,7 @@ void UIMgr::LoadLevel() {
 	mProgressBar = mGameUIMgr->createProgressBar(OgreBites::TL_BOTTOMLEFT, "HealthBar", "Health", 300, 200);
 	mProgressBar->setProgress(100);
 	std::cout << "Buttons..\n";
+	currentScore = 0;
 	mScore = mGameUIMgr->createLabel(OgreBites::TL_TOPRIGHT, "Score", "0", 50);
 	std::cout << "Break.\n";
 }

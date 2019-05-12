@@ -67,6 +67,7 @@ void Player::Initialize()
 	mShooting = shooting;
 	mShooting->mBullets.clear();
 	mShooting->mBulletCount = 20;
+	mShooting->mLocalShotDirection = Ogre::Vector3::NEGATIVE_UNIT_Z;
 
 	// create all the bullets
 	for (int i = 0; i < mShooting->mBulletCount; i++)
@@ -195,6 +196,16 @@ void Player::OnCollision(Entity381* collider, float timeSinceLastCollision)
 
 		obstacleHitTimer = 0.0f;
 	}
+	// enemy bullet collision is handled in enemy bullet collision handler
+	/*
+	else if (collider->mTag == "EnemyBullet")
+	{
+		mHealth -= 10;
+		Ogre::LogManager::getSingletonPtr()->logMessage("Player took damage");
+
+		obstacleHitTimer = 0.0f;
+	}
+	*/
 }
 
 bool Player::CheckVictory()

@@ -4,6 +4,7 @@ ShootingAspect::ShootingAspect(Entity381* entity) : Aspect(entity)
 {
 	mBulletCount = 0;
 	mBulletIndex = 0;
+	mLocalShotDirection = Ogre::Vector3::NEGATIVE_UNIT_Z;
 }
 
 ShootingAspect::~ShootingAspect()
@@ -26,7 +27,8 @@ void ShootingAspect::Fire()
 		// reset bullet position and fire
 		currentBullet->mPosition = mEntity381->mPosition;
 		currentBullet->targetPosition =
-			(mEntity381->mSceneNode->getOrientation() * Ogre::Vector3::NEGATIVE_UNIT_Z * 5000) + mEntity381->mSceneNode->getPosition();
+			(mEntity381->mSceneNode->getOrientation() * mLocalShotDirection * 5000) + mEntity381->mSceneNode->getPosition();
+		currentBullet->isFired = true;
 
 		// set next bullet
 		mBulletIndex = (mBulletIndex + 1) % mBulletCount;

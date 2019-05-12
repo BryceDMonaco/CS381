@@ -17,6 +17,7 @@
 
 #include "Entity381.h"
 #include "Player.h"
+#include "Bullet.h"
 #include "ShootingAspect.h"
 #include "EnemyAI.h"
 

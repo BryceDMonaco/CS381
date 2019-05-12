@@ -27,6 +27,7 @@ public:
 	std::vector<Bullet*> mBullets;
 	int mBulletCount;
 	int mBulletIndex;
+	Ogre::Vector3 mLocalShotDirection;
 };
 
 

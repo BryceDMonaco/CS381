@@ -30,6 +30,8 @@ public:
 
 	void Reset();
 
+	bool isFired = false;
+
 protected:
 	virtual void OnCollision(Entity381* collider, float timeSinceLastCollision);
 
@@ -37,6 +39,9 @@ protected:
 
 	float hitInterval;
 	float hitTimer;
+
+	float lifetime = 5.0f;
+	float lifeTimer = 0.0f;
 };
 
 class PlayerBullet : public Bullet

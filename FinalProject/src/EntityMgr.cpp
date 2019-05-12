@@ -89,7 +89,7 @@ Entity381* EntityMgr::CreateEntityOfType(
 			position);
 
 		scale *= 50;
-		//scale.z *= -1;
+		scale.z *= -1;
 
 		break;
 	case ENEMY_DYNAMIC:

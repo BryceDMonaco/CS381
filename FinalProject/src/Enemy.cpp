@@ -136,6 +136,21 @@ void DynamicEnemy::Initialize()
 	this->AddAspect(shooting);
 	this->AddAspect(mAI);
 
+	mShooting = shooting;
+	mShooting->mBullets.clear();
+	mShooting->mBulletCount = 20;
+
+	// create all the bullets
+	for (int i = 0; i < mShooting->mBulletCount; i++)
+	{
+		mShooting->mBullets.push_back((EnemyBullet*)mEntityMgr->CreateEntityOfType(
+			EntityType::ENEMY_BULLET,					// type
+			mEntityName + "Bullet" + std::to_string(i),	// name
+			"sphere.mesh",								// mesh file
+			Ogre::Vector3(4000, 4000, 4000),			// position
+			Ogre::Vector3(0.15f,0.15f,0.15f)));			// scale
+	}
+
 	// get the player
 	std::map<int, Entity381*>* entities = mEntityMgr->GetEntities();
 	std::map<int, Entity381*>::iterator it;
@@ -157,14 +172,19 @@ void DynamicEnemy::Initialize()
 
 void DynamicEnemy::Tick(float dt)
 {
-	std::cout << "pitch before render: " << pitchDegree << std::endl;
+	shootTimer += dt;
+
+	// only fire when in range of the player, in front of the player, and every shootInterval seconds
+	if (mPosition.distance(mPlayer->mPosition) <= 1500.0f && mPosition.z < 0.0f && shootTimer >= shootInterval)
+	{
+		mShooting->Fire();
+		shootTimer = 0.0f;
+	}
 
 	for (int i = 0; i < (int) mAspects->size(); i++)
 	{
 		mAspects->at(i)->Tick(dt);
 	}
-
-	std::cout << "pitch after render: " << pitchDegree << std::endl;
 }
 
 void DynamicEnemy::SetPlayer(Player* player)

@@ -138,6 +138,15 @@ Entity381* EntityMgr::CreateEntityOfType(
 			meshFileName,
 			position);
 		break;
+	case ENEMY_BULLET:
+		newEntity = new EnemyBullet(
+			mSceneMgr,
+			this,
+			mNextEntityID,
+			name,
+			meshFileName,
+			position);
+		break;
 	case WIN_TRIGGER:
 		newEntity = new WinTrigger(
 			mSceneMgr,

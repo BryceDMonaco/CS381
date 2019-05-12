@@ -16,7 +16,7 @@ Bullet::Bullet (
 {
 	mTag = "Bullet";
 
-	mSpeed = 400.0f;
+	mSpeed = 600.0f;
 
 	initialPos = position;
 	targetPosition = position;
@@ -52,6 +52,12 @@ void Bullet::Tick(float dt)
 {
 	hitTimer += dt;
 
+	if (isFired)
+		lifeTimer += dt;
+
+	if (lifeTimer >= lifetime)
+		Reset();
+
 	for (int i = 0; i < (int) mAspects->size(); i++)
 	{
 		mAspects->at(i)->Tick(dt);
@@ -62,6 +68,9 @@ void Bullet::Reset()
 {
 	mPosition = initialPos;
 	targetPosition = mPosition;
+
+	isFired = false;
+	lifeTimer = 0.0f;
 }
 
 void Bullet::OnCollision(Entity381* collider, float timeSinceLastCollision)
@@ -90,7 +99,6 @@ PlayerBullet::~PlayerBullet()
 
 void PlayerBullet::OnCollision(Entity381* collider, float timeSinceLastCollision)
 {
-	// TODO: handle player bullet collision
 	//if (timeSinceLastCollision > 0.5f)
 	//{
 		if (collider->mTag == "Destructible" /*&& hitTimer >= hitInterval*/)
@@ -147,5 +155,16 @@ EnemyBullet::~EnemyBullet()
 
 void EnemyBullet::OnCollision(Entity381* collider, float timeSinceLastCollision)
 {
-	// TODO: handle enemy bullet collision
+	if (collider->mTag == "Obstacle" || collider->mTag == "Destructible")
+	{
+		//Ogre::LogManager::getSingletonPtr()->logMessage("obstacle hit");
+		Reset();
+	}
+	else if (collider->mTag == "Player")
+	{
+		collider->mHealth -= 10;
+		std::cout << "Enemy shot player" << std::endl;
+
+		Reset();
+	}
 }

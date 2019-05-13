@@ -56,7 +56,7 @@ public:
 	int winTriggerID = 0;
 	bool exists = false;
 
-	int maxDistanceBetweenPieces = 1500;
+	int maxDistanceBetweenPieces = 1000;
 	int minDistanceBetweenPieces = 500;
 	int currentDistanceBetweenPieces = maxDistanceBetweenPieces;
 

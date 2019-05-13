@@ -103,7 +103,9 @@ void Player::Tick(float dt)
 		mEntityMgr->engine->gameMgr->NextLevel();
 
 		// increment speed to compensate for lesser distance between pieces
-		mSpeed += 10;
+		mSpeed += 5;
+		if (mSpeed >= mMaxSpeed)
+			mSpeed = mMaxSpeed;
 	}
 
 	if (mHealth <= 0)

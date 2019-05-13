@@ -134,6 +134,7 @@ void GameMgr::changeGameState(GameState state) {
 			"Player");
 		currentState = GameState::LEVEL_ONE;
 		mSceneMgr->setSkyBox(true, "5dim");
+		currentDistanceBetweenPieces = maxDistanceBetweenPieces;
 		LoadRandomLevel(10, 1000);
 		player->winTriggerID = winTriggerID;
 		break;

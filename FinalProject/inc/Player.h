@@ -44,7 +44,7 @@ private:
 	float obstacleHitInterval;
 	float obstacleHitTimer;
 
-
+	float mMaxSpeed = 300.0f;
 
 };
 

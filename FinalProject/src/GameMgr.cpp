@@ -134,6 +134,7 @@ void GameMgr::changeGameState(GameState state) {
 			"Player");
 		currentState = GameState::LEVEL_ONE;
 		mSceneMgr->setSkyBox(true, "5dim");
+		currentLevel = 1;
 		currentDistanceBetweenPieces = maxDistanceBetweenPieces;
 		LoadRandomLevel(10, 1000);
 		player->winTriggerID = winTriggerID;
@@ -166,7 +167,10 @@ void GameMgr::changeGameState(GameState state) {
 		engine->uiMgr->currentScore += 100;
 		engine->uiMgr->mScore->setCaption(std::to_string(engine->uiMgr->currentScore));
 
+		currentLevel++;
+
 		//Next Level UI
+		engine->uiMgr->mNextLevel->setCaption("Level " + std::to_string(currentLevel));
 		engine->uiMgr->advance = true;
 
 		currentState = GameState::RANDOM;

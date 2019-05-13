@@ -80,6 +80,7 @@ void GameMgr::NextLevel()
 	case GameState::GAME_START:
 		changeGameState(GameState::LEVEL_ONE);
 		break;
+	/*
 	case GameState::LEVEL_ONE:
 		changeGameState(GameState::LEVEL_TWO);
 		break;
@@ -90,7 +91,9 @@ void GameMgr::NextLevel()
 	case GameState::LEVEL_THREE:
 		changeGameState(GameState::GAME_START);
 		break;
+	*/
 	default:
+		changeGameState(GameState::RANDOM);
 		break;
 	}
 }
@@ -134,6 +137,7 @@ void GameMgr::changeGameState(GameState state) {
 		LoadRandomLevel(10, 1000);
 		player->winTriggerID = winTriggerID;
 		break;
+	/*
 	case 2:
 		//Victory points
 		engine->uiMgr->currentScore += 100;
@@ -155,7 +159,20 @@ void GameMgr::changeGameState(GameState state) {
 		currentState = GameState::LEVEL_THREE;
 		LoadRandomLevel(10, 800);
 		break;
+	*/
 	default:
+		//Victory points
+		engine->uiMgr->currentScore += 100;
+		engine->uiMgr->mScore->setCaption(std::to_string(engine->uiMgr->currentScore));
+
+		//Next Level UI
+		engine->uiMgr->advance = true;
+
+		currentState = GameState::RANDOM;
+		currentDistanceBetweenPieces -= 50;
+		if (currentDistanceBetweenPieces < minDistanceBetweenPieces)
+			currentDistanceBetweenPieces = minDistanceBetweenPieces;
+		LoadRandomLevel(10, currentDistanceBetweenPieces);
 		break;
 	}
 }

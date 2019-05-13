@@ -23,7 +23,8 @@ enum GameState
 	GAME_START = 0,
 	LEVEL_ONE,
 	LEVEL_TWO,
-	LEVEL_THREE
+	LEVEL_THREE,
+	RANDOM
 };
 
 class GameMgr : public Mgr
@@ -54,6 +55,11 @@ public:
 	WinTrigger* winTrigger = nullptr;
 	int winTriggerID = 0;
 	bool exists = false;
+
+	int currentLevel = 0;
+	int maxDistanceBetweenPieces = 1000;
+	int minDistanceBetweenPieces = 500;
+	int currentDistanceBetweenPieces = maxDistanceBetweenPieces;
 
 };
 

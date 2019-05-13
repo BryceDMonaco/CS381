@@ -25,6 +25,7 @@ Player::Player (
 	mTag = "Player";
 
 	mSpeed = 200.0f;
+	mMaxSpeed = 270.0f;
 
 	stationaryPosition = Ogre::Vector3::ZERO;
 	movingVertical = false;
@@ -101,6 +102,11 @@ void Player::Tick(float dt)
 	if (nextLevel)
 	{
 		mEntityMgr->engine->gameMgr->NextLevel();
+
+		// increment speed to compensate for lesser distance between pieces
+		mSpeed += 7;
+		if (mSpeed >= mMaxSpeed)
+			mSpeed = mMaxSpeed;
 	}
 
 	if (mHealth <= 0)

@@ -30,7 +30,8 @@ void EnemyAI::Tick (float dt)
 		orientation = mEntity381->mSceneNode->getOrientation();
 		mEntity381->targetPitch = orientation.getPitch().valueDegrees();
 		mEntity381->targetYaw = orientation.getYaw().valueDegrees();
-		mEntity381->targetRoll = orientation.getRoll().valueDegrees();
+		//mEntity381->targetRoll = orientation.getRoll().valueDegrees();
+		mEntity381->targetRoll = 0.0f;
 		mEntity381->pitchDegree = mEntity381->targetPitch;
 		mEntity381->yawDegree = mEntity381->targetYaw;
 		mEntity381->rollDegree = mEntity381->targetRoll;
@@ -46,7 +47,8 @@ void EnemyAI::Tick (float dt)
 		orientation = mEntity381->mSceneNode->getOrientation();
 		mEntity381->targetPitch = orientation.getPitch().valueDegrees();
 		mEntity381->targetYaw = orientation.getYaw().valueDegrees();
-		mEntity381->targetRoll = orientation.getRoll().valueDegrees();
+		//mEntity381->targetRoll = orientation.getRoll().valueDegrees();
+		mEntity381->targetRoll = 0.0f;
 		//mEntity381->pitchDegree = mEntity381->targetPitch;
 		//mEntity381->yawDegree = mEntity381->targetYaw;
 		//mEntity381->rollDegree = mEntity381->targetRoll;

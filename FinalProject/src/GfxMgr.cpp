@@ -61,7 +61,7 @@ void GfxMgr::Init ()
 	mOverlaySystem = new Ogre::OverlaySystem();
 	//addQListener(mOverlaySystem);
 
-	mWindow = mRoot->initialise(true, "TutorialApplication Render Window");
+	mWindow = mRoot->initialise(true, "Spacey Shooty Bois");
 
 	Ogre::TextureManager::getSingleton().setDefaultNumMipmaps(5);
 

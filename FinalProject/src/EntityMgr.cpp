@@ -85,7 +85,7 @@ Entity381* EntityMgr::CreateEntityOfType(
 			this,
 			mNextEntityID,
 			name,
-			"pCube3.mesh",
+			"pCube12.mesh",
 			position);
 
 		scale *= 50;
@@ -98,7 +98,7 @@ Entity381* EntityMgr::CreateEntityOfType(
 			this,
 			mNextEntityID,
 			name,
-			"pCube3.mesh",
+			"pCube12.mesh",
 			position);
 
 		scale *= 50;
